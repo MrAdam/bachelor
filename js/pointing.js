@@ -9,8 +9,9 @@ var running = false;
 var counter = 0;
 
 window.onload = function() {
-	paper.setup('canvas');
 	
+	paper.setup('canvas');
+
 	// Center circle
 	center = new Path.Circle(view.center, 15);
 	center.fillColor = 'red';
