@@ -4,9 +4,8 @@ paper.install(window);
 var A = [67, 184, 280, 230, 144, 249, 255, 96, 225, 263, 259, 229, 215, 198, 301, 194, 260, 296, 180, 278, 283, 40, 233, 191, 179];
 var W = [20, 38, 14, 29, 55, 29, 14, 50, 19, 12, 25, 20, 31, 83, 16, 66, 12, 14, 44, 11, 37, 32, 10, 50, 18];
 
-// Empty array to hold the resulting paths and times from the targets
-var paths = [];
-var times = [];
+// Empty array to hold the test results
+var results = [];
 
 var pathTool, path;
 var circleCenter, circleTarget;
@@ -26,7 +25,10 @@ createTarget = function(distance, width) {
 	var angle = Math.floor(Math.random()*361);
 	var x = (distance * Math.cos(angle * Math.PI/180)) + view.center.x;
 	var y = (distance * Math.sin(angle * Math.PI/180)) + view.center.y;
-	return new Path.Circle(new Point(x,y), width / 2);
+	var target = new Path.Circle(new Point(x,y), width / 2);
+	target.data.distance = distance;
+	target.data.width = width;
+	return target;
 }
 
 window.onload = function() {
@@ -98,9 +100,13 @@ window.onload = function() {
 			// Stop the system from running
 			running = false;
 			timeEnd = performance.now();
-			// Add the path segments and the timing in milliseconds to the result arrays
-			paths.push(path.segments);
-			times.push(timeEnd - timeStart);
+			// Add the data to the results
+			results.push({
+				distance: circleTarget.data.distance,
+				width: circleTarget.data.width,
+				path: path.segments,
+				time: timeEnd - timeStart
+			});
 			// Remove the target and its path
 			circleTarget.remove();
 			path.remove();
@@ -108,6 +114,7 @@ window.onload = function() {
 			remainingText.content = textRemaining + A.length;
 			// Color the center circle active
 			circleCenter.fillColor = colorActive;
+			
 			// If there are no remaining targets ->
 			if (A.length < 1) {
 				finished = true;
@@ -122,9 +129,10 @@ window.onload = function() {
 					fontWeight: 'bold',
 					fontSize: 20
 				});
-				// DEBUG
-				for(i = 0; i < times.length; i++) {
-					$('#table > tbody:last').append('<tr><td>' + (i + 1) + '</td><td>' + times[i] + '</td></tr>');
+				
+				// Show results in table on page for debugging
+				for (i = 0; i < results.length; i++) {
+					$('#table').find('tbody:last').append('<tr><td>' + (i+1) + '</td><td>' + results[i].distance + '</td><td>' + results[i].width + '</td><td>' + results[i].time + '</td></tr>');
 				}
 			}
 		}
