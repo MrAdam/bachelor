@@ -21,7 +21,7 @@ createTarget = function(distance, width) {
 	var angle = Math.floor(Math.random()*361);
 	var x = (distance * Math.cos(angle * Math.PI/180)) + view.center.x;
 	var y = (distance * Math.sin(angle * Math.PI/180)) + view.center.y;
-	return new Path.Circle(new Point(x,y), width);
+	return new Path.Circle(new Point(x,y), width / 2);
 }
 
 window.onload = function() {
