@@ -1,27 +1,34 @@
 paper.install(window);
 
+/*
+ * Variables
+ */
+
 // Original values from the article: Two Large Open-Access Datasets for Fitts’ Law of  Human Motion and a Succinct Derivation of the Square-Root Variant
 var A = [67, 184, 280, 230, 144, 249, 255, 96, 225, 263, 259, 229, 215, 198, 301, 194, 260, 296, 180, 278, 283, 40, 233, 191, 179];
 var W = [20, 38, 14, 29, 55, 29, 14, 50, 19, 12, 25, 20, 31, 83, 16, 66, 12, 14, 44, 11, 37, 32, 10, 50, 18];
-
-// Empty array to hold the test results
 var results = [];
 
 var pathTool, path;
-var circleCenter, circleTarget;
-var timeStart, timeEnd;
-var colorInactive = 'blue';
-var colorActive = 'green';
-var textRemaining = 'Targets remaining: ';
+var centerCircle, targetCircle;
+var startTime, endTime;
+var targetColor = 'green';
+var nonTargetColor = 'blue';
 var running = false;
 var finished = false;
 
-beep = function() {
+/*
+ * Helper functions
+ */
+
+// Plays a beeping sound
+function beep() {
 	var sound = new Audio('sound/beep.wav');
 	sound.play();
 }
 
-createTarget = function(distance, width) {
+// Creates a new target with specified width, and specified distance from center (at random angle)
+function createTarget(distance, width) {
 	var angle = Math.floor(Math.random()*361);
 	var x = (distance * Math.cos(angle * Math.PI/180)) + view.center.x;
 	var y = (distance * Math.sin(angle * Math.PI/180)) + view.center.y;
@@ -31,102 +38,114 @@ createTarget = function(distance, width) {
 	return target;
 }
 
-average = function() {
+// Returns the average time of results
+function average() {
 	var sum = 0;
 	for (i = 0; i < results.length; i++) {
 		sum += results[i].time;
 	}
-	return Math.round(sum / results.length);
+	return sum / results.length;
 }
+
+/*
+ * Main program
+ */
 
 window.onload = function() {
 	paper.setup('canvas');
 	
-	// Create help text
+	// Initialize texts and center circle
 	var helpText = new PointText({
 		point: new Point(view.center.x, 30),
 		justification: 'center',
 		content: 'When a green circle appears, click on it as fast as possible',
 		fillColor: 'red',
-		fontWeight: 'bold',
 		fontSize: 15
 	});
-	
-	// Create remaining targets text
+
 	var remainingText = new PointText({
 		point: new Point(view.center.x, (view.center.y * 2) - 30),
 		justification: 'center',
-		content: textRemaining + A.length,
+		content: 'Targets remaining: ' + A.length,
 		fillColor: '#ccc',
-		fontWeight: 'bold',
 		fontSize: 15
 	});
+	
+	centerCircle = new Path.Circle({
+		center: view.center,
+		radius: 20,
+		fillColor: targetColor
+	});
 
-	// Center circle
-	circleCenter = new Path.Circle(view.center, 20);
-	circleCenter.fillColor = colorActive;
-
-	/*
-	 * Setup path tool
-	 */
+	// Initialize path tool, and set up its functions
 	pathTool = new Tool();
 	
 	pathTool.onMouseMove = function(event) {
 		if (running) {
 			path.add(event.point);
+			var lastPoint = path.data.points[path.data.points.length - 1];
+			path.data.points.push({
+				position: event.point, // TODO: Maybe subtract view.center for normalization? (will result in negtive values)
+				totalTime: performance.now() - startTime,
+				deltaTime: lastPoint != undefined ? (performance.now() - startTime) - lastPoint.totalTime : performance.now() - startTime,
+				deltaDistance: event.delta.length
+			});
 		}
 	}
 	
 	pathTool.onMouseDown = function(event) {
 		// If center circle is clicked, and a new target is needed ->
-		if (circleCenter.contains(event.point) && !running && !finished) {
+		if (centerCircle.contains(event.point) && !running && !finished) {
 			// Beep to notify the testee of the action
 			beep();
 			// Fetch the next A (distance) and W (width)
 			var distance = A.shift();
 			var width = W.shift();
 			// Create the target based on the distance and width from the center (keep going until it fits in the view)
-			circleTarget = createTarget(distance, width);
-			while(!circleTarget.isInside(view.bounds)) {
-				circleTarget = createTarget(distance, width);
+			targetCircle = createTarget(distance, width);
+			while(!targetCircle.isInside(view.bounds)) {
+				targetCircle = createTarget(distance, width);
 			}
 			// Color the target circle active, and the center circle inactive
-			circleTarget.fillColor = colorActive;
-			circleCenter.fillColor = colorInactive;
+			targetCircle.fillColor = targetColor;
+			centerCircle.fillColor = nonTargetColor;
+			// Remove the help text
+			helpText.remove();
 			// Instantiate the path for the current target
 			path = new Path();
+			path.data.points = [];
 			path.strokeColor = 'black';
 			// Set the system as running
 			running = true;
-			timeStart = performance.now();
+			startTime = performance.now();
 		}
 		
 		// If target circle is clicked ->
-		if (circleTarget.contains(event.point) && running) {
+		if (targetCircle.contains(event.point) && running) {
 			// Beep to notify the testee of the action
 			beep();
 			// Stop the system from running
 			running = false;
-			timeEnd = performance.now();
+			endTime = performance.now();
 			// Add the data to the results
 			results.push({
-				distance: circleTarget.data.distance,
-				width: circleTarget.data.width,
-				path: path.segments,
-				time: timeEnd - timeStart
+				distance: targetCircle.data.distance,
+				width: targetCircle.data.width,
+				points: path.data.points,
+				time: endTime - startTime
 			});
 			// Remove the target and its path
-			circleTarget.remove();
+			targetCircle.remove();
 			path.remove();
 			// Update the remaining targets text
-			remainingText.content = textRemaining + A.length;
+			remainingText.content = 'Targets remaining: ' + A.length;
 			// Color the center circle active
-			circleCenter.fillColor = colorActive;
+			centerCircle.fillColor = targetColor;
 			
 			// If there are no remaining targets ->
 			if (A.length < 1) {
 				finished = true;
-				circleCenter.remove();
+				centerCircle.remove();
 				remainingText.remove();
 				helpText.remove();
 				finishedText = new PointText({
@@ -139,15 +158,10 @@ window.onload = function() {
 				averageText = new PointText({
 					point: new Point(view.center.x, view.center.y + 20),
 					justification: 'center',
-					content: 'Your average response time was ' + average() + ' msec',
+					content: 'Your average response time was ' + Math.round(average()) + ' msec',
 					fillColor: 'red',
 					fontSize: 20
 				});
-				
-				// Show results in table on page for debugging
-				for (i = 0; i < results.length; i++) {
-					$('#table').find('tbody:last').append('<tr><td>' + (i+1) + '</td><td>' + results[i].distance + '</td><td>' + results[i].width + '</td><td>' + results[i].time + '</td></tr>');
-				}
 			}
 		}
 	}
