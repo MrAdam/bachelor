@@ -31,6 +31,14 @@ createTarget = function(distance, width) {
 	return target;
 }
 
+average = function() {
+	var sum = 0;
+	for (i = 0; i < results.length; i++) {
+		sum += results[i].time;
+	}
+	return Math.round(sum / results.length);
+}
+
 window.onload = function() {
 	paper.setup('canvas');
 	
@@ -124,9 +132,15 @@ window.onload = function() {
 				finishedText = new PointText({
 					point: view.center,
 					justification: 'center',
-					content: 'Finished!',
+					content: 'Your data has been recorded successfully',
 					fillColor: 'red',
-					fontWeight: 'bold',
+					fontSize: 20
+				});
+				averageText = new PointText({
+					point: new Point(view.center.x, view.center.y + 20),
+					justification: 'center',
+					content: 'Your average response time was ' + average() + ' msec',
+					fillColor: 'red',
 					fontSize: 20
 				});
 				
