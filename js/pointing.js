@@ -4,8 +4,13 @@ paper.install(window);
 var A = [67, 184, 280, 230, 144, 249, 255, 96, 225, 263, 259, 229, 215, 198, 301, 194, 260, 296, 180, 278, 283, 40, 233, 191, 179];
 var W = [20, 38, 14, 29, 55, 29, 14, 50, 19, 12, 25, 20, 31, 83, 16, 66, 12, 14, 44, 11, 37, 32, 10, 50, 18];
 
+// Empty array to hold the resulting paths and times from the targets
+var paths = [];
+var times = [];
+
 var pathTool, path;
 var circleCenter, circleTarget;
+var timeStart, timeEnd;
 var colorInactive = 'blue';
 var colorActive = 'green';
 var textRemaining = 'Targets remaining: ';
@@ -83,6 +88,7 @@ window.onload = function() {
 			path.strokeColor = 'black';
 			// Set the system as running
 			running = true;
+			timeStart = performance.now();
 		}
 		
 		// If target circle is clicked ->
@@ -91,7 +97,11 @@ window.onload = function() {
 			beep();
 			// Stop the system from running
 			running = false;
-			// Remove the target and its path (TODO: log it to array)
+			timeEnd = performance.now();
+			// Add the path segments and the timing in milliseconds to the result arrays
+			paths.push(path.segments);
+			times.push(timeEnd - timeStart);
+			// Remove the target and its path
 			circleTarget.remove();
 			path.remove();
 			// Update the remaining targets text
@@ -112,6 +122,10 @@ window.onload = function() {
 					fontWeight: 'bold',
 					fontSize: 20
 				});
+				// DEBUG
+				for(i = 0; i < times.length; i++) {
+					$('#table > tbody:last').append('<tr><td>' + (i + 1) + '</td><td>' + times[i] + '</td></tr>');
+				}
 			}
 		}
 	}
