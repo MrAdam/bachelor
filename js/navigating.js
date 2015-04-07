@@ -25,6 +25,8 @@ window.onload = function() {
 	finishline.fillColor = "green";
 	
 	var next = new Path.Rectangle(new Point(250,300), new Point(255,308))
+	finishline.strokeColor = "green";
+	finishline.fillColor = "green";
 	
 	// Setup path tool
 	pathTool = new Tool();
