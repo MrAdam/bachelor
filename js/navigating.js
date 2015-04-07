@@ -24,6 +24,8 @@ window.onload = function() {
 	finishline.strokeColor = "green";
 	finishline.fillColor = "green";
 	
+	var next = new Path.Rectangle(new Point(250,300), new Point(255,308))
+	
 	// Setup path tool
 	pathTool = new Tool();
 
@@ -39,6 +41,7 @@ window.onload = function() {
 			startline.fillColor = "red";
 			running = true;
 		}
+		
 		if (finishline.hitTest(event.point) != null && running == true && event.delta.x > 0) {
 			finishline.strokeColor = "yellow";
 			startline.strokeColor = "yellow";
@@ -46,6 +49,9 @@ window.onload = function() {
 			startline.fillColor = "yellow";
 			finishline.fillColor = "yellow";
 			running = false;
+			
+			
+			
 		}
 		
 	}
