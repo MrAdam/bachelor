@@ -30,8 +30,9 @@ var finished = false;
  */
 
 // Plays a beeping sound
+var sound = new Audio('sound/beep.wav');
 function beep() {
-	var sound = new Audio('sound/beep.wav');
+	sound.currentTime = 0;
 	sound.play();
 }
 
