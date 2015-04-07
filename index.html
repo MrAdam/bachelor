@@ -15,11 +15,22 @@
     <![endif]-->
   </head>
   <body>
-  	<h1>Welcome to our Bachelor's Project!</h1>
-  	<p>Try out the pointing task here: <a href="pointing.html">link</a></p>
-	<p>Try out the navigating task here: <a href="navigating.html">link</a></p>
-
+	<div class="row">
+		<h1>Welcome to our Bachelor's Project!</h1>
+	</div>
+	<div class="row">
+		<form id="form" class="col-md-4 col-md-offset-4">
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input type="text" class="form-control" name="name" placeholder="Anders And">
+			</div>
+		</form>
+	</div>
+	<div class="row">
+		<button onclick="onContinue()" class="btn btn-primary btn-lg">Continue</button>
+	</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
