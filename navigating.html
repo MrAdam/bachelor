@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bachelor - Navigating Task</title>
-
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
@@ -15,10 +15,11 @@
     <![endif]-->
   </head>
   <body>
-    
-	<div id="container">
-    <canvas id="canvas"></canvas>
-	<button class="btn" type="button" style="hidden">Default button</button>
+	<div class="row">
+		<canvas id="canvas"></canvas>
+	</div>
+	<div class="row">
+		<button id="continue" onclick="onContinue()" style="display: none" class="btn btn-primary btn-lg">Continue</button>
 	</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

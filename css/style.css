@@ -5,10 +5,8 @@ body {
 	text-align: center;
 }
 
-
 #canvas {
-	border: 1px solid gray;
 	width: 512px;
 	height: 512px;
-	display: inline;
+	border: 1px solid gray;
 }
