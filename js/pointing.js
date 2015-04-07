@@ -73,7 +73,7 @@ window.onload = function() {
 	var helpText = new PointText({
 		point: new Point(view.center.x, 30),
 		justification: 'center',
-		content: 'When a green circle appears, click on it as fast as possible',
+		content: 'Når du ser en grøn cirkel, skal du trykke på den så hurtigt du kan'
 		fillColor: 'red',
 		fontSize: 15
 	});
@@ -81,7 +81,7 @@ window.onload = function() {
 	var remainingText = new PointText({
 		point: new Point(view.center.x, (view.center.y * 2) - 30),
 		justification: 'center',
-		content: 'Targets remaining: ' + A.length,
+		content: 'Resterende mål: ' + A.length,
 		fillColor: '#ccc',
 		fontSize: 15
 	});
@@ -154,7 +154,7 @@ window.onload = function() {
 			targetCircle.remove();
 			path.remove();
 			// Update the remaining targets text
-			remainingText.content = 'Targets remaining: ' + A.length;
+			remainingText.content = 'Resterende mål: ' + A.length;
 			// Color the center circle active
 			centerCircle.fillColor = targetColor;
 			
@@ -167,14 +167,14 @@ window.onload = function() {
 				finishedText = new PointText({
 					point: view.center,
 					justification: 'center',
-					content: 'Your data has been recorded successfully',
+					content: 'Dine data er blevet registreret korrekt',
 					fillColor: 'red',
 					fontSize: 20
 				});
 				averageText = new PointText({
 					point: new Point(view.center.x, view.center.y + 20),
 					justification: 'center',
-					content: 'Your average response time was ' + Math.round(average()) + ' msec',
+					content: 'Din gennemsnitlige responstid var ' + Math.round(average()) + ' msek',
 					fillColor: 'red',
 					fontSize: 20
 				});
