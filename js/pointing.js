@@ -85,9 +85,10 @@ window.onload = function() {
 			path.add(event.point);
 			var lastPoint = path.data.points[path.data.points.length - 1];
 			path.data.points.push({
-				position: event.point, // TODO: Maybe subtract view.center for normalization? (will result in negtive values)
-				totalTime: performance.now() - startTime,
-				deltaTime: lastPoint != undefined ? (performance.now() - startTime) - lastPoint.totalTime : performance.now() - startTime,
+				x: event.point.x,
+				y: event.point.y,
+				elapsedTime: performance.now() - startTime,
+				deltaTime: lastPoint != undefined ? (performance.now() - startTime) - lastPoint.elapsedTime : performance.now() - startTime,
 				deltaDistance: event.delta.length
 			});
 		}
