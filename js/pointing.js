@@ -58,7 +58,7 @@ function average() {
 function onContinue() {
 	data.pointing = results;
 	sessionStorage.data = JSON.stringify(data);
-	window.location.replace('navigating.php');
+	window.location.replace('navigating.html');
 }
 
 /*
