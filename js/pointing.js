@@ -73,7 +73,7 @@ window.onload = function() {
 	var helpText = new PointText({
 		point: new Point(view.center.x, 30),
 		justification: 'center',
-		content: 'Når du ser en grøn cirkel, skal du trykke på den så hurtigt du kan'
+		content: 'Når du ser en grøn cirkel, skal du trykke på den så hurtigt du kan',
 		fillColor: 'red',
 		fontSize: 15
 	});
