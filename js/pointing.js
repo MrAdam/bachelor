@@ -3,8 +3,8 @@ paper.install(window);
 /*
  * Initialization
  */
-if (sessionStorage.data == "null") { window.location.replace('index.html'); }
-var data = JSON.parse(sessionStorage.data);
+if (typeof sessionStorage.data === "undefined") { $(location).attr('href', 'index.html') }
+else { var data = JSON.parse(sessionStorage.data) }
 
 /*
  * Variables
@@ -13,6 +13,7 @@ var data = JSON.parse(sessionStorage.data);
 // Original values from the article: Two Large Open-Access Datasets for Fitts’ Law of  Human Motion and a Succinct Derivation of the Square-Root Variant
 var A = [67, 184, 280, 230, 144, 249, 255, 96, 225, 263, 259, 229, 215, 198, 301, 194, 260, 296, 180, 278, 283, 40, 233, 191, 179];
 var W = [20, 38, 14, 29, 55, 29, 14, 50, 19, 12, 25, 20, 31, 83, 16, 66, 12, 14, 44, 11, 37, 32, 10, 50, 18];
+
 var results = [];
 
 var pathTool, path;
@@ -57,7 +58,7 @@ function average() {
 function onContinue() {
 	data.pointing = results;
 	sessionStorage.data = JSON.stringify(data);
-	window.location.replace('navigating.html');
+	$(location).attr('href', 'results.html');
 }
 
 /*
@@ -135,7 +136,7 @@ window.onload = function() {
 		}
 		
 		// If target circle is clicked ->
-		if (targetCircle.contains(event.point) && running) {
+		else if (targetCircle.contains(event.point) && running) {
 			// Beep to notify the testee of the action
 			beep();
 			// Stop the system from running

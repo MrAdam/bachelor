@@ -5,8 +5,23 @@ body {
 	text-align: center;
 }
 
-#canvas {
+#frame {
+	margin-left: auto;
+	margin-right: auto;
 	width: 512px;
 	height: 512px;
+	position: relative;
+}
+
+#canvas {
+	width: 100%;
+	height: 100%;
 	border: 1px solid gray;
+}
+
+#next {
+	position: absolute;
+	width: 10%;
+	top: 60%;
+	left: 45%;
 }

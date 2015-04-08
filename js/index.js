@@ -12,5 +12,5 @@ function onContinue() {
 		device: $('select[name="device"]').val()
 	};
 	sessionStorage.data = JSON.stringify(data);
-	window.location.replace('pointing.html');
+	window.location.replace('navigating.html');
 }
