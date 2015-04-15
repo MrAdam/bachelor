@@ -12,4 +12,6 @@
 	
 	$mysqli->close();
 	
+	die('All done!');
+	
 ?>
