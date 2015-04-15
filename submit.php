@@ -1,14 +1,17 @@
 <?php
 	
 	if (!isset($_POST['person']))
-		die('Validation error!');
+		die('Fejl: persondata mangler!');
 	
 	if (!isset($_POST['navigating']))
-		die('Validation error!');
+		die('Fejl: tunneldata mangler!');
+	
+	if (!isset($_POST['pointing']))
+		die('Fejl: pegedata mangler!');
 	
 	$mysqli = new mysqli('127.0.0.1','root','toor','bachelor');
 	if ($mysqli->connect_error)
-		die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
+		die('Fejl: ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
 	
 	$reference 	= '"'.$mysqli->real_escape_string($_POST['person']['reference']).'"';
 	$age 		= '"'.$mysqli->real_escape_string($_POST['person']['age']).'"';
@@ -20,7 +23,7 @@
 	
 	$insert_person = $mysqli->query("INSERT INTO person (reference, age, gender, videogames, computers, hand, device) VALUES ($reference, $age, $gender, $videogames, $computers, $hand, $device)");
 	if (!$insert_person)
-		die('Error : ('. $mysqli->errno .') '. $mysqli->error);
+		die('Fejl: ('. $mysqli->errno .') '. $mysqli->error);
 	else
 		$insert_person = $mysqli->insert_id;
 	
@@ -32,7 +35,7 @@
 		$time		= (float)$task['time'];
 		$insert_task = $mysqli->query("INSERT INTO task (person, type, distance, width, time) VALUES ($person, $type, $distance, $width, $time)");
 		if (!$insert_task)
-			die('Error : ('. $mysqli->errno .') '. $mysqli->error);
+			die('Fejl: ('. $mysqli->errno .') '. $mysqli->error);
 		else
 			$insert_task = $mysqli->insert_id;
 		
@@ -45,7 +48,7 @@
 			$deltaDistance 	= (float)$point['deltaDistance'];
 			$insert_point = $mysqli->query("INSERT INTO point (task, x, y, elapsedTime, deltaTime, deltaDistance) VALUES ($task, $x, $y, $elapsedTime, $deltaTime, $deltaDistance)");
 			if (!$insert_point)
-				die('Error : ('. $mysqli->errno .') '. $mysqli->error);
+				die('Fejl: ('. $mysqli->errno .') '. $mysqli->error);
 		}
 	}
 	
@@ -57,7 +60,7 @@
 		$time		= (float)$task['time'];
 		$insert_task = $mysqli->query("INSERT INTO task (person, type, distance, width, time) VALUES ($person, $type, $distance, $width, $time)");
 		if (!$insert_task)
-			die('Error : ('. $mysqli->errno .') '. $mysqli->error);
+			die('Fejl: ('. $mysqli->errno .') '. $mysqli->error);
 		else
 			$insert_task = $mysqli->insert_id;
 		
@@ -70,7 +73,7 @@
 			$deltaDistance 	= (float)$point['deltaDistance'];
 			$insert_point = $mysqli->query("INSERT INTO point (task, x, y, elapsedTime, deltaTime, deltaDistance) VALUES ($task, $x, $y, $elapsedTime, $deltaTime, $deltaDistance)");
 			if (!$insert_point)
-				die('Error : ('. $mysqli->errno .') '. $mysqli->error);
+				die('Fejl: ('. $mysqli->errno .') '. $mysqli->error);
 		}
 	}
 	
