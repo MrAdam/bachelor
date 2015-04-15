@@ -1,5 +1,7 @@
 <?php
 	
+	die(var_dump($_POST));
+	
 	if (!isset($_POST['person']))
 		die('Fejl: persondata mangler!');
 	
