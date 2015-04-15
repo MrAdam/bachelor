@@ -23,5 +23,22 @@
 	</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+	    
+	    // Fetch the data stored in the local session, or redirect to index if none is found
+	    if (typeof sessionStorage.data === "undefined") { $(location).attr('href', 'index.html') }
+		else { var data = JSON.parse(sessionStorage.data) }
+		
+		$(function() {
+			$.ajax({
+				type: 'POST',
+				url: 'submit.php',
+				data: JSON.stringify(data),
+				success: function(data) { alert(data) },
+				dataType: 'json'
+			});
+		});
+		
+    </script>
   </body>
 </html>
