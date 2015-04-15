@@ -29,9 +29,9 @@
 		else { var data = JSON.parse(sessionStorage.data) }
 		
 		$(function() {
-			$.post('submit.php', data, function(response) {
+			$.post('submit.php', data).done(function(response){
 				$('#debug').html(response);
-			}, 'json');
+			});
 		});
 		
     </script>
