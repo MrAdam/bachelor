@@ -30,12 +30,8 @@
 		else { var data = JSON.parse(sessionStorage.data) }
 		
 		$(function() {
-			$.ajax({
-				type: 'POST',
-				url: 'submit.php',
-				data: JSON.stringify(data),
-				success: function(data) { alert(data) },
-				dataType: 'json'
+			$.post('submit.php', data).done(function(response) {
+				console.log(response);
 			});
 		});
 		
