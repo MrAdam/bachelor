@@ -12,6 +12,6 @@
 	
 	$mysqli->close();
 	
-	die('All done!');
+	var_dump($_POST);
 	
 ?>
