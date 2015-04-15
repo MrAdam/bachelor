@@ -18,9 +18,15 @@
 	$hand 		= '"'.$mysqli->real_escape_string($_POST['person']['hand']).'"';
 	$device 	= '"'.$mysqli->real_escape_string($_POST['person']['device']).'"';
 	
-	$insert_person = $mysqli->query("INSERT INTO person (reference, age, gender, videogames, computers, hand, device) VALUES($reference, $age, $gender, $videogames, $computers, $hand, $device)");
+	$insert_person = $mysqli->query("INSERT INTO person (reference, age, gender, videogames, computers, hand, device) VALUES ($reference, $age, $gender, $videogames, $computers, $hand, $device)");
 	if (!$insert_person)
 		die('Error : ('. $mysqli->errno .') '. $mysqli->error);
+	
+	foreach ($_POST['navigating'] as $task) {
+		$insert_task = $mysqli->query("INSERT INTO task (person, type, distance, width) VALUES ($insert_person, 'navigating', $task['distance'], $task['width'])");
+		if (!insert_task)
+			die('Error : ('. $mysqli->errno .') '. $mysqli->error);
+	}
 	
 	$mysqli->close();
 	
