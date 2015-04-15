@@ -21,9 +21,11 @@
 	$insert_person = $mysqli->query("INSERT INTO person (reference, age, gender, videogames, computers, hand, device) VALUES ($reference, $age, $gender, $videogames, $computers, $hand, $device)");
 	if (!$insert_person)
 		die('Error : ('. $mysqli->errno .') '. $mysqli->error);
+	else
+		$insert_person = $mysqli->insert_id;
 	
 	foreach ($_POST['navigating'] as $task) {
-		$person 	= $mysqli->insert_id;
+		$person 	= $insert_person;
 		$type 		= '"'.$mysqli->real_escape_string('navigating').'"';
 		$distance 	= (int)$task['distance'];
 		$width		= (int)$task['width'];
