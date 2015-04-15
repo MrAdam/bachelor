@@ -23,7 +23,7 @@
 		die('Error : ('. $mysqli->errno .') '. $mysqli->error);
 	
 	foreach ($_POST['navigating'] as $task) {
-		$person 	= $insert_person;
+		$person 	= $mysqli->insert_id;
 		$type 		= '"'.$mysqli->real_escape_string('navigating').'"';
 		$distance 	= (int)$task['distance'];
 		$width		= (int)$task['width'];
