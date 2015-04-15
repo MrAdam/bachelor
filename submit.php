@@ -18,7 +18,7 @@
 	$hand 		= '"'.$mysqli->real_escape_string($_POST['person']['hand']).'"';
 	$device 	= '"'.$mysqli->real_escape_string($_POST['person']['device']).'"';
 	
-	$insert_person = $mysqli->query("INSERT INTO person VALUES($reference, $age, $gender, $videogames, $computers, $hand, $device)");
+	$insert_person = $mysqli->query("INSERT INTO person (reference, age, gender, videogames, computers, hand, device) VALUES($reference, $age, $gender, $videogames, $computers, $hand, $device)");
 	if (!$insert_person)
 		die('Error : ('. $mysqli->errno .') '. $mysqli->error);
 	
