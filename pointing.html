@@ -18,9 +18,15 @@
 	<div class="row">
 		<div id="frame">
 			<canvas id="canvas"></canvas>
-			<button id="continue" onclick="onContinue()" style="display: none" class="btn btn-primary btn-lg btn-block">Fortsæt</button>
 		</div>
 	</div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <button id="continue" onclick="onContinue()" style="display: none" class="btn btn-primary btn-lg btn-block">Fortsæt</button>
+      
+      <p>I denne opgave skal du trykke på de grønne cirkler med markøren. Du starter med at trykke på den grønne cirkel i midten, hvorefter en ny cirkel dukker op et tilfældigt sted på skærmen. Det er herefter din opgave at trykke på den nye cirkel, ved at føre markøren over på cirklen og trykke. Dette fortsættes indtil der ikke er flere cirkler tilbage. Det handler ikke om at udføre opgaven hurtigt, men snarere præcist. Vi registrere markørens bane til hver cirkel og hvor lang tid du tager om at trykke på hver enkelt cirkel.</p>
+    </div>
+  </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="js/paper.min.js"></script>
