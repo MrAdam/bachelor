@@ -10,20 +10,19 @@
 	if ($mysqli->connect_error)
 		die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
 	
-	$reference = $_POST['person']['reference'];
-	$age = $_POST['person']['age'];
-	$gender = $_POST['person']['gender'];
-	$videogames = $_POST['person']['videogames'];
-	$computers = $_POST['person']['computers'];
-	$hand = $_POST['person']['hand'];
-	$device = $_POST['person']['device'];
+	$reference 	= $mysqli->real_escape_string($_POST['person']['reference']);
+	$age 		= $mysqli->real_escape_string($_POST['person']['age']);
+	$gender 	= $mysqli->real_escape_string($_POST['person']['gender']);
+	$videogames = $mysqli->real_escape_string($_POST['person']['videogames']);
+	$computers 	= $mysqli->real_escape_string($_POST['person']['computers']);
+	$hand 		= $mysqli->real_escape_string($_POST['person']['hand']);
+	$device 	= $mysqli->real_escape_string($_POST['person']['device']);
 	
-	for ($i = 0; $i < 10; $i++) {
-		
-	}
+	$insert_person = $mysqli->query("INSERT INTO person VALUES($reference, $age, $gender, $videogames, $computers, $hand, $device)");
+	if (!$insert_person)
+		die('Error : ('. $mysqli->errno .') '. $mysqli->error);
 	
 	$mysqli->close();
-	
 	
 	var_dump($_POST);
 	
