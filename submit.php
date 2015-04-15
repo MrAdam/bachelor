@@ -29,6 +29,7 @@
 		$type 		= '"'.$mysqli->real_escape_string('navigating').'"';
 		$distance 	= (int)$task['distance'];
 		$width		= (int)$task['width'];
+		$time		= (float)$task['time'];
 		$insert_task = $mysqli->query("INSERT INTO task (person, type, distance, width) VALUES ($person, $type, $distance, $width)");
 		if (!insert_task)
 			die('Error : ('. $mysqli->errno .') '. $mysqli->error);
