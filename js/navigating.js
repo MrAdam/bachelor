@@ -82,7 +82,7 @@ function createTunnel() {
 	// Set up handler for mouseEnter on left gate
 	leftGate.onMouseEnter = function(event) {
 		// If the left gate was crossed and the test should start ->
-		if (!running && !finished) {
+		if (!running && !finished && event.event.movementX > 0) {
 			// Beep to notify the testee of the action
 			beep();
 			// Instantiate the path for the current tunnel

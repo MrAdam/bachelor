@@ -2,7 +2,10 @@ body {
 	margin: 0;
 	padding: 0;
 	margin-top: 20px;
-	text-align: center;
+}
+
+.row {
+	margin-top: 10px;
 }
 
 #frame {

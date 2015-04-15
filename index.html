@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bachelor</title>
-
+    <title>Bachelorprojekt</title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
@@ -16,71 +16,19 @@
   </head>
   <body>
 	<div class="row">
-		<h1>Velkommen til vores bachelorprojekt!</h1>
-	</div>
-	<div class="row">
-		<form id="form" class="col-md-4 col-md-offset-4">
-			<div class="form-group">
-				<label for="reference">Hvorfra hørte du om denne side?</label>
-				<input type="text" class="form-control" name="reference">
-			</div>
-			<div class="form-group">
-				<label for="age">Hvor gammel er du?</label>
-				<input type="number" class="form-control" name="age">
-			</div>
-			<div class="form-group">
-				<label for="">Hvad er dit køn?</label><br/>
-				<label class="radio-inline">
-					<input type="radio" name="gender" value="male"> Mand
-				</label>
-				<label class="radio-inline">
-					<input type="radio" name="gender" value="female"> Kvinde
-				</label>
-			</div>
-			<div class="form-group">
-				<label for="videogames">Hvor mange timer om ugen bruger du på computerspil?</label>
-				<select name="videogames" class="form-control">
-					<option>under 1 time</option>
-					<option>1 - 5 timer</option>
-					<option>5 - 15 timer</option>
-					<option>15 - 40 timer</option>
-					<option>over 40 timer</option>
-				</select>
-			</div>
-			<div class="form-group">
-				<label for="computers">Hvor mange timer om ugen bruger du på computere?</label>
-				<select name="computers" class="form-control">
-					<option>under 1 time</option>
-					<option>1 - 5 timer</option>
-					<option>5 - 15 timer</option>
-					<option>15 - 40 timer</option>
-					<option>over 40 timer</option>
-				</select>
-			</div>
-			<div class="form-group">
-				<label for="hand">Er du højre- eller venstrehåndet?</label><br/>
-				<label class="radio-inline">
-					<input type="radio" name="hand" value="right"> Højrehåndet
-				</label>
-				<label class="radio-inline">
-					<input type="radio" name="hand" value="left"> Venstrehåndet
-				</label>
-			</div>
-			<div class="form-group">
-				<label for="device">Hvilken pegeenhed benytter du?</label>
-				<select name="device" class="form-control">
-					<option>mus</option>
-					<option>touchpad</option>
-					<option>andet</option>
-				</select>
-			</div>
-		</form>
-	</div>
-	<div class="row">
-		<button onclick="onContinue()" class="btn btn-primary btn-lg">Continue</button>
+		<div class="col-md-6 col-md-offset-3">
+			<h1>Bachelorprojekt</h1>
+			<p>We are studying Fitts' Law, a model of human motor response developed by Paul Fitts in 1954. Fitts' Law has been applied by Human Factors and Ergonomics engineers to thousands of designs ranging from assembly lines to computer interfaces. Since Fitts' model is so influential, it is important to verify its accuracy and to consider alternative models.</p>
+			<p>We've developed a web-based interactive experiment that allows anyone on the Internet to see if their own motor skills compare with Fitts' and with an alternative model we've developed based on an acceleration model.  If you can spare 3 minutes to click on 50 target points, we'll plot and display your results immediately.  In a few months, we'll post a copy of our report of how well these models perform, based on the timing data from hundreds of users like you.</p>
+			<button class="btn btn-primary btn-lg btn-block" onclick="onContinue()">Fortsæt</button>
+		</div>
 	</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="js/index.js"></script>
+    <script type="text/javascript">
+	    function onContinue() {
+		    window.location.replace('consent.html');
+	    }
+    </script>
   </body>
 </html>
