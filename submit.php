@@ -25,8 +25,8 @@
 	foreach ($_POST['navigating'] as $task) {
 		$person 	= $insert_person;
 		$type 		= '"'.$mysqli->real_escape_string('navigating').'"';
-		$distance 	= (int)$task['distance']);
-		$width		= (int)$task['width']);
+		$distance 	= (int)$task['distance'];
+		$width		= (int)$task['width'];
 		$insert_task = $mysqli->query("INSERT INTO task (person, type, distance, width) VALUES ($person, $type, $distance, $width)");
 		if (!insert_task)
 			die('Error : ('. $mysqli->errno .') '. $mysqli->error);
