@@ -17,8 +17,7 @@
   <body>
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-			<p>Tak for din deltagelse.</p>
-			<p>Dine data er blevet gemt korrekt.</p>
+			<p id="debug"></p>
 		</div>
 	</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -31,7 +30,7 @@
 		
 		$(function() {
 			$.post('submit.php', data).done(function(response) {
-				console.log(response);
+				$('#debug').html(response);
 			});
 		});
 		

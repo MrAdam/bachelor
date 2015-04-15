@@ -51,6 +51,6 @@
 	
 	$mysqli->close();
 	
-	var_dump($_POST);
+	die('Tak for din deltagelse. Dine data er blevet gemt korrekt.');
 	
 ?>
