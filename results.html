@@ -29,9 +29,14 @@
 		else { var data = JSON.parse(sessionStorage.data) }
 		
 		$(function() {
-			$.post('submit.php', JSON.stringify(data), null, 'json').done(function(response) {
+			$.ajax({
+				type: 'POST',
+				url: 'submit.php',
+				data: data,
+				dataType: 'json'
+			}).done(function(response) {
 				$('#debug').html(response);
-			});;
+			});
 		});
 		
     </script>
