@@ -29,7 +29,7 @@
 		else { var data = JSON.parse(sessionStorage.data) }
 		
 		$(function() {
-			$.post('submit.php', data).done(function(response) {
+			$.post({url: 'submit.php', data: data, dataType: 'json'}).done(function(response) {
 				$('#debug').html(response);
 			});
 		});
