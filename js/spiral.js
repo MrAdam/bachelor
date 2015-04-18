@@ -11,15 +11,17 @@ else { var data = JSON.parse(sessionStorage.data) }
  */
 
 // Original values from the article: Two Large Open-Access Datasets for Fitts’ Law of  Human Motion and a Succinct Derivation of the Square-Root Variant
-var A = [250, 500, 750, 1000];
-var W = [20, 30, 40, 50];
+var A = [127, 190, 252, 315];
+var Y = [0, 4, -5, -5];
+var X = [25, 55, 55, 94, 94, 140, 109, 145];
+var ThickVar = [0.01, 0.01, 0.01, 0.005];
 var W2 = 8;
 
 var results = [];
 
 var pathTool, path;
 var helpText, remainingText;
-var topWall, bottomWall, leftGate, rightGate;
+var leftGate, rightGate, spiral;
 var startTime, endTime;
 var running = false;
 var finished = false;
@@ -28,7 +30,6 @@ var finished = false;
  * Helper functions
  */
 
-// Plays a beeping sound
 var sound = new Audio('sound/beep.wav');
 function beep() {
 	sound.currentTime = 0;
@@ -36,53 +37,54 @@ function beep() {
 }
 
 function onNext() {
-	createTunnel();
+	drawSpiral();
 	$('#next').hide();
-	
 }
 
 function onContinue() {
 	data.navigating = results;
 	sessionStorage.data = JSON.stringify(data);
-	$(location).attr('href', 'spiral.html');
+	$(location).attr('href', 'pointing.html');
 }
 
-// Create a tunnel width the specified distance and gate width
-function createTunnel() {
-	// Fetch the distance and width from the data
-	var distance = A.shift();
-	var width = W.shift();
-	// Set the default options for the tunnel paths
+
+
+function drawSpiral() {
+	var centerx = view.center.x;
+	var centery = view.center.y;
 	var options = { strokeColor: 'black', strokeWidth: 3, strokeCap: 'round' };
-	// Instantiate the paths
-	topWall = new Path(options);
-	bottomWall = new Path(options);
+	spiral = new Path(options);
 	leftGate = new Path(options);
 	rightGate = new Path(options);
-	// Save the distance and width inside the leftGate data
-	leftGate.data.distance = distance;
-	leftGate.data.width = width;
-	// Instantiate the coordinates for the tunnel based on the distance and width
-	var topLeft = new Point(view.center.x - (distance / 2), view.center.y - (width / 2));
-	var topRight = new Point(view.center.x + (distance / 2), view.center.y - (W2 / 2));
-	var bottomLeft = new Point(view.center.x - (distance / 2), view.center.y + (width / 2));
-	var bottomRight = new Point(view.center.x + (distance / 2), view.center.y + (W2 / 2));
-	// Remove existing tunnel segments, and add the new ones
-	topWall.removeSegments();
-	topWall.add(topLeft, topRight);
-	bottomWall.removeSegments();
-	bottomWall.add(bottomLeft, bottomRight);
+	spiral.removeSegments();
 	leftGate.removeSegments();
-	leftGate.add(topLeft, bottomLeft);
 	rightGate.removeSegments();
-	rightGate.add(topRight, bottomRight);
-	// Color the left gate green
-	leftGate.strokeColor = 'green';
 	
-	// Set up handler for mouseEnter on left gate
+	spiral.add(new Point(centerx, centery));
+	
+	
+	var endPoint = A.shift();
+	var yPoint = Y.shift();
+	var one = X.shift();
+	var two = X.shift();
+	var thick = ThickVar.shift();
+	thickness = 3
+	for (i = 0; i < endPoint; i++) {
+		angle = 0.1 * i;
+	    x = centerx + (2 + thickness * angle) * Math.cos(angle);
+	    y = centery + (2 + thickness * angle) * Math.sin(angle);
+		thickness = thickness+thick;
+		spiral.add(new Point(x,y));
+	    }
+		
+	leftGate.add(new Point(centerx, centery));
+	leftGate.add(new Point(centerx+25, centery));
+	rightGate.add(new Point(centerx+one, centery+yPoint));
+	rightGate.add(new Point(centerx+two, centery+yPoint));
+	
 	leftGate.onMouseEnter = function(event) {
 		// If the left gate was crossed and the test should start ->
-		if (!running && !finished && (event.event.movementX > 0 || event.event.mozMovementX > 0)) {
+		if (!running && !finished && (event.event.movementY > 0 || event.event.mozMovementY > 0)) {
 			// Beep to notify the testee of the action
 			beep();
 			// Instantiate the path for the current tunnel
@@ -98,10 +100,9 @@ function createTunnel() {
 		}
 	}
 	
-	// Set up handler for mouseEnter on right gate
 	rightGate.onMouseEnter = function(event) {
 		// If the right gate was crossed and the test should stop ->
-		if (running && !finished) {
+		if (running && !finished && (event.event.movementY > 0 || event.event.mozMovementY > 0)) {
 			// Beep to notify the testee of the action
 			beep();
 			// Stop the system from running
@@ -115,9 +116,8 @@ function createTunnel() {
 				time: endTime - startTime
 			});
 			// Remove the path and the tunnel
- 			path.remove();
- 			topWall.remove();
- 			bottomWall.remove();
+ 			spiral.remove();
+			path.remove();
  			leftGate.remove();
  			rightGate.remove();
 			// Update the remaining targets text
@@ -145,14 +145,15 @@ function createTunnel() {
 	}
 }
 
+
 /*
  * Main program
  */
 
+
 window.onload = function() {
 	paper.setup('canvas');
 	
-	// Initialize texts and center circle
 	helpText = new PointText({
 		point: new Point(view.center.x, 30),
 		justification: 'center',
@@ -169,12 +170,10 @@ window.onload = function() {
 		fontSize: 15
 	});
 	
-	// Initialize first tunnel
-	createTunnel();
+	drawSpiral();
 	
-	// Initialize path tool, and set up its functions
 	pathTool = new Tool();
-
+	
 	pathTool.onMouseMove = function(event) {
 		if (running) {
 			path.add(event.point);
