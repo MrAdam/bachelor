@@ -79,6 +79,7 @@ function drawSpiral() {
 		
 	leftGate.add(new Point(centerx, centery));
 	leftGate.add(new Point(centerx+25, centery));
+	leftGate.strokeColor = 'green';
 	rightGate.add(new Point(centerx+one, centery+yPoint));
 	rightGate.add(new Point(centerx+two, centery+yPoint));
 	
