@@ -79,13 +79,13 @@ function drawSpiral() {
 		
 	leftGate.add(new Point(centerx, centery));
 	leftGate.add(new Point(centerx+25, centery));
-	leftGate.strokeColor = 'green';
+	rightGate.strokeColor = 'green';
 	rightGate.add(new Point(centerx+one, centery+yPoint));
 	rightGate.add(new Point(centerx+two, centery+yPoint));
 	
 	leftGate.onMouseEnter = function(event) {
 		// If the left gate was crossed and the test should start ->
-		if (!running && !finished) {
+		if (running && !finished) {
 			// Beep to notify the testee of the action
 			beep();
 			// Instantiate the path for the current tunnel
@@ -93,8 +93,8 @@ function drawSpiral() {
 			path.data.points = [];
 			path.strokeColor = 'black';
 			// Color the right gate green
-			leftGate.strokeColor = 'black';
-			rightGate.strokeColor = 'green';
+			leftGate.strokeColor = 'green';
+			rightGate.strokeColor = 'black';
 			// Set the system as running
 			running = true;
 			startTime = performance.now();
@@ -103,7 +103,7 @@ function drawSpiral() {
 	
 	rightGate.onMouseEnter = function(event) {
 		// If the right gate was crossed and the test should stop ->
-		if (running && !finished) {
+		if (!running && !finished) {
 			// Beep to notify the testee of the action
 			beep();
 			// Stop the system from running
