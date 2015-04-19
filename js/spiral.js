@@ -42,7 +42,7 @@ function onNext() {
 }
 
 function onContinue() {
-	data.navigating = results;
+	data.spiraling = results;
 	sessionStorage.data = JSON.stringify(data);
 	$(location).attr('href', 'pointing.html');
 }
