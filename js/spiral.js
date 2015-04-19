@@ -91,7 +91,7 @@ function drawSpiral() {
 			// Instantiate the path for the current tunnel
 			path = new Path();
 			path.data.points = [];
-			path.strokeColor = 'black';
+			path.strokeColor = 'green';
 			// Color the right gate green
 			leftGate.strokeColor = 'green';
 			rightGate.strokeColor = 'black';

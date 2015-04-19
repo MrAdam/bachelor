@@ -129,7 +129,7 @@ window.onload = function() {
 			// Instantiate the path for the current target
 			path = new Path();
 			path.data.points = [];
-			path.strokeColor = 'black';
+			path.strokeColor = 'green';
 			// Set the system as running
 			running = true;
 			startTime = performance.now();
