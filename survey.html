@@ -17,9 +17,8 @@
   <body>
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-			<label>Indtast venligst følgende information til at hjælpe os med at analysere svartider.</label>
-			<label>Alle personlige oplysninger vil blive behandlet fortroligt.</label>
-			<br/><br/>
+			<p>Indtast venligst følgende information til at hjælpe os med at analysere svartider.</p>
+			<p>Alle personlige oplysninger vil blive behandlet fortroligt.</p>
 			<form id="form">
 				<div class="form-group">
 					<label for="reference">Hvorfra hørte du om denne side?</label>
@@ -103,7 +102,8 @@
 				videogames: $('select[name="videogames"]').val(),
 				computers: $('select[name="computers"]').val(),
 				hand: $('input[name="hand"]:checked').val(),
-				device: $('select[name="device"]').val()
+				device: $('select[name="device"]').val(),
+        browser: navigator.userAgent
 			};
 			sessionStorage.data = JSON.stringify(data);
 			window.location.replace('navigating.html');

@@ -42,7 +42,7 @@ function onNext() {
 }
 
 function onContinue() {
-	data.navigating = results;
+	data.spiraling = results;
 	sessionStorage.data = JSON.stringify(data);
 	$(location).attr('href', 'pointing.html');
 }
@@ -91,7 +91,7 @@ function drawSpiral() {
 			// Instantiate the path for the current tunnel
 			path = new Path();
 			path.data.points = [];
-			path.strokeColor = 'black';
+			path.strokeColor = 'green';
 			// Color the right gate green
 			leftGate.strokeColor = 'green';
 			rightGate.strokeColor = 'black';
@@ -158,7 +158,7 @@ window.onload = function() {
 	helpText = new PointText({
 		point: new Point(view.center.x, 30),
 		justification: 'center',
-		content: 'Før musen forbi den grønne streg og herefter igennem spirallen indtil midten.',
+		content: 'Før musen forbi den grønne streg, og flyt derefter markøren igennem spiralen til den næste grønne streg',
 		fillColor: 'red',
 		fontSize: 15
 	});
@@ -166,7 +166,7 @@ window.onload = function() {
 	remainingText = new PointText({
 		point: new Point(view.center.x, (view.center.y * 2) - 30),
 		justification: 'center',
-		content: 'Resterende tunneler: ' + A.length,
+		content: 'Resterende spiraler: ' + A.length,
 		fillColor: '#ccc',
 		fontSize: 15
 	});

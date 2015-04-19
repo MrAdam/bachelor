@@ -88,7 +88,7 @@ function createTunnel() {
 			// Instantiate the path for the current tunnel
 			path = new Path();
 			path.data.points = [];
-			path.strokeColor = 'black';
+			path.strokeColor = 'green';
 			// Color the right gate green
 			leftGate.strokeColor = 'black';
 			rightGate.strokeColor = 'green';
@@ -156,7 +156,7 @@ window.onload = function() {
 	helpText = new PointText({
 		point: new Point(view.center.x, 30),
 		justification: 'center',
-		content: 'Før musen forbi den grønne streg, og derefter den næste så hurtigt du kan',
+		content: 'Før musen forbi den grønne streg, og flyt derefter markøren igennem tunnelen til den næste grønne streg',
 		fillColor: 'red',
 		fontSize: 15
 	});

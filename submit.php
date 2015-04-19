@@ -5,6 +5,9 @@
 	
 	if (!isset($_POST['navigating']))
 		die('Fejl: tunneldata mangler!');
+
+  if (!isset($_POST['spiraling']))
+    die('Fejl: spiraldata mangler');
 	
 	if (!isset($_POST['pointing']))
 		die('Fejl: pegedata mangler!');
@@ -20,8 +23,9 @@
 	$computers 	= '"'.$mysqli->real_escape_string($_POST['person']['computers']).'"';
 	$hand 		= '"'.$mysqli->real_escape_string($_POST['person']['hand']).'"';
 	$device 	= '"'.$mysqli->real_escape_string($_POST['person']['device']).'"';
+	$browser  = '"'.$mysqli->real_escape_string($_POST['person']['device']).'"';
 	
-	$insert_person = $mysqli->query("INSERT INTO person (reference, age, gender, videogames, computers, hand, device) VALUES ($reference, $age, $gender, $videogames, $computers, $hand, $device)");
+	$insert_person = $mysqli->query("INSERT INTO person (reference, age, gender, videogames, computers, hand, device, browser) VALUES ($reference, $age, $gender, $videogames, $computers, $hand, $device, $browser)");
 	if (!$insert_person)
 		die('Fejl: ('. $mysqli->errno .') '. $mysqli->error);
 	else
@@ -51,6 +55,31 @@
 				die('Fejl: ('. $mysqli->errno .') '. $mysqli->error);
 		}
 	}
+
+  foreach ($_POST['spiraling'] as $task) {
+    $person   = $insert_person;
+    $type     = '"'.$mysqli->real_escape_string('spiraling').'"';
+    $distance   = (int)$task['distance'];
+    $width    = (int)$task['width'];
+    $time   = (float)$task['time'];
+    $insert_task = $mysqli->query("INSERT INTO task (person, type, distance, width, time) VALUES ($person, $type, $distance, $width, $time)");
+    if (!$insert_task)
+      die('Fejl: ('. $mysqli->errno .') '. $mysqli->error);
+    else
+      $insert_task = $mysqli->insert_id;
+    
+    foreach ($task['points'] as $point) {
+      $task     = $insert_task;
+      $x        = (int)$point['x'];
+      $y        = (int)$point['y'];
+      $elapsedTime  = (float)$point['elapsedTime'];
+      $deltaTime    = (float)$point['deltaTime'];
+      $deltaDistance  = (float)$point['deltaDistance'];
+      $insert_point = $mysqli->query("INSERT INTO point (task, x, y, elapsedTime, deltaTime, deltaDistance) VALUES ($task, $x, $y, $elapsedTime, $deltaTime, $deltaDistance)");
+      if (!$insert_point)
+        die('Fejl: ('. $mysqli->errno .') '. $mysqli->error);
+    }
+  }
 	
 	foreach ($_POST['pointing'] as $task) {
 		$person 	= $insert_person;
