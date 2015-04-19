@@ -158,7 +158,7 @@ window.onload = function() {
 	helpText = new PointText({
 		point: new Point(view.center.x, 30),
 		justification: 'center',
-		content: 'Før musen forbi den grønne streg, og derefter den næste så hurtigt du kan',
+		content: 'Før musen forbi den grønne streg og herefter igennem spirallen indtil midten.',
 		fillColor: 'red',
 		fontSize: 15
 	});
