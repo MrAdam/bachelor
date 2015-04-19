@@ -156,7 +156,7 @@ window.onload = function() {
 	helpText = new PointText({
 		point: new Point(view.center.x, 30),
 		justification: 'center',
-		content: 'Før musen forbi den grønne streg, og flyt derefter markøren igennem tunnelen',
+		content: 'Før musen forbi den grønne streg, og flyt derefter markøren igennem tunnelen til den næste grønne streg',
 		fillColor: 'red',
 		fontSize: 15
 	});
