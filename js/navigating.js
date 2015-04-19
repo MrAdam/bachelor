@@ -88,7 +88,7 @@ function createTunnel() {
 			// Instantiate the path for the current tunnel
 			path = new Path();
 			path.data.points = [];
-			path.strokeColor = 'black';
+			path.strokeColor = '#ccc';
 			// Color the right gate green
 			leftGate.strokeColor = 'black';
 			rightGate.strokeColor = 'green';
