@@ -103,7 +103,8 @@
 				videogames: $('select[name="videogames"]').val(),
 				computers: $('select[name="computers"]').val(),
 				hand: $('input[name="hand"]:checked').val(),
-				device: $('select[name="device"]').val()
+				device: $('select[name="device"]').val(),
+        browser: navigator.userAgent
 			};
 			sessionStorage.data = JSON.stringify(data);
 			window.location.replace('navigating.html');
