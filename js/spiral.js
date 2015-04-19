@@ -85,7 +85,7 @@ function drawSpiral() {
 	
 	leftGate.onMouseEnter = function(event) {
 		// If the left gate was crossed and the test should start ->
-		if (!running && !finished && (event.event.movementY > 0 || event.event.mozMovementY > 0)) {
+		if (!running && !finished) {
 			// Beep to notify the testee of the action
 			beep();
 			// Instantiate the path for the current tunnel
@@ -103,7 +103,7 @@ function drawSpiral() {
 	
 	rightGate.onMouseEnter = function(event) {
 		// If the right gate was crossed and the test should stop ->
-		if (running && !finished && (event.event.movementY > 0 || event.event.mozMovementY > 0)) {
+		if (running && !finished) {
 			// Beep to notify the testee of the action
 			beep();
 			// Stop the system from running
