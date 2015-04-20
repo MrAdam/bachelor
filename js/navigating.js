@@ -121,7 +121,7 @@ function createTunnel() {
  			leftGate.remove();
  			rightGate.remove();
 			// Update the remaining targets text
-			remainingText.content = 'Resterende tunneler: ' + A.length;
+			remainingText.content = 'Remaining tunnels: ' + A.length;
 			
 			// If there are no remaining tunnels ->
 			if (A.length < 1) {
@@ -131,7 +131,7 @@ function createTunnel() {
 				finishedText = new PointText({
 					point: view.center,
 					justification: 'center',
-					content: 'Dine data er blevet registreret korrekt',
+					content: 'Your data was registered correctly.',
 					fillColor: 'red',
 					fontSize: 20
 				});
@@ -156,7 +156,7 @@ window.onload = function() {
 	helpText = new PointText({
 		point: new Point(view.center.x, 30),
 		justification: 'center',
-		content: 'Før musen forbi den grønne streg, og flyt derefter markøren igennem tunnelen til den næste grønne streg',
+		content: 'Move the cursor past the green line and through the tunnel to the next green line.',
 		fillColor: 'red',
 		fontSize: 15
 	});
@@ -164,7 +164,7 @@ window.onload = function() {
 	remainingText = new PointText({
 		point: new Point(view.center.x, (view.center.y * 2) - 30),
 		justification: 'center',
-		content: 'Resterende tunneler: ' + A.length,
+		content: 'remaining tunnels: ' + A.length,
 		fillColor: '#ccc',
 		fontSize: 15
 	});
