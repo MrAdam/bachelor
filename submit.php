@@ -23,7 +23,7 @@
 	$computers 	= '"'.$mysqli->real_escape_string($_POST['person']['computers']).'"';
 	$hand 		= '"'.$mysqli->real_escape_string($_POST['person']['hand']).'"';
 	$device 	= '"'.$mysqli->real_escape_string($_POST['person']['device']).'"';
-	$browser  = '"'.$mysqli->real_escape_string($_POST['person']['device']).'"';
+	$browser  = '"'.$mysqli->real_escape_string($_POST['person']['browser']).'"';
 	
 	$insert_person = $mysqli->query("INSERT INTO person (reference, age, gender, videogames, computers, hand, device, browser) VALUES ($reference, $age, $gender, $videogames, $computers, $hand, $device, $browser)");
 	if (!$insert_person)
