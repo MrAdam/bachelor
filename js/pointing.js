@@ -72,7 +72,7 @@ window.onload = function() {
 	var helpText = new PointText({
 		point: new Point(view.center.x, 30),
 		justification: 'center',
-		content: 'Click on the green circles when you see them.',
+		content: 'When a green circle appears, click on it as fast as possible',
 		fillColor: 'red',
 		fontSize: 15
 	});
@@ -166,14 +166,14 @@ window.onload = function() {
 				finishedText = new PointText({
 					point: view.center,
 					justification: 'center',
-					content: 'Your data was registered correctly',
+					content: 'Your data was registered successfully',
 					fillColor: 'red',
 					fontSize: 20
 				});
 				averageText = new PointText({
 					point: new Point(view.center.x, view.center.y + 20),
 					justification: 'center',
-					content: 'Your average responsetime was ' + Math.round(average()) + ' msec',
+					content: 'Your average response time was ' + Math.round(average()) + ' msec',
 					fillColor: 'red',
 					fontSize: 20
 				});

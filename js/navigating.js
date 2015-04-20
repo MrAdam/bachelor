@@ -164,7 +164,7 @@ window.onload = function() {
 	remainingText = new PointText({
 		point: new Point(view.center.x, (view.center.y * 2) - 30),
 		justification: 'center',
-		content: 'remaining tunnels: ' + A.length,
+		content: 'Remaining tunnels: ' + A.length,
 		fillColor: '#ccc',
 		fontSize: 15
 	});

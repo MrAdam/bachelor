@@ -132,7 +132,7 @@ function drawSpiral() {
 				finishedText = new PointText({
 					point: view.center,
 					justification: 'center',
-					content: 'Your data was registered correctly',
+					content: 'Your data was registered successfully',
 					fillColor: 'red',
 					fontSize: 20
 				});
@@ -158,7 +158,7 @@ window.onload = function() {
 	helpText = new PointText({
 		point: new Point(view.center.x, 30),
 		justification: 'center',
-		content: 'Før musen forbi den grønne streg, og flyt derefter markøren igennem spiralen til den næste grønne streg',
+		content: 'Move the cursor past the green line and through the spiral to the next green line.',
 		fillColor: 'red',
 		fontSize: 15
 	});
@@ -166,7 +166,7 @@ window.onload = function() {
 	remainingText = new PointText({
 		point: new Point(view.center.x, (view.center.y * 2) - 30),
 		justification: 'center',
-		content: 'Resterende spiraler: ' + A.length,
+		content: 'Remaining spirals: ' + A.length,
 		fillColor: '#ccc',
 		fontSize: 15
 	});
