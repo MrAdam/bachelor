@@ -14,7 +14,7 @@ $persons = $mysqli->query('SELECT count(*) FROM person');
   <table>
     <tr>
       <td># of persons</td>
-      <td><? print($persons); ?></td>
+      <td><? print(mysqli_fetch_assoc($persons)); ?></td>
     </tr>
   </table>
 </body>
