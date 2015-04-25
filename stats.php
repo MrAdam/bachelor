@@ -2,7 +2,7 @@
 $mysqli = new mysqli('127.0.0.1','root','toor','bachelor');
   if ($mysqli->connect_error)
     die('Fejl: ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
-$persons = $mysqli->query('SELECT count(*) FROM person');
+$persons = $mysqli->query('SELECT count(*) as count FROM person');
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ $persons = $mysqli->query('SELECT count(*) FROM person');
   <table>
     <tr>
       <td># of persons</td>
-      <td><? print(mysqli_fetch_assoc($persons)[0]); ?></td>
+      <td><? print(mysqli_fetch_assoc($persons)['count']); ?></td>
     </tr>
   </table>
 </body>
