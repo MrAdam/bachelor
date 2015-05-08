@@ -1,2 +1,2 @@
 # Bachelor
-3rd Year Computer Science Bachelor's Project
+3rd Year Computer Science Bachelor Thesis
