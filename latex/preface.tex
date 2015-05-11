@@ -1,0 +1,79 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[margin=2cm]{geometry}
+
+%-- Encoding, Language --%
+
+\usepackage[utf8]{inputenc}
+\usepackage[danish]{babel}
+
+%-- Included Packages --%
+
+\linespread{1.2}
+\usepackage{eso-pic}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage[babel]{csquotes}
+\usepackage{capt-of}
+\usepackage{minted}
+\usepackage[toc,page]{appendix}
+\usepackage{verbatim}
+\usepackage{caption}
+
+%-- Bibliography --%
+
+%\usepackage[backend=biber,style=verbose]{biblatex}
+\usepackage[
+    hyperref=auto,
+    backend=biber,
+    style=alphabetic, %numeric
+    citestyle=alphabetic %verboze
+]{biblatex}
+\bibliography{bibliography}
+
+%-- Authors --%
+
+\author{
+  Adam Honoré\\
+  \texttt{030991-2721}\\
+  \texttt{qgf142@alumni.ku.dk}
+  \and
+  Alexander Olsen\\
+  \texttt{200692-2875}\\
+  \texttt{bdj816@alumni.ku.dk}
+  \and
+  Rasmus Andersen\\
+  \texttt{200491-2457}\\
+  \texttt{hmd200@alumni.ku.dk}
+}
+
+%-- Title --%
+
+\title{
+  \vspace{3cm}
+  \Huge{Bachelorprojekt} \\
+  \Large{Fitts' lov}
+}
+
+%-- Frontpage, TOC --%
+\begin{document}
+
+\AddToShipoutPicture*{
+    \put(0,0){
+        \includegraphics*[viewport=0 0 700 600]{include/natbio-farve}}}
+\AddToShipoutPicture*{
+    \put(0,602){
+        \includegraphics*[viewport=0 600 700 1600]{include/natbio-farve}}}
+\AddToShipoutPicture*{
+    \put(0,0){
+        \includegraphics*{include/nat-en}}}
+
+\clearpage\maketitle
+\thispagestyle{empty}
+\newpage
+\tableofcontents
+\newpage
