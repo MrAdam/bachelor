@@ -190,6 +190,34 @@ Når man kigger på Ligning \ref{eq:meyer}, så er det vigtigt at notere sig, at
 
 \cite{goldberg2015} notere dog at der er nogle ulemper ved denne formel. Hvis testdeltageren når målet i en enkelt bevægelse, så går modellen hen og bliver lineær, hvilket ikke passer godt med observeret værdier. For en fast positiv værdi af $\frac{A}{W}$ vil Meyers formel gå mod $1$, når antallet af underbevægelser går mod uendelig.
 
+\addcontentsline{toc}{subsection}{Sammenligning}
+\subsection*{Sammenligning}
+Formlerne for de fire forskellige formuleringer af Fitts' lov, opridset i (9)-(12), 
+\begin{align}
+\text{Fitts: } T &= a+b\cdot\log\left(\frac{2A}{W}\right)\\
+\text{Welford: } T &= K\cdot\log\left(\frac{A+0.5W}{W}\right)\\
+\text{Mckenzie: } T &= a+b\cdot\log\left(\frac{A+W}{W}\right)\\
+\text{Meyer: } T &= a+b\cdot\sqrt{\frac{A}{W}}
+\end{align}
+
+Welfords formulering har, indeholder den eneste, ikke nogen additiv konstant, $a$. Vi vil derfor omskrive (10) og forsøge at finde en formel som er lettere sammenligning med resten af formuleringerne.
+\begin{align*}
+T &= K\cdot\log\left(\frac{A+0.5W}{W}\right)\Leftrightarrow\\
+T &= K\left(1-1+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
+T &= -K+K\left(1+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
+T &= -K+K\left(\log(2)+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
+T &= -K+K\left(\log\left(2\left(\cdot\frac{A+0.5W}{W}\right)\right)\right)\Leftrightarrow\\
+T &= -K+K\cdot\log\left(\frac{2A+W}{W}\right)
+\end{align*}
+
+Bemærk, at dette resultat indeholder et negativt konstant led, $a=-K$. Dette ville betyde at tiden det tager for en testdeltager at påbegynde en opgave er negativ, og vi vil derfor kun benytte ID ledet af denne formel til den følgende sammenligning og ellers forkaste omskrivningen igen.
+
+\begin{align*}
+&\log\left(\frac{2A}{W}\right) &&\log\left(\frac{2A+W}{W}\right) &&&\log\left(\frac{A+W}{W}\right) &&&&\Leftrightarrow\\
+&\log\left(2A\right) &&\log\left(2A+W\right) &&&\log\left(A+W\right) &&&&\Leftrightarrow\\
+&1+\log(A) && 1+\log(A+0.5W) &&& &&&&\Leftrightarrow
+\end{align*}
+
 %\addcontentsline{toc}{section}{Forudsætninger for formuleringerne (Fitts vs Meyers vs Shannons)}
 
 %\section*{Forudsætninger for formuleringerne (Fitts vs Meyers vs Shannons)}
@@ -353,21 +381,24 @@ Efterfølgende har vi lukket for muligheden for at deltage i vores forsøg den 3
 \addcontentsline{toc}{chapter}{Analyse}
 \chapter*{Analyse}
 \subsection*{Model selection}
-For at kunne lave model selection skal vi først finde en model for hver af de fire formuleringer af Fitts' Lov. Til dette har vi brugt lineær regression, da formuleringerne kan ses som lineære modeller, hvor ID-leddet ses som x-variablen og tiden som y-variablen. 
+Som det kan ses af de fire formuleringer for Fitts' lov, så kan de alle sammen opfattes som lineære modeller, med tiden, T, som y-variabel og ID som x-variabel. Bemærk, at Welfords formel har en skæring med y-aksen i 0, dvs. $a=0$. 
 
-Vi overvejede følgende model selections
+For at kunne finde ud af, hvilken af de fire lineære modeller, som beskriver vores data bedst, har vi overvejet følgende sammenlignings kriterier.
 
 \begin{itemize}
-\item Least Squared Errors
-\item Mallow's $C_p$
-\item Akaike Information Criterion (AIC)
-\item BBayesian Information Criterion (BIC)
+\item{Least Squared Errors (LSE); beregner gennemsnittet af kvadratet på afstandene fra punkterne til modellen.}
+\item{Mallow's $C_p$; baserer sig på LSE men tager også højde for at antallet af parametre kan betyde overfitting.}
+\item{Akaike Information Criterion (AIC); sammenligner modeller ved maximum likelihood og antallet af parametre brugt.}
+\item{Bayesian Information Criterion (BIC); fungerer som AIC men antallet af parametre vægter mere negativt.}
 \end{itemize}
 
-I least squared errors tages gennemsnittet af afstanden fra punkterne til modellen, for at finde den bedst passende model. Mallow's $C_p$ er baseret på least squared errors, men tager større højde for overfitting ved flere parametre. 
-AIC sammenligner samtlige modeller udfra maximum likelihood og antallet af parametre. Når antallet af parametre stiger, så gives en større straf til modellerne. BIC bruger, som AIC, maximum likelihood og antallet af parametre, men giver en større straf for flere parametre end AIC gør.
+Af de fire ovenstående modeller har vi valgt at bruge AIC, da det er den mest udbredte at basere sin model selection på. Hvis vi lader $L$ være maximum likelihood værdien for modellen og $k$ antallet af parametre, så er AIC givet ved
+\begin{align}
+AIC = 2k - 2\ln(L)
+\end{align}
+Vi har til vores analyse brugt programmeringssproget R, som både har lineær regression og AIC funktionalitet indbygget. $lm()$\footnote{R dokumentation om $lm()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/lm.html}} fitter en lineær model ud fra de (x,y) datasæt der gives som input. Modellen bliver baseret på least squares, og kan også tvinges til at gå igennem origo (for Welford).
 
-Af de fire ovenstående modeller bruger vi AIC, da det er den mest udbredte model at bruge. Vi har til vores analyse brugt programmeringssproget R, som også har indbygget AIC funktionalitet. 
+$AIC()$\footnote{R dokumentation om $AIC()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/AIC.html}} bruger (13) som udgangspunkt til sine beregninger, og tager som input en model, der har metoden $logLik()$\footnote{R dokumentation om $logLik()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/logLik.html}}, hvilket $lm()$'s output modeller har. $lm()$ og $AIC()$ gør det derfor muligt at sammenligne modellerne med R.
 %\addcontentsline{toc}{chapter}{Konklusion}
 %\chapter*{Konklusion}
 
