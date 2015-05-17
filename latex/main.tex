@@ -372,10 +372,11 @@ Efterfølgende har vi lukket for muligheden for at deltage i vores forsøg den 3
 \newpage
 \addcontentsline{toc}{chapter}{Analyse}
 \chapter*{Analyse}
-\subsection*{Model selection}
+\addcontentsline{toc}{section}{Modeludvælgelse}
+\section*{Modeludvælgelse}
 Som det kan ses af de fire formuleringer for Fitts' lov, så kan de alle sammen opfattes som lineære modeller, med tiden, T, som y-variabel og ID som x-variabel. Bemærk, at Welfords formel har en skæring med y-aksen i 0, dvs. $a=0$. 
 
-For at kunne finde ud af, hvilken af de fire lineære modeller, som beskriver vores data bedst, har vi overvejet følgende sammenlignings kriterier.
+For at kunne finde ud af, hvilken af de fire lineære modeller, som beskriver vores data bedst, har vi overvejet følgende sammenligningskriterier.
 
 \begin{itemize}
 \item{Least Squared Errors (LSE); beregner gennemsnittet af kvadratet på afstandene fra punkterne til modellen.}
@@ -390,7 +391,50 @@ AIC = 2k - 2\ln(L)
 \end{align}
 Vi har til vores analyse brugt programmeringssproget R, som både har lineær regression og AIC funktionalitet indbygget. $lm()$\footnote{R dokumentation om $lm()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/lm.html}} fitter en lineær model ud fra de (x,y) datasæt der gives som input. Modellen bliver baseret på least squares, og kan også tvinges til at gå igennem origo (for Welford).
 
-$AIC()$\footnote{R dokumentation om $AIC()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/AIC.html}} bruger (13) som udgangspunkt til sine beregninger, og tager som input en model, der har metoden $logLik()$\footnote{R dokumentation om $logLik()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/logLik.html}}, hvilket $lm()$'s output modeller har. $lm()$ og $AIC()$ gør det derfor muligt at sammenligne modellerne med R.
+$AIC()$\footnote{R dokumentation om $AIC()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/AIC.html}} bruger (13) som udgangspunkt til sine beregninger, og tager som input en model, der har metoden $logLik()$\footnote{R dokumentation om $logLik()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/logLik.html}}, hvilket $lm()$'s output-modeller har. $lm()$ og $AIC()$ gør det derfor muligt at sammenligne modellerne med R.
+
+\addcontentsline{toc}{section}{Modelanalyse}
+\section*{Modelanalyse}
+Vores modelanalyse tager udgangspunkt i AIC-metoden som beskrevet i forrige afsnit, og vi benytter os af de data der er indsamlet ved de 10 testpersoners udførsel af pegeopgaven.
+
+\lstinputlisting[caption=Modelanalyse i R, language=R, firstline=33, lastline=65]{analyse.r}
+
+\begin{minipage}{\textwidth}
+\centering
+\includegraphics[width=\textwidth]{images/plots/plot_model_fitt}
+\captionof{figure}{Fitt's Model}
+\label{fig:model_fitts}
+\end{minipage}
+
+\begin{minipage}{\textwidth}
+\centering
+\includegraphics[width=\textwidth]{images/plots/plot_model_welford}
+\captionof{figure}{Welford's Model}
+\label{fig:model_welford}
+\end{minipage}
+
+\begin{minipage}{\textwidth}
+\centering
+\includegraphics[width=\textwidth]{images/plots/plot_model_mackenzie}
+\captionof{figure}{MacKenzie's Model}
+\label{fig:model_mackenzie}
+\end{minipage}
+
+\begin{minipage}{\textwidth}
+\centering
+\includegraphics[width=\textwidth]{images/plots/plot_model_meyer}
+\captionof{figure}{Meyer's Model}
+\label{fig:model_meyer}
+\end{minipage}
+
+\begin{verbatim}
+                df      AIC
+fitt_model       3 3544.437
+welford_model    2 3587.564
+mackenzie_model  3 3540.466
+meyer_model      3 3534.884
+\end{verbatim}
+
 %\addcontentsline{toc}{chapter}{Konklusion}
 %\chapter*{Konklusion}
 
