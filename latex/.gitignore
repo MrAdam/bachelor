@@ -128,3 +128,6 @@ sympy-plots-for-*.tex/
 
 # R
 .Rhistory
+
+# Latexian
+TSWLatexianTemp*
