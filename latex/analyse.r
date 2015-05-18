@@ -2,13 +2,13 @@
 library(DBI);
 library(RMySQL);
 library(plotrix);
-library(ggplot2)
+library(ggplot2);
 
 # Disable warnings temporarily
 options(warn=-1);
 
 # Connect to the database
-connection <-dbConnect(dbDriver("MySQL"), user="root", password="toor", host="127.0.0.1", dbname="bachelor_test");
+connection <-dbConnect(dbDriver("MySQL"), user="root", password="toor", host="127.0.0.1", dbname="bachelor_final");
 
 # Fetch all data from the 'person' table
 result <- dbSendQuery(connection, "SELECT * FROM person");
@@ -16,7 +16,7 @@ persons <- dbFetch(result, n=-1);
 dbClearResult(result);
 
 # Fetch all data from the 'task' table
-result <- dbSendQuery(connection, "SELECT * FROM task");
+result <- dbSendQuery(connection, "SELECT * FROM task WHERE id NOT IN (8094, 1741, 7847)");
 tasks <- dbFetch(result, n=-1);
 dbClearResult(result);
 
