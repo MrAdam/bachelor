@@ -300,7 +300,7 @@ Vi valte $/r/helpme$ og $/r/care$, da begge disse subredits er lavet til at spø
 Som det sidste vil vi også dele forsøget på vores egne Facebook-profiler.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.75]{billeder/Questions.png}
+\includegraphics[scale=0.7]{billeder/Questions.png}
 \caption{Spørgsmål som blev stillet før crowdsourcing-deltagerne kunne udføre forsøget.}
 \label{fig:Questions}
 \end{figure}
@@ -379,13 +379,19 @@ Som det kan ses af de fire formuleringer for Fitts' lov, så kan de alle sammen 
 For at kunne finde ud af, hvilken af de fire lineære modeller, som beskriver vores data bedst, har vi overvejet følgende sammenligningskriterier.
 
 \begin{itemize}
-\item{Least Squared Errors (LSE); beregner gennemsnittet af kvadratet på afstandene fra punkterne til modellen.}
-\item{Mallow's $C_p$; baserer sig på LSE men tager også højde for at antallet af parametre kan betyde overfitting.}
-\item{Akaike Information Criterion (AIC); sammenligner modeller ved maximum likelihood og antallet af parametre brugt.}
-\item{Bayesian Information Criterion (BIC); fungerer som AIC men antallet af parametre vægter mere negativt.}
+\item{Least Squared Errors (LSE).}
+\item{Mallow's $C_p$.}
+\item{Akaike Information Criterion (AIC).}
+\item{Bayesian Information Criterion (BIC).}
 \end{itemize}
 
-Af de fire ovenstående modeller har vi valgt at bruge AIC, da det er den mest udbredte at basere sin model selection på. Hvis vi lader $L$ være maximum likelihood værdien for modellen og $k$ antallet af parametre, så er AIC givet ved
+LSE er bestemt ved at finde gennemsnittet af kvadratet på afstandene fra punkterne til modellen, den model som har det laveste gennemsnit bliver vurderet som bedst. Et problem ved udelukkende at benytte dette kriterium er, at en model altid kan beskrive alle data punkter perfekt ved blot at inkludere flere parametre. Dette er hvad der kan klassificeres som overfitting.
+
+Mallow's $C_p$ kriteriet bliver beregnet ud fra LSE men inddrager også antallet af parametre i beregningen for netop at undgå overfitting. Tilsvarende gør sig gældende for AIC og BIC, de beregnes dog ved hjælp af maximum likelihood i stedet for LSE.
+
+For et givent datasæt med parametre og udfald og en tilhørende statistisk model vil likelihood funktionen beregne sandsynligheden for at modellens parametre vil resultere i de givne udfald. Ved maximum likelihood findes de værdier for modellens parametre som maksimere likelihood funktionen, det vil sige har størst sandsynlighed for at hænde. Forskellen imellem AIC og BIC er, at BIC vægter antallet af parametre mere negativt end AIC.
+
+Af de fire beskrevne modeller har vi valgt at bruge AIC, da det er den mest udbredte at basere sin modeludvælgelse på. Hvis vi lader $L$ være maximum likelihood værdierne for modellens parametre og $k$ antallet af parametre, så er AIC givet ved
 \begin{align}
 AIC = 2k - 2\ln(L)
 \end{align}
@@ -395,6 +401,9 @@ $AIC()$\footnote{R dokumentation om $AIC()$: \url{https://stat.ethz.ch/R-manual/
 
 \addcontentsline{toc}{section}{Indledende analyse}
 \section*{Indledende analyse}
+For at være sikre på, at vores data kan bruges til at sammenligne de fire formuleringer har vi først kigget på vores 10 testdeltagere hver for sig. Vi har fitted vores 10 testdeltageres data fra pegeopgaverne til Fitts lov hver for sig. Tre af disse plots kan ses i appendiks D, Testpersonernes individuelle grafer.  Det kan af graferne ses hvordan punkterne ligger pænt omkring modellen, angivet ved den blå linje. Men også, at enkelte datapunkter bryder tendensen, specielt på figur \ref{fig:testdeltager1}. 
+
+På grund af den primært pæne model kan det konkluderes, at vores data godt kan danne grundlag for vores analyse, der kan dog opstå et behov for at skære ekstremt afvigende data fra. Specielt fordi crowdsourcing forsøget er ukontrolleret.
 
 \addcontentsline{toc}{section}{Modelanalyse}
 \section*{Modelanalyse}
@@ -464,6 +473,7 @@ Den relevante R-kode er vist i listing \ref{lst:analyse}.
 	\label{fig:plot_qq_meyer}
 \end{minipage}
 
+\newpage
 \addcontentsline{toc}{subsection}{Sammenligning af modellerne}
 \subsection*{Sammenligning af modellerne}
 \begin{minipage}{\textwidth}
@@ -472,6 +482,15 @@ Den relevante R-kode er vist i listing \ref{lst:analyse}.
 	\captionof{figure}{AIC Analyse}
 	\label{fig:plot_analyse_aic}
 \end{minipage}
+
+\begin{landscape}
+\begin{minipage}{\textwidth}
+	\centering
+	\includegraphics[]{images/plots/standardResidualsVsFitted}
+	\captionof{figure}{Standard residualer vs fitted}
+	\label{fig:plot_qq_meyer}
+\end{minipage}
+\end{landscape}
 
 %\addcontentsline{toc}{chapter}{Konklusion}
 %\chapter*{Konklusion}
