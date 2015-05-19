@@ -39,29 +39,29 @@ data <- tasks[tasks$type == "pointing" & tasks$time < 3000 & tasks$time != 0, c(
 fitt_data <- data;
 fitt_data$id <- log2((2 * fitt_data$distance) / (fitt_data$width));
 fitt_model <- lm(time ~ id, data = fitt_data);
-fitt_plot <- ggplot(data = fitt_model, aes(x = .fitted, y = .stdresid)) + geom_hline(yintercept=0, alpha=0.75, color="blue") + geom_point() + geom_smooth(se = F, color="red") +
-  labs(title="Fitt's Residualplot", x="Fitted", y="Standardiserede Residualer");
+fitt_plot <- ggplot(data = fitt_model, aes(x = .fitted, y = .resid)) + geom_hline(yintercept=0, alpha=0.75, color="blue") + geom_point() + geom_smooth(se = F, color="red") +
+  labs(title="Fitt's Residualplot", x="Fitted", y="Residualer");
 
 # Welford's model
 welford_data <- data;
 welford_data$id <- log2((welford_data$distance + 0.5 * welford_data$width) / (welford_data$width));
 welford_model <- lm(time ~ 0 + id, data = welford_data);
-welford_plot <- ggplot(data = welford_model, aes(x = .fitted, y = .stdresid)) + geom_hline(yintercept=0, alpha=0.75, color="blue") + geom_point() + geom_smooth(se = F, color="red") +
-  labs(title="Welford's Residualplot", x="Fitted", y="Standardiserede Residualer");
+welford_plot <- ggplot(data = welford_model, aes(x = .fitted, y = .resid)) + geom_hline(yintercept=0, alpha=0.75, color="blue") + geom_point() + geom_smooth(se = F, color="red") +
+  labs(title="Welford's Residualplot", x="Fitted", y="Residualer");
 
 # MacKenzie's model
 mackenzie_data <- data;
 mackenzie_data$id <- log2((mackenzie_data$distance + mackenzie_data$width) / (mackenzie_data$width));
 mackenzie_model <- lm(time ~ id, data = mackenzie_data);
-mackenzie_plot <- ggplot(data = mackenzie_model, aes(x = .fitted, y = .stdresid)) + geom_hline(yintercept=0, alpha=0.75, color="blue") + geom_point() + geom_smooth(se = F, color="red") +
-  labs(title="MacKenzie's Residualplot", x="Fitted", y="Standardiserede Residualer");
+mackenzie_plot <- ggplot(data = mackenzie_model, aes(x = .fitted, y = .resid)) + geom_hline(yintercept=0, alpha=0.75, color="blue") + geom_point() + geom_smooth(se = F, color="red") +
+  labs(title="MacKenzie's Residualplot", x="Fitted", y="Residualer");
 
 # Meyer's model
 meyer_data <- data;
 meyer_data$id <- sqrt((meyer_data$distance) / (meyer_data$width));
 meyer_model <- lm(time ~ id, data = meyer_data);
-meyer_plot <- ggplot(data = meyer_model, aes(x = .fitted, y = .stdresid)) + geom_hline(yintercept=0, alpha=0.75, color="blue") + geom_point() + geom_smooth(se = F, color="red") +
-  labs(title="Meyer's Residualplot", x="Fitted", y="Standardiserede Residualer");
+meyer_plot <- ggplot(data = meyer_model, aes(x = .fitted, y = .resid)) + geom_hline(yintercept=0, alpha=0.75, color="blue") + geom_point() + geom_smooth(se = F, color="red") +
+  labs(title="Meyer's Residualplot", x="Fitted", y="Residualer");
 
 # Plots
 grid.arrange(fitt_plot, mackenzie_plot, welford_plot, meyer_plot, ncol=2);
