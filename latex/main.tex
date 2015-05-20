@@ -30,7 +30,7 @@ Testdeltagerne, 16 højrehåndede universitetsstuderende mænd, fik 15 sekunder 
 
 \begin{figure}[h]
 \centering
-\includegraphics{billeder/FittsEx1.png}
+\includegraphics{images/illustrations/fitt_ex1}
 \caption{Opstillingen brugt til Fitts' første eksperiment \footcite{fitts1954}}
   \label{fig:FittsEx1}
 \end{figure}
@@ -42,7 +42,7 @@ I dette eksperiment brugte Fitts to pinde og otte runde plader. De otte runde pl
 Hver af de 16 forsøgsmuligheder blev i tilfældig rækkefølge udført af 16 højrehåndede universitetsstuderende mænd. Figur \ref{fig:FittsEx2} viser, hvordan eksperimentet blev udført.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.9]{billeder/FittsEx2.png}
+\includegraphics[scale=0.9]{images/illustrations/fitt_ex2}
 \caption{Opstillingen brugt til Fitts' andet eksperiment \footcite{fitts1954}}
 \label{fig:FittsEx2}
 \end{figure}
@@ -54,7 +54,7 @@ Udførelsen af dette eksperiment krævede et sæt af otte pinde og 16 huller del
 Hver af de 20 mulige forsøgsopstillinger blev udført i tilfældig rækkefølge af 20 universitetsstuderende mænd.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.9]{billeder/FittsEx3.png}
+\includegraphics[scale=0.9]{images/illustrations/fitt_ex3}
 \caption{Opstillingen brug til Fitts' tredje eksperiement \footcite{fitts1954}}
 \label{fig:FittsEx3}
 \end{figure}
@@ -109,7 +109,7 @@ Siden udgivelsen af Fitts’ artikel, har flere forskere forsøgt at finde en fo
 I \cite{welford1968} beskriver Welford en række fundamentale forudsætninger for det menneskelige motoriske system. Her kiggede han blandt andet på Fitts' lov og de data han indsamlede i sit første forsøg. Han mente at Fitts' lov i princippet gengav den indsamlede data præcist, men han så også tre utilfredsstillende egenskaber, hvilket fik ham til at foreslå følgende modifikationer.
 \begin{figure}[h]
 \centering
-\includegraphics{billeder/WelfordGraf.png}
+\includegraphics{images/illustrations/welford_plot}
 \caption{Denne graf er pt medtaget for at kunne forklare Welford's tanker. Den vil blive erstattet af en pænere graf!}
 \label{fig:WelfordGraf}
 \end{figure}
@@ -146,12 +146,11 @@ En af de mest accepterede udledninger af Fitts' lov stammer fra modellen \emph{d
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{billeder/mackenzie_fig3.png}
+\includegraphics[scale=0.5]{images/illustrations/mackenzie_plot_1}
 \caption{Index of difficulty i forhold til movement time ved forskellige værdier af $W$}
-\label{fig:MacKenzie3}
+\label{fig:MacKenziePlot1}
 \end{figure}
-MacKenzie beskriver at et af problemerne med Fitts' Lov er den tætte relation mellem $ID$ og $MT$. Figur~\ref{fig:MacKenzie3} illustrerer hvordan punkterne flader ud, ved lave værdier af $ID$, mens kurven beholder sit $1:1$-forhold mellem $ID$ og $MT$. Der er altså en usammenhæng mellem de observerede og forudsagte værdier, hvilket også er blevet observeret i flere andre studier som \cite{welford1960, buck1986, crossman1983, drury1975, klapp1975, langolf1976, meyer1988, wallace1978}\\
-
+MacKenzie beskriver at et af problemerne med Fitts' Lov er den tætte relation mellem $ID$ og $MT$. Figur~\ref{fig:MacKenziePlot1} illustrerer hvordan punkterne flader ud, ved lave værdier af $ID$, mens kurven beholder sit $1:1$-forhold mellem $ID$ og $MT$. Der er altså en usammenhæng mellem de observerede og forudsagte værdier, hvilket også er blevet observeret i flere andre studier som \cite{welford1960, buck1986, crossman1983, drury1975, klapp1975, langolf1976, meyer1988, wallace1978}\\
 Han fremhæver dog at der er lavet en del studier af Fitts' lov, og at der er blevet præsenteret en del alternative formuleringer som forsøger at få den reelle data til at passe bedre til modellen. Specielt fremhæver han Welford's~\cite{welford1960,welford1968}, da den er udbredt som alternativ til Fitts' originale formulering. MacKenzie nævner den ekstreme lighed mellem Welford og Shannons formulering, og beskriver hvordan det for nyligt er blevet vist at Paul Fitts originale formulerings forhold mellem $A$ og $W$ havde baggrund i en approksimation af Shannon's sætning~\cite[p. 388]{fitts1954}, som var blevet introduceret med en advarsel om at brugbarheden kun gjaldt ved et højt signal-til-støj forhold. Dette giver selvfølgelig problemer når der i Fitts' originale forsøg bliver brugt et forhold helt ned til 1:1 mellem A og W. MacKenzie foreslår at man benytter sig af en form der minder meget om Welford's, men her er en direkte analogi til Shannon's formulering:
 \begin{align}
 \text{Shannon: }C=B\times&\log{\frac{S+N}{N}}\\
@@ -159,14 +158,14 @@ Han fremhæver dog at der er lavet en del studier af Fitts' lov, og at der er bl
 \text{MacKenzie: }MT=a+b\times&\log{\frac{A+W}{W}}
 \end{align}
 
-Forskellen mellem Fitts' originale formulering for $ID$, og MacKenzie's bud på en ny formulering lavet som en direkte analogi til Shannon's bliver sammenlignet i figur~\ref{fig:MacKenzie4}, hvor det tydeligt at der ved lavere værdier af $A$ sker en udfladning af kurven, hvilket passer med data i figur~\ref{fig:MacKenzie3}.\\
+Forskellen mellem Fitts' originale formulering for $ID$, og MacKenzie's bud på en ny formulering lavet som en direkte analogi til Shannon's bliver sammenlignet i figur~\ref{fig:MacKenziePlot2}, hvor det tydeligt at der ved lavere værdier af $A$ sker en udfladning af kurven, hvilket passer med data i figur~\ref{fig:MacKenziePlot1}.\\
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{billeder/mackenzie_fig4.png}
+\includegraphics[scale=0.5]{images/illustrations/mackenzie_plot_2}
 \caption{Sammenligning af Fitts' ID og MacKenzies ID baseret på Shannon's formulering}
-\label{fig:MacKenzie4}
+\label{fig:MacKenziePlot2}
 \end{figure}
-MacKenzie ser hans formulering som værende en mindre forbedring i forhold til Welford's, og mener ikke at man vil kunne se den store forskel mellem Welfords og sin formulering, medmindre man har at gøre med $ID$ som er under 3 bits. Han kommer frem til de 3 bits ved at se på figur~\ref{fig:MacKenzie4} hvor det ses at de to formuleringer for $ID$ er paralelle med hinanden, indtil omkring 3 bits eller derunder.\\
+MacKenzie ser hans formulering som værende en mindre forbedring i forhold til Welford's, og mener ikke at man vil kunne se den store forskel mellem Welfords og sin formulering, medmindre man har at gøre med $ID$ som er under 3 bits. Han kommer frem til de 3 bits ved at se på figur~\ref{fig:MacKenziePlot2} hvor det ses at de to formuleringer for $ID$ er paralelle med hinanden, indtil omkring 3 bits eller derunder.\\
 
 Det generelle problem med MacKenzie's artikel er at han ikke kommer med noget teoretisk grundlag for hans formulering, og derved ikke kan forklare hvorfor hans formulering er mere præcis end andre, eller hvorfor det netop er bedre med en direkte analogi til Shannon's i forhold til Welford's. I artiklen~\cite{drewes2010} bliver der stillet spørgsmålstegn ved dette. Men hvis man ser bort fra det manglende teoretiske grundlag, så er MacKenzies formulering stadig en af de mest udbredte og brugte varianter af Fitt's lov, og har vist sig at passe godt på udførte forsøg~\cite{goldberg2015}.
 
@@ -174,7 +173,7 @@ Det generelle problem med MacKenzie's artikel er at han ikke kommer med noget te
 \subsection*{Meyers formel}
 \begin{figure}[h]
 \centering
-\includegraphics[scale=1.0]{billeder/MeyerTheory.png}
+\includegraphics[scale=1.0]{images/illustrations/meyer_plot_theory}
 \caption{Stochastic optimized-submovement modellen - Den horisontale akse repræsentere afstand og den vertikale akse bevægelseshastighed. De faste linjer repræsentere primære underbevægelser, mens stiplede linjer er korrigerende underbevægelser. Bevægelserne tager udgangspunkt i en startende position (afstand = 0) og skal bevæge sig til et mål, med center i D og bredde W.}
 \label{fig:MeyerTheory}
 \end{figure}
@@ -300,7 +299,7 @@ Vi valte $/r/helpme$ og $/r/care$, da begge disse subredits er lavet til at spø
 Som det sidste vil vi også dele forsøget på vores egne Facebook-profiler.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.7]{billeder/Questions.png}
+\includegraphics[scale=0.7]{images/screenshots/ex_questions}
 \caption{Spørgsmål som blev stillet før crowdsourcing-deltagerne kunne udføre forsøget.}
 \label{fig:Questions}
 \end{figure}
@@ -318,21 +317,21 @@ Forsøget gik godt - 264 personer gennemførte vores forsøg og har suppleret os
 Det var ikke muligt at dele vores forsøg på $reddit.com/r/helpme$ og $reddit.com/r/care$, da vi ikke havde nok "karma" for at kunne lave et indlæg på disse sites.\\
 Efterfølgende har vi lukket for muligheden for at deltage i vores forsøg den 30/04/2015, og skrevet en besked på forsøgssiden hvor vi takker folk for deres deltagelse.
 
-\begin{minipage}[t]{.4\textwidth}
+\begin{minipage}[t]{.5\textwidth}
 \centering
 \vspace{0pt}
 \captionof{figure}{Illustration af pegeopgave}
-\includegraphics[scale=0.5]{billeder/pegeopgave1.png}
+\includegraphics[width=\textwidth, trim = 7cm 20cm 15cm 5cm, clip]{images/screenshots/ex_step_6_pointing_path}
 \label{fig:pegeopgave}
 \caption{Illustration af tunnelopgave}
-\includegraphics[scale=0.5]{billeder/tunnelopgave.png}
+\includegraphics[width=\textwidth, trim = 25cm 15cm 25cm 10cm, clip]{images/screenshots/ex_step_4_tunnel_path}
 \label{fig:tunnelopgaver}
 \caption{Illustration af spiralopgave}
-\includegraphics[scale=0.5]{billeder/spiral.png}
+\includegraphics[width=\textwidth, trim = 25cm 15cm 25cm 10cm, clip]{images/screenshots/ex_step_5_spiral_path}
 \label{fig:spiralopgave}
 
 \end{minipage}\hfill
-\begin{minipage}[t]{.4\textwidth}
+\begin{minipage}[t]{.5\textwidth}
 \centering
 \vspace{0pt}
     \begin{tabular}{ c c c c }
@@ -401,96 +400,49 @@ $AIC()$\footnote{R dokumentation om $AIC()$: \url{https://stat.ethz.ch/R-manual/
 
 \addcontentsline{toc}{section}{Indledende analyse}
 \section*{Indledende analyse}
-For at være sikre på, at vores data kan bruges til at sammenligne de fire formuleringer har vi først kigget på vores 10 testdeltagere hver for sig. Vi har fitted vores 10 testdeltageres data fra pegeopgaverne til Fitts lov hver for sig. Tre af disse plots kan ses i appendiks D, Testpersonernes individuelle grafer.  Det kan af graferne ses hvordan punkterne ligger pænt omkring modellen, angivet ved den blå linje. Men også, at enkelte datapunkter bryder tendensen, specielt på figur \ref{fig:testdeltager1}. 
+For at være sikre på, at vores data kan bruges til at sammenligne de fire formuleringer har vi først kigget på vores 10 testdeltagere hver for sig. Vi har fitted vores 10 testdeltageres data fra pegeopgaverne til Fitts lov hver for sig. Tre af disse plots kan ses i appendiks D, Testpersonernes individuelle grafer.  Det kan på graferne ses hvordan punkterne ligger pænt omkring modellen, angivet ved den blå linje. Men også, at enkelte datapunkter bryder tendensen, specielt på figur \ref{fig:testdeltager1}. 
 
-På grund af den primært pæne model kan det konkluderes, at vores data godt kan danne grundlag for vores analyse, der kan dog opstå et behov for at skære ekstremt afvigende data fra. Specielt fordi crowdsourcing forsøget er ukontrolleret.
+På grund af den primært pæne model kan det konkluderes, at vores data godt kan danne grundlag for vores analyse, der kan dog opstå et behov for at skære ekstremt afvigende data fra. Specielt fordi crowdsourcingforsøget er ukontrolleret.
 
 \addcontentsline{toc}{section}{Modelanalyse}
 \section*{Modelanalyse}
-Vores modelanalyse tager udgangspunkt i AIC-metoden som beskrevet i forrige afsnit, og vi benytter os af de data der er indsamlet ved de 10 testpersoners udførsel af pegeopgaven.\\
-Den relevante R-kode er vist i listing \ref{lst:analyse}.
+Vores modelanalyse tager udgangspunkt i AIC-metoden som beskrevet i forrige afsnit, og vi benytter os af de data der er indsamlet ved crowdsourcingdeltagernes udførsel af pegeopgaven.
 
-\lstinputlisting[label={lst:analyse}, caption=Modelanalyse i R, language=R, firstline=33, lastline=65]{analyse.r}
+\addcontentsline{toc}{subsection}{R-kode}
+\subsection*{R-kode}
+Den relevante R-kode som bliver brugt til analysen, er vist i listing \ref{lst:fitt}, \ref{lst:welford}, \ref{lst:mackenzie}, \ref{lst:meyer}, \ref{lst:aic}.
 
+\lstinputlisting[label={lst:fitt}, caption=Fitt's Modelanalyse, language=R, firstline=38, lastline=45]{analyse.r}
+\lstinputlisting[label={lst:welford}, caption=Welford's Modelanalyse, language=R, firstline=47, lastline=54]{analyse.r}
+\lstinputlisting[label={lst:mackenzie}, caption=MacKenzie's Modelanalyse, language=R, firstline=56, lastline=63]{analyse.r}
+\lstinputlisting[label={lst:meyer}, caption=Meyer's Modelanalyse, language=R, firstline=65, lastline=72]{analyse.r}
+\lstinputlisting[label={lst:aic}, caption=AIC-analyse, language=R, firstline=77, lastline=83]{analyse.r}
 
-\addcontentsline{toc}{subsection}{Analyse af Fitt's model}
-\subsection*{Analyse af Fitt's model}
-\begin{minipage}{.5\textwidth}
-	\centering
-	\includegraphics[width=\textwidth]{images/plots/plot_model_fitt}
-	\captionof{figure}{Fitt's Model}
-	\label{fig:plot_model_fitt}
-\end{minipage}
-\begin{minipage}{.5\textwidth}
-	\centering
-	\includegraphics[width=\textwidth]{images/plots/plot_qq_fitt}
-	\captionof{figure}{Fitt's QQ-plot}
-	\label{fig:plot_qq_fitt}
-\end{minipage}
+Som det ses af listing \ref{lst:fitt}, udregner vi først $ID$ for vores data, baseret på de foruddefinerede værdier af $A$ og $W$. Herefter bruger vi $lm()$ til at fitte modellen til vores data, hvorefter vi plotter dataen og modellen i et residualplot.\\
+I listing \ref{lst:aic} ses det at vi benytter $AIC()$ på alle fire modeller, hvorefter de bliver sorteret efter størrelse for nemmere sammenligning.
 
-\addcontentsline{toc}{subsection}{Analyse af Welford's model}
-\subsection*{Analyse af Welford's model}
-\begin{minipage}{.5\textwidth}
-	\centering
-	\includegraphics[width=\textwidth]{images/plots/plot_model_welford}
-	\captionof{figure}{Welford's Model}
-	\label{fig:plot_model_welford}
-\end{minipage}
-\begin{minipage}{.5\textwidth}
-	\centering
-	\includegraphics[width=\textwidth]{images/plots/plot_qq_welford}
-	\captionof{figure}{Welford's QQ-plot}
-	\label{fig:plot_qq_welford}
-\end{minipage}
-
-\addcontentsline{toc}{subsection}{Analyse af MacKenzie's model}
-\subsection*{Analyse af MacKenzie's model}
-\begin{minipage}{.5\textwidth}
-	\centering
-	\includegraphics[width=\textwidth]{images/plots/plot_model_mackenzie}
-	\captionof{figure}{MacKenzie's Model}
-	\label{fig:plot_model_mackenzie}
-\end{minipage}
-\begin{minipage}{.5\textwidth}
-	\centering
-	\includegraphics[width=\textwidth]{images/plots/plot_qq_mackenzie}
-	\captionof{figure}{MacKenzie's QQ-plot}
-	\label{fig:plot_qq_mackenzie}
-\end{minipage}
-
-\addcontentsline{toc}{subsection}{Analyse af Meyer's model}
-\subsection*{Analyse af Meyer's model}
-\begin{minipage}{.5\textwidth}
-	\centering
-	\includegraphics[width=\textwidth]{images/plots/plot_model_meyer}
-	\captionof{figure}{Meyer's Model}
-	\label{fig:plot_model_meyer}
-\end{minipage}
-\begin{minipage}{.5\textwidth}
-	\centering
-	\includegraphics[width=\textwidth]{images/plots/plot_qq_meyer}
-	\captionof{figure}{Meyer's QQ-plot}
-	\label{fig:plot_qq_meyer}
-\end{minipage}
-
-\newpage
-\addcontentsline{toc}{subsection}{Sammenligning af modellerne}
-\subsection*{Sammenligning af modellerne}
+\addcontentsline{toc}{subsection}{Residualanalyse}
+\subsection*{Residualanalyse}
 \begin{minipage}{\textwidth}
 	\centering
-	\includegraphics[width=.75\textwidth]{images/plots/plot_analyse_aic}
-	\captionof{figure}{AIC Analyse}
-	\label{fig:plot_analyse_aic}
-\end{minipage}
+	\includegraphics[width=\textwidth]{images/plots/plot_residual_comparison}
+	\captionof{figure}{Sammenligning af residualplots}
+	\label{fig:plot_residual_comparison}
+\end{minipage}\\\\
+For at vurdere præcisionen af modellerne, har vi valgt at lave en residualanalyse ved hjælp af residualplots (figur \ref{fig:plot_residual_comparison}). Residualerne I modellerne er variationen i tid ($MT$) som modellerne ikke når at opfange, og de kan derved sige noget om hvor præcis modellerne er i forhold til den data vi har indsamlet.\\
+På figur \ref{fig:plot_residual_comparison} ses alle fire modellers residualplot, med en rød linje defineret af en smoothing-funktion. Smoothing-funktionen er tilføjet som et visuelt hjælpemiddel der tydeligt kan vise hvordan residualerne fordeler sig omkring x-aksen. Jo mere centreret de er om aksen, og jo mere linære de er i forhold til aksen, jo bedre er modellen.\\
+Vi kan derfor hurtigt se på Welford's residualplot at denne model passer dårligt på vores data, hvorom Fitt's, MacKenzie's og Meyer's ligger sig tættere op ad den data vi har indsamlet - det ses ved nærmere studering at smoothing-funktionen's linje at Meyer's model giver os det bedste fit til vores data.
 
-\begin{landscape}
+
+\addcontentsline{toc}{subsection}{AIC-analyse}
+\subsection*{AIC-analyse}
 \begin{minipage}{\textwidth}
 	\centering
-	\includegraphics[]{images/plots/standardResidualsVsFitted}
-	\captionof{figure}{Standard residualer vs fitted}
-	\label{fig:plot_qq_meyer}
-\end{minipage}
-\end{landscape}
+	\includegraphics[width=.75\textwidth]{images/plots/plot_analysis_aic}
+	\captionof{figure}{AIC-analyse}
+	\label{fig:plot_analysis_aic}
+\end{minipage}\\\\
+Bla bla bla.. tekst om residualanalyse
 
 %\addcontentsline{toc}{chapter}{Konklusion}
 %\chapter*{Konklusion}
