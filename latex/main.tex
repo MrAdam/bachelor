@@ -226,56 +226,26 @@ På trods af at det er muligt at omformulere Welford's formulering, så vil det 
 
 Når vi kigger på de fire formuleringer, så kan vi vise at de ikke er ens, ved at indsætte $a=0.2$, $b=0.16$, $A = 5$ og $W = 1$,
 \begin{align*}
-0.2 + 0.16\cdot\log\left(\frac{2\cdot5}{1}\right) = 0.5684\\
-0.16\cdot\log\left(\frac{5+0.5\cdot1}{1}\right) = 0.2727\\
+0.2 + 0.16\cdot\log\left(\frac{2\cdot5}{1}\right) = 0.7315\\
+0.16\cdot\log\left(\frac{5+0.5\cdot1}{1}\right) = 0.3935\\
 0.2 + 0.16\cdot\log\left(\frac{5 + 1}{1}\right) = 0.4866\\
 0.2 + 0.16\cdot\sqrt{\frac{5}{1}} = 0.5577
 \end{align*}
 Da de fire ovenstående udregninger giver forskellige resultater, er de fire formuleringer ikke ens og vi vil derfor få forskellige resultater når vi bruger dem på den indsamlede data.
 
-På trods af at de fire formuleringer er forskellige, så vil de godt kunne approksimere hinanden. Vi har derfor plottet de fire formulering i to interval, for at se om de approksimere hinanden.
+På trods af at de fire formuleringer er forskellige, så vil de godt kunne approksimere hinanden. Vi har derfor plottet de fire formulering i to interval, for at se om de approksimere hinanden. Figur \ref{fig:Sammenligning} viser $ID$ som funktion af $A/W$ og viser at Meyer's, Welford's og MacKenzie's approksimere hinanden for $A/W$-værdier mellem 0 og 25. Grafen for Fitts' ligger højere end de tre andre og approksimere ikke de andre.
 
-
-\subsection*{Meyers formel}
 \begin{figure}[h]
 \centering
-\includegraphics[scale=1.0]{images/illustrations/base_model_meyer}
-\caption{Stochastic optimized-submovement modellen - Den horisontale akse repræsentere afstand og den vertikale akse bevægelseshastighed. De faste linjer repræsentere primære underbevægelser, mens stiplede linjer er korrigerende underbevægelser. Bevægelserne tager udgangspunkt i en startende position (afstand = 0) og skal bevæge sig til et mål, med center i D og bredde W.}
-\label{fig:MeyerTheory}
-\end{figure}
-\subsection*{Meyers formel}
-\begin{figure}[h]
-\centering
-\includegraphics[scale=1.0]{images/illustrations/base_model_meyer}
-\caption{Stochastic optimized-submovement modellen - Den horisontale akse repræsentere afstand og den vertikale akse bevægelseshastighed. De faste linjer repræsentere primære underbevægelser, mens stiplede linjer er korrigerende underbevægelser. Bevægelserne tager udgangspunkt i en startende position (afstand = 0) og skal bevæge sig til et mål, med center i D og bredde W.}
-\label{fig:MeyerTheory}
+\includegraphics[scale=0.7]{images/plots/sammenligning_ID}
+\caption{ID for de fire formuleringer som funktion af A/W}
+\label{fig:Sammenligning}
 \end{figure}
 
 
 
 
 
-
-
-
-For at få en bedre forståelse af de fire formuleringer af Fitts' lov vil vi i dette afsnit se på hvordan de ligner hinanden. De fire formuleringer er opridset i (9)-(12). 
-\begin{align}
-\text{Fitts: } T &= a+b\cdot\log\left(\frac{2A}{W}\right)\\
-\text{Welford: } T &= K\cdot\log\left(\frac{A+0.5W}{W}\right)\\
-\text{Mckenzie: } T &= a+b\cdot\log\left(\frac{A+W}{W}\right)\\
-\text{Meyer: } T &= a+b\cdot\sqrt{\frac{A}{W}}
-\end{align}
-
-For at få en lettere sammenligning af de fire, vil vi prøve at omformulere Welford's, da den som den eneste ikke indeholder en additiv konstant, $a$. 
-\begin{align*}
-T &= K\cdot\log\left(\frac{A+0.5W}{W}\right)\Leftrightarrow\\
-T &= K\left(1-1+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
-T &= -K+K\left(1+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
-T &= -K+K\left(\log(2)+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
-T &= -K+K\left(\log\left(2\left(\cdot\frac{A+0.5W}{W}\right)\right)\right)\Leftrightarrow\\
-T &= -K+K\cdot\log\left(\frac{2A+W}{W}\right)
-\end{align*}
-Mens denne omskrivning rent matematisk giver mening, så vil den ikke være brugbar i praksis. Grunden til dette er at den indeholder et negativt konstant led, $a=-K$. Det vil betyde at tiden det tager for en testdeltager at påbegynde en opgave er negativ. 
 
 
 

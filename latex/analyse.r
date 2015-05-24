@@ -9,7 +9,7 @@ library(gridExtra)
 options(warn=-1);
 
 # Connect to the database
-connection <-dbConnect(dbDriver("MySQL"), user="root", password="toor", host="127.0.0.1", dbname="bachelor_final");
+connection <-dbConnect(dbDriver("MySQL"), user="root", password="toor", host="127.0.0.1", dbname="finale");
 
 # Fetch all data from the 'person' table
 result <- dbSendQuery(connection, "SELECT * FROM person");
@@ -47,7 +47,8 @@ fitt_plot <- ggplot(data = fitt_model, aes(x = .fitted, y = .resid)) +
 # Welford's model
 welford_data <- data;
 welford_data$id <- log2((welford_data$distance + 0.5 * welford_data$width) / (welford_data$width));
-welford_model <- lm(time ~ 0 + id, data = welford_data);
+#welford_model <- lm(time ~ 0 + id, data = welford_data);
+welford_model <- lm(time ~ id, data = welford_data);
 welford_plot <- ggplot(data = welford_model, aes(x = .fitted, y = .resid)) + 
   geom_hline(yintercept=0, alpha=0.75, color="blue") + 
   geom_point() + geom_smooth(se = F, color="red") +
