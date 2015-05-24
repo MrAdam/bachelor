@@ -179,7 +179,7 @@ Det generelle problem med MacKenzie's artikel er at han ikke kommer med noget te
 \subsection*{Meyers formel}
 \begin{figure}[h]
 \centering
-\includegraphics[scale=1.0]{images/illustrations/meyer_plot_theory}
+\includegraphics[scale=1.0]{images/illustrations/base_model_meyer}
 \caption{Stochastic optimized-submovement modellen - Den horisontale akse repræsentere afstand og den vertikale akse bevægelseshastighed. De faste linjer repræsentere primære underbevægelser, mens stiplede linjer er korrigerende underbevægelser. Bevægelserne tager udgangspunkt i en startende position (afstand = 0) og skal bevæge sig til et mål, med center i D og bredde W.}
 \label{fig:MeyerTheory}
 \end{figure}
@@ -197,6 +197,35 @@ Når man kigger på Ligning \ref{eq:meyer}, så er det vigtigt at notere sig, at
 
 \addcontentsline{toc}{subsection}{Sammenligning}
 \subsection*{Sammenligning}
+For at få en bedre forståelse af de fire formuleringer af Fitts' lov, vil vi i dette afsnit se på hvordan de matematisk ligner hinanden. Det første vi vil gøre er at prøve at omformulere Welford's formulering, da den ikke indeholder et additivt `a'-led. 
+\begin{align*}
+T &= K\cdot\log\left(\frac{A+0.5W}{W}\right)\Leftrightarrow\\
+T &= K\left(1-1+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
+T &= -K+K\left(1+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
+T &= -K+K\left(\log(2)+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
+T &= -K+K\left(\log\left(2\left(\cdot\frac{A+0.5W}{W}\right)\right)\right)\Leftrightarrow\\
+T &= -K+K\cdot\log\left(\frac{2A+W}{W}\right)
+\end{align*}
+På trods af at det er muligt at omformulere Welford's formulering, så vil det ikke være brugbart i praksis. Omformuleringen gør at det additive led, $a = -K$, er blevet negativt, hvilket betyder at tiden det tager at påbegynde en opgave er negativ. Vi vil derfor fremadrettet kun bruge Welford's formulering uden det additive konstant.
+
+Når vi kigger på de fire formuleringer, så kan vi vise at de ikke er ens, ved at indsætte $a=0.2$, $b=0.16$, $A = 5$ og $W = 1$,
+\begin{align*}
+0.2 + 0.16\cdot\log\left(\frac{2\cdot5}{1}\right) = 0.5684\\
+0.16\cdot\log\left(\frac{5+0.5\cdot1}{1}\right) = 0.2727\\
+0.2 + 0.16\cdot\log\left(\frac{5 + 1}{1}\right) = 0.4866\\
+0.2 + 0.16\cdot\sqrt{\frac{5}{1}} = 0.5577
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
 For at få en bedre forståelse af de fire formuleringer af Fitts' lov vil vi i dette afsnit se på hvordan de ligner hinanden. De fire formuleringer er opridset i (9)-(12). 
 \begin{align}
 \text{Fitts: } T &= a+b\cdot\log\left(\frac{2A}{W}\right)\\
@@ -214,7 +243,7 @@ T &= -K+K\left(\log(2)+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
 T &= -K+K\left(\log\left(2\left(\cdot\frac{A+0.5W}{W}\right)\right)\right)\Leftrightarrow\\
 T &= -K+K\cdot\log\left(\frac{2A+W}{W}\right)
 \end{align*}
-Mens denne omskrivning rent matematisk giver mening, så vil den ikke være brugbar i praksis. Grunden til dette er at den indeholder et negativt konstant led, $a=-K$. Det vil betyde at tiden det tager for en testdeltager at påbegynde en opgave er negativ. Vi vil derfor fremadrettet kun bruge Welford's formulering uden det additive konstant.
+Mens denne omskrivning rent matematisk giver mening, så vil den ikke være brugbar i praksis. Grunden til dette er at den indeholder et negativt konstant led, $a=-K$. Det vil betyde at tiden det tager for en testdeltager at påbegynde en opgave er negativ. 
 
 
 
