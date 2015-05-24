@@ -237,14 +237,50 @@ Vi har valgt at bruge JavaScript til at udvikle vores forsøg, da vi alle er bek
 
 \addcontentsline{toc}{section}{Opgavetyper}
 \section*{Opgavetyper}
-I denne sektion vil vi beskrive hvordan tunnel- og pegeopgaverne er designet.
- % Beskriv typen af opgaver ud fra ovenstående, antallet af opgaver, og hvor lang tid de skal vare
+I denne sektion vil vi beskrive hvordan tunnel-, spiral- og pegeopgaven er designet.
 
 \addcontentsline{toc}{subsection}{Tunnelopgave}
 \subsection*{Tunnelopgave}
-I denne opgave skal testdeltageren føre markøren gennem fire tunneller af varierende længde og indmunding. Et eksempel på en sådan tunnel kan ses i Figur \ref{fig:tunnelopgaver}. Tunnellernes længde varierer med ($A = 100, 250, 300, 400$) og indmundingen med ($W = 20, 30 ,40, 50$), alle målt i pixel. Udmundingen vil i alle tilfælde være 8 pixels bred.
-
-Ved begyndelsen af en opgave er to vertikale grønne linjer vist i hver ende af tunnellen. Når deltageren passerer første linje, fra venstre mod højre, vil linjen blive rød for at indikere at opgaven er i gang. Herefter vil en blå linje blive tegnet, hvor deltageren bevæger sin pegeenhed. Først når deltageren passerer anden linje fra venstre vil opgaven slutte, indikeret ved at de to vertikale linjer og bevægelsesbanen bliver gule. Næste opgave blev først startet når deltageren klikker på knappen 'continue', som kun er tilgængelig når én opgave er slut. I tilfælde af at testdeltageren rammer eller ryger uden for kanterne vil de kunne fortsætte ubemærket. Hele bevægelsesbanen og tiden det tager at gennemføre hver tunnel vil blive gemt.\\
+\begin{minipage}{\textwidth}
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth, trim = .5cm 20cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_path}
+		\captionof{figure}{Eksperiment - Tunnel 1}
+		\label{fig:ex_tunnel_1}
+	\end{minipage}
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth, trim = .5cm 20cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_2}
+		\captionof{figure}{Eksperiment - Tunnel 2}
+		\label{fig:ex_tunnel_2}
+	\end{minipage}
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth, trim = .5cm 20cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_3}
+		\captionof{figure}{Eksperiment - Tunnel 3}
+		\label{fig:ex_tunnel_3}
+	\end{minipage}
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth, trim = .5cm 20cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_4}
+		\captionof{figure}{Eksperiment - Tunnel 4}
+		\label{fig:ex_tunnel_4}
+	\end{minipage}
+\end{minipage}\\\\
+I denne opgave skal testdeltageren føre deres markør igennem fire tunneller af varierende længe, og varierende indmundingsbredde. De fire tunneller kan ses på Figur \ref{fig:ex_tunnel_1}, \ref{fig:ex_tunnel_2}, \ref{fig:ex_tunnel_3} og \ref{fig:ex_tunnel_4}. Størrelserne målt i pixels for tunnellængde ($A$) og indmundingsbredde ($W$) er vist i tabel \ref{tab:tunnelopgave}. Udmundingsbredden er fastsat til 8 pixels bredde, hvilket stemmer overens med forsøget lavet i \cite{accot1997}
+\begin{center}
+	\begin{tabular}{c c c}
+		Tunnel & A & W \\
+		\hline
+		1 & 100 & 20 \\
+		2 & 250 & 30 \\
+		3 & 300 & 40 \\
+		4 & 400 & 50 \\
+	\end{tabular}
+	\captionof{table}{Længde og indmundingsbredde af tunneller}\label{tab:tunnelopgave}
+\end{center}
+Ved begyndelsen af en tunnelopgave vil den venstre side af tunnellen være markeret med grøn, for at tydeliggøre hvor opgaven starter. Når testdeltagerens markør passerer venstre side af tunnellen vil opgaven starte, og det vil nu være den højre side af tunnellen der er grøn, for at signalere hvor markøren nu skal flyttes hen. Når opgaven er i gang, vil der som på figur \ref{fig:ex_tunnel_1} blive vist en grøn linje der hvor markøren flyttes fra. I tilfælde af at testdeltageren rammer eller ryger uden for kanterne, vil de kunne fortsætte ubemærket.\\
+Når testpersonen passerer den højre side af tunnellen vil opgaven stoppe, og der vil blive vist en knap hvor testpersonen kan fortsætte til næste opgave, eller afslutte denne test hvis sidste opgave er gennemført. Ved afslutningen af de fire tunnelopgaver vil tunnellernes længde og bredde, og markørens bane, blive gemt - og til sidst sendt til vores database.
 
 \addcontentsline{toc}{subsection}{Spiralopgave}
 \subsection*{Spiralopgave}
