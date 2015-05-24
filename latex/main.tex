@@ -191,7 +191,7 @@ Når man kigger på Ligning \ref{eq:meyer}, så er det vigtigt at notere sig, at
 
 \addcontentsline{toc}{subsection}{Sammenligning}
 \subsection*{Sammenligning}
-Formlerne for de fire forskellige formuleringer af Fitts' lov, opridset i (9)-(12), 
+For at få en bedre forståelse af de fire formuleringer af Fitts' lov vil vi i dette afsnit se på hvordan de ligner hinanden. De fire formuleringer er opridset i (9)-(12). 
 \begin{align}
 \text{Fitts: } T &= a+b\cdot\log\left(\frac{2A}{W}\right)\\
 \text{Welford: } T &= K\cdot\log\left(\frac{A+0.5W}{W}\right)\\
@@ -199,7 +199,7 @@ Formlerne for de fire forskellige formuleringer af Fitts' lov, opridset i (9)-(1
 \text{Meyer: } T &= a+b\cdot\sqrt{\frac{A}{W}}
 \end{align}
 
-Welfords formulering har, indeholder den eneste, ikke nogen additiv konstant, $a$. Vi vil derfor omskrive (10) og forsøge at finde en formel som er lettere sammenligning med resten af formuleringerne.
+For at få en lettere sammenligning af de fire, vil vi prøve at omformulere Welford's, da den som den eneste ikke indeholder en additiv konstant, $a$. 
 \begin{align*}
 T &= K\cdot\log\left(\frac{A+0.5W}{W}\right)\Leftrightarrow\\
 T &= K\left(1-1+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
@@ -208,19 +208,9 @@ T &= -K+K\left(\log(2)+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
 T &= -K+K\left(\log\left(2\left(\cdot\frac{A+0.5W}{W}\right)\right)\right)\Leftrightarrow\\
 T &= -K+K\cdot\log\left(\frac{2A+W}{W}\right)
 \end{align*}
+Mens denne omskrivning rent matematisk giver mening, så vil den ikke være brugbar i praksis. Grunden til dette er at den indeholder et negativt konstant led, $a=-K$. Det vil betyde at tiden det tager for en testdeltager at påbegynde en opgave er negativ. Vi vil derfor fremadrettet kun bruge Welford's formulering uden det additive konstant.
 
-Bemærk, at dette resultat indeholder et negativt konstant led, $a=-K$. Dette ville betyde at tiden det tager for en testdeltager at påbegynde en opgave er negativ, og vi vil derfor kun benytte ID ledet af denne formel til den følgende sammenligning og ellers forkaste omskrivningen igen.
 
-\begin{align*}
-&\log\left(\frac{2A}{W}\right) &&\log\left(\frac{2A+W}{W}\right) &&&\log\left(\frac{A+W}{W}\right) &&&&\Leftrightarrow\\
-&\log\left(2A\right) &&\log\left(2A+W\right) &&&\log\left(A+W\right) &&&&\Leftrightarrow\\
-&1+\log(A) && 1+\log(A+0.5W) &&& &&&&\Leftrightarrow
-\end{align*}
-
-%\addcontentsline{toc}{section}{Forudsætninger for formuleringerne (Fitts vs Meyers vs Shannons)}
-
-%\section*{Forudsætninger for formuleringerne (Fitts vs Meyers vs Shannons)}
-%Sammenligning af en og to dimensioner
 
 \newpage
 \addcontentsline{toc}{chapter}{Design}
@@ -429,7 +419,7 @@ I listing \ref{lst:aic} ses det at vi benytter $AIC()$ på alle fire modeller, h
 	\captionof{figure}{AIC-analyse}
 	\label{fig:plot_analysis_aic}
 \end{minipage}\\\\
-Udfra AIC-analysen har vi mulighed for at vurdere præcisionen af de fire modeller. Det ses af figur \ref{fig:plot_analysis_aic} at AIC-tallet Meyer-modellen er lavest, men både MacKenzies og Fitts ligger kort efter. Til gengæld ligger Welford-modellen langt højere end de tre andre. I følge AIC-analysen er Meyer-modellen altså den bedste, mens Welford-modellen er den klart dårligste. MacKenzie- og Fitt-modellerne ligger tæt på hinanden og ligger også tæt på Meyers.
+Figur \ref{fig:plot_analysis_aic} viser AIC for de fire modeller. De fire modellers AIC er høje, men det er underordnet for vores analyse, da vi kigger på deres indbyrdes forhold. Det ses af figuren at Meyer's har den laveste AIC og derfor er den model der passer bedst til den indsamlede data. MacKenzie's og Fitt's følger herefter med lidt højere AIC værdier, mens Welford's er den klart dårligste af de fire modeller.
 
 \addcontentsline{toc}{subsection}{Residualanalyse}
 \subsection*{Residualanalyse}
@@ -439,9 +429,10 @@ Udfra AIC-analysen har vi mulighed for at vurdere præcisionen af de fire modell
 	\captionof{figure}{Sammenligning af residualplots}
 	\label{fig:plot_residual_comparison}
 \end{minipage}\\\\
-For at få en ekstra vurdering af præcisionen af modellerne, har vi valgt at lave en residualanalyse ved hjælp af residualplots (figur \ref{fig:plot_residual_comparison}). Residualerne I modellerne er variationen i tid ($MT$) som modellerne ikke når at opfange, og de kan derved sige noget om hvor præcis modellerne er i forhold til den data vi har indsamlet.\\
+For at få en ekstra vurdering af præcisionen af modellerne, har vi valgt at lave en residualanalyse ved hjælp af residualplots (figur \ref{fig:plot_residual_comparison}). Residualerne I modellerne er variationen i $ID$ som modellerne ikke når at opfange, og de kan derved sige noget om hvor præcis modellerne er i forhold til den data vi har indsamlet.\\
 På figur \ref{fig:plot_residual_comparison} ses alle fire modellers residualplot, med en rød linje defineret af en smoothing-funktion. Smoothing-funktionen er tilføjet som et visuelt hjælpemiddel der tydeligt kan vise hvordan residualerne fordeler sig omkring x-aksen. Jo mere centreret de er om aksen, og jo mere linære de er i forhold til aksen, jo bedre er modellen.\\
 Når vi kigger på de fire residualplot, så viser de samme resultater som AIC-analysen. Welford's residualplot viser at modellen passer dårlig på den indsamlede data. Fitt's og MacKenzie's ligner hinanden meget, mens Meyer's er den model der giver den bedste fit til den indsamlede data.
+Det ses af figur \ref{fig:plot_residual_comparison} at Welford's især er dårligere ved lavere værdier af $ID$. Grunden til dette skal findes i at Welford's ikke har det additive $a$-led. Som Welford \cite{welford1968} selv forklare, så vil det manglende $a$-led ikke gøre stor forskel ved større værdier af $ID$. Fitt's og MacKenzie's residualer ligner hinanden rigtig meget. Dette passer også med vores Sammenligningsafsnit, hvor vi viste at $ID$ for de to vil ligge parrallelt med hinanden.
 
 %\addcontentsline{toc}{chapter}{Konklusion}
 %\chapter*{Konklusion}
