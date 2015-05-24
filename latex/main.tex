@@ -179,7 +179,7 @@ Det generelle problem med MacKenzie's artikel er at han ikke kommer med noget te
 \subsection*{Meyers formel}
 \begin{figure}[h]
 \centering
-\includegraphics[scale=1.0]{images/illustrations/meyer_plot_theory}
+\includegraphics[scale=1.0]{images/illustrations/base_model_meyer}
 \caption{Stochastic optimized-submovement modellen - Den horisontale akse repræsentere afstand og den vertikale akse bevægelseshastighed. De faste linjer repræsentere primære underbevægelser, mens stiplede linjer er korrigerende underbevægelser. Bevægelserne tager udgangspunkt i en startende position (afstand = 0) og skal bevæge sig til et mål, med center i D og bredde W.}
 \label{fig:MeyerTheory}
 \end{figure}
@@ -197,6 +197,35 @@ Når man kigger på Ligning \ref{eq:meyer}, så er det vigtigt at notere sig, at
 
 \addcontentsline{toc}{subsection}{Sammenligning}
 \subsection*{Sammenligning}
+For at få en bedre forståelse af de fire formuleringer af Fitts' lov, vil vi i dette afsnit se på hvordan de matematisk ligner hinanden. Det første vi vil gøre er at prøve at omformulere Welford's formulering, da den ikke indeholder et additivt `a'-led. 
+\begin{align*}
+T &= K\cdot\log\left(\frac{A+0.5W}{W}\right)\Leftrightarrow\\
+T &= K\left(1-1+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
+T &= -K+K\left(1+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
+T &= -K+K\left(\log(2)+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
+T &= -K+K\left(\log\left(2\left(\cdot\frac{A+0.5W}{W}\right)\right)\right)\Leftrightarrow\\
+T &= -K+K\cdot\log\left(\frac{2A+W}{W}\right)
+\end{align*}
+På trods af at det er muligt at omformulere Welford's formulering, så vil det ikke være brugbart i praksis. Omformuleringen gør at det additive led, $a = -K$, er blevet negativt, hvilket betyder at tiden det tager at påbegynde en opgave er negativ. Vi vil derfor fremadrettet kun bruge Welford's formulering uden det additive konstant.
+
+Når vi kigger på de fire formuleringer, så kan vi vise at de ikke er ens, ved at indsætte $a=0.2$, $b=0.16$, $A = 5$ og $W = 1$,
+\begin{align*}
+0.2 + 0.16\cdot\log\left(\frac{2\cdot5}{1}\right) = 0.5684\\
+0.16\cdot\log\left(\frac{5+0.5\cdot1}{1}\right) = 0.2727\\
+0.2 + 0.16\cdot\log\left(\frac{5 + 1}{1}\right) = 0.4866\\
+0.2 + 0.16\cdot\sqrt{\frac{5}{1}} = 0.5577
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
 For at få en bedre forståelse af de fire formuleringer af Fitts' lov vil vi i dette afsnit se på hvordan de ligner hinanden. De fire formuleringer er opridset i (9)-(12). 
 \begin{align}
 \text{Fitts: } T &= a+b\cdot\log\left(\frac{2A}{W}\right)\\
@@ -214,7 +243,7 @@ T &= -K+K\left(\log(2)+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
 T &= -K+K\left(\log\left(2\left(\cdot\frac{A+0.5W}{W}\right)\right)\right)\Leftrightarrow\\
 T &= -K+K\cdot\log\left(\frac{2A+W}{W}\right)
 \end{align*}
-Mens denne omskrivning rent matematisk giver mening, så vil den ikke være brugbar i praksis. Grunden til dette er at den indeholder et negativt konstant led, $a=-K$. Det vil betyde at tiden det tager for en testdeltager at påbegynde en opgave er negativ. Vi vil derfor fremadrettet kun bruge Welford's formulering uden det additive konstant.
+Mens denne omskrivning rent matematisk giver mening, så vil den ikke være brugbar i praksis. Grunden til dette er at den indeholder et negativt konstant led, $a=-K$. Det vil betyde at tiden det tager for en testdeltager at påbegynde en opgave er negativ. 
 
 
 
@@ -243,7 +272,7 @@ Vi har valgt at bruge JavaScript til at udvikle vores forsøg, da vi alle er bek
 
 \addcontentsline{toc}{section}{Opgavetyper}
 \section*{Opgavetyper}
-I denne sektion vil vi beskrive hvordan tunnel-, spiral- og pegeopgaven er designet.
+I denne sektion vil vi beskrive hvordan tunnel-, spiral- og pegeopgaverne er designet.
 
 \addcontentsline{toc}{subsection}{Tunnelopgave}
 \subsection*{Tunnelopgave}
@@ -290,10 +319,48 @@ Når testpersonen passerer den højre side af tunnellen vil opgaven stoppe, og d
 
 \addcontentsline{toc}{subsection}{Spiralopgave}
 \subsection*{Spiralopgave}
-I denne opgave skal testdeltageren føre markøren gennem fire spiraler af varierende vindinger. Et eksempel på en sådan spiral kan ses i Figur \ref{fig:spiralopgave}. Spiralernes vindinger varierer med ($A = 1, 2, 3, 4$). Bredden er på de tre første spiraler ens, mens den sidste spiral kun har halv bredde af de tre forrige.
+\begin{minipage}{\textwidth}
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_path}
+		\captionof{figure}{Eksperiment - Spiral 1}
+		\label{fig:ex_spiral_1}
+	\end{minipage}
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_2}
+		\captionof{figure}{Eksperiment - Spiral 2}
+		\label{fig:ex_spiral_2}
+	\end{minipage}
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_3}
+		\captionof{figure}{Eksperiment - Spiral 3}
+		\label{fig:ex_spiral_3}
+	\end{minipage}
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_4}
+		\captionof{figure}{Eksperiment - Spiral 4}
+		\label{fig:ex_spiral_4}
+	\end{minipage}
+\end{minipage}\\\\
+I denne opgave skal testdeltageren føre deres markør igennem fire spiraler af varierende størrelse, og med varierende antal vindinger. De fire spiraler kan ses på figur \ref{fig:ex_spiral_1}, \ref{fig:ex_spiral_2}, \ref{fig:ex_spiral_3} og \ref{fig:ex_spiral_4}. Antallet af vindinger i spiralerne er vist i figur \ref{tab:spiralopgave}. Antallet af vindingerne på spiralerne er taget fra \cite{accot1997}.
+\begin{center}
+	\begin{tabular}{c c}
+		Spiral & A \\
+		\hline
+		1 & 1 \\
+		2 & 2 \\
+		3 & 3 \\
+		4 & 4 \\
+	\end{tabular}
+	\captionof{table}{Antal vindinger på spiraler}\label{tab:spiralopgave}
+\end{center}
 
-Ved begyndelsen af en opgave er spiralens udmunding markeret som en grøn streg. Når deltageren passerer denne linje, vil linjen blive stort. På samme tid vil den inderste linje i spiralen blive grøn. En grøn streg vil blive tegnet, hvor deltageren bevæger sin pegeenhed. Først når deltageren passerer den inderste linje vil opgaven slutte, indikeret ved at spiralen fjernes. Næste opgave blev først startet når deltageren klikker på knappen 'continue', som kun er tilgængelig når én opgave er slut. I tilfælde af at testdeltageren rammer eller ryger uden for kanterne vil de kunne fortsætte ubemærket. Hele bevægelsesbanen og tiden det tager at gennemføre hver tunnel vil blive gemt.
-I denne opgave vil testdeltageren skulle føre markøren igennem fire spiraler af varierende størrelser og brede. Et eksempel på én af spiralerne kan ses i figur \ref{fig:spiralopgave}. Spiralerne kom i fire størrelser Hver test starter når testdeltageren fører musen forbi den grønne linje i spiralens indmunding
+
+%Ved begyndelsen af en opgave er spiralens udmunding markeret som en grøn streg. Når deltageren passerer denne linje, vil linjen blive stort. På samme tid vil den inderste linje i spiralen blive grøn. En grøn streg vil blive tegnet, hvor deltageren bevæger sin pegeenhed. Først når deltageren passerer den inderste linje vil opgaven slutte, indikeret ved at spiralen fjernes. Næste opgave blev først startet når deltageren klikker på knappen 'continue', som kun er tilgængelig når én opgave er slut. I tilfælde af at testdeltageren rammer eller ryger uden for kanterne vil de kunne fortsætte ubemærket. Hele bevægelsesbanen og tiden det tager at gennemføre hver tunnel vil blive gemt.
+%I denne opgave vil testdeltageren skulle føre markøren igennem fire spiraler af varierende størrelser og brede. Et eksempel på én af spiralerne kan ses i figur \ref{fig:spiralopgave}. Spiralerne kom i fire størrelser Hver test starter når testdeltageren fører musen forbi den grønne linje i spiralens indmunding
 
 \addcontentsline{toc}{subsection}{Pegeopgave}
 \subsection*{Pegeopgave}
