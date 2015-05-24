@@ -4,14 +4,14 @@
 
 %\end{abstract}
 
+\onecolumn
 \addcontentsline{toc}{chapter}{Indledning}
 \chapter*{Indledning}
 I 1954 udgav Paul M. Fitts en artikel\footcite{fitts1954} som søgte at finde informationskapaciteten af det menneskelige motoriske system - og dermed en generel formulering for sammenhængen mellem distancen til og størrelsen af et mål i en motorisk opgave og den tid det tager at udføre opgaven. Fitts så et behov for et samlende begreb for den menneskelige motoriske kapacitet, grundet de tydelige problemer med at forene mange af de fakta, der var blevet beskrevet i tidligere litteratur. Hans forklaring var, at der var blevet overset en overordnet sammenhæng mellem amplituden, varigheden og variabiliteten i bevægelserne ved motoriske opgaver.
 
-
+\twocolumn
 \addcontentsline{toc}{chapter}{Teori}
 \chapter*{Teori}
-%For at påvise den sammenhæng som Fitts mente var til stede, udførte han en række eksperimenter\footcite{fitts1954}, hvorfra han ud fra indsamlet data kunne opstille en formel til at beskrive den tid det tager at udføre en given motorisk opgave afhængigt af afstanden til og størrelsen på målet. I alt udførte Fitts tre eksperimenter, det første af dem dog med to forskellige pegeredskaber, hvilket gav anledning til data fra fire forskellige motoriske opgaver.
 I dette kapitel vil vi kigge nærmere på teorierne bag Fitts' lov. Vi vil først give en opsummering af Fitts' egne tanker, hvorefter vi beskriver tre alternative formulering af Fitts' lov.
 
 \addcontentsline{toc}{section}{Fitts' tre eksperimenter}
@@ -30,7 +30,7 @@ Testdeltagerne, 16 højrehåndede universitetsstuderende mænd, fik 15 sekunder 
 
 \begin{figure}[h]
 \centering
-\includegraphics{images/illustrations/fitt_ex1}
+\includegraphics[width=\linewidth]{images/illustrations/fitt_ex1}
 \caption{Opstillingen brugt til Fitts' første eksperiment \cite{fitts1954}}
   \label{fig:FittsEx1}
 \end{figure}
@@ -42,7 +42,7 @@ I dette eksperiment brugte Fitts to pinde og otte runde plader. De otte runde pl
 Hver af de 16 forsøgsmuligheder blev i tilfældig rækkefølge udført af 16 højrehåndede universitetsstuderende mænd. Figur \ref{fig:FittsEx2} viser, hvordan eksperimentet blev udført.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.9]{images/illustrations/fitt_ex2}
+\includegraphics[width=\linewidth]{images/illustrations/fitt_ex2}
 \caption{Opstillingen brugt til Fitts' andet eksperiment \cite{fitts1954}}
 \label{fig:FittsEx2}
 \end{figure}
@@ -54,7 +54,7 @@ Udførelsen af dette eksperiment krævede et sæt af otte pinde og 16 huller del
 Hver af de 20 mulige forsøgsopstillinger blev udført i tilfældig rækkefølge af 20 universitetsstuderende mænd.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.9]{images/illustrations/fitt_ex3}
+\includegraphics[width=\linewidth]{images/illustrations/fitt_ex3}
 \caption{Opstillingen brug til Fitts' tredje eksperiement \cite{fitts1954}}
 \label{fig:FittsEx3}
 \end{figure}
@@ -109,7 +109,7 @@ Siden udgivelsen af Fitts’ artikel, har flere forskere forsøgt at finde en fo
 I \cite{welford1968} beskriver Welford en række fundamentale forudsætninger for det menneskelige motoriske system. Her kiggede han blandt andet på Fitts' lov og de data han indsamlede i sit første forsøg. Han mente at Fitts' lov i princippet gengav den indsamlede data præcist, men han så også tre utilfredsstillende egenskaber, hvilket fik ham til at foreslå følgende modifikationer.
 \begin{figure}[h]
 \centering
-\includegraphics[width=.5\textwidth]{images/illustrations/welford_plot_1}
+\includegraphics[width=\linewidth]{images/illustrations/welford_plot_1}
 \caption{Grafen som Welford bruger som grundlag for sine modifikationer.}
 \label{fig:WelfordGraf}
 \end{figure}
@@ -131,7 +131,7 @@ Den sidste observation, der blev gjort, var at kurven i figur~\ref{fig:WelfordGr
 Ud fra de tre ovenstående modifikationer indførte Welford igen Fitts' data fra hans første forsøg i et koordinatsystem. Denne gang havde dataen dog været igennem fejl reduktion og blev indsat op imod Welford's formulering, hvilket viste at Ligning \ref{eq:WelfordsLov} var bedre til at beskrive dataen end Ligning \ref{eq:FittsLov}. Den affine kurve som Welford kom frem til er at se i figur \ref{fig:WelfordGraf2}
 \begin{figure}[h]
 \centering
-\includegraphics[width=.5\textwidth]{images/illustrations/welford_plot_2}
+\includegraphics[width=\linewidth]{images/illustrations/welford_plot_2}
 \caption{Fitts' data og den affine kurve for Welfords model.}
 \label{fig:WelfordGraf2}
 \end{figure}
@@ -152,7 +152,7 @@ En af de mest accepterede udledninger af Fitts' lov stammer fra modellen \emph{d
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{images/illustrations/mackenzie_plot_1}
+\includegraphics[width=\linewidth]{images/illustrations/mackenzie_plot_1}
 \caption{Index of difficulty i forhold til movement time ved forskellige værdier af $W$}
 \label{fig:MacKenziePlot1}
 \end{figure}
@@ -167,7 +167,7 @@ Han fremhæver dog at der er lavet en del studier af Fitts' lov, og at der er bl
 Forskellen mellem Fitts' originale formulering for $ID$, og MacKenzie's bud på en ny formulering lavet som en direkte analogi til Shannon's bliver sammenlignet i figur~\ref{fig:MacKenziePlot2}, hvor det er tydeligt, at der ved lavere værdier af $A$ sker en udfladning af kurven, hvilket passer med data i figur~\ref{fig:MacKenziePlot1}.\\
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{images/illustrations/mackenzie_plot_2}
+\includegraphics[width=\linewidth]{images/illustrations/mackenzie_plot_2}
 \caption{Sammenligning af Fitts' ID og MacKenzies ID baseret på Shannon's formulering}
 \label{fig:MacKenziePlot2}
 \end{figure}
@@ -179,7 +179,7 @@ Det generelle problem med MacKenzie's artikel er at han ikke kommer med noget te
 \subsection*{Meyers formel}
 \begin{figure}[h]
 \centering
-\includegraphics[scale=1.0]{images/illustrations/base_model_meyer}
+\includegraphics[width=\linewidth]{images/illustrations/base_model_meyer}
 \caption{Stochastic optimized-submovement modellen - Den horisontale akse repræsentere afstand og den vertikale akse bevægelseshastighed. De faste linjer repræsentere primære underbevægelser, mens stiplede linjer er korrigerende underbevægelser. Bevægelserne tager udgangspunkt i en startende position (afstand = 0) og skal bevæge sig til et mål, med center i D og bredde W.}
 \label{fig:MeyerTheory}
 \end{figure}
@@ -292,26 +292,26 @@ I denne sektion vil vi beskrive hvordan tunnel-, spiral- og pegeopgaverne er des
 
 \addcontentsline{toc}{subsection}{Tunnelopgave}
 \subsection*{Tunnelopgave}
-\begin{minipage}{\textwidth}
-	\begin{minipage}{.5\textwidth}
+\begin{minipage}{\linewidth}
+	\begin{minipage}{\textwidth}
 		\centering
 		\includegraphics[width=\textwidth, trim = .5cm 20cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_path}
 		\captionof{figure}{Eksperiment - Tunnel 1}
 		\label{fig:ex_tunnel_1}
 	\end{minipage}
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{\textwidth}
 		\centering
 		\includegraphics[width=\textwidth, trim = .5cm 20cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_2}
 		\captionof{figure}{Eksperiment - Tunnel 2}
 		\label{fig:ex_tunnel_2}
 	\end{minipage}
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{\textwidth}
 		\centering
 		\includegraphics[width=\textwidth, trim = .5cm 20cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_3}
 		\captionof{figure}{Eksperiment - Tunnel 3}
 		\label{fig:ex_tunnel_3}
 	\end{minipage}
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{\textwidth}
 		\centering
 		\includegraphics[width=\textwidth, trim = .5cm 20cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_4}
 		\captionof{figure}{Eksperiment - Tunnel 4}
@@ -335,26 +335,26 @@ Når testpersonen passerer den højre side af tunnellen vil opgaven stoppe, og d
 
 \addcontentsline{toc}{subsection}{Spiralopgave}
 \subsection*{Spiralopgave}
-\begin{minipage}{\textwidth}
-	\begin{minipage}{.5\textwidth}
+\begin{minipage}{\linewidth}
+	\begin{minipage}{\textwidth}
 		\centering
 		\includegraphics[width=\textwidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_path}
 		\captionof{figure}{Eksperiment - Spiral 1}
 		\label{fig:ex_spiral_1}
 	\end{minipage}
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{\textwidth}
 		\centering
 		\includegraphics[width=\textwidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_2}
 		\captionof{figure}{Eksperiment - Spiral 2}
 		\label{fig:ex_spiral_2}
 	\end{minipage}
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{\textwidth}
 		\centering
 		\includegraphics[width=\textwidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_3}
 		\captionof{figure}{Eksperiment - Spiral 3}
 		\label{fig:ex_spiral_3}
 	\end{minipage}
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{\textwidth}
 		\centering
 		\includegraphics[width=\textwidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_4}
 		\captionof{figure}{Eksperiment - Spiral 4}
@@ -413,7 +413,7 @@ Vi valte $/r/helpme$ og $/r/care$, da begge disse subredits er lavet til at spø
 Som det sidste vil vi også dele forsøget på vores egne Facebook-profiler.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.7]{images/screenshots/ex_questions}
+\includegraphics[width=\linewidth, trim = 0cm 0cm 7cm 0cm, clip]{images/screenshots/ex_questions}
 \caption{Spørgsmål som blev stillet før crowdsourcing-deltagerne kunne udføre forsøget.}
 \label{fig:Questions}
 \end{figure}
@@ -431,25 +431,24 @@ Forsøget gik godt - 264 personer gennemførte vores forsøg og har suppleret os
 Det var ikke muligt at dele vores forsøg på $reddit.com/r/helpme$ og $reddit.com/r/care$, da vi ikke havde nok "karma" for at kunne lave et indlæg på disse sites.\\
 Efterfølgende har vi lukket for muligheden for at deltage i vores forsøg den 30/04/2015, og skrevet en besked på forsøgssiden hvor vi takker folk for deres deltagelse.
 
-\begin{minipage}[t]{.5\textwidth}
+\begin{minipage}[t]{\linewidth}
 \centering
 \vspace{0pt}
 \captionof{figure}{Illustration af pegeopgave}
-\includegraphics[width=\textwidth, trim = 7cm 20cm 15cm 5cm, clip]{images/screenshots/ex_step_6_pointing_path}
+\includegraphics[width=\textwidth, trim = 7cm 22cm 20cm 5cm, clip]{images/screenshots/ex_step_6_pointing_path}
 \label{fig:pegeopgave}
 \caption{Illustration af tunnelopgave}
-\includegraphics[width=\textwidth, trim = 25cm 15cm 25cm 10cm, clip]{images/screenshots/ex_step_4_tunnel_path}
+\includegraphics[width=\textwidth, trim = 25cm 23cm 25cm 17cm, clip]{images/screenshots/ex_step_4_tunnel_path}
 \label{fig:tunnelopgaver}
 \caption{Illustration af spiralopgave}
-\includegraphics[width=\textwidth, trim = 25cm 15cm 25cm 10cm, clip]{images/screenshots/ex_step_5_spiral_path}
+\includegraphics[width=\textwidth, trim = 25cm 20cm 25cm 14cm, clip]{images/screenshots/ex_step_5_spiral_path}
 \label{fig:spiralopgave}
-
-\end{minipage}\hfill
-\begin{minipage}[t]{.5\textwidth}
+\end{minipage}
+\begin{minipage}[t]{\linewidth}
 \centering
 \vspace{0pt}
     \begin{tabular}{ c c c c }
-        Forsøg & $A$ & $W$ & $A/W$ \\\hline\hline
+        Forsøg & $A$ & $W$ & $A/W$ \\\hline
         1  & 67  & 20 & 3.35  \\
         2  & 184 & 38 & 4.84  \\
         3  & 280 & 14 & 20.00 \\
@@ -537,9 +536,9 @@ I listing \ref{lst:aic} ses det at vi benytter $AIC()$ på alle fire modeller, h
 
 \addcontentsline{toc}{subsection}{AIC-analyse}
 \subsection*{AIC-analyse}
-\begin{minipage}{\textwidth}
+\begin{minipage}{\linewidth}
 	\centering
-	\includegraphics[width=.75\textwidth]{images/plots/plot_analysis_aic}
+	\includegraphics[width=\textwidth]{images/plots/plot_analysis_aic}
 	\captionof{figure}{AIC-analyse}
 	\label{fig:plot_analysis_aic}
 \end{minipage}\\\\
@@ -547,7 +546,7 @@ Figur \ref{fig:plot_analysis_aic} viser AIC for de fire modeller. De fire modell
 
 \addcontentsline{toc}{subsection}{Residualanalyse}
 \subsection*{Residualanalyse}
-\begin{minipage}{\textwidth}
+\begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=\textwidth]{images/plots/plot_residual_comparison}
 	\captionof{figure}{Sammenligning af residualplots}
@@ -563,7 +562,9 @@ Det ses af figur \ref{fig:plot_residual_comparison} at Welford's især er dårli
 
 \nocite{*}
 \newpage
+\onecolumn
 \input{appendices.tex}
 \addcontentsline{toc}{chapter}{\bibname}
+\twocolumn
 \printbibliography
 \end{document}
