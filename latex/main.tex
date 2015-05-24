@@ -231,9 +231,25 @@ Når vi kigger på de fire formuleringer, så kan vi vise at de ikke er ens, ved
 0.2 + 0.16\cdot\log\left(\frac{5 + 1}{1}\right) = 0.4866\\
 0.2 + 0.16\cdot\sqrt{\frac{5}{1}} = 0.5577
 \end{align*}
+Da de fire ovenstående udregninger giver forskellige resultater, er de fire formuleringer ikke ens og vi vil derfor få forskellige resultater når vi bruger dem på den indsamlede data.
+
+På trods af at de fire formuleringer er forskellige, så vil de godt kunne approksimere hinanden. Vi har derfor plottet de fire formulering i to interval, for at se om de approksimere hinanden.
 
 
-
+\subsection*{Meyers formel}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1.0]{images/illustrations/base_model_meyer}
+\caption{Stochastic optimized-submovement modellen - Den horisontale akse repræsentere afstand og den vertikale akse bevægelseshastighed. De faste linjer repræsentere primære underbevægelser, mens stiplede linjer er korrigerende underbevægelser. Bevægelserne tager udgangspunkt i en startende position (afstand = 0) og skal bevæge sig til et mål, med center i D og bredde W.}
+\label{fig:MeyerTheory}
+\end{figure}
+\subsection*{Meyers formel}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1.0]{images/illustrations/base_model_meyer}
+\caption{Stochastic optimized-submovement modellen - Den horisontale akse repræsentere afstand og den vertikale akse bevægelseshastighed. De faste linjer repræsentere primære underbevægelser, mens stiplede linjer er korrigerende underbevægelser. Bevægelserne tager udgangspunkt i en startende position (afstand = 0) og skal bevæge sig til et mål, med center i D og bredde W.}
+\label{fig:MeyerTheory}
+\end{figure}
 
 
 
@@ -373,10 +389,8 @@ I denne opgave skal testdeltageren føre deres markør igennem fire spiraler af 
 	\end{tabular}
 	\captionof{table}{Antal vindinger på spiraler}\label{tab:spiralopgave}
 \end{center}
-
-
-%Ved begyndelsen af en opgave er spiralens udmunding markeret som en grøn streg. Når deltageren passerer denne linje, vil linjen blive stort. På samme tid vil den inderste linje i spiralen blive grøn. En grøn streg vil blive tegnet, hvor deltageren bevæger sin pegeenhed. Først når deltageren passerer den inderste linje vil opgaven slutte, indikeret ved at spiralen fjernes. Næste opgave blev først startet når deltageren klikker på knappen 'continue', som kun er tilgængelig når én opgave er slut. I tilfælde af at testdeltageren rammer eller ryger uden for kanterne vil de kunne fortsætte ubemærket. Hele bevægelsesbanen og tiden det tager at gennemføre hver tunnel vil blive gemt.
-%I denne opgave vil testdeltageren skulle føre markøren igennem fire spiraler af varierende størrelser og brede. Et eksempel på én af spiralerne kan ses i figur \ref{fig:spiralopgave}. Spiralerne kom i fire størrelser Hver test starter når testdeltageren fører musen forbi den grønne linje i spiralens indmunding
+Ved begyndelsen af en spiralopgave vil spiralens udmunding være grøn, for at tydeliggøre over for testpersonen hvor opgaven starter. Når testdeltagerens markør passerer udmundingen vil opgaven starte, og indmundingen vil derefter skifte til grøn for at signalere hvor testpersonen skal flytte sin markør hen. Når udmundingen passeres startes opgaven, og der vil blive vist en grøn linje der hvor markøren flyttes fra. I tilfælde af at testdeltageren rammer kanten både ind- og udvendigt i spiralen, vil de kunne fortsætte ubemærket.\\
+Når testpersonen passerer indmundingen inderst i spiralen, vil opgaven stoppe. Der vil efterfølgende blive vist en knap hvor der kan fortsættes til næste spiral, eller afslutte og fortsætte til næste opgave. Ved afslutning af opgaven vil vi, som med tunnelopgaven, gemme tiden det har taget og banen brugt igennem spiralen, og sende denne til vores database.
 
 \addcontentsline{toc}{subsection}{Pegeopgave}
 \subsection*{Pegeopgave}
