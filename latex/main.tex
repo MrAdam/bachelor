@@ -61,12 +61,12 @@ Hver af de 20 mulige forsøgsopstillinger blev udført i tilfældig rækkefølge
 
 \addcontentsline{toc}{subsection}{Fitts' konklusion}
 \subsection*{Fitts' konklusion}
-Resultaterne som Fitts fik fra de udførte eksperimenter viste, at des større afstand målene imellem desto længere tid brugte testdeltagerne. For at bevise sin teori udledte Fitts et \textit{Index of Difficulty}, $ID$, som beskriver sværhedsgraden af en given motorisk opgave på baggrund af størrelsen, $W$, på og afstanden, $A$, til målet.
+Resultaterne som Fitts fik fra de udførte eksperimenter viste, at des større afstand målene imellem, desto længere tid brugte testdeltagerne. For at bevise sin teori udledte Fitts et \textit{Index of Difficulty}, $ID$, som beskriver sværhedsgraden af en given motorisk opgave på baggrund af størrelsen, $W$, og på afstanden, $A$, til målet.
 \begin{align*}
 ID = -\log_2\left(\frac{W}{2A}\right)
 \end{align*}
 
-Brugen af $\log_2$ i formlen er baseret på baggrund af Fitts kendskab til Shannon's sætning 17 \cite{goldberg2015}. For at sikre, at $ID$ altid giver en positiv værdi valgte Fitts at gøre brug af $2A$ frem for $A$, da det kan garanteres at $2A > W$, hvilket sikre det samme fortegn for alle udfald af logaritmen. Da $log\left(\frac{W}{2A}\right)<0$, for $0<\frac{W}{2A}<1$, valgte Fitts at multiplicere det med $-1$, hvilket sikre at ID altid er positiv.
+Brugen af $\log_2$ i formlen er baseret på Fitts' kendskab til Shannon's sætning 17 \cite{goldberg2015}. For at sikre, at $ID$ altid giver en positiv værdi, valgte Fitts at gøre brug af $2A$ frem for $A$, da det kan garanteres at $2A > W$, hvilket sikrer det samme fortegn for alle udfald af logaritmen. Da $log\left(\frac{W}{2A}\right)<0$, for $0<\frac{W}{2A}<1$, valgte Fitts at multiplicere det med $-1$, hvilket sikrer, at ID altid er positiv.
 
 Ved brug af $ID$ udregnede Fitts et \textit{Index of Performance}, IP, som beskriver hvorledes en opgave er udført i forhold til sværhedsgraden, $ID$, og tiden $t$.
 \begin{align*}
@@ -81,7 +81,7 @@ ID &= -\log_2\left(W\right)-\left(-\log_2\left(2A\right)\right) \Leftrightarrow\
 ID &= \log_2\left(2A\right)-\log_2\left(W\right) \Leftrightarrow\\
 ID &= log_2\left(\frac{2A}{W}\right)
 \end{align*}
-Vi kan indsætte dette i formlen for IP og isolere et udtryk for tiden $t$.
+Vi kan indsætte dette i formlen for IP, og isolere et udtryk for tiden $t$.
 \begin{align*}
 IP &=\frac{-1}{t}\log_2\left(\frac{W}{2A}\right) \Leftrightarrow\\ 
 IP &= \frac{1}{t}\log_2\left(\frac{2A}{W}\right) \Leftrightarrow\\ 
@@ -99,21 +99,30 @@ T = a + b \cdot log_2\left(\frac{2A}{W}\right)
 \end{equation}
 Dette er hvad der i dag kendes som Fitts lov.
 
+Crossman og Goodeve \cite{crossman1983} forklarer Fitts lov som en overordnet bevægelse fra start positionen imod målet, hvorefter der ved én eller flere underbevægelser korrigeres for den fejl der blev foretaget ved den overordnede bevægelse. En illustration af bevægelsens hastighed over afstanden er vist i figur \ref{fig:CrossmanFitt} med en serie af tre delbevægelser, hvoraf den overordnede bevægelse begynder i start positionen med afstand 0.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1.0]{images/illustrations/base_model_fitt}
+\caption{Illustration af Crossman og Goodeves forklaring af Fitts lov \cite{Meyer1988}.}
+\label{fig:CrossmanFitt}
+\end{figure}
+
 \addcontentsline{toc}{section}{Alternative formuleringer}
 \section*{Alternative formuleringer}
-Siden udgivelsen af Fitts’ artikel, har flere forskere forsøgt at finde en formel, der passer bedre på det motoriske system, end Fitts’ originale lov. Der har indenfor menneske-datamaskine interaktion været flere udgivelser, som mener at have fundet en mere præcis formel end Fitts’ lov, eller som kigger på andre former for eksperimenter. Vi vil i dette afsnit se nærmere på tre sådanne formuleringer.
+Siden udgivelsen af Fitts’ artikel, har flere forskere forsøgt at finde en formel, der passer bedre på det motoriske system, end Fitts’ originale lov. Der har indenfor menneske-datamaskine interaktion været flere udgivelser, som mener at have fundet en mere præcis formel end Fitts’ lov, eller som kigger på andre former for eksperimenter. Vi vil i dette afsnit se nærmere på tre af sådanne formuleringer.
 
-\addcontentsline{toc}{subsection}{Welfords formel}
-\subsection*{Welfords formel}
+\addcontentsline{toc}{subsection}{Welfords formulering}
+\subsection*{Welfords formulering}
 
-I \cite{welford1968} beskriver Welford en række fundamentale forudsætninger for det menneskelige motoriske system. Her kiggede han blandt andet på Fitts' lov og de data han indsamlede i sit første forsøg. Han mente at Fitts' lov i princippet gengav den indsamlede data præcist, men han så også tre utilfredsstillende egenskaber, hvilket fik ham til at foreslå følgende modifikationer.
+I \cite{welford1968} beskriver Welford en række fundamentale forudsætninger for det menneskelige motoriske system. Her kiggede han blandt andet på Fitts' lov, og de data han indsamlede i sit første forsøg. Han mente at Fitts' lov i princippet gengav den indsamlede data præcist, men han så også tre utilfredsstillende egenskaber, hvilket fik ham til at foreslå følgende modifikationer.
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\textwidth]{images/illustrations/welford_plot_1}
 \caption{Grafen som Welford bruger som grundlag for sine modifikationer.}
 \label{fig:WelfordGraf}
 \end{figure}
-Welford argumenterede for, at der skulle undlades at multiplicere $A$ med $2$, da det på data fra Fitts' første forsøg ville resultere i en negativ $a$-værdi. Derved bliver Ligning \ref{eq:FittsLov} til
+Welford argumenterede for, at der skulle undlades at multiplicere $A$ med $2$, da det på data fra Fitts' første forsøg, ville resultere i en negativ $a$-værdi. Derved bliver Ligning \ref{eq:FittsLov} til
 \begin{align}
 \label{eq:Crossman}
 T = a + b \cdot log\left(\frac{A}{W}\right)
@@ -124,11 +133,11 @@ Figur \ref{fig:WelfordGraf} viser data fra ét af Fitts' eksperimenter og den ti
 \begin{align}\label{eq:WelfordsLov}
 T = K \cdot log\left(\frac{A + \frac{1}{2}W}{W}\right) = K \cdot log\left(\frac{A}{W} + 0.5\right)
 \end{align}
-Ligning \ref{eq:WelfordsLov} er sidenhen blevet kendt som Welfords lov og har betydning for hvordan tiden, $T$, opfattes. Tiden vil i Ligning \ref{eq:WelfordsLov} blive afhænging af en Weber Fraction \cite{welford1958}, da testpersonen skal skelne mellem længderne til målets fjerneste og næreste kant. Testpersonen skal altså udvælge en længde, $W$, ud fra den totale længde mellem startpunktet og målets fjerneste kant. Det er her vigtigt at notere at Ligning \ref{eq:WelfordsLov} også opretholder den fordel, som Fitts hævdede der var ved at multiplicere $A$ med $2$. Dette ses udfra det mest ekstreme tilfælde, hvor bevægelsens startpunkt er på målets kant, da $A = \frac{1}{2}W$ vil gælde, hvorved $T = K \cdot log\left(\frac{A + \frac{1}{2}W}{W}\right) = K \cdot log\left(\frac{W}{W}\right)$. Da $W > 0$ vil $log(W) > 0$.
+Ligning \ref{eq:WelfordsLov} er sidenhen blevet kendt som Welfords lov og har betydning for hvordan tiden, $T$, opfattes. Tiden vil i Ligning \ref{eq:WelfordsLov} blive afhænging af en Weber Fraction \cite{welford1958}, da testpersonen skal skelne mellem længderne til målets fjerneste og næreste kant. Testpersonen skal altså udvælge en længde, $W$, ud fra den totale længde mellem startpunktet og målets fjerneste kant. Det er her vigtigt at notere at Ligning \ref{eq:WelfordsLov} også opretholder den fordel, som Fitts hævdede der var ved at multiplicere $A$ med $2$. Dette ses ud fra det mest ekstreme tilfælde, hvor bevægelsens startpunkt er på målets kant, da $A = \frac{1}{2}W$ vil gælde, hvorved $T = K \cdot log\left(\frac{A + \frac{1}{2}W}{W}\right) = K \cdot log\left(\frac{W}{W}\right)$. Da $W > 0$ vil $log(W) > 0$.
 
-Den sidste observation, der blev gjort, var at kurven i figur~\ref{fig:WelfordGraf} viser en tydelig udfladning i den lave ende. Welford noterede at det sandsynligvis var grundet en begrænsende faktor som beskriver en minimumstid per bevægelse, hvor kort eller uhindret bevægelse end måtte være. Welford's egne undersøgelser har påvist at denne begrænsende faktor har betydning for hvor meget af målet der rent faktisk bliver brugt. Når målene er brede og længden mellem dem kort, så vil testpersonen kun bruge en sub-længde af målets fulde længde. Han overfører mere information end Ligning \ref{eq:WelfordsLov} ville beskrive, fordi den effektive W er kortere. Den kortere bredde kan i nogen omfang afspejles i en reduktion af fejl og, hvis reduktionen sker med behørigt hensyn, så holder Ligning \ref{eq:WelfordsLov} stadig.
+Den sidste observation, der blev gjort, var at kurven i figur~\ref{fig:WelfordGraf} viser en tydelig udfladning ved lavere værdier af $x$. Welford noterede at det sandsynligvis var grundet en begrænsende faktor som beskriver en minimumstid per bevægelse, hvor kort eller uhindret bevægelse end måtte være. Welford's egne undersøgelser har påvist at denne begrænsende faktor har betydning for hvor meget af målet der rent faktisk bliver brugt. Når målene er brede og længden mellem dem kort, så vil testpersonen kun bruge en sub-længde af målets fulde længde. Han overfører mere information end Ligning \ref{eq:WelfordsLov} ville beskrive, fordi den effektive W er kortere. Den kortere bredde kan i nogen omfang afspejles i en reduktion af fejl og, hvis reduktionen sker med behørigt hensyn, så holder Ligning \ref{eq:WelfordsLov} stadig.
 
-Ud fra de tre ovenstående modifikationer indførte Welford igen Fitts' data fra hans første forsøg i et koordinatsystem. Denne gang havde dataen dog været igennem fejl reduktion og blev indsat op imod Welford's formulering, hvilket viste at Ligning \ref{eq:WelfordsLov} var bedre til at beskrive dataen end Ligning \ref{eq:FittsLov}. Den affine kurve som Welford kom frem til er at se i figur \ref{fig:WelfordGraf2}
+Ud fra de tre ovenstående modifikationer indførte Welford igen Fitts' data fra hans første forsøg i et koordinatsystem. Denne gang havde dataen dog været igennem fejlreduktion og blev indsat op imod Welford's formulering, hvilket viste at Ligning \ref{eq:WelfordsLov} var bedre til at beskrive dataen end Ligning \ref{eq:FittsLov}. Den affine kurve som Welford kom frem til er at se i figur \ref{fig:WelfordGraf2}
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\textwidth]{images/illustrations/welford_plot_2}
@@ -136,8 +145,8 @@ Ud fra de tre ovenstående modifikationer indførte Welford igen Fitts' data fra
 \label{fig:WelfordGraf2}
 \end{figure}
 
-\addcontentsline{toc}{subsection}{MacKenzies formel}
-\subsection*{MacKenzies formel}
+\addcontentsline{toc}{subsection}{MacKenzies formulering}
+\subsection*{MacKenzies formulering}
 MacKenzie udgav i 1992 en artikel~\cite{mackenzie1992}, hvor han ser nærmere på Fitts' Lov og seks alternative studier af samme. Han gennemgår en række forbedringer af den originale model, og fremstiller en alternativ formulering til $ID$, som han beskriver som værende mere teoretisk forsvarlig, nemlig:
 \begin{align}
 T=a+b\cdot\log_2\left({\frac{A+W}{W}}\right)
@@ -175,8 +184,8 @@ MacKenzie ser hans formulering som værende en mindre forbedring i forhold til W
 
 Det generelle problem med MacKenzie's artikel er at han ikke kommer med noget teoretisk grundlag for hans formulering, og derved ikke kan forklare hvorfor hans formulering er mere præcis end andre, eller hvorfor det netop er bedre med en direkte analogi til Shannon's i forhold til Welford's. I artiklen~\cite{drewes2010} bliver der stillet spørgsmålstegn ved dette. Men hvis man ser bort fra det manglende teoretiske grundlag, så er MacKenzies formulering stadig en af de mest udbredte og brugte varianter af Fitt's lov, og har vist sig at passe godt på udførte forsøg~\cite{goldberg2015}.
 
-\addcontentsline{toc}{subsection}{Meyers formel}
-\subsection*{Meyers formel}
+\addcontentsline{toc}{subsection}{Meyers formulering}
+\subsection*{Meyers formulering}
 \begin{figure}[h]
 \centering
 \includegraphics[scale=1.0]{images/illustrations/base_model_meyer}
@@ -191,9 +200,16 @@ T = a + b \sqrt{\frac{A}{W}}
 
 Meyer et. al udfører et teoretisk og to praktiske forsøg, hvor der i det teoretiske forsøg bliver gjort flere udregninger med forskellige værdier af A og W, som viser en god approksimation i forhold til Fitts' formulering. De praktiske forsøg gør brug af simplere motoriske opgaver end dem kendt fra Fitts' egne forsøg. Den eneste rummelige frihed i Meyers forsøg er håndledenes rotation. Igennem hele artiklen benytter Meyer sig af, at en motorisk opgave er delt ind i en primær underbevægelse, og nogle efterfølgende korrigerende underbevægelser. Dette har dog ikke nogen betydning for sammenligningen med Fitts’ formulering, da den totale tid af alle underbevægelser vil approksimere den logaritmiske funktion af A/W, hvilket medfører at Fitts model også passer på modeller med iterative fejlkorrigerende underbevægelser.
 
-Når man kigger på Ligning \ref{eq:meyer}, så er det vigtigt at notere sig, at grafen for funktionen vil udvise en form svarende til $log_2(2A/W)$ og derved efterligne Ligning \ref{eq:FittsLov}. Grunden til dette er begge funktioner monotont voksende, når $\frac{A}{W}$ bliver større, $\sqrt{\frac{A}{W}}$ vokser dog hurtigere end den tilsvarende logaritmiske funktion, hvilket kan ses af \ref{fig:log_vs_sqrt}. 
+Når man kigger på Ligning \ref{eq:meyer}, så er det vigtigt at notere sig, at grafen for funktionen vil udvise en form svarende til $log_2(2A/W)$ og derved efterligne Ligning \ref{eq:FittsLov}. Grunden til dette er begge funktioner monotont voksende, når $\frac{A}{W}$ bliver større, $\sqrt{\frac{A}{W}}$ vokser dog hurtigere end den tilsvarende logaritmiske funktion, hvilket kan ses af figur \ref{fig:log_vs_sqrt}. 
 
 \cite{goldberg2015} noterer dog, at der er nogle ulemper ved denne formel. Hvis testdeltageren når målet i en enkelt bevægelse, så vil modellen følge en lineær udvikling i stedet for en eksponentiel udvikling. Dette passer ikke godt med observerede værdier. For en fast positiv værdi af $\frac{A}{W}$ vil Meyers formel gå mod $1$, når antallet af underbevægelser går mod uendelig.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{images/illustrations/meyer_plot_comparison}
+\caption{Udviklingen for henholdvis $\log_2(\frac{A}{W})$ og $\sqrt{\frac{A}{W}}$}
+\label{fig:log_vs_sqrt}
+\end{figure}
 
 \addcontentsline{toc}{subsection}{Sammenligning}
 \subsection*{Sammenligning}
