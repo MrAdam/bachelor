@@ -1,17 +1,17 @@
-curve( sqrt(x), from=0, to=5, col="red", xlab="A/W", ylab="ID")
-curve( log(2*x), col="blue", add=TRUE)
-curve( log(x+1), col="yellow", add=TRUE)
-curve( log(x+0.5), col="green", add=TRUE)
-legend( "topleft", legend=c("sqrt(x)", "log(2*x)", "log(x+1)", "log(x+0.5)"), col=c("red", "blue", "yellow", "green"), pt.bg=c("red","blue", "yellow", "green"), pch=c(21,22))
+require(ggplot2)
 
-curve( sqrt(x), from=0, to=100, col="red", xlab="A/W", ylab="ID")
-curve( log(2*x), col="blue", add=TRUE)
-curve( log(x+1), col="yellow", add=TRUE)
-curve( log(x+0.5), col="green", add=TRUE)
-legend( "topleft", legend=c("sqrt(x)", "log(2*x)", "log(x+1)", "log(x+0.5)"), col=c("red", "blue", "yellow", "green"), pt.bg=c("red","blue", "yellow", "green"), pch=c(21,22))
+ggplot(data.frame(x=c(0,2)), aes(x)) +
+  stat_function(fun=function(x) sqrt(x), aes(color="sqrt(x)")) +
+  stat_function(fun=function(x) log(2*x), aes(color="log(2*x)")) +
+  stat_function(fun=function(x) log(x+1), aes(color="log(x+1)")) +
+  stat_function(fun=function(x) log(x+0.5), aes(color="log(x+0.5)")) +
+  xlim(0, 5) + ylim(0, 2.5) + xlab("A/W") + ylab("ID") +
+  scale_colour_discrete(name = "Funktion")
 
-
-0.2 + 0.16*log(2*5/1)
-0.16 * log((5+0.5*1)/1)
-0.2 + 0.16*log((5 + 1)/1)
-0.2 + 0.16*sqrt(5/1)
+ggplot(data.frame(x=c(0,2)), aes(x)) +
+  stat_function(fun=function(x) sqrt(x), aes(color="sqrt(x)")) +
+  stat_function(fun=function(x) log(2*x), aes(color="log(2*x)")) +
+  stat_function(fun=function(x) log(x+1), aes(color="log(x+1)")) +
+  stat_function(fun=function(x) log(x+0.5), aes(color="log(x+0.5)")) +
+  xlim(0, 100) + xlab("A/W") + ylab("ID") +
+  scale_colour_discrete(name = "Funktion")
