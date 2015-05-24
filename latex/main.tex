@@ -12,11 +12,11 @@ I 1954 udgav Paul M. Fitts en artikel\footcite{fitts1954} som søgte at finde in
 \addcontentsline{toc}{chapter}{Teori}
 \chapter*{Teori}
 %For at påvise den sammenhæng som Fitts mente var til stede, udførte han en række eksperimenter\footcite{fitts1954}, hvorfra han ud fra indsamlet data kunne opstille en formel til at beskrive den tid det tager at udføre en given motorisk opgave afhængigt af afstanden til og størrelsen på målet. I alt udførte Fitts tre eksperimenter, det første af dem dog med to forskellige pegeredskaber, hvilket gav anledning til data fra fire forskellige motoriske opgaver.
-I dette kapitel vil vi kigge nærmere på teorierne bag Fitts' lov. Vi vil først give en opsumering af Fitts' egne tanker, hvorefter vi beskriver tre alternative formulering af Fitts' lov.
+I dette kapitel vil vi kigge nærmere på teorierne bag Fitts' lov. Vi vil først give en opsummering af Fitts' egne tanker, hvorefter vi beskriver tre alternative formulering af Fitts' lov.
 
 \addcontentsline{toc}{section}{Fitts' tre eksperimenter}
 \section*{Fitts' tre eksperimenter}
-Fitts var interesseret i at vise at informationsteori kunne bruges til at beskrive det menneskelige motoriske system og udførte derfor en række eksperimenter\cite{fitts1954}. Fitts' udførte i alt tre eksperimenter, det første af dem dog med to forskellige pegeredskaber, hvilket gav anledning til data fra fire forskellige motoriske opgaver. Fitts' arbejdede med de tre eksperimenter udfra følgende hypotese, hvor $E$ er .... og $S$ er forsøgspersonen
+Fitts var interesseret i at vise at informationsteori kunne bruges til at beskrive det menneskelige motoriske system og udførte derfor en række eksperimenter \cite{fitts1954}. Fitts' udførte i alt tre eksperimenter, det første af dem dog med to forskellige pegeredskaber, hvilket gav anledning til data fra fire forskellige motoriske opgaver. Fitts' arbejdede med de tre eksperimenter udfra følgende hypotese, hvor $E$ er .... og $S$ er forsøgspersonen
 \begin{quotation}
 \textit{If the amplitude and tolerance limits of a task are controlled by E, and S is instructed to work at his maximum rate, then the average time per response will be directly proportional to the minimum average amount of information per response demanded by the particular conditions of amplitude and tolerance.}
 \end{quotation}
@@ -31,7 +31,7 @@ Testdeltagerne, 16 højrehåndede universitetsstuderende mænd, fik 15 sekunder 
 \begin{figure}[h]
 \centering
 \includegraphics{images/illustrations/fitt_ex1}
-\caption{Opstillingen brugt til Fitts' første eksperiment \footcite{fitts1954}}
+\caption{Opstillingen brugt til Fitts' første eksperiment \cite{fitts1954}}
   \label{fig:FittsEx1}
 \end{figure}
 
@@ -43,7 +43,7 @@ Hver af de 16 forsøgsmuligheder blev i tilfældig rækkefølge udført af 16 h�
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.9]{images/illustrations/fitt_ex2}
-\caption{Opstillingen brugt til Fitts' andet eksperiment \footcite{fitts1954}}
+\caption{Opstillingen brugt til Fitts' andet eksperiment \cite{fitts1954}}
 \label{fig:FittsEx2}
 \end{figure}
 
@@ -55,26 +55,26 @@ Hver af de 20 mulige forsøgsopstillinger blev udført i tilfældig rækkefølge
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.9]{images/illustrations/fitt_ex3}
-\caption{Opstillingen brug til Fitts' tredje eksperiement \footcite{fitts1954}}
+\caption{Opstillingen brug til Fitts' tredje eksperiement \cite{fitts1954}}
 \label{fig:FittsEx3}
 \end{figure}
 
 \addcontentsline{toc}{subsection}{Fitts' konklusion}
 \subsection*{Fitts' konklusion}
-Resultaterne som Fitts fik fra de udførte eksperimenter viste, at des større afstand målene imellem desto længere tid brugte testdeltagerne. For at bevise sin teori udledte Fitts et \textit{Index of Difficulty}, ID, som beskriver sværhedsgraden af en given motorisk opgave på baggrund af størrelsen, $W$, på og afstanden, $A$, til målet.
+Resultaterne som Fitts fik fra de udførte eksperimenter viste, at des større afstand målene imellem desto længere tid brugte testdeltagerne. For at bevise sin teori udledte Fitts et \textit{Index of Difficulty}, $ID$, som beskriver sværhedsgraden af en given motorisk opgave på baggrund af størrelsen, $W$, på og afstanden, $A$, til målet.
 \begin{align*}
 ID = -\log_2\left(\frac{W}{2A}\right)
 \end{align*}
 
-Brugen af $\log_2$ i formlen er baseret på baggrund af Fitts kendskab til Shannon's sætning 17 \footcite{goldberg2015}. For at sikre, at ID altid giver en positiv værdi valgte Fitts at gøre brug af $2A$ frem for $A$, da det kan garanteres at $2A > W$, hvilket sikre det samme fortegn på logaritmen i alle tilfælde. Da $log\left(\frac{W}{2A}\right)<0$, for $0<\frac{W}{2A}<1$, valgte Fitts at multiplicere det med $-1$, hvilket sikre at ID altid er positiv.
+Brugen af $\log_2$ i formlen er baseret på baggrund af Fitts kendskab til Shannon's sætning 17 \cite{goldberg2015}. For at sikre, at $ID$ altid giver en positiv værdi valgte Fitts at gøre brug af $2A$ frem for $A$, da det kan garanteres at $2A > W$, hvilket sikre det samme fortegn for alle udfald af logaritmen. Da $log\left(\frac{W}{2A}\right)<0$, for $0<\frac{W}{2A}<1$, valgte Fitts at multiplicere det med $-1$, hvilket sikre at ID altid er positiv.
 
-Ved brug af ID udregnede Fitts et \textit{Index of Performance}, IP, som beskriver hvor godt en opgave er udført i forhold til sværhedsgraden, ID, og tiden $t$.
+Ved brug af $ID$ udregnede Fitts et \textit{Index of Performance}, IP, som beskriver hvorledes en opgave er udført i forhold til sværhedsgraden, $ID$, og tiden $t$.
 \begin{align*}
 IP &= \frac{ID}{t}\Leftrightarrow\\
 IP &= \frac{-1}{t}\log_2\left(\frac{W}{2A}\right)
 \end{align*}
 
-Denne formel er dog ikke den klassiske formel for Fitts lov, men ved matematiske omregninger kan den findes. Vi ser først på ID.
+Denne formel er dog ikke den klassiske formel for Fitts lov, men ved omregninger kan den findes. Vi ser først på ID.
 \begin{align*}
 ID &= -\log_2\left(\frac{W}{2A}\right) \Leftrightarrow\\
 ID &= -\log_2\left(W\right)-\left(-\log_2\left(2A\right)\right) \Leftrightarrow\\
@@ -87,12 +87,12 @@ IP &=\frac{-1}{t}\log_2\left(\frac{W}{2A}\right) \Leftrightarrow\\
 IP &= \frac{1}{t}\log_2\left(\frac{2A}{W}\right) \Leftrightarrow\\ 
 t &= \frac{\log_2\left(\frac{2A}{W}\right)}{IP}
 \end{align*}
-Da det virker uoverskueligt i sådan en formel at dividere med IP så substitueres denne værdi med $IP = \frac{1}{b}$, hvilket giver en pænere formel.
+Da det virker uoverskueligt i sådan en formel at dividere med IP så substitueres denne værdi med $IP = \frac{1}{b}$, hvilket giver en anledning til en formel, som er nemmere at bruge og forstå.
 \begin{align*}
 t &= \frac{\log_2\left(\frac{2A}{W}\right)}{\frac{1}{b}} \Leftrightarrow\\ 
 t &= b \cdot \log_2\left(\frac{2A}{W}\right)
 \end{align*}
-Når man regner med det menneskelige motoriske system, så skal der medregnes den tid det tager for et menneske at opfatte at en opgave er startet. Fitts fandt frem til denne faktor, $a$, ved at tilpasse sine data ved lineær regression.
+Når man regner med det menneskelige motoriske system, så skal der medregnes den tid det tager for et menneske at opfatte at en opgave er startet. Fitts fandt frem til dette led, $a$, ved at benytte lineær regression på sine data.
 \begin{equation}
 \label{eq:FittsLov}
 T = a + b \cdot log_2\left(\frac{2A}{W}\right)
@@ -109,26 +109,26 @@ Siden udgivelsen af Fitts’ artikel, har flere forskere forsøgt at finde en fo
 I \cite{welford1968} beskriver Welford en række fundamentale forudsætninger for det menneskelige motoriske system. Her kiggede han blandt andet på Fitts' lov og de data han indsamlede i sit første forsøg. Han mente at Fitts' lov i princippet gengav den indsamlede data præcist, men han så også tre utilfredsstillende egenskaber, hvilket fik ham til at foreslå følgende modifikationer.
 \begin{figure}[h]
 \centering
-\includegraphics{images/illustrations/welford_plot}
-\caption{Denne graf er pt medtaget for at kunne forklare Welford's tanker. Den vil blive erstattet af en pænere graf!}
+\includegraphics{images/illustrations/welford_plot_1}
+\caption{Grafen som Welford bruger som grundlag for sine modifikationer.}
 \label{fig:WelfordGraf}
 \end{figure}
-Welford argumenteret for at der skulle undlades at multiplicere $A$ med $2$, da det på data fra Fitts' første forsøg ville resultere i en negativ $a$-værdi. Derved bliver Ligning \ref{eq:FittsLov} til
+Welford argumenterede for, at der skulle undlades at multiplicere $A$ med $2$, da det på data fra Fitts' første forsøg ville resultere i en negativ $a$-værdi. Derved bliver Ligning \ref{eq:FittsLov} til
 \begin{align}
 \label{eq:Crossman}
 T = a + b \cdot log\left(\frac{A}{W}\right)
 \end{align}
-som også tidligere var blevet udledt af Crossman\cite{crossman1957}. Hvis data fra Fitts' første forsøg indsættes i Ligning \ref{eq:Crossman}, så vil $a$ ligge tæt på $0.05$. Dette passer med Crossman's eksperiment, hvor han får tiden man bruger inden bevægelsen begynder til at være cirka $0.05$\cite{crossman1957}. Man kunne argumentere for at man derved helt kunne undlade $a$, da det beskriver tiden inden bevægelsen. I et lignende eksperiment\cite{welford1958} fandt man dog at resultaterne generelt var mere uniforme og plausible, hvis $a$-leddet var medtaget.
+som også tidligere var blevet udledt af Crossman \cite{crossman1957}. Hvis data fra Fitts' første forsøg indsættes i Ligning \ref{eq:Crossman}, så vil $a$ ligge tæt på $0.05$. Dette passer med Crossman's eksperiment, hvor tiden man bruger, inden bevægelsen begynder, udregnes til at være cirka $0.05$ \cite{crossman1957}. Welford argumenterer for, at man derved helt kunne undlade $a$, da det beskriver tiden inden bevægelsen. I et lignende eksperiment \cite{welford1958} fandt man dog, at resultaterne generelt var mere troværdige, hvis $a$-leddet var medtaget.
 
-Den kurve der passer Figur \ref{fig:WelfordGraf} bedst ville være en let opdagående kurve. Welford mente at kurven kunne gøres væsentlig mindre, ved at lave følgende modifikationer til Ligning \ref{eq:FittsLov}:
+Figur \ref{fig:WelfordGraf} viser data fra ét af Fitts' eksperimenter og den tilhørende affine kurve. Den affine kurves skæring med $y$-aksen rammer under nul, jvf. den negative $a$ værdi. På baggrund af de to første punkter, som ikke ligger på den affine linje, fandt Welford frem til, at følgende modifikationer til ligning \ref{eq:FittsLov} ville beskrive data punkterne bedre.
 \begin{align}\label{eq:WelfordsLov}
 T = K \cdot log\left(\frac{A + \frac{1}{2}W}{W}\right) = K \cdot log\left(\frac{A}{W} + 0.5\right)
 \end{align}
-Ligning \ref{eq:WelfordsLov} er sidenhen blevet kendt som Welfords lov og har betydning for hvordan tiden, $T$, opfattes. Tiden vil i Ligning \ref{eq:WelfordsLov} blive afhænging af en Weber Fraction, da testpersonen skal skelne mellem længderne til målets fjerneste og næreste kant. Testpersonen skal altså udvælge en længde, $W$, ud fra den totale længde mellem startpunktet og målets fjerneste kant. Det er her vigtigt at notere at Ligning \ref{eq:WelfordsLov} også opretholder den fordel, som Fitts hævdede der var ved at multiplicere $A$ med $2$. Dette ses udfra det mest ekstreme tilfælde, hvor bevægelsens startpunkt er på målets kant, da $A = \frac{1}{2}W$ vil gælde, hvorved $T = K \cdot log\left(\frac{A + \frac{1}{2}W}{W}\right) = K \cdot log\left(\frac{W}{W}\right)$. Da $W > 0$ vil $log(W) > 0$.
+Ligning \ref{eq:WelfordsLov} er sidenhen blevet kendt som Welfords lov og har betydning for hvordan tiden, $T$, opfattes. Tiden vil i Ligning \ref{eq:WelfordsLov} blive afhænging af en Weber Fraction \cite{welford1958}, da testpersonen skal skelne mellem længderne til målets fjerneste og næreste kant. Testpersonen skal altså udvælge en længde, $W$, ud fra den totale længde mellem startpunktet og målets fjerneste kant. Det er her vigtigt at notere at Ligning \ref{eq:WelfordsLov} også opretholder den fordel, som Fitts hævdede der var ved at multiplicere $A$ med $2$. Dette ses udfra det mest ekstreme tilfælde, hvor bevægelsens startpunkt er på målets kant, da $A = \frac{1}{2}W$ vil gælde, hvorved $T = K \cdot log\left(\frac{A + \frac{1}{2}W}{W}\right) = K \cdot log\left(\frac{W}{W}\right)$. Da $W > 0$ vil $log(W) > 0$.
 
-Den sidste observation, der blev gjort, var at kurven i figur~\ref{fig:WelfordGraf} viser en tydelig udfladning i den lave ende. Welford noterede at det sandsynligvis var grundet en begrænsende faktor som beskriver en minimumstid per bevægelse, hvor kort eller uhindret bevægelse end måtte være. Welford's egne undersøgelser har påvist at denne begrænsende faktor har betydning for hvor meget af målet der rent faktisk bliver brugt. Når målene er brede og længden mellem dem kort, så vil testpersonen kun bruge en sub-længde af målets fulde længde. Han overfører mere information end Ligning \ref{eq:WelfordsLov} ville beskrive, fordi den effektive W er kortere. Den kortere bredde kan i nogen omfang afspejles i en reduktion af fejl og, hvis reduktionen sker med behørigt hensyn, så holder Ligning \ref{eq:WelfordsLov} stadig\footnote{Evt. skrive noget om hvordan fejl reduktionen sker: Welford FoS side 147-149}.
+Den sidste observation, der blev gjort, var at kurven i figur~\ref{fig:WelfordGraf} viser en tydelig udfladning i den lave ende. Welford noterede at det sandsynligvis var grundet en begrænsende faktor som beskriver en minimumstid per bevægelse, hvor kort eller uhindret bevægelse end måtte være. Welford's egne undersøgelser har påvist at denne begrænsende faktor har betydning for hvor meget af målet der rent faktisk bliver brugt. Når målene er brede og længden mellem dem kort, så vil testpersonen kun bruge en sub-længde af målets fulde længde. Han overfører mere information end Ligning \ref{eq:WelfordsLov} ville beskrive, fordi den effektive W er kortere. Den kortere bredde kan i nogen omfang afspejles i en reduktion af fejl og, hvis reduktionen sker med behørigt hensyn, så holder Ligning \ref{eq:WelfordsLov} stadig.
 
-Ud fra de tre ovenstående modifikationer indførte Welford igen Fitts' data fra hans første forsøg i et koordinatsystem. Denne gang havde dataen dog været igennem fejl reduktion og blev indsat op imod Welford's formulering, hvilket viste at Ligning \ref{eq:WelfordsLov} var bedre til at beskrive dataen end Ligning \ref{eq:FittsLov} \footnote{Indsætte figur 5.4 fra FoS side 148}.
+Ud fra de tre ovenstående modifikationer indførte Welford igen Fitts' data fra hans første forsøg i et koordinatsystem. Denne gang havde dataen dog været igennem fejl reduktion og blev indsat op imod Welford's formulering, hvilket viste at Ligning \ref{eq:WelfordsLov} var bedre til at beskrive dataen end Ligning \ref{eq:FittsLov} \footnote{TODO Indsætte figur 5.4 fra FoS side 148}.
 
 \addcontentsline{toc}{subsection}{MacKenzies formel}
 \subsection*{MacKenzies formel}
