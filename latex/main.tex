@@ -357,10 +357,8 @@ I denne opgave skal testdeltageren føre deres markør igennem fire spiraler af 
 	\end{tabular}
 	\captionof{table}{Antal vindinger på spiraler}\label{tab:spiralopgave}
 \end{center}
-
-
-%Ved begyndelsen af en opgave er spiralens udmunding markeret som en grøn streg. Når deltageren passerer denne linje, vil linjen blive stort. På samme tid vil den inderste linje i spiralen blive grøn. En grøn streg vil blive tegnet, hvor deltageren bevæger sin pegeenhed. Først når deltageren passerer den inderste linje vil opgaven slutte, indikeret ved at spiralen fjernes. Næste opgave blev først startet når deltageren klikker på knappen 'continue', som kun er tilgængelig når én opgave er slut. I tilfælde af at testdeltageren rammer eller ryger uden for kanterne vil de kunne fortsætte ubemærket. Hele bevægelsesbanen og tiden det tager at gennemføre hver tunnel vil blive gemt.
-%I denne opgave vil testdeltageren skulle føre markøren igennem fire spiraler af varierende størrelser og brede. Et eksempel på én af spiralerne kan ses i figur \ref{fig:spiralopgave}. Spiralerne kom i fire størrelser Hver test starter når testdeltageren fører musen forbi den grønne linje i spiralens indmunding
+Ved begyndelsen af en spiralopgave vil spiralens udmunding være grøn, for at tydeliggøre over for testpersonen hvor opgaven starter. Når testdeltagerens markør passerer udmundingen vil opgaven starte, og indmundingen vil derefter skifte til grøn for at signalere hvor testpersonen skal flytte sin markør hen. Når udmundingen passeres startes opgaven, og der vil blive vist en grøn linje der hvor markøren flyttes fra. I tilfælde af at testdeltageren rammer kanten både ind- og udvendigt i spiralen, vil de kunne fortsætte ubemærket.\\
+Når testpersonen passerer indmundingen inderst i spiralen, vil opgaven stoppe. Der vil efterfølgende blive vist en knap hvor der kan fortsættes til næste spiral, eller afslutte og fortsætte til næste opgave. Ved afslutning af opgaven vil vi, som med tunnelopgaven, gemme tiden det har taget og banen brugt igennem spiralen, og sende denne til vores database.
 
 \addcontentsline{toc}{subsection}{Pegeopgave}
 \subsection*{Pegeopgave}
