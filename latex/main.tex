@@ -20,24 +20,6 @@ Fitts var interesseret i at vise at informationsteori kunne bruges til at beskri
 \end{quotation}
 Vi vil i denne sektion se nærmere på de tre eksperimenter og Fitts konklusioner.
 
-\begin{minipage}{\linewidth}
-	\begin{minipage}[b]{.30\linewidth}
-		\includegraphics[width=\linewidth]{images/illustrations/fitt_ex1}
-		\captionof{figure}{Fitts' første eksperiment \cite{fitts1954}}
-	  	\label{fig:FittsEx1}
-	\end{minipage}
-	\begin{minipage}[b]{.30\linewidth}
-		\includegraphics[width=\linewidth]{images/illustrations/fitt_ex2}
-		\captionof{figure}{Fitts' andet eksperiment \cite{fitts1954}}
-	  	\label{fig:FittsEx2}
-	\end{minipage}
-	\begin{minipage}[b]{.30\linewidth}
-		\includegraphics[width=\linewidth]{images/illustrations/fitt_ex3}
-		\captionof{figure}{Fitts' tredje eksperiment \cite{fitts1954}}
-	  	\label{fig:FittsEx3}
-	\end{minipage}
-\end{minipage}
-
 \addcontentsline{toc}{subsection}{Eksperiment 1}
 \subsection*{Eksperiment 1: \textit{Reciprocal Tapping}}
 Fitts gjorde i dette eksperiment brug af et pegeredskab, og seks plader af samme længde. De to af pladerne, centerpladerne, var placeret med en forudbestemt afstand imellem sig, imens én af hver af de sidste fire plader blev placeret på hver side af centerpladerne. De to centerplader kunne antage fire forskellige bredder og de kunne placeres på fire måder, hver med en ny afstand imellem dem. Testpersonen skulle gentagene gange føre pegeredskabet fra den ene centerplade til den anden med vægt på præcision frem for fart, de omkringliggende pladers formål var at måle eventuelle fejl. Figur \ref{fig:FittsEx1} viser opstillingen, hvor de to stiplede plader er centerpladerne.
@@ -47,11 +29,29 @@ Testdeltagerne, 16 højrehåndede mandlige universitetsstuderende, fik 15 sekund
 \subsection*{Eksperiment 2: \textit{Disc Transfer}}
 I dette eksperiment brugte Fitts to pinde og otte runde plader. De otte runde plader havde et hul i midten som kunne antage fire forskellige størrelser, dog havde alle otte plader den samme hulstørrelse i hver enkel opgave. De to pinde kunne lige som i eksperiment 1 være placeret med fire forskellige afstande i mellem sig. 
 Hver af de 16 forsøgsmuligheder blev i tilfældig rækkefølge udført af 16 højrehåndede mandlige universitetsstuderende. Figur \ref{fig:FittsEx2} viser, hvordan eksperimentet blev udført.
+\begin{minipage}{\linewidth}
+	\begin{minipage}[b]{.50\linewidth}
+		\includegraphics[width=\textwidth]{images/illustrations/fitt_ex1}
+		\captionof{figure}{Fitts' første eksperiment \cite{fitts1954}}
+		\label{fig:FittsEx1}
+	\end{minipage}
+	\begin{minipage}[b]{0.50\linewidth}
+		\includegraphics[width=0.8\textwidth]{images/illustrations/fitt_ex2}
+		\captionof{figure}{Fitts' andet eksperiment \cite{fitts1954}}
+		\label{fig:FittsEx2}
+	\end{minipage}
+\end{minipage}
 
 \addcontentsline{toc}{subsection}{Eksperiment 3}
 \subsection*{Eksperiment 3: \textit{Pin Transfer}}
 Udførelsen af dette eksperiment krævede et sæt af otte pinde og 16 huller, delt i to sæt. Diameteren på de otte pinde kunne antage fire forskellige størrelser, alt imens afstanden i mellem de to sæt huller kunne være af fem forskellige længder. Opstillingen kan ses af figur \ref{fig:FittsEx3}.
 Hver af de 20 mulige forsøgsopstillinger blev udført i tilfældig rækkefølge af 20 mandlige universitetsstuderende.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{images/illustrations/fitt_ex3}
+\captionof{figure}{Fitts' tredje eksperiment \cite{fitts1954}}
+\label{fig:FittsEx3}
+\end{figure}
 
 \addcontentsline{toc}{subsection}{Fitts' konklusion}
 \subsection*{Fitts' konklusion}
@@ -195,7 +195,7 @@ Når man kigger på Ligning \ref{eq:meyer}, så er det vigtigt at notere sig, at
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=.5\linewidth]{images/illustrations/meyer_plot_comparison}
+\includegraphics[width=.7\linewidth]{images/illustrations/meyer_plot_comparison}
 \caption{Udviklingen for henholdvis $\log_2(\frac{A}{W})$ og $\sqrt{\frac{A}{W}}$}
 \label{fig:log_vs_sqrt}
 \end{figure}
@@ -226,7 +226,7 @@ På trods af at de fire formuleringer er forskellige, så vil de godt kunne appr
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=.5\linewidth]{images/plots/plot_comparison_id}
+\includegraphics[width=\linewidth]{images/plots/plot_comparison_id}
 \caption{ID for de fire formuleringer som funktion af A/W}
 \label{fig:Sammenligning}
 \end{figure}
@@ -334,11 +334,63 @@ Når testpersonen passerer indmundingen inderst i spiralen, vil opgaven stoppe. 
 
 \addcontentsline{toc}{subsection}{Pegeopgave}
 \subsection*{Pegeopgave}
-I denne opgave vil testdeltageren blive præsenteret for en sekvens af 25 cirkulære mål af skiftene størrelse og position. Målene præsenteres i rækkefølgen som ses i Tabel \ref{tab:pegeopgave}. Hver test i sættet starter, når testdeltageren klikker inden for en fastplaceret cirkel i vinduets center og slutter når testdeltageren klikker indenfor målet. Hvert cirkulært mål varierer i distance fra center-cirklen og varierer i diameter, hvilket giver ændringer i A/W-sværhedsgrad som ses i Tabel \ref{tab:pegeopgave}. Center-cirklen vil  blive præsenteret i en grøn farve og vil ved klik skifte til blå - alle mål-cirklerne er vist i grøn farve. Et eksempel herpå ses i Figur \ref{fig:pegeopgave}. Vi vil i løbet af opgaven registrere tiden det tager fra at testpersonen trykker på center-cirklen, til de trykker på målet. Dertil vil banen som testdeltageren bruger også blive registreret.
+I denne opgave vil testdeltageren blive præsenteret for en sekvens af 25 cirkulære mål af skiftene størrelse og position. Målene præsenteres i rækkefølgen som ses i Tabel \ref{tab:pegeopgave}. Hver test i sættet starter, når testdeltageren klikker inden for en fastplaceret cirkel i vinduets center og slutter når testdeltageren klikker indenfor målet. Hvert cirkulært mål varierer i distance fra center-cirklen og varierer i diameter, hvilket giver ændringer i A/W-sværhedsgrad som ses i tabel \ref{tab:pegeopgave}. Center-cirklen vil blive præsenteret i en grøn farve, se figur \ref{fig:pegeopgave_start}, og vil ved klik skifte til blå - alle mål-cirklerne er vist i grøn farve. Figur \ref{fig:pegeopgave_target} illustrerer, hvordan center- og mål-cirklerne er farvet. 
 
+Testdeltagerens bane til mål-cirklen er illustreret ved en grøn linje, der følger musen, et eksempel herpå ses i figur \ref{fig:pegeopgave_path}. Vi vil i løbet af opgaven registrere tiden det tager fra at testpersonen trykker på center-cirklen, til de trykker på målet. Dertil vil banen som testdeltageren bruger også blive registreret.
+
+\begin{minipage}[t]{.5\linewidth}
+\centering
+\vspace{0pt}
+\captionof{figure}{Illustration af pegeopgavens start}
+\includegraphics[width=0.8\textwidth, trim = 8cm 20cm 8cm 15cm, clip]{images/screenshots/ex_step_6_pointing_start}
+\label{fig:pegeopgave_start}
+\caption{Efter at have klikket på center-cirklen}
+\includegraphics[width=0.8\textwidth, trim = 8cm 8cm 8cm 15cm, clip]{images/screenshots/ex_step_6_pointing_target_1}
+\label{fig:pegeopgave_target}
+\caption{Før klik på mål-cirklen}
+\includegraphics[width=0.8\textwidth, trim = 8cm 22cm 20cm 5cm, clip]{images/screenshots/ex_step_6_pointing_path}
+\label{fig:pegeopgave_path}
+\end{minipage}
+\begin{minipage}[t]{.5\linewidth}
+\centering
+\vspace{0pt}
+    \begin{tabular}{ c c c c }
+        Forsøg & $A$ & $W$ & $A/W$ \\\hline
+        1  & 67  & 20 & 3.35  \\
+        2  & 184 & 38 & 4.84  \\
+        3  & 280 & 14 & 20.00 \\
+        4  & 230 & 29 & 7.93  \\
+        5  & 144 & 55 & 2.62  \\
+        6  & 249 & 29 & 8.59  \\
+        7  & 255 & 14 & 18.21 \\
+        8  & 96  & 50 & 1.92  \\
+        9  & 225 & 19 & 11.84 \\
+        10 & 263 & 12 & 21.92 \\
+        11 & 259 & 25 & 10.36 \\
+        12 & 229 & 20 & 11.45 \\
+        13 & 215 & 31 & 6.94  \\
+        14 & 198 & 83 & 2.39  \\
+        15 & 301 & 16 & 18.81 \\
+        16 & 194 & 66 & 2.94  \\
+        17 & 260 & 12 & 21.67 \\
+        18 & 296 & 14 & 21.14 \\
+        19 & 180 & 44 & 4.09  \\
+        20 & 278 & 11 & 25.27 \\
+        21 & 283 & 37 & 7.65  \\
+        22 & 40  & 32 & 1.25  \\
+        23 & 233 & 10 & 23.30 \\
+        24 & 191 & 50 & 3.82  \\
+        25 & 179 & 18 & 9.94  \\\hline
+    \end{tabular}
+   \captionof{table}{Afstand og størrelse på målet}\label{tab:pegeopgave}
+\end{minipage}
+
+\newpage
 \addcontentsline{toc}{subsection}{Generelt for de tre opgaver}
 \subsection*{Generelt for de tre opgaver}
-I alle opgaverne vil deltagerne blive informeret om, hvor mange opgaver de mangler at gennemføre, så de har en fornemmelse af, hvornår de er færdige. Hvis deltagerne bevæger pegeenheden uden for det canvas som opgaven skal udføres i vil denne del af banen ikke komme med i vores gemte data.
+I alle opgaverne vil deltagerne blive informeret om, hvor mange opgaver de mangler at gennemføre, så de ved hvornår de er færdige, den grå tekst \textit{"Remaining circles"} i figur \ref{fig:pegeopgave_target} er et eksempel på, hvordan denne information så ud undervejs. Vi har medtaget det i håb om, at testdeltagere fra crowdsourcing forsøget ikke vil miste tålmodigheden midt i testen.  
+
+Hvis deltagerne bevæger pegeenheden uden for det canvas som opgaven skal udføres i vil denne del af banen ikke komme med i vores gemte data.
 
 \addcontentsline{toc}{chapter}{Eksperimenter}
 \chapter*{Eksperimenter}
@@ -386,53 +438,6 @@ Vi, P1, P2 og P3, udførte vores laboratorieeksperiment den 20. april 2015 på H
 Forsøget gik godt - 264 personer gennemførte vores forsøg og har suppleret os med vital data. Vi fik delt vores forsøg på størstedelen af de tidligere beskrevne sider, dog med nogle få undtagelser. Generelt set var reddit det mest lukrative sted, hvorfra 140 personer har skrevet siden på som deres reference - hvorimod 74 skrev at de var blevet refereret fra Facebook.\\
 Det var ikke muligt at dele vores forsøg på $reddit.com/r/helpme$ og $reddit.com/r/care$, da vi ikke havde nok "karma" for at kunne lave et indlæg på disse sites.\\
 Efterfølgende har vi lukket for muligheden for at deltage i vores forsøg den 30/04/2015, og skrevet en besked på forsøgssiden hvor vi takker folk for deres deltagelse.
-
-\begin{minipage}[t]{.5\linewidth}
-\centering
-\vspace{0pt}
-\captionof{figure}{Illustration af pegeopgave}
-\includegraphics[width=\textwidth, trim = 8cm 22cm 20cm 5cm, clip]{images/screenshots/ex_step_6_pointing_path}
-\label{fig:pegeopgave}
-\caption{Illustration af tunnelopgave}
-\includegraphics[width=\textwidth, trim = 25cm 23cm 25cm 17cm, clip]{images/screenshots/ex_step_4_tunnel_path}
-\label{fig:tunnelopgaver}
-\caption{Illustration af spiralopgave}
-\includegraphics[width=\textwidth, trim = 25cm 20cm 25cm 14cm, clip]{images/screenshots/ex_step_5_spiral_path}
-\label{fig:spiralopgave}
-\end{minipage}
-\begin{minipage}[t]{.5\linewidth}
-\centering
-\vspace{0pt}
-    \begin{tabular}{ c c c c }
-        Forsøg & $A$ & $W$ & $A/W$ \\\hline
-        1  & 67  & 20 & 3.35  \\
-        2  & 184 & 38 & 4.84  \\
-        3  & 280 & 14 & 20.00 \\
-        4  & 230 & 29 & 7.93  \\
-        5  & 144 & 55 & 2.62  \\
-        6  & 249 & 29 & 8.59  \\
-        7  & 255 & 14 & 18.21 \\
-        8  & 96  & 50 & 1.92  \\
-        9  & 225 & 19 & 11.84 \\
-        10 & 263 & 12 & 21.92 \\
-        11 & 259 & 25 & 10.36 \\
-        12 & 229 & 20 & 11.45 \\
-        13 & 215 & 31 & 6.94  \\
-        14 & 198 & 83 & 2.39  \\
-        15 & 301 & 16 & 18.81 \\
-        16 & 194 & 66 & 2.94  \\
-        17 & 260 & 12 & 21.67 \\
-        18 & 296 & 14 & 21.14 \\
-        19 & 180 & 44 & 4.09  \\
-        20 & 278 & 11 & 25.27 \\
-        21 & 283 & 37 & 7.65  \\
-        22 & 40  & 32 & 1.25  \\
-        23 & 233 & 10 & 23.30 \\
-        24 & 191 & 50 & 3.82  \\
-        25 & 179 & 18 & 9.94  \\\hline
-    \end{tabular}
-    \captionof{table}{Afstand og størrelse på målet}\label{tab:pegeopgave}
-\end{minipage}
 
 \addcontentsline{toc}{chapter}{Analyse}
 \chapter*{Analyse}
