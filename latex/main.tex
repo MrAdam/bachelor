@@ -4,12 +4,10 @@
 
 %\end{abstract}
 
-\onecolumn
 \addcontentsline{toc}{chapter}{Indledning}
 \chapter*{Indledning}
 I 1954 udgav Paul M. Fitts en artikel\footcite{fitts1954} som søgte at finde informationskapaciteten af det menneskelige motoriske system - og dermed en generel formulering for sammenhængen mellem distancen til og størrelsen af et mål i en motorisk opgave og den tid det tager at udføre opgaven. Fitts så et behov for et samlende begreb for den menneskelige motoriske kapacitet, grundet de tydelige problemer med at forene mange af de fakta, der var blevet beskrevet i tidligere litteratur. Hans forklaring var, at der var blevet overset en overordnet sammenhæng mellem amplituden, varigheden og variabiliteten i bevægelserne ved motoriske opgaver.
 
-\twocolumn
 \addcontentsline{toc}{chapter}{Teori}
 \chapter*{Teori}
 I dette kapitel vil vi kigge nærmere på teorierne bag Fitts' lov. Vi vil først give en opsummering af Fitts' egne tanker, hvorefter vi beskriver tre alternative formulering af Fitts' lov.
@@ -25,12 +23,10 @@ Vi vil i denne sektion se nærmere på de tre eksperimenter og Fitts konklusione
 \addcontentsline{toc}{subsection}{Eksperiment 1}
 \subsection*{Eksperiment 1: \textit{Reciprocal Tapping}}
 Fitts gjorde i dette eksperiment brug af et pegeredskab, og seks plader af samme længde. De to af pladerne, centerpladerne, var placeret med en forudbestemt afstand imellem sig, imens én af hver af de sidste fire plader blev placeret på hver side af centerpladerne. De to centerplader kunne antage fire forskellige bredder og de kunne placeres på fire måder, hver med en ny afstand imellem dem. Testpersonen skulle gentagene gange føre pegeredskabet fra den ene centerplade til den anden med vægt på præcision frem for fart, de omkringliggende pladers formål var at måle eventuelle fejl. Figur \ref{fig:FittsEx1} viser opstillingen, hvor de to stiplede plader er centerpladerne.
-
 Testdeltagerne, 16 højrehåndede mandlige universitetsstuderende, fik 15 sekunder til hver af de 16 opgaver i tilfældig rækkefølge med en mellemliggende pause på 55 sekunder mellem hver af dem. Eksperimentet blev udført med to forskellige pegeredskaber, et lettere i vægt end det andet.
-
 \begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth]{images/illustrations/fitt_ex1}
+\includegraphics[width=.5\linewidth]{images/illustrations/fitt_ex1}
 \caption{Opstillingen brugt til Fitts' første eksperiment \cite{fitts1954}}
   \label{fig:FittsEx1}
 \end{figure}
@@ -38,11 +34,10 @@ Testdeltagerne, 16 højrehåndede mandlige universitetsstuderende, fik 15 sekund
 \addcontentsline{toc}{subsection}{Eksperiment 2}
 \subsection*{Eksperiment 2: \textit{Disc Transfer}}
 I dette eksperiment brugte Fitts to pinde og otte runde plader. De otte runde plader havde et hul i midten som kunne antage fire forskellige størrelser, dog havde alle otte plader den samme hulstørrelse i hver enkel opgave. De to pinde kunne lige som i eksperiment 1 være placeret med fire forskellige afstande i mellem sig. 
-
 Hver af de 16 forsøgsmuligheder blev i tilfældig rækkefølge udført af 16 højrehåndede mandlige universitetsstuderende. Figur \ref{fig:FittsEx2} viser, hvordan eksperimentet blev udført.
 \begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth]{images/illustrations/fitt_ex2}
+\includegraphics[width=.5\linewidth]{images/illustrations/fitt_ex2}
 \caption{Opstillingen brugt til Fitts' andet eksperiment \cite{fitts1954}}
 \label{fig:FittsEx2}
 \end{figure}
@@ -50,11 +45,10 @@ Hver af de 16 forsøgsmuligheder blev i tilfældig rækkefølge udført af 16 h�
 \addcontentsline{toc}{subsection}{Eksperiment 3}
 \subsection*{Eksperiment 3: \textit{Pin Transfer}}
 Udførelsen af dette eksperiment krævede et sæt af otte pinde og 16 huller, delt i to sæt. Diameteren på de otte pinde kunne antage fire forskellige størrelser, alt imens afstanden i mellem de to sæt huller kunne være af fem forskellige længder. Opstillingen kan ses af figur \ref{fig:FittsEx3}.
-
 Hver af de 20 mulige forsøgsopstillinger blev udført i tilfældig rækkefølge af 20 mandlige universitetsstuderende.
 \begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth]{images/illustrations/fitt_ex3}
+\includegraphics[width=.5\linewidth]{images/illustrations/fitt_ex3}
 \caption{Opstillingen brug til Fitts' tredje eksperiement \cite{fitts1954}}
 \label{fig:FittsEx3}
 \end{figure}
@@ -65,15 +59,12 @@ Resultaterne som Fitts fik fra de udførte eksperimenter viste, at des større a
 \begin{align*}
 ID = -\log_2\left(\frac{W}{2A}\right)
 \end{align*}
-
 Brugen af $\log_2$ i formlen er baseret på Fitts' kendskab til Shannon's sætning 17 \cite{goldberg2015}. For at sikre, at $ID$ altid giver en positiv værdi, valgte Fitts at gøre brug af $2A$ frem for $A$, da det kan garanteres at $2A > W$, hvilket sikrer det samme fortegn for alle udfald af logaritmen. Da $log\left(\frac{W}{2A}\right)<0$, for $0<\frac{W}{2A}<1$, valgte Fitts at multiplicere det med $-1$, hvilket sikrer, at ID altid er positiv.
-
 Ved brug af $ID$ udregnede Fitts et \textit{Index of Performance}, IP, som beskriver hvorledes en opgave er udført i forhold til sværhedsgraden, $ID$, og tiden $t$.
 \begin{align*}
 IP &= \frac{ID}{t}\Leftrightarrow\\
 IP &= \frac{-1}{t}\log_2\left(\frac{W}{2A}\right)
 \end{align*}
-
 Denne formel er dog ikke den klassiske formel for Fitts lov, men ved omregninger kan den findes. Vi ser først på ID.
 \begin{align*}
 ID &= -\log_2\left(\frac{W}{2A}\right) \Leftrightarrow\\
@@ -98,12 +89,10 @@ Når man regner med det menneskelige motoriske system, så skal der medregnes de
 T = a + b \cdot log_2\left(\frac{2A}{W}\right)
 \end{equation}
 Dette er hvad der i dag kendes som Fitts lov.
-
 Crossman og Goodeve \cite{crossman1983} forklarer Fitts lov som en overordnet bevægelse fra start positionen imod målet, hvorefter der ved én eller flere underbevægelser korrigeres for den fejl der blev foretaget ved den overordnede bevægelse. En illustration af bevægelsens hastighed over afstanden er vist i figur \ref{fig:CrossmanFitt} med en serie af tre delbevægelser, hvoraf den overordnede bevægelse begynder i start positionen med afstand 0.
-
 \begin{figure}[h]
 \centering
-\includegraphics[scale=1.0]{images/illustrations/base_model_fitt}
+\includegraphics[width=.5\linewidth]{images/illustrations/base_model_fitt}
 \caption{Illustration af Crossman og Goodeves forklaring af Fitts lov \cite{Meyer1988}.}
 \label{fig:CrossmanFitt}
 \end{figure}
@@ -118,7 +107,7 @@ Siden udgivelsen af Fitts’ artikel, har flere forskere forsøgt at finde en fo
 I \cite{welford1968} beskriver Welford en række fundamentale forudsætninger for det menneskelige motoriske system. Her kiggede han blandt andet på Fitts' lov, og de data han indsamlede i sit første forsøg. Han mente at Fitts' lov i princippet gengav den indsamlede data præcist, men han så også tre utilfredsstillende egenskaber, hvilket fik ham til at foreslå følgende modifikationer.
 \begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth]{images/illustrations/welford_plot_1}
+\includegraphics[width=.5\linewidth]{images/illustrations/welford_plot_1}
 \caption{Grafen som Welford bruger som grundlag for sine modifikationer.}
 \label{fig:WelfordGraf}
 \end{figure}
@@ -140,7 +129,7 @@ Den sidste observation, der blev gjort, var at kurven i figur~\ref{fig:WelfordGr
 Ud fra de tre ovenstående modifikationer indførte Welford igen Fitts' data fra hans første forsøg i et koordinatsystem. Denne gang havde dataen dog været igennem fejlreduktion og blev indsat op imod Welford's formulering, hvilket viste at Ligning \ref{eq:WelfordsLov} var bedre til at beskrive dataen end Ligning \ref{eq:FittsLov}. Den affine kurve som Welford kom frem til er at se i figur \ref{fig:WelfordGraf2}
 \begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth]{images/illustrations/welford_plot_2}
+\includegraphics[width=.5\linewidth]{images/illustrations/welford_plot_2}
 \caption{Fitts' data og den affine kurve for Welfords model.}
 \label{fig:WelfordGraf2}
 \end{figure}
@@ -161,7 +150,7 @@ En af de mest accepterede udledninger af Fitts' lov stammer fra modellen \emph{d
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth]{images/illustrations/mackenzie_plot_1}
+\includegraphics[width=.5\linewidth]{images/illustrations/mackenzie_plot_1}
 \caption{Index of difficulty i forhold til movement time ved forskellige værdier af $W$}
 \label{fig:MacKenziePlot1}
 \end{figure}
@@ -176,7 +165,7 @@ Han fremhæver dog, at der er lavet en del studier af Fitts' lov og, at der er b
 Forskellen mellem Fitts' originale formulering for $ID$, og MacKenzie's bud på en ny formulering lavet som en direkte analogi til Shannon's bliver sammenlignet i figur~\ref{fig:MacKenziePlot2}, hvor det er tydeligt, at der ved lavere værdier af $A$ sker en udfladning af kurven, hvilket passer med data punkterne i figur~\ref{fig:MacKenziePlot1}, jvf. det første data punkt som ikke ligger på den affine linje.\\
 \begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth]{images/illustrations/mackenzie_plot_2}
+\includegraphics[width=.5\linewidth]{images/illustrations/mackenzie_plot_2}
 \caption{Sammenligning af Fitts' ID og MacKenzies ID baseret på Shannon's formulering}
 \label{fig:MacKenziePlot2}
 \end{figure}
@@ -188,7 +177,7 @@ Det generelle problem med MacKenzie's artikel er at han ikke kommer med noget te
 \subsection*{Meyers formulering}
 \begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth]{images/illustrations/base_model_meyer}
+\includegraphics[width=.5\linewidth]{images/illustrations/base_model_meyer}
 \caption{Stochastic optimized-submovement modellen - Den horisontale akse repræsentere afstand og den vertikale akse bevægelseshastighed. De faste linjer repræsentere primære underbevægelser, mens stiplede linjer er korrigerende underbevægelser. Bevægelserne tager udgangspunkt i en startende position (afstand = 0) og skal bevæge sig til et mål, med center i D og bredde W.}
 \label{fig:MeyerTheory}
 \end{figure}
@@ -206,7 +195,7 @@ Når man kigger på Ligning \ref{eq:meyer}, så er det vigtigt at notere sig, at
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth]{images/illustrations/meyer_plot_comparison}
+\includegraphics[width=.5\linewidth]{images/illustrations/meyer_plot_comparison}
 \caption{Udviklingen for henholdvis $\log_2(\frac{A}{W})$ og $\sqrt{\frac{A}{W}}$}
 \label{fig:log_vs_sqrt}
 \end{figure}
@@ -237,7 +226,7 @@ På trods af at de fire formuleringer er forskellige, så vil de godt kunne appr
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth]{images/plots/plot_comparison_id}
+\includegraphics[width=.5\linewidth]{images/plots/plot_comparison_id}
 \caption{ID for de fire formuleringer som funktion af A/W}
 \label{fig:Sammenligning}
 \end{figure}
@@ -322,30 +311,19 @@ Når testpersonen passerer den højre side af tunnellen vil opgaven stoppe, og d
 \addcontentsline{toc}{subsection}{Spiralopgave}
 \subsection*{Spiralopgave}
 \begin{minipage}{\linewidth}
-	\begin{minipage}{\textwidth}
-		\centering
-		\includegraphics[width=\textwidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_path}
-		\captionof{figure}{Eksperiment - Spiral 1}
-		\label{fig:ex_spiral_1}
-	\end{minipage}
-	\begin{minipage}{\textwidth}
-		\centering
-		\includegraphics[width=\textwidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_2}
-		\captionof{figure}{Eksperiment - Spiral 2}
-		\label{fig:ex_spiral_2}
-	\end{minipage}
-	\begin{minipage}{\textwidth}
-		\centering
-		\includegraphics[width=\textwidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_3}
-		\captionof{figure}{Eksperiment - Spiral 3}
-		\label{fig:ex_spiral_3}
-	\end{minipage}
-	\begin{minipage}{\textwidth}
-		\centering
-		\includegraphics[width=\textwidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_4}
-		\captionof{figure}{Eksperiment - Spiral 4}
-		\label{fig:ex_spiral_4}
-	\end{minipage}
+	\centering
+	\includegraphics[width=.4\linewidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_path}
+	\captionof{figure}{Eksperiment - Spiral 1}
+	\label{fig:ex_spiral_1}
+	\includegraphics[width=.4\linewidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_2}
+	\captionof{figure}{Eksperiment - Spiral 2}
+	\label{fig:ex_spiral_2}
+	\includegraphics[width=.5\linewidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_3}
+	\captionof{figure}{Eksperiment - Spiral 3}
+	\label{fig:ex_spiral_3}
+	\includegraphics[width=.5\linewidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_4}
+	\captionof{figure}{Eksperiment - Spiral 4}
+	\label{fig:ex_spiral_4}
 \end{minipage}\\\\
 I denne opgave skal testdeltageren føre deres markør igennem fire spiraler af varierende størrelse, og med varierende antal vindinger. De fire spiraler kan ses på figur \ref{fig:ex_spiral_1}, \ref{fig:ex_spiral_2}, \ref{fig:ex_spiral_3} og \ref{fig:ex_spiral_4}. Antallet af vindinger i spiralerne er vist i figur \ref{tab:spiralopgave}. Antallet af vindingerne på spiralerne er taget fra \cite{accot1997}.
 \begin{center}
@@ -399,7 +377,7 @@ Vi valte $/r/helpme$ og $/r/care$, da begge disse subredits er lavet til at spø
 Som det sidste vil vi også dele forsøget på vores egne Facebook-profiler.
 \begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth, trim = 0cm 0cm 7cm 0cm, clip]{images/screenshots/ex_questions}
+\includegraphics[width=.5\linewidth, trim = 0cm 0cm 7cm 0cm, clip]{images/screenshots/ex_questions}
 \caption{Spørgsmål som blev stillet før crowdsourcing-deltagerne kunne udføre forsøget.}
 \label{fig:Questions}
 \end{figure}
@@ -417,7 +395,7 @@ Forsøget gik godt - 264 personer gennemførte vores forsøg og har suppleret os
 Det var ikke muligt at dele vores forsøg på $reddit.com/r/helpme$ og $reddit.com/r/care$, da vi ikke havde nok "karma" for at kunne lave et indlæg på disse sites.\\
 Efterfølgende har vi lukket for muligheden for at deltage i vores forsøg den 30/04/2015, og skrevet en besked på forsøgssiden hvor vi takker folk for deres deltagelse.
 
-\begin{minipage}[t]{\linewidth}
+\begin{minipage}[t]{.5\linewidth}
 \centering
 \vspace{0pt}
 \captionof{figure}{Illustration af pegeopgave}
@@ -430,7 +408,7 @@ Efterfølgende har vi lukket for muligheden for at deltage i vores forsøg den 3
 \includegraphics[width=\textwidth, trim = 25cm 20cm 25cm 14cm, clip]{images/screenshots/ex_step_5_spiral_path}
 \label{fig:spiralopgave}
 \end{minipage}
-\begin{minipage}[t]{\linewidth}
+\begin{minipage}[t]{.5\linewidth}
 \centering
 \vspace{0pt}
     \begin{tabular}{ c c c c }
@@ -511,17 +489,24 @@ Vores modelanalyse tager udgangspunkt i AIC-metoden som beskrevet i forrige afsn
 \subsection*{R-kode}
 Den relevante R-kode som bliver brugt til analysen, er vist i listing \ref{lst:fitt}, \ref{lst:welford}, \ref{lst:mackenzie}, \ref{lst:meyer}, \ref{lst:aic}.
 
-\lstinputlisting[label={lst:fitt}, caption=Fitt's Modelanalyse, language=R, firstline=38, lastline=45]{analyse.r}
-\lstinputlisting[label={lst:welford}, caption=Welford's Modelanalyse, language=R, firstline=47, lastline=54]{analyse.r}
-\lstinputlisting[label={lst:mackenzie}, caption=MacKenzie's Modelanalyse, language=R, firstline=56, lastline=63]{analyse.r}
-\lstinputlisting[label={lst:meyer}, caption=Meyer's Modelanalyse, language=R, firstline=65, lastline=72]{analyse.r}
-\lstinputlisting[label={lst:aic}, caption=AIC-analyse, language=R, firstline=77, lastline=83]{analyse.r}
+\lstinputlisting[label={lst:function}, caption=Funktion til modelanalyse, language=R, firstline=33, lastline=51]{analyse.r}
 
-Som det ses af listing \ref{lst:fitt}, udregner vi først $ID$ for vores data, baseret på de foruddefinerede værdier af $A$ og $W$. Herefter bruger vi $lm()$ til at fitte modellen til vores data, hvorefter vi plotter dataen og modellen i et residualplot.\\
+
+%\lstinputlisting[label={lst:welford}, caption=Welford's Modelanalyse, language=R, firstline=47, lastline=54]{analyse.r}
+%\lstinputlisting[label={lst:mackenzie}, caption=MacKenzie's Modelanalyse, language=R, firstline=56, lastline=63]{analyse.r}
+%\lstinputlisting[label={lst:meyer}, caption=Meyer's Modelanalyse, language=R, firstline=65, lastline=72]{analyse.r}
+%\lstinputlisting[label={lst:aic}, caption=AIC-analyse, language=R, firstline=77, lastline=83]{analyse.r}
+
+Som det ses af listing \ref{lst:function}, udregner vi først $ID$ for vores data, baseret på de foruddefinerede værdier af $A$ og $W$. Herefter bruger vi $lm()$ til at fitte modellen til vores data, hvorefter vi plotter dataen og modellen i et residualplot.\\
 I listing \ref{lst:aic} ses det at vi benytter $AIC()$ på alle fire modeller, hvorefter de bliver sorteret efter størrelse for nemmere sammenligning.
 
 \addcontentsline{toc}{subsection}{AIC-analyse}
 \subsection*{AIC-analyse}
+%[1] "Fitt's AIC = 75572.3883401724"
+%[1] "Welford's AIC = 79415.0662411436"
+%[1] "Welford's Additive AIC = 75566.8402100114"
+%[1] "MacKenzie's AIC = 75567.185218973"
+%[1] "Meyer's AIC = 75620.1633109145"
 % TODO: Indsæt tabel med de relative størrelser i stedet for plot
 Figur \ref{fig:plot_analysis_aic} viser AIC for de fire modeller. De fire modellers AIC er høje, men det er underordnet for vores analyse, da vi kigger på deres indbyrdes forhold. Det ses af figuren at Meyer's har den laveste AIC og derfor er den model der passer bedst til den indsamlede data. MacKenzie's og Fitt's følger herefter med lidt højere AIC værdier, mens Welford's er den klart dårligste af de fire modeller.
 
@@ -529,19 +514,19 @@ Figur \ref{fig:plot_analysis_aic} viser AIC for de fire modeller. De fire modell
 \subsection*{Residualanalyse}
 \begin{minipage}{\linewidth}
 	\centering
-	\includegraphics[height=.2\textheight]{images/plots/plot_residual_fitt}
+	\includegraphics[width=.4\linewidth]{images/plots/plot_residual_fitt}
 	\captionof{figure}{Fitt's residualplot}
 	\label{fig:plot_residual_fitt}
 	
-	\includegraphics[height=.2\textheight]{images/plots/plot_residual_welford}
+	\includegraphics[width=.4\linewidth]{images/plots/plot_residual_welford}
 	\captionof{figure}{Welford's residualplot}
 	\label{fig:plot_residual_welford}
 	
-	\includegraphics[height=.2\textheight]{images/plots/plot_residual_mackenzie}
+	\includegraphics[width=.4\linewidth]{images/plots/plot_residual_mackenzie}
 	\captionof{figure}{MacKenzie's residualplot}
 	\label{fig:plot_residual_mackenzie}
 	
-	\includegraphics[height=.2\textheight]{images/plots/plot_residual_meyer}
+	\includegraphics[width=.4\linewidth]{images/plots/plot_residual_meyer}
 	\captionof{figure}{Meyer's residualplot}
 	\label{fig:plot_residual_meyer}
 \end{minipage}\\\\
@@ -555,9 +540,7 @@ Det ses af figur \ref{fig:plot_residual_welford} at Welford's især er dårliger
 
 \nocite{*}
 \newpage
-\onecolumn
 \input{appendices.tex}
 \addcontentsline{toc}{chapter}{\bibname}
-\twocolumn
 \printbibliography
 \end{document}

@@ -39,13 +39,10 @@ analyse <- function(title, file, data, func, zero = NULL) {
     model <- lm(time ~ 0 + id, data = data)
     formula <- y ~ 0 + x
   }
-  
   print(paste(title, "AIC", "=", AIC(model), sep = " "))
-  
   ggplot(model, aes(x = id, y = time)) + 
     geom_point() + stat_smooth(method = "lm", formula = formula, se = F)
   ggsave(file = paste("images/plots/plot_model_", file, sep = ""))
-  
   ggplot(data = model, aes(x = .fitted, y = .resid)) +
     geom_hline(yintercept = 0, alpha = 0.75, color = "red") +
     geom_point() + geom_smooth(se = F) +
