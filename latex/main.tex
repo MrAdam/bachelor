@@ -20,38 +20,38 @@ Fitts var interesseret i at vise at informationsteori kunne bruges til at beskri
 \end{quotation}
 Vi vil i denne sektion se nærmere på de tre eksperimenter og Fitts konklusioner.
 
+\begin{minipage}{\linewidth}
+	\begin{minipage}[b]{.30\linewidth}
+		\includegraphics[width=\linewidth]{images/illustrations/fitt_ex1}
+		\captionof{figure}{Fitts' første eksperiment \cite{fitts1954}}
+	  	\label{fig:FittsEx1}
+	\end{minipage}
+	\begin{minipage}[b]{.30\linewidth}
+		\includegraphics[width=\linewidth]{images/illustrations/fitt_ex2}
+		\captionof{figure}{Fitts' andet eksperiment \cite{fitts1954}}
+	  	\label{fig:FittsEx2}
+	\end{minipage}
+	\begin{minipage}[b]{.30\linewidth}
+		\includegraphics[width=\linewidth]{images/illustrations/fitt_ex3}
+		\captionof{figure}{Fitts' tredje eksperiment \cite{fitts1954}}
+	  	\label{fig:FittsEx3}
+	\end{minipage}
+\end{minipage}
+
 \addcontentsline{toc}{subsection}{Eksperiment 1}
 \subsection*{Eksperiment 1: \textit{Reciprocal Tapping}}
 Fitts gjorde i dette eksperiment brug af et pegeredskab, og seks plader af samme længde. De to af pladerne, centerpladerne, var placeret med en forudbestemt afstand imellem sig, imens én af hver af de sidste fire plader blev placeret på hver side af centerpladerne. De to centerplader kunne antage fire forskellige bredder og de kunne placeres på fire måder, hver med en ny afstand imellem dem. Testpersonen skulle gentagene gange føre pegeredskabet fra den ene centerplade til den anden med vægt på præcision frem for fart, de omkringliggende pladers formål var at måle eventuelle fejl. Figur \ref{fig:FittsEx1} viser opstillingen, hvor de to stiplede plader er centerpladerne.
 Testdeltagerne, 16 højrehåndede mandlige universitetsstuderende, fik 15 sekunder til hver af de 16 opgaver i tilfældig rækkefølge med en mellemliggende pause på 55 sekunder mellem hver af dem. Eksperimentet blev udført med to forskellige pegeredskaber, et lettere i vægt end det andet.
-\begin{figure}[h]
-\centering
-\includegraphics[width=.5\linewidth]{images/illustrations/fitt_ex1}
-\caption{Opstillingen brugt til Fitts' første eksperiment \cite{fitts1954}}
-  \label{fig:FittsEx1}
-\end{figure}
 
 \addcontentsline{toc}{subsection}{Eksperiment 2}
 \subsection*{Eksperiment 2: \textit{Disc Transfer}}
 I dette eksperiment brugte Fitts to pinde og otte runde plader. De otte runde plader havde et hul i midten som kunne antage fire forskellige størrelser, dog havde alle otte plader den samme hulstørrelse i hver enkel opgave. De to pinde kunne lige som i eksperiment 1 være placeret med fire forskellige afstande i mellem sig. 
 Hver af de 16 forsøgsmuligheder blev i tilfældig rækkefølge udført af 16 højrehåndede mandlige universitetsstuderende. Figur \ref{fig:FittsEx2} viser, hvordan eksperimentet blev udført.
-\begin{figure}[h]
-\centering
-\includegraphics[width=.5\linewidth]{images/illustrations/fitt_ex2}
-\caption{Opstillingen brugt til Fitts' andet eksperiment \cite{fitts1954}}
-\label{fig:FittsEx2}
-\end{figure}
 
 \addcontentsline{toc}{subsection}{Eksperiment 3}
 \subsection*{Eksperiment 3: \textit{Pin Transfer}}
 Udførelsen af dette eksperiment krævede et sæt af otte pinde og 16 huller, delt i to sæt. Diameteren på de otte pinde kunne antage fire forskellige størrelser, alt imens afstanden i mellem de to sæt huller kunne være af fem forskellige længder. Opstillingen kan ses af figur \ref{fig:FittsEx3}.
 Hver af de 20 mulige forsøgsopstillinger blev udført i tilfældig rækkefølge af 20 mandlige universitetsstuderende.
-\begin{figure}[h]
-\centering
-\includegraphics[width=.5\linewidth]{images/illustrations/fitt_ex3}
-\caption{Opstillingen brug til Fitts' tredje eksperiement \cite{fitts1954}}
-\label{fig:FittsEx3}
-\end{figure}
 
 \addcontentsline{toc}{subsection}{Fitts' konklusion}
 \subsection*{Fitts' konklusion}
@@ -231,14 +231,6 @@ På trods af at de fire formuleringer er forskellige, så vil de godt kunne appr
 \label{fig:Sammenligning}
 \end{figure}
 
-
-
-
-
-
-
-
-\newpage
 \addcontentsline{toc}{chapter}{Design}
 \chapter*{Design}
 I dette afsnit beskriver vi det design der er brugt i vores forsøg. Derudover vil vi også beskrive vores forsøgsopstillinger.
@@ -442,10 +434,6 @@ Efterfølgende har vi lukket for muligheden for at deltage i vores forsøg den 3
     \captionof{table}{Afstand og størrelse på målet}\label{tab:pegeopgave}
 \end{minipage}
 
-%\addcontentsline{toc}{chapter}{Statistik}
-%\chapter*{Statistik}
-
-\newpage
 \addcontentsline{toc}{chapter}{Analyse}
 \chapter*{Analyse}
 \addcontentsline{toc}{section}{Modeludvælgelse}
@@ -487,18 +475,12 @@ Vores modelanalyse tager udgangspunkt i AIC-metoden som beskrevet i forrige afsn
 
 \addcontentsline{toc}{subsection}{R-kode}
 \subsection*{R-kode}
-Den relevante R-kode som bliver brugt til analysen, er vist i listing \ref{lst:fitt}, \ref{lst:welford}, \ref{lst:mackenzie}, \ref{lst:meyer}, \ref{lst:aic}.
-
+Listing \ref{lst:filter} viser hvordan vi udfiltrerer alle data som ligger udenfor tre standardafvigelser, hvilket for normaltfordelt data vil betyde at vi beholder $99.7\%$ af vores data.
+\lstinputlisting[label={lst:filter}, caption=Filter til data, language=R, firstline=24, lastline=26]{analyse.r}
+Den relevante R-kode som bliver brugt til analysen, er vist i listing \ref{lst:function}
 \lstinputlisting[label={lst:function}, caption=Funktion til modelanalyse, language=R, firstline=33, lastline=51]{analyse.r}
-
-
-%\lstinputlisting[label={lst:welford}, caption=Welford's Modelanalyse, language=R, firstline=47, lastline=54]{analyse.r}
-%\lstinputlisting[label={lst:mackenzie}, caption=MacKenzie's Modelanalyse, language=R, firstline=56, lastline=63]{analyse.r}
-%\lstinputlisting[label={lst:meyer}, caption=Meyer's Modelanalyse, language=R, firstline=65, lastline=72]{analyse.r}
-%\lstinputlisting[label={lst:aic}, caption=AIC-analyse, language=R, firstline=77, lastline=83]{analyse.r}
-
+\lstinputlisting[label={lst:analysis}, caption=Kald til analysefunktion, language=R, firstline=53, lastline=62]{analyse.r}
 Som det ses af listing \ref{lst:function}, udregner vi først $ID$ for vores data, baseret på de foruddefinerede værdier af $A$ og $W$. Herefter bruger vi $lm()$ til at fitte modellen til vores data, hvorefter vi plotter dataen og modellen i et residualplot.\\
-I listing \ref{lst:aic} ses det at vi benytter $AIC()$ på alle fire modeller, hvorefter de bliver sorteret efter størrelse for nemmere sammenligning.
 
 \addcontentsline{toc}{subsection}{AIC-analyse}
 \subsection*{AIC-analyse}
@@ -513,33 +495,36 @@ Figur \ref{fig:plot_analysis_aic} viser AIC for de fire modeller. De fire modell
 \addcontentsline{toc}{subsection}{Residualanalyse}
 \subsection*{Residualanalyse}
 \begin{minipage}{\linewidth}
-	\centering
-	\includegraphics[width=.4\linewidth]{images/plots/plot_residual_fitt}
-	\captionof{figure}{Fitt's residualplot}
-	\label{fig:plot_residual_fitt}
-	
-	\includegraphics[width=.4\linewidth]{images/plots/plot_residual_welford}
-	\captionof{figure}{Welford's residualplot}
-	\label{fig:plot_residual_welford}
-	
-	\includegraphics[width=.4\linewidth]{images/plots/plot_residual_mackenzie}
-	\captionof{figure}{MacKenzie's residualplot}
-	\label{fig:plot_residual_mackenzie}
-	
-	\includegraphics[width=.4\linewidth]{images/plots/plot_residual_meyer}
-	\captionof{figure}{Meyer's residualplot}
-	\label{fig:plot_residual_meyer}
+	\begin{minipage}{.5\linewidth}
+		\includegraphics[width=\linewidth]{images/plots/plot_residual_fitt}
+		\captionof{figure}{Fitt's residualplot}
+		\label{fig:plot_residual_fitt}
+	\end{minipage}
+	\begin{minipage}{.5\linewidth}
+		\includegraphics[width=\linewidth]{images/plots/plot_residual_welford}
+		\captionof{figure}{Welford's residualplot}
+		\label{fig:plot_residual_welford}
+	\end{minipage}
+	\begin{minipage}{.5\linewidth}
+		\includegraphics[width=\linewidth]{images/plots/plot_residual_mackenzie}
+		\captionof{figure}{MacKenzie's residualplot}
+		\label{fig:plot_residual_mackenzie}
+	\end{minipage}
+	\begin{minipage}{.5\linewidth}
+		\includegraphics[width=\linewidth]{images/plots/plot_residual_meyer}
+		\captionof{figure}{Meyer's residualplot}
+		\label{fig:plot_residual_meyer}
+	\end{minipage}
 \end{minipage}\\\\
 For at få en ekstra vurdering af præcisionen af modellerne, har vi valgt at lave en residualanalyse ved hjælp af residualplots. Residualerne I modellerne er variationen i $ID$ som modellerne ikke når at opfange, og de kan derved sige noget om hvor præcis modellerne er i forhold til den data vi har indsamlet.\\
 På figur \ref{fig:plot_residual_fitt}, \ref{fig:plot_residual_welford}. \ref{fig:plot_residual_mackenzie} og \ref{fig:plot_residual_meyer} ses alle fire modellers residualplot, med en rød linje defineret af en smoothing-funktion. Smoothing-funktionen er tilføjet som et visuelt hjælpemiddel der tydeligt kan vise hvordan residualerne fordeler sig omkring x-aksen. Jo mere centreret de er om aksen, og jo mere linære de er i forhold til aksen, jo bedre er modellen.\\
-Når vi kigger på de fire residualplot, så viser de samme resultater som AIC-analysen. Welford's residualplot viser at modellen passer dårlig på den indsamlede data. Fitt's og MacKenzie's ligner hinanden meget, mens Meyer's er den model der giver den bedste fit til den indsamlede data.
+Når vi kigger på de fire residualplot, så viser de samme resultater som AIC-analysen. Welford's residualplot viser at modellen passer dårlig på den indsamlede data. Fitt's og MacKenzie's ligner hinanden meget, mens Meyer's er den model der giver den bedste fit til den indsamlede data.\\
 Det ses af figur \ref{fig:plot_residual_welford} at Welford's især er dårligere ved lavere værdier af $ID$. Grunden til dette skal findes i at Welford's ikke har det additive $a$-led. Som Welford \cite{welford1968} selv forklare, så vil det manglende $a$-led ikke gøre stor forskel ved større værdier af $ID$. Fitt's og MacKenzie's residualer ligner hinanden rigtig meget. Dette passer også med vores Sammenligningsafsnit, hvor vi viste at $ID$ for de to vil ligge parrallelt med hinanden.
 
 %\addcontentsline{toc}{chapter}{Konklusion}
 %\chapter*{Konklusion}
 
 \nocite{*}
-\newpage
 \input{appendices.tex}
 \addcontentsline{toc}{chapter}{\bibname}
 \printbibliography
