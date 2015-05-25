@@ -42,3 +42,10 @@ for (j in 1:60) {
   }
   print(j)
 }
+
+p <- ggplot(data = NULL)
+for (i in unique(dataPoints$task)) {
+  temp = dataPoints[dataPoints$task==i,]
+  p <- p + geom_path(data = temp, aes(x = x, y = y, colour = id))
+}
+print(p)
