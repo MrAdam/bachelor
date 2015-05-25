@@ -441,6 +441,7 @@ Efterfølgende har vi lukket for muligheden for at deltage i vores forsøg den 3
 
 \addcontentsline{toc}{chapter}{Analyse}
 \chapter*{Analyse}
+I dette afsnit vil vi analysere den indsamlede data ved brug af både kvantitative og kvalitative metoder. Vi vil mere præcist analysere testdeltagernes bevægelsesbaner og hastighedsprofiler. 
 \addcontentsline{toc}{section}{Modeludvælgelse}
 \section*{Modeludvælgelse}
 Som det kan ses af de fire formuleringer for Fitts' lov, så kan de alle sammen opfattes som lineære modeller, med tiden, T, som y-variabel og ID som x-variabel. Bemærk, at Welfords formel har en skæring med y-aksen i 0, dvs. $a=0$. 
@@ -474,9 +475,9 @@ For at være sikre på, at vores data kan bruges til at sammenligne de fire form
 
 På grund af den primært pæne model kan det konkluderes, at vores data godt kan danne grundlag for vores analyse, der kan dog opstå et behov for at skære ekstremt afvigende data fra. Specielt fordi crowdsourcingforsøget er ukontrolleret.
 
-\addcontentsline{toc}{section}{Modelanalyse}
-\section*{Modelanalyse}
-Vores modelanalyse tager udgangspunkt i AIC-metoden som beskrevet i forrige afsnit, og vi benytter os af de data der er indsamlet ved crowdsourcingdeltagernes udførsel af pegeopgaven.
+\addcontentsline{toc}{section}{Modelanalyse af bevægelsesbaner}
+\section*{Modelanalyse af bevægelsesbaner}
+Vores modelanalyse af bevægelsesbaner tager udgangspunkt i AIC-modellen og de bevægelsesbaner der er indsamlet ved crowdsourcingdeltagernes udførsel af opgaverne.
 
 \addcontentsline{toc}{subsection}{R-kode}
 \subsection*{R-kode}
@@ -524,7 +525,19 @@ Figur \ref{fig:plot_analysis_aic} viser AIC for de fire modeller. De fire modell
 For at få en ekstra vurdering af præcisionen af modellerne, har vi valgt at lave en residualanalyse ved hjælp af residualplots. Residualerne I modellerne er variationen i $ID$ som modellerne ikke når at opfange, og de kan derved sige noget om hvor præcis modellerne er i forhold til den data vi har indsamlet.\\
 På figur \ref{fig:plot_residual_fitt}, \ref{fig:plot_residual_welford}. \ref{fig:plot_residual_mackenzie} og \ref{fig:plot_residual_meyer} ses alle fire modellers residualplot, med en rød linje defineret af en smoothing-funktion. Smoothing-funktionen er tilføjet som et visuelt hjælpemiddel der tydeligt kan vise hvordan residualerne fordeler sig omkring x-aksen. Jo mere centreret de er om aksen, og jo mere linære de er i forhold til aksen, jo bedre er modellen.\\
 Når vi kigger på de fire residualplot, så viser de samme resultater som AIC-analysen. Welford's residualplot viser at modellen passer dårlig på den indsamlede data. Fitt's og MacKenzie's ligner hinanden meget, mens Meyer's er den model der giver den bedste fit til den indsamlede data.\\
-Det ses af figur \ref{fig:plot_residual_welford} at Welford's især er dårligere ved lavere værdier af $ID$. Grunden til dette skal findes i at Welford's ikke har det additive $a$-led. Som Welford \cite{welford1968} selv forklare, så vil det manglende $a$-led ikke gøre stor forskel ved større værdier af $ID$. Fitt's og MacKenzie's residualer ligner hinanden rigtig meget. Dette passer også med vores Sammenligningsafsnit, hvor vi viste at $ID$ for de to vil ligge parrallelt med hinanden.
+Det ses af figur \ref{fig:plot_residual_welford} at Welford's især er dårligere ved lavere værdier af $ID$. Grunden til dette skal findes i at Welford's ikke har det additive $a$-led. Som Welford \cite{welford1968} selv forklare, så vil det manglende $a$-led ikke gøre stor forskel ved større værdier af $ID$. Fitt's og MacKenzie's residualer ligner hinanden rigtig meget.
+
+\addcontentsline{toc}{section}{Modelanalyse af hastighedsprofiler}
+\section*{Modelanalyse af hastighedsprofiler}
+Vores modelanalyse af hastighedsprofiler tager udgangspunkt i en kvantitativ og en kvalitativ analyse af de indsamlede hastighedsprofiler fra crowdsourcingdeltagernes pegeopgaver.
+
+\addcontentsline{toc}{subsection}{Kvalitativ analyse}
+\subsection*{Kvalitativ analyse}
+Vi har valgt at udføre en kvalitativ af bevægelsesbanerne, da det vil give os et større overblik over den indsamlede data og vise os hvilke tendenser der kan observeres.
+Den kvalitative analyse bygger på 57 tilfældigt crowdsourcingdeltagerne, hvilket svare til cirka $21\%$ af deltagerne. Af de 57 deltagere angav 32 at de brugte mus, mens 25 angav at deres pegeredskab var touchpad. Vores observationer basere sig på bevægelsesbanerne for hver deltager, et eksempel herpå ses i figur ... .
+
+Vi har observeret at deltagerne tager en stor underbevægelse, eventuelt opfulgt af mindre korrigerende underbevægelser. Typisk vil der for muse-brugerne være en korrigerende underbevægelse, mens touchpad-brugerne ofte bruger flere korrigerende underbevægelser. Generelt har muse-brugerne også mindre udsving i deres bevægelsesbaner end touchpad-brugerne. Dertil var der flere deltagere som startede enkelte baner, med at bevæge pegeredskabet i en forkert retning. 
+
 
 %\addcontentsline{toc}{chapter}{Konklusion}
 %\chapter*{Konklusion}
