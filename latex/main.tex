@@ -611,12 +611,26 @@ Den kvalitative analyse bygger på 57 tilfældigt crowdsourcingdeltagerne, hvilk
 
 Vi har observeret at deltagerne tager en stor underbevægelse, eventuelt opfulgt af mindre korrigerende underbevægelser. Typisk vil der for muse-brugerne være en korrigerende underbevægelse, mens touchpad-brugerne ofte bruger flere korrigerende underbevægelser. Generelt har muse-brugerne også mindre udsving i deres bevægelsesbaner end touchpad-brugerne. Dertil var der flere deltagere som startede enkelte baner, med at bevæge pegeredskabet i en forkert retning. 
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=.5\linewidth, trim = 0cm 0cm 7cm 0cm, clip]{images/plots/kvalitativ_analyse}
-\caption{Bevægelsesbaner for en tilfældig testdeltager.}
-\label{fig:movement_random_person}
-\end{figure}
+\begin{minipage}{\linewidth}
+	\begin{minipage}{.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/plots/kvalitativ_analyse}
+		\captionof{figure}{Bevægelsesbaner for en tilfældig testdeltager}
+		\label{fig:movement_random_person}
+	\end{minipage}
+	\begin{minipage}{.5\linewidth}
+		\centering
+		\includegraphics[width=.75\linewidth]{images/plots/plot_velocity_random}
+		\captionof{figure}{Hastighedsprofil for en tilfældig testdeltager}
+		\label{fig:plot_velocity_random}
+	\end{minipage}
+	\begin{minipage}{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/plots/plot_speed_overall}
+		\captionof{figure}{Samlet fartprofil for alle 10 testdeltagere}
+		\label{fig:plot_speed_overall}
+	\end{minipage}
+\end{minipage}
 
 %\addcontentsline{toc}{chapter}{Konklusion}
 %\chapter*{Konklusion}

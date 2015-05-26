@@ -60,7 +60,7 @@ for (m_task in tasks$id) {
 plot1 <- ggplot(points, aes(x = elapsedTime, y = deltaDistance)) + geom_point() + coord_fixed(ratio=4)
 print(plot1)
 
-plot2 <- ggplot(subset(points, task == 33), aes(x = x, y = y)) + 
+plot2 <- ggplot(subset(points, task == 15), aes(x = x, y = y)) + 
   geom_segment(aes(xend = x + deltaX, yend = y + deltaY), arrow = arrow(length = unit(0.2, "cm"))) + 
   coord_fixed(ratio=1)
 print(plot2)
