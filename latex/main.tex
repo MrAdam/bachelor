@@ -29,6 +29,7 @@ Testdeltagerne, 16 højrehåndede mandlige universitetsstuderende, fik 15 sekund
 \subsection*{Eksperiment 2: \textit{Disc Transfer}}
 I dette eksperiment brugte Fitts to pinde og otte runde plader. De otte runde plader havde et hul i midten som kunne antage fire forskellige størrelser, dog havde alle otte plader den samme hulstørrelse i hver enkel opgave. De to pinde kunne lige som i eksperiment 1 være placeret med fire forskellige afstande i mellem sig. 
 Hver af de 16 forsøgsmuligheder blev i tilfældig rækkefølge udført af 16 højrehåndede mandlige universitetsstuderende. Figur \ref{fig:FittsEx2} viser, hvordan eksperimentet blev udført.
+
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.50\linewidth}
 		\includegraphics[width=\textwidth]{images/illustrations/fitt_ex1}
@@ -97,6 +98,7 @@ Crossman og Goodeve \cite{crossman1983} forklarer Fitts lov som en overordnet be
 \label{fig:CrossmanFitt}
 \end{figure}
 
+\newpage
 \addcontentsline{toc}{section}{Alternative formuleringer}
 \section*{Alternative formuleringer}
 Siden udgivelsen af Fitts’ artikel, har flere forskere forsøgt at finde en formel, der passer bedre på det motoriske system, end Fitts’ originale lov. Der har indenfor menneske-datamaskine interaktion været flere udgivelser, som mener at have fundet en mere præcis formel end Fitts’ lov, eller som kigger på andre former for eksperimenter. Vi vil i dette afsnit se nærmere på tre af sådanne formuleringer.
@@ -200,8 +202,8 @@ Når man kigger på Ligning \ref{eq:meyer}, så er det vigtigt at notere sig, at
 \label{fig:log_vs_sqrt}
 \end{figure}
 
-\addcontentsline{toc}{subsection}{Sammenligning}
-\subsection*{Sammenligning}
+\addcontentsline{toc}{section}{Sammenligning}
+\section*{Sammenligning}
 For at få en bedre forståelse af de fire formuleringer af Fitts' lov, vil vi i dette afsnit se på hvordan de matematisk ligner hinanden. Det første vi vil gøre er at prøve at omformulere Welford's formulering, da den ikke indeholder et additivt `a'-led. 
 \begin{align*}
 T &= K\cdot\log\left(\frac{A+0.5W}{W}\right)\Leftrightarrow\\
@@ -211,9 +213,9 @@ T &= -K+K\left(\log(2)+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
 T &= -K+K\left(\log\left(2\left(\cdot\frac{A+0.5W}{W}\right)\right)\right)\Leftrightarrow\\
 T &= -K+K\cdot\log\left(\frac{2A+W}{W}\right)
 \end{align*}
-På trods af at det er muligt at omformulere Welford's formulering, så vil det ikke være brugbart i praksis. Omformuleringen gør at det additive led, $a = -K$, er blevet negativt, hvilket betyder at tiden det tager at påbegynde en opgave er negativ. Vi vil derfor fremadrettet kun bruge Welford's formulering uden det additive konstant.
+På trods af at det er muligt at omformulere Welford's formulering, så vil det ikke være brugbart i praksis. Omformuleringen gør, at det additive led, $a = -K$, er blevet negativt, hvilket betyder at tiden det tager at påbegynde en opgave er negativ. Vi vil derfor fremadrettet kun bruge Welford's formulering uden den additive konstant.
 
-Når vi kigger på de fire formuleringer, så kan vi vise at de ikke er ens, ved at indsætte $a=0.2$, $b=0.16$, $A = 5$ og $W = 1$,
+Når vi kigger på de fire formuleringer, så kan vi vise, at de ikke er ens, ved at indsætte $a=0.2$, $b=0.16$, $A = 5$ og $W = 1$,
 \begin{align*}
 0.2 + 0.16\cdot\log\left(\frac{2\cdot5}{1}\right) = 0.7315\\
 0.16\cdot\log\left(\frac{5+0.5\cdot1}{1}\right) = 0.3935\\
@@ -222,7 +224,7 @@ Når vi kigger på de fire formuleringer, så kan vi vise at de ikke er ens, ved
 \end{align*}
 Da de fire ovenstående udregninger giver forskellige resultater, er de fire formuleringer ikke ens og vi vil derfor få forskellige resultater når vi bruger dem på den indsamlede data.
 
-På trods af at de fire formuleringer er forskellige, så vil de godt kunne approksimere hinanden. Vi har derfor plottet de fire formulering i to interval, for at se om de approksimere hinanden. Figur \ref{fig:Sammenligning} viser $ID$ som funktion af $A/W$ og viser at Meyer's, Welford's og MacKenzie's approksimere hinanden for $A/W$-værdier mellem 0 og 25. Grafen for Fitts' ligger højere end de tre andre og approksimere ikke de andre.
+På trods af at de fire formuleringer er forskellige, så vil de kunne approksimere hinanden. Vi har derfor plottet de fire formulering i ét interval, for at se om de approksimere hinanden. Figur \ref{fig:Sammenligning} viser $ID$ som funktion af $A/W$ og viser at Meyer's, Welford's og MacKenzie's approksimere hinanden for $A/W$-værdier mellem 0 og 25. Grafen for Fitts' ligger højere end de tre andre og approksimere ikke de andre.
 
 \begin{figure}[h]
 \centering
@@ -441,24 +443,25 @@ Efterfølgende har vi lukket for muligheden for at deltage i vores forsøg den 3
 
 \addcontentsline{toc}{chapter}{Analyse}
 \chapter*{Analyse}
+I dette afsnit vil vi analysere den indsamlede data ved brug af både kvantitative og kvalitative metoder. Vi vil mere præcist analysere testdeltagernes bevægelsesbaner og hastighedsprofiler. 
 \addcontentsline{toc}{section}{Modeludvælgelse}
 \section*{Modeludvælgelse}
-Som det kan ses af de fire formuleringer for Fitts' lov, så kan de alle sammen opfattes som lineære modeller, med tiden, T, som y-variabel og ID som x-variabel. Bemærk, at Welfords formel har en skæring med y-aksen i 0, dvs. $a=0$. 
+Som det kan ses af de fire formuleringer for Fitts' lov, så kan de alle sammen opfattes som affine modeller, med tiden, T, som y-variabel og ID som x-variabel. Bemærk, at Welfords formel har en skæring med y-aksen i 0, dvs. $y=b\cdot x$. 
 
 For at kunne finde ud af, hvilken af de fire lineære modeller, som beskriver vores data bedst, har vi overvejet følgende sammenligningskriterier.
 
 \begin{itemize}
-\item{Least Squared Errors (LSE).}
-\item{Mallow's $C_p$.}
-\item{Akaike Information Criterion (AIC).}
-\item{Bayesian Information Criterion (BIC).}
+\item{Least Squared Errors (LSE) \cite{legendre1805}.}
+\item{Mallow's $C_p$ \cite{mallow1973}.}
+\item{Akaike Information Criterion (AIC) \cite{akaike1973}.}
+\item{Bayesian Information Criterion (BIC) \cite{schwarz1978}.}
 \end{itemize}
 
 LSE er bestemt ved at finde gennemsnittet af kvadratet på afstandene fra punkterne til modellen, den model som har det laveste gennemsnit bliver vurderet som bedst. Et problem ved udelukkende at benytte dette kriterium er, at en model altid kan beskrive alle data punkter perfekt ved blot at inkludere flere parametre. Dette er hvad der kan klassificeres som overfitting.
 
 Mallow's $C_p$ kriteriet bliver beregnet ud fra LSE men inddrager også antallet af parametre i beregningen for netop at undgå overfitting. Tilsvarende gør sig gældende for AIC og BIC, de beregnes dog ved hjælp af maximum likelihood i stedet for LSE.
 
-For et givent datasæt med parametre og udfald og en tilhørende statistisk model vil likelihood funktionen beregne sandsynligheden for at modellens parametre vil resultere i de givne udfald. Ved maximum likelihood findes de værdier for modellens parametre som maksimere likelihood funktionen, det vil sige har størst sandsynlighed for at hænde. Forskellen imellem AIC og BIC er, at BIC vægter antallet af parametre mere negativt end AIC.
+For et givent datasæt $x$ og en tilhørende statistisk model vil likelihood funktionen beregne sandsynligheden for at modellens parametre $p$ vil resultere i $x$. Ved maximum likelihood findes de værdier for parametrene $p$, som maksimere likelihood funktionen. Det vil sige de værdier for parametrene $p$, som gør det observerede datasæt $x$ mest sandsynligt. Forskellen imellem AIC og BIC er, at BIC vægter antallet af parametre mere negativt end AIC.
 
 Af de fire beskrevne modeller har vi valgt at bruge AIC, da det er den mest udbredte at basere sin modeludvælgelse på. Hvis vi lader $L$ være maximum likelihood værdierne for modellens parametre og $k$ antallet af parametre, så er AIC givet ved
 \begin{align}
@@ -470,14 +473,62 @@ $AIC()$\footnote{R dokumentation om $AIC()$: \url{https://stat.ethz.ch/R-manual/
 
 \addcontentsline{toc}{section}{Indledende analyse}
 \section*{Indledende analyse}
-For at være sikre på, at vores data kan bruges til at sammenligne de fire formuleringer har vi først kigget på vores 10 testdeltagere hver for sig. Vi har fitted vores 10 testdeltageres data fra pegeopgaverne til Fitts lov hver for sig. Tre af disse plots kan ses i appendiks D, Testpersonernes individuelle grafer.  Det kan på graferne ses hvordan punkterne ligger pænt omkring modellen, angivet ved den blå linje. Men også, at enkelte datapunkter bryder tendensen, specielt på figur \ref{fig:testdeltager1}. 
+For at være sikre på, at vores data kan bruges til at sammenligne de fire formuleringer har vi først kigget på vores 10 testdeltagere hver for sig. Vi har fitted vores 10 testdeltageres data fra pegeopgaverne til Fitts lov hver for sig. Tre af disse plots kan ses i figurerne \ref{fig:testdeltager1}, \ref{fig:testdeltager6}, \ref{fig:testdeltager10}.  Det kan på graferne ses hvordan punkterne ligger pænt omkring modellen, angivet ved den blå linje. Men også, at enkelte datapunkter bryder tendensen, specielt på figur \ref{fig:testdeltager6}. 
 
-På grund af den primært pæne model kan det konkluderes, at vores data godt kan danne grundlag for vores analyse, der kan dog opstå et behov for at skære ekstremt afvigende data fra. Specielt fordi crowdsourcingforsøget er ukontrolleret.
+På baggrund af de affine linjers overenstemmelse med største delen af datapunkterne har vi konkluderet, at vores data godt kan danne grundlag for en analyse af de fire formuleringer af Fitts lov. Vi vil dog fjerne alle datapunkter som afviger med mere end 3 gange standardafvigelsen, $\sigma$, som er givet ved kvadratroden af variansen på datasættet \cite{pearson1894}.
 
-\addcontentsline{toc}{section}{Modelanalyse}
-\section*{Modelanalyse}
-Vores modelanalyse tager udgangspunkt i AIC-metoden som beskrevet i forrige afsnit, og vi benytter os af de data der er indsamlet ved crowdsourcingdeltagernes udførsel af pegeopgaven.
+\begin{minipage}{\linewidth}
+	\begin{minipage}[b]{.50\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_testdeltager_1}
+		\captionof{figure}{Testdeltager 1}
+		\label{fig:testdeltager1}
+	\end{minipage}
+	\begin{minipage}[b]{0.50\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_testdeltager_6}
+		\captionof{figure}{Testdeltager 6}
+		\label{fig:testdeltager6}
+	\end{minipage}
+\end{minipage}
 
+\begin{minipage}{\textwidth}
+\centering
+\includegraphics[width=.25\textheight,width=0.5\textwidth]{images/plots/plot_testdeltager_10}
+\captionof{figure}{Testdeltager 10}
+\label{fig:testdeltager10}
+\end{minipage}
+
+\addcontentsline{toc}{section}{Modelanalyse af bevægelsesbaner}
+\section*{Modelanalyse af bevægelsesbaner}
+Vores modelanalyse af bevægelsesbaner tager udgangspunkt i AIC-modellen og de bevægelsesbaner der er indsamlet ved crowdsourcingdeltagernes udførsel af opgaverne.
+
+Hver af de fire formuleringer af Fitts lov har vi tilpasset til vores data fra de 264 testdeltageres pegeopgaver ved lineær regression ved R's $lm()$ funktion. Til hver af modellerne har vi gjort brug af formuleringernes respektive $ID$ som $x$-koordinat og tiden, $t$, det tog testdeltageren at løse en pågældende pegeopgave. R-koden er at se i listing \ref{lst:function}. Datapunkterne og de fire modeller er vist i figur \ref{fig:welford_affine_line}, \ref{fig:fitt_affine_line}, \ref{fig:meyer_affine_line} og \ref{fig:mackenzie_affine_line}. Bemærk, hvordan datapunkterne danner 25 vertikale 'søjler', én for hvert af vores pegeopgavers $ID$.
+
+Det er disse modeller som vores pegeopgaveanalyse vil tage udgangspunkt i. For at finde ud af, hvilken af modellerne der er bedst, vil vi som tidligere beskrevet gøre brug af AIC, da det ikke er muligt ud fra disse figurer at sige noget om.
+
+\begin{minipage}{\linewidth}
+	\begin{minipage}[b]{.50\linewidth}
+		\captionof{figure}{Welfords}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_welford}
+		\label{fig:welford_affine_line}
+	\end{minipage}
+	\begin{minipage}[b]{0.50\linewidth}
+		\captionof{figure}{Fitt}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_fitt}
+		\label{fig:fitt_affine_line}
+	\end{minipage}
+	\begin{minipage}[b]{.50\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_meyer}
+		\captionof{figure}{Meyer}
+		\label{fig:meyer_affine_line}
+	\end{minipage}
+	\begin{minipage}[b]{0.50\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_mackenzie}
+		\captionof{figure}{Mackenzie}
+		\label{fig:mackenzie_affine_line}
+	\end{minipage}
+\end{minipage}
+
+\newpage
 \addcontentsline{toc}{subsection}{R-kode}
 \subsection*{R-kode}
 Listing \ref{lst:filter} viser hvordan vi udfiltrerer alle data som ligger udenfor tre standardafvigelser, hvilket for normaltfordelt data vil betyde at vi beholder $99.7\%$ af vores data.
@@ -495,7 +546,20 @@ Som det ses af listing \ref{lst:function}, udregner vi først $ID$ for vores dat
 %[1] "MacKenzie's AIC = 75567.185218973"
 %[1] "Meyer's AIC = 75620.1633109145"
 % TODO: Indsæt tabel med de relative størrelser i stedet for plot
-Figur \ref{fig:plot_analysis_aic} viser AIC for de fire modeller. De fire modellers AIC er høje, men det er underordnet for vores analyse, da vi kigger på deres indbyrdes forhold. Det ses af figuren at Meyer's har den laveste AIC og derfor er den model der passer bedst til den indsamlede data. MacKenzie's og Fitt's følger herefter med lidt højere AIC værdier, mens Welford's er den klart dårligste af de fire modeller.
+Figur \ref{tab:table_analysis_aic} viser AIC for de fire modeller. De fire modellers AIC er høje, men det er underordnet da det afhænger af antallet af datapunkter, Det der derimod betyder noget er deres indbyrdes forhold. Det ses af tabellen at Meyer's har den laveste AIC og derfor er den model der passer bedst til den indsamlede data. MacKenzie's og Fitt's følger herefter med lidt højere AIC værdier, mens Welford's er den klart dårligste af de fire modeller. Vi har valgt at sætte Meyers AIC værdi som nulpunkt og så beregne forskellen til de andre herfra. 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ccc}
+Model & AIC værdi & Forskel\\
+Meyer & 94598.08 & 0 \\
+Mackenzie & 94649.26 & 51.18 \\
+Fitts & 94694.76 &96.68 \\
+Welford & 96060.29 & 1462.21
+\end{tabular}
+\caption{AIC værdier og indbyrdes forskel med udgangspunkt i Meyers som nulpunkt}
+\label{tab:table_analysis_aic}
+\end{table}
 
 \addcontentsline{toc}{subsection}{Residualanalyse}
 \subsection*{Residualanalyse}
@@ -524,7 +588,35 @@ Figur \ref{fig:plot_analysis_aic} viser AIC for de fire modeller. De fire modell
 For at få en ekstra vurdering af præcisionen af modellerne, har vi valgt at lave en residualanalyse ved hjælp af residualplots. Residualerne I modellerne er variationen i $ID$ som modellerne ikke når at opfange, og de kan derved sige noget om hvor præcis modellerne er i forhold til den data vi har indsamlet.\\
 På figur \ref{fig:plot_residual_fitt}, \ref{fig:plot_residual_welford}. \ref{fig:plot_residual_mackenzie} og \ref{fig:plot_residual_meyer} ses alle fire modellers residualplot, med en rød linje defineret af en smoothing-funktion. Smoothing-funktionen er tilføjet som et visuelt hjælpemiddel der tydeligt kan vise hvordan residualerne fordeler sig omkring x-aksen. Jo mere centreret de er om aksen, og jo mere linære de er i forhold til aksen, jo bedre er modellen.\\
 Når vi kigger på de fire residualplot, så viser de samme resultater som AIC-analysen. Welford's residualplot viser at modellen passer dårlig på den indsamlede data. Fitt's og MacKenzie's ligner hinanden meget, mens Meyer's er den model der giver den bedste fit til den indsamlede data.\\
-Det ses af figur \ref{fig:plot_residual_welford} at Welford's især er dårligere ved lavere værdier af $ID$. Grunden til dette skal findes i at Welford's ikke har det additive $a$-led. Som Welford \cite{welford1968} selv forklare, så vil det manglende $a$-led ikke gøre stor forskel ved større værdier af $ID$. Fitt's og MacKenzie's residualer ligner hinanden rigtig meget. Dette passer også med vores Sammenligningsafsnit, hvor vi viste at $ID$ for de to vil ligge parrallelt med hinanden.
+Det ses af figur \ref{fig:plot_residual_welford} at Welford's især er dårligere ved lavere værdier af $ID$. Grunden til dette skal findes i at Welford's ikke har det additive $a$-led. Som Welford \cite{welford1968} selv forklare, så vil det manglende $a$-led ikke gøre stor forskel ved større værdier af $ID$. Fitt's og MacKenzie's residualer ligner hinanden rigtig meget.
+
+\addcontentsline{toc}{section}{Modelanalyse af navigationsopgaver}
+\section*{Modelanalyse af navigationsopgaver}
+I vores forsøg havde vi, udover pegeopgaven, også tunnel- og spiralopgaver. Vi vil i dette afsnit forsøge at passe de fire formuleringer af Fitts lov på vores navigationsopgaver, velvidende, at det ikke er den en type opgaver de er beregnet til. Accot og Zhai har i deres artikel \cite{accot1997} undersøgt lignende navigationsopgaver og fundet $ID$ specifikt for både tunnel- og spiralopgaver, hvilket vi vil bruge til at sammenligne med de fire formuleringer.
+
+\addcontentsline{toc}{subsection}{Analyse af tunnelopgaver}
+\section*{Analyse af tunnelopgaver}
+
+\addcontentsline{toc}{subsection}{Analyse af spiralopgaver}
+\section*{Analyse af spiralopgaver}
+
+\addcontentsline{toc}{section}{Modelanalyse af hastighedsprofiler}
+\section*{Modelanalyse af hastighedsprofiler}
+Vores modelanalyse af hastighedsprofiler tager udgangspunkt i en kvantitativ og en kvalitativ analyse af de indsamlede hastighedsprofiler fra crowdsourcingdeltagernes pegeopgaver.
+
+\addcontentsline{toc}{subsection}{Kvalitativ analyse}
+\subsection*{Kvalitativ analyse}
+Vi har valgt at udføre en kvalitativ af bevægelsesbanerne, da det vil give os et større overblik over den indsamlede data og vise os hvilke tendenser der kan observeres.
+Den kvalitative analyse bygger på 57 tilfældigt crowdsourcingdeltagerne, hvilket svare til cirka $21\%$ af deltagerne. Af de 57 deltagere angav 32 at de brugte mus, mens 25 angav at deres pegeredskab var touchpad. Vores observationer basere sig på bevægelsesbanerne for hver deltager, et eksempel herpå ses i figur \ref{fig:movement_random_person}.
+
+Vi har observeret at deltagerne tager en stor underbevægelse, eventuelt opfulgt af mindre korrigerende underbevægelser. Typisk vil der for muse-brugerne være en korrigerende underbevægelse, mens touchpad-brugerne ofte bruger flere korrigerende underbevægelser. Generelt har muse-brugerne også mindre udsving i deres bevægelsesbaner end touchpad-brugerne. Dertil var der flere deltagere som startede enkelte baner, med at bevæge pegeredskabet i en forkert retning. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=.5\linewidth, trim = 0cm 0cm 7cm 0cm, clip]{images/plots/kvalitativ_analyse}
+\caption{Bevægelsesbaner for en tilfældig testdeltager.}
+\label{fig:movement_random_person}
+\end{figure}
 
 %\addcontentsline{toc}{chapter}{Konklusion}
 %\chapter*{Konklusion}

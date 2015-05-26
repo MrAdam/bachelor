@@ -7,7 +7,7 @@ library(gridExtra)
 
 # Load data from database
 options(warn=-1);
-connection <-dbConnect(dbDriver("MySQL"), user="root", password="toor", host="127.0.0.1", dbname="bachelor_final")
+connection <-dbConnect(dbDriver("MySQL"), user="root", host="127.0.0.1", dbname="bachelor_final");
 result <- dbSendQuery(connection, "SELECT * FROM person")
 persons <- dbFetch(result, n=-1)
 dbClearResult(result)
