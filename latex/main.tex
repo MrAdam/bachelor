@@ -132,7 +132,7 @@ Ud fra de tre ovenstående modifikationer indførte Welford igen Fitts' data fra
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth]{images/illustrations/welford_plot_2}
-\caption{Fitts' data og den affine kurve for Welfords model.}
+\caption{Fitts' data og den lineære kurve for Welfords model.}
 \label{fig:WelfordGraf2}
 \end{figure}
 
@@ -156,7 +156,7 @@ En af de mest accepterede udledninger af Fitts' lov stammer fra modellen \emph{d
 \caption{Index of difficulty i forhold til movement time ved forskellige værdier af $W$}
 \label{fig:MacKenziePlot1}
 \end{figure}
-MacKenzie beskriver, at et af problemerne med Fitts' Lov er den tætte relation mellem $ID$ og $MT$. Figur~\ref{fig:MacKenziePlot1} illustrerer hvordan punkterne flader ud, ved lave værdier af $ID$, mens kurven beholder sit $1:1$-forhold mellem $ID$ og $MT$. Der er altså en usammenhæng mellem de observerede og forudsagte værdier, hvilket også er blevet observeret i flere andre studier som \cite{welford1960, buck1986, crossman1983, drury1975, klapp1975, langolf1976, meyer1988, wallace1978}\\
+MacKenzie beskriver, at et af problemerne med Fitts' Lov er den tætte relation mellem $ID$ og $MT$. Figur~\ref{fig:MacKenziePlot1} illustrerer, hvordan punkterne flader ud, ved lave værdier af $ID$, mens kurven beholder sit $1:1$-forhold mellem $ID$ og $MT$. Der er altså en usammenhæng mellem de observerede og forudsagte værdier, hvilket også er blevet observeret i flere andre studier som \cite{welford1960, buck1986, crossman1983, drury1975, klapp1975, langolf1976, meyer1988, wallace1978}\\
 Han fremhæver dog, at der er lavet en del studier af Fitts' lov og, at der er blevet præsenteret en del alternative formuleringer, som forsøger at få de faktiske data til at passe bedre til modellen. Specielt fremhæver han Welford's~\cite{welford1960,welford1968}, da den er udbredt som alternativ til Fitts' originale formulering. MacKenzie nævner den ekstreme lighed mellem Welford og Shannons formulering, og beskriver hvordan det for nyligt er blevet vist at Paul Fitts originale formulerings forhold mellem $A$ og $W$ havde baggrund i en approksimation af Shannon's sætning~\cite[p. 388]{fitts1954}, som var blevet introduceret med en advarsel om at brugbarheden kun gjaldt ved et højt signal-til-støj forhold. Dette giver selvfølgelig problemer når der i Fitts' originale forsøg bliver brugt et forhold helt ned til 1:1 mellem A og W. MacKenzie foreslår at man benytter sig af en form der minder meget om Welford's, men her er en direkte analogi til Shannon's formulering:
 \begin{align}
 \text{Shannon: }C=B\times&\log{\frac{S+N}{N}}\\
@@ -191,7 +191,7 @@ T = a + b \sqrt{\frac{A}{W}}
 
 Meyer et. al udfører et teoretisk og to praktiske forsøg, hvor der i det teoretiske forsøg bliver gjort flere udregninger med forskellige værdier af A og W, som viser en god approksimation i forhold til Fitts' formulering. De praktiske forsøg gør brug af simplere motoriske opgaver end dem kendt fra Fitts' egne forsøg. Den eneste rummelige frihed i Meyers forsøg er håndledenes rotation. Igennem hele artiklen benytter Meyer sig af, at en motorisk opgave er delt ind i en primær underbevægelse, og nogle efterfølgende korrigerende underbevægelser. Dette har dog ikke nogen betydning for sammenligningen med Fitts’ formulering, da den totale tid af alle underbevægelser vil approksimere den logaritmiske funktion af A/W, hvilket medfører at Fitts model også passer på modeller med iterative fejlkorrigerende underbevægelser.
 
-Når man kigger på Ligning \ref{eq:meyer}, så er det vigtigt at notere sig, at grafen for funktionen vil udvise en form svarende til $log_2(2A/W)$ og derved efterligne Ligning \ref{eq:FittsLov}. Grunden til dette er begge funktioner monotont voksende, når $\frac{A}{W}$ bliver større, $\sqrt{\frac{A}{W}}$ vokser dog hurtigere end den tilsvarende logaritmiske funktion, hvilket kan ses af figur \ref{fig:log_vs_sqrt}. 
+Graferne for funktionerne i ligning \ref{eq:meyer} og \ref{eq:FittsLov} vil udvise samme form. Grunden til dette er begge funktioner monotont voksende, når $\frac{A}{W}$ bliver større, $\sqrt{\frac{A}{W}}$ vokser dog hurtigere end den tilsvarende logaritmiske funktion, hvilket kan ses af figur \ref{fig:log_vs_sqrt}. 
 
 \cite{goldberg2015} noterer dog, at der er nogle ulemper ved denne formel. Hvis testdeltageren når målet i en enkelt bevægelse, så vil modellen følge en lineær udvikling i stedet for en eksponentiel udvikling. Dette passer ikke godt med observerede værdier. For en fast positiv værdi af $\frac{A}{W}$ vil Meyers formel gå mod $1$, når antallet af underbevægelser går mod uendelig.
 
@@ -215,13 +215,21 @@ T &= -K+K\cdot\log\left(\frac{2A+W}{W}\right)
 \end{align*}
 På trods af at det er muligt at omformulere Welford's formulering, så vil det ikke være brugbart i praksis. Omformuleringen gør, at det additive led, $a = -K$, er blevet negativt, hvilket betyder at tiden det tager at påbegynde en opgave er negativ. Vi vil derfor fremadrettet kun bruge Welford's formulering uden den additive konstant.
 
-Når vi kigger på de fire formuleringer, så kan vi vise, at de ikke er ens, ved at indsætte $a=0.2$, $b=0.16$, $A = 5$ og $W = 1$,
+Når vi kigger på de fire formuleringer, så kan vi vise, at de ikke er ens, ved at vælge et fast $A = 5$ og $W = 1$ og finde ét punkt, hvor de to funktionsværdier er forskellige.
 \begin{align*}
-0.2 + 0.16\cdot\log\left(\frac{2\cdot5}{1}\right) = 0.7315\\
-0.16\cdot\log\left(\frac{5+0.5\cdot1}{1}\right) = 0.3935\\
-0.2 + 0.16\cdot\log\left(\frac{5 + 1}{1}\right) = 0.4866\\
-0.2 + 0.16\cdot\sqrt{\frac{5}{1}} = 0.5577
+\text{Fitts: } &T=a+b\cdot\log\left(\frac{2\cdot5}{2}\right)\\
+\text{Welford: } &T=k\cdot\log\left(\frac{5+0.5\cdot 2}{2}\right)\\
+\text{Mackenzie: } &T=a+b\cdot\log\left(\frac{5 + 2}{2}\right)\\
+\text{Meyer: } &T=a+b\cdot\sqrt{\frac{5}{2}}
 \end{align*}
+Ved at sætte $a=0$ kan vi finde skæringen med $y$-aksen og vise deres forskellige funktionsværdier.
+\begin{align*}
+\text{Fitts: } &T=b\cdot\log\left(\frac{2\cdot5}{2}\right)\\
+\text{Welford: } &T=k\cdot\log\left(\frac{5+0.5\cdot 2}{2}\right)\\
+\text{Mackenzie: } &T=b\cdot\log\left(\frac{5 + 2}{2}\right)\\
+\text{Meyer: } &T=b\cdot\sqrt{\frac{5}{2}}
+\end{align*}
+
 Da de fire ovenstående udregninger giver forskellige resultater, er de fire formuleringer ikke ens og vi vil derfor få forskellige resultater når vi bruger dem på den indsamlede data.
 
 På trods af at de fire formuleringer er forskellige, så vil de kunne approksimere hinanden. Vi har derfor plottet de fire formulering i ét interval, for at se om de approksimere hinanden. Figur \ref{fig:Sammenligning} viser $ID$ som funktion af $A/W$ og viser at Meyer's, Welford's og MacKenzie's approksimere hinanden for $A/W$-værdier mellem 0 og 25. Grafen for Fitts' ligger højere end de tre andre og approksimere ikke de andre.
@@ -507,23 +515,23 @@ Det er disse modeller som vores pegeopgaveanalyse vil tage udgangspunkt i. For a
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.50\linewidth}
-		\captionof{figure}{Welfords}
+		\captionof{figure}{Welford's affine model}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_welford}
 		\label{fig:welford_affine_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.50\linewidth}
-		\captionof{figure}{Fitt}
+		\captionof{figure}{Fitts' affine model}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_fitt}
 		\label{fig:fitt_affine_line}
 	\end{minipage}
 	\begin{minipage}[b]{.50\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_meyer}
-		\captionof{figure}{Meyer}
+		\captionof{figure}{Meyer's affine model}
 		\label{fig:meyer_affine_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.50\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_mackenzie}
-		\captionof{figure}{Mackenzie}
+		\captionof{figure}{Mackenzie's affine model}
 		\label{fig:mackenzie_affine_line}
 	\end{minipage}
 \end{minipage}
@@ -566,7 +574,7 @@ Welford & 96060.29 & 1462.21
 \begin{minipage}{\linewidth}
 	\begin{minipage}{.5\linewidth}
 		\includegraphics[width=\linewidth]{images/plots/plot_residual_fitt}
-		\captionof{figure}{Fitt's residualplot}
+		\captionof{figure}{Fitts' residualplot}
 		\label{fig:plot_residual_fitt}
 	\end{minipage}
 	\begin{minipage}{.5\linewidth}
@@ -612,37 +620,35 @@ Accot \& Zhai & 17669.07 & 0.54\\
 Meyer & 17669.50 & 0.87 \\
 Welford & 17679.18 & 10.65
 \end{tabular}
-\caption{AIC værdier og indbyrdes forskel med udgangspunkt i Welfords som nulpunkt}
+\caption{AIC værdier og indbyrdes forskel med udgangspunkt i Fitts' som nulpunkt}
 \label{tab:table_analysis_aic}
 \end{table}
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.50\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_tunnel_model_welford}
-		\captionof{figure}{Welfords}
+		\captionof{figure}{Welford's affine model}
 		\label{fig:welford_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.50\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_tunnel_model_fitt}
-		\captionof{figure}{Fitts}
+		\captionof{figure}{Fitts' affine model}
 		\label{fig:fitt_tunnel_line}
 	\end{minipage}
-\end{minipage}
-\begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.50\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_tunnel_model_meyer}
-		\captionof{figure}{Meyer}
+		\captionof{figure}{Meyer's affine model}
 		\label{fig:meyer_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.50\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_tunnel_model_mackenzie}
-		\captionof{figure}{Mackenzie}
+		\captionof{figure}{Mackenzie's affine model}
 		\label{fig:mackenzie_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{\linewidth}
 		\centering
 		\includegraphics[width=0.5\textwidth]{images/plots/plot_tunnel_model_accot}
-		\captionof{figure}{Accot \& Zhai}
+		\captionof{figure}{Accot \& Zhai's affine model}
 		\label{fig:accot_tunnel_line}
 	\end{minipage}
 \end{minipage}
@@ -650,7 +656,7 @@ Welford & 17679.18 & 10.65
 \newpage
 \addcontentsline{toc}{subsection}{Analyse af spiralopgaver}
 \subsection*{Analyse af spiralopgaver}
-De to spiralmodeller er lavet på baggrund af Accot og Zhai's spiral og ses i figur \ref{fig:spiral_model_without} og \ref{spiral_model_with}.
+De to spiralmodeller er lavet på baggrund af Accot og Zhai's spiral og ses i figur \ref{fig:spiral_model_without} og \ref{fig:spiral_model_with}.
 \begin{align*}
 ID_s = \int_{2\pi}^{2\pi(n+1)}\frac{\sqrt{\left(\theta+w\right)^6+9\left(\theta+w\right)4}}{\left(\theta+2\pi+2\right)^3-\left(\theta+w\right)^3}d\theta
 \end{align*}
