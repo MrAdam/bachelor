@@ -6,7 +6,52 @@
 
 \addcontentsline{toc}{chapter}{Indledning}
 \chapter*{Indledning}
+
+\section*{Noter}
+Længere indledning! - meget længere.
+Heilmeiers katekisme - tre-fire første punkter passer perfekt til indledning.
+Skrive hvorfor vi gør det, hvad det kan bruges til.
+Hvad vi gør, hvordan gør vi det anderledes?
+\begin{itemize}
+	\item What are you trying to do? Articulate your objectives using absolutely no jargon.
+	\item How is it done today, and what are the limits of current practice?
+	\item What's new in your approach and why do you think it will be successful?
+	\item Who cares?
+	\item If you're successful, what difference will it make?
+\end{itemize}~\\
+
 I 1954 udgav Paul M. Fitts en artikel\footcite{fitts1954} som søgte at finde informationskapaciteten af det menneskelige motoriske system - og dermed en generel formulering for sammenhængen mellem distancen til og størrelsen af et mål i en motorisk opgave og den tid det tager at udføre opgaven. Fitts så et behov for et samlende begreb for den menneskelige motoriske kapacitet, grundet de tydelige problemer med at forene mange af de fakta, der var blevet beskrevet i tidligere litteratur. Hans forklaring var, at der var blevet overset en overordnet sammenhæng mellem amplituden, varigheden og variabiliteten i bevægelserne ved motoriske opgaver.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \addcontentsline{toc}{chapter}{Teori}
 \chapter*{Teori}
@@ -228,6 +273,15 @@ Ved at sætte $a=0$ kan vi finde skæringen med $y$-aksen og vise deres forskell
 \text{Welford: } &T=k\cdot\log\left(\frac{5+0.5\cdot 2}{2}\right)\\
 \text{Mackenzie: } &T=b\cdot\log\left(\frac{5 + 2}{2}\right)\\
 \text{Meyer: } &T=b\cdot\sqrt{\frac{5}{2}}
+\end{align*}
+
+\begin{align*}
+b_{Fit}\cdot\log\left(\frac{2\cdot5}{2}\right)&=b_{Mac}\cdot\log\left(\frac{5 + 2}{2}\right)\\
+b_{Mac} &= \frac{b_{Fit}\cdot\log\left(\frac{2\cdot5}{2}\right)}{\log\left(\frac{5 + 2}{2}\right)}
+\end{align*}
+
+\begin{align*}
+\text{}
 \end{align*}
 
 Da de fire ovenstående udregninger giver forskellige resultater, er de fire formuleringer ikke ens og vi vil derfor få forskellige resultater når vi bruger dem på den indsamlede data.
@@ -626,30 +680,27 @@ Welford & 17679.18 & 10.65
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.50\linewidth}
-		\includegraphics[width=\textwidth]{images/plots/plot_tunnel_model_welford}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_welford}
 		\captionof{figure}{Welford's affine model}
 		\label{fig:welford_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.50\linewidth}
-		\includegraphics[width=\textwidth]{images/plots/plot_tunnel_model_fitt}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_fitt}
 		\captionof{figure}{Fitts' affine model}
-		\label{fig:fitt_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{.50\linewidth}
-		\includegraphics[width=\textwidth]{images/plots/plot_tunnel_model_meyer}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_meyer}
 		\captionof{figure}{Meyer's affine model}
 		\label{fig:meyer_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.50\linewidth}
-		\includegraphics[width=\textwidth]{images/plots/plot_tunnel_model_mackenzie}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_mackenzie}
 		\captionof{figure}{Mackenzie's affine model}
-		\label{fig:mackenzie_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{\linewidth}
 		\centering
-		\includegraphics[width=0.5\textwidth]{images/plots/plot_tunnel_model_accot}
+		\includegraphics[width=0.5\textwidth]{images/plots/plot_model_tunnel_accot}
 		\captionof{figure}{Accot \& Zhai's affine model}
-		\label{fig:accot_tunnel_line}
 	\end{minipage}
 \end{minipage}
 
@@ -662,12 +713,12 @@ ID_s = \int_{2\pi}^{2\pi(n+1)}\frac{\sqrt{\left(\theta+w\right)^6+9\left(\theta+
 \end{align*}
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.50\linewidth}
-		\includegraphics[width=\textwidth]{images/plots/plot_spiral_model_without}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_spiral_without}
 		\captionof{figure}{Spiral model without additive}
 		\label{fig:spiral_model_without}
 	\end{minipage}
 	\begin{minipage}[b]{0.50\linewidth}
-		\includegraphics[width=\textwidth]{images/plots/plot_spiral_model_with}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_spiral_with}
 		\captionof{figure}{Spiral model with additive}
 		\label{fig:spiral_model_with}
 	\end{minipage}
