@@ -260,31 +260,25 @@ T &= -K+K\cdot\log\left(\frac{2A+W}{W}\right)
 \end{align*}
 På trods af at det er muligt at omformulere Welford's formulering, så vil det ikke være brugbart i praksis. Omformuleringen gør, at det additive led, $a = -K$, er blevet negativt, hvilket betyder at tiden det tager at påbegynde en opgave er negativ. Vi vil derfor fremadrettet kun bruge Welford's formulering uden den additive konstant.
 
-Når vi kigger på de fire formuleringer, så kan vi vise, at de ikke er ens, ved at vælge et fast $A = 5$ og $W = 1$ og finde ét punkt, hvor de to funktionsværdier er forskellige.
-\begin{align*}
-\text{Fitts: } &T=a+b\cdot\log\left(\frac{2\cdot5}{2}\right)\\
-\text{Welford: } &T=k\cdot\log\left(\frac{5+0.5\cdot 2}{2}\right)\\
-\text{Mackenzie: } &T=a+b\cdot\log\left(\frac{5 + 2}{2}\right)\\
-\text{Meyer: } &T=a+b\cdot\sqrt{\frac{5}{2}}
-\end{align*}
-Ved at sætte $a=0$ kan vi finde skæringen med $y$-aksen og vise deres forskellige funktionsværdier.
+Når vi kigger på de fire formuleringer, så kan vi vise, at de ikke er ens, ved at vælge et fast $A = 5$ og $W = 1$ og finde ét punkt, hvor de to funktionsværdier er forskellige. Vi sætter $a=0$ og finder tiden i skæringen med $y$-aksen.
 \begin{align*}
 \text{Fitts: } &T=b\cdot\log\left(\frac{2\cdot5}{2}\right)\\
 \text{Welford: } &T=k\cdot\log\left(\frac{5+0.5\cdot 2}{2}\right)\\
 \text{Mackenzie: } &T=b\cdot\log\left(\frac{5 + 2}{2}\right)\\
 \text{Meyer: } &T=b\cdot\sqrt{\frac{5}{2}}
 \end{align*}
-
+Ved at sætte to af ligninerne for $T$ lig hinanden kan vi vise, at de to formuleringer ikke er ens.
 \begin{align*}
 b_{Fit}\cdot\log\left(\frac{2\cdot5}{2}\right)&=b_{Mac}\cdot\log\left(\frac{5 + 2}{2}\right)\\
 b_{Mac} &= \frac{b_{Fit}\cdot\log\left(\frac{2\cdot5}{2}\right)}{\log\left(\frac{5 + 2}{2}\right)}
 \end{align*}
-
+Indsætter vi denne værdi for $b_{Mac}$ i Mackenzies formulering, kan vi finde frem til, at Mackenzies og Fitts formuleringer kun er ens, såfremt $ID$ ledet er ens, hvilket ikke er tilfældet.
 \begin{align*}
-\text{}
+\text{Mackenzie: } &T =\frac{b_{Fit}\cdot\log\left(\frac{2\cdot5}{2}\right)}{\log\left(\frac{5 + 2}{2}\right)}\cdot\log\left(\frac{5 + 2}{2}\right)\\
+\text{Mackenzie: } &T =b_{Fit}\cdot\log\left(\frac{2\cdot5}{2}\right)
 \end{align*}
 
-Da de fire ovenstående udregninger giver forskellige resultater, er de fire formuleringer ikke ens og vi vil derfor få forskellige resultater når vi bruger dem på den indsamlede data.
+Denne sammenligning af formuleringerne to og to kan gøres for dem alle fire, men det vil vi undlade at gøre her, og blot formode, at det rent faktisk er tilfældet for dem alle sammen. De fire formuleringer er derfor ikke ens og vi vil derfor få forskellige resultater når vi bruger dem på den indsamlede data.
 
 På trods af at de fire formuleringer er forskellige, så vil de kunne approksimere hinanden. Vi har derfor plottet de fire formulering i ét interval, for at se om de approksimere hinanden. Figur \ref{fig:Sammenligning} viser $ID$ som funktion af $A/W$ og viser at Meyer's, Welford's og MacKenzie's approksimere hinanden for $A/W$-værdier mellem 0 og 25. Grafen for Fitts' ligger højere end de tre andre og approksimere ikke de andre.
 
