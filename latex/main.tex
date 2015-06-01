@@ -474,23 +474,18 @@ Efterfølgende har vi lukket for muligheden for at deltage i vores forsøg den 3
 I dette afsnit vil vi analysere den indsamlede data ved brug af både kvantitative og kvalitative metoder. Vi vil mere præcist analysere testdeltagernes bevægelsesbaner og hastighedsprofiler. 
 \addcontentsline{toc}{section}{Modeludvælgelse}
 \section*{Modeludvælgelse}
-Som det kan ses af de fire formuleringer for Fitts' lov, så kan de alle sammen opfattes som affine modeller, med tiden, T, som y-variabel og ID som x-variabel. Bemærk, at Welfords formel har en skæring med y-aksen i 0, dvs. $y=b\cdot x$. 
-
-For at kunne finde ud af, hvilken af de fire lineære modeller, som beskriver vores data bedst, har vi overvejet følgende sammenligningskriterier.
-
+Som det kan ses af de fire formuleringer for Fitts' lov, så kan de alle sammen opfattes som affine modeller, med tiden $T$ som y-variabel og ID som x-variabel. Bemærk, at Welfords formel har en skæring med y-aksen i 0, dvs. $y=b\cdot x$.\\
+For at kunne finde ud af hvilken af de fire lineære modeller der beskriver vores data bedst, har vi valgt at tage udgangspunkt i \cite{wu2011experiments} der refererer til tre modeludvælgelseskriterier som værende almindeligt anvendte. Denne bog er citeret af 1624 forskellige bøger og artikler, hvilket understøtter vores valg af denne som troværdig kilde.\\
+I \cite{wu2011experiments} afsnit \textit{1.7 VARIABLE SELECTION IN REGRESSION ANALYSIS} bliver $C_p$, $AIC$ og $BIC$ beskrevet som almindeligt anvendte, og der bliver refereret til Ockhams ragekniv som værende et godt udgangspunkt ved modeludvælgelse, da det oftest er den simpleste model der passer bedst. Dette har vi brugt til selv at vælge $LSE$, da denne er simpel, og derfor er understøttet som metode, af Ockhams ragekniv.
 \begin{itemize}
 \item{Least Squared Errors (LSE) \cite{legendre1805}.}
 \item{Mallow's $C_p$ \cite{mallow1973}.}
 \item{Akaike Information Criterion (AIC) \cite{akaike1973}.}
 \item{Bayesian Information Criterion (BIC) \cite{schwarz1978}.}
 \end{itemize}
-
-LSE er bestemt ved at finde gennemsnittet af kvadratet på afstandene fra punkterne til modellen, den model som har det laveste gennemsnit bliver vurderet som bedst. Et problem ved udelukkende at benytte dette kriterium er, at en model altid kan beskrive alle data punkter perfekt ved blot at inkludere flere parametre. Dette er hvad der kan klassificeres som overfitting.
-
-Mallow's $C_p$ kriteriet bliver beregnet ud fra LSE men inddrager også antallet af parametre i beregningen for netop at undgå overfitting. Tilsvarende gør sig gældende for AIC og BIC, de beregnes dog ved hjælp af maximum likelihood i stedet for LSE.
-
-For et givent datasæt $x$ og en tilhørende statistisk model vil likelihood funktionen beregne sandsynligheden for at modellens parametre $p$ vil resultere i $x$. Ved maximum likelihood findes de værdier for parametrene $p$, som maksimere likelihood funktionen. Det vil sige de værdier for parametrene $p$, som gør det observerede datasæt $x$ mest sandsynligt. Forskellen imellem AIC og BIC er, at BIC vægter antallet af parametre mere negativt end AIC.
-
+LSE er bestemt ved at finde gennemsnittet af kvadratet på afstandene fra punkterne til modellen, den model som har det laveste gennemsnit bliver vurderet som bedst. Et problem ved udelukkende at benytte dette kriterium er, at en model altid kan beskrive alle data punkter perfekt ved blot at inkludere flere parametre. Dette er hvad der kan klassificeres som overfitting.\\
+Mallow's $C_p$ kriteriet bliver beregnet ud fra LSE men inddrager også antallet af parametre i beregningen for netop at undgå overfitting. Tilsvarende gør sig gældende for AIC og BIC, de beregnes dog ved hjælp af maximum likelihood i stedet for LSE.\\
+For et givent datasæt $x$ og en tilhørende statistisk model vil likelihood funktionen beregne sandsynligheden for at modellens parametre $p$ vil resultere i $x$. Ved maximum likelihood findes de værdier for parametrene $p$, som maksimere likelihood funktionen. Det vil sige de værdier for parametrene $p$, som gør det observerede datasæt $x$ mest sandsynligt. Forskellen imellem AIC og BIC er, at BIC vægter antallet af parametre mere negativt end AIC.\\
 Af de fire beskrevne modeller har vi valgt at bruge AIC, da det er den mest udbredte at basere sin modeludvælgelse på. Hvis vi lader $L$ være maximum likelihood værdierne for modellens parametre og $k$ antallet af parametre, så er AIC givet ved
 \begin{align}
 AIC = 2k - 2\ln(L)
