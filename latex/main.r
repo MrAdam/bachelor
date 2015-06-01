@@ -29,7 +29,7 @@ options(warn=0)
 # Import Final Data #
 #####################
 options(warn=-1)
-connection = dbConnect(dbDriver("MySQL"), user="root", password="toor", host="127.0.0.1", dbname="bachelor_test")
+connection = dbConnect(dbDriver("MySQL"), user="root", password="toor", host="127.0.0.1", dbname="bachelor_final")
 # Persons
 result = dbSendQuery(connection, "SELECT * FROM person")
 final_persons = dbFetch(result, n=-1)
