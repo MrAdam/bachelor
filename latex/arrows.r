@@ -67,15 +67,15 @@ for (m_task in tasks$id) {
 
 # OMREGNING AF PIXELS/MILISEC TIL CM/SEC -> X/3.7795
 # Plot the data
-plot1 <- ggplot(points, aes(x = elapsedTime, y = deltaDistance)) + geom_point() + coord_fixed(ratio=4)
+plot1 <- ggplot(subset(points, task == 14), aes(x = elapsedTime, y = deltaDistance)) + geom_point() + coord_fixed(ratio=4)
 print(plot1)
 
-plot2 <- ggplot(subset(points, task == 15), aes(x = x, y = y)) + 
+plot2 <- ggplot(subset(points, task == 14), aes(x = x, y = y)) + 
   geom_segment(aes(xend = x + cos(angleToNext)*speed*10, yend = y + sin(angleToNext)*speed*10), arrow = arrow(length = unit(0.2, "cm"))) + 
   coord_fixed(ratio=1)
 print(plot2)
 
-plot3 <- ggplot(subset(points, task == 15), aes(x = x, y = y)) + 
+plot3 <- ggplot(subset(points, task == 14), aes(x = x, y = y)) + 
   geom_segment(aes(xend = x + cos(angleToEnd)*speed*10, yend = y + sin(angleToEnd)*speed*10), arrow = arrow(length = unit(0.2, "cm"))) + 
   coord_fixed(ratio=1)
 print(plot3)
