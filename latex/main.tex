@@ -7,6 +7,7 @@
 \addcontentsline{toc}{chapter}{Indledning}
 \chapter*{Indledning}
 
+
 \section*{Noter}
 Længere indledning! - meget længere.
 Heilmeiers katekisme - tre-fire første punkter passer perfekt til indledning.
@@ -22,8 +23,9 @@ Hvad vi gør, hvordan gør vi det anderledes?
 
 I 1954 udgav Paul M. Fitts en artikel\footcite{fitts1954} som søgte at finde informationskapaciteten af det menneskelige motoriske system - og dermed en generel formulering for sammenhængen mellem distancen til og størrelsen af et mål i en motorisk opgave og den tid det tager at udføre opgaven. Fitts så et behov for et samlende begreb for den menneskelige motoriske kapacitet, grundet de tydelige problemer med at forene mange af de fakta, der var blevet beskrevet i tidligere litteratur. Hans forklaring var, at der var blevet overset en overordnet sammenhæng mellem amplituden, varigheden og variabiliteten i bevægelserne ved motoriske opgaver.
 
-
-
+\addcontentsline{toc}{section}{Forventninger til læseren}
+\section*{Forventninger til læseren}
+Der stilles en forventning til læseren om generel viden inden for statistik og sandsynlighed, med udgangspunkt i [cite].
 
 \addcontentsline{toc}{chapter}{Teori}
 \chapter*{Teori}
@@ -51,15 +53,18 @@ I dette eksperiment brugte Fitts to pinde, og otte runde plader. De otte runde p
 
 Hver af de 16 forsøgsmuligheder blev i tilfældig rækkefølge udført af 16 højrehåndede mandlige universitetsstuderende. Figur \ref{fig:FittsEx2} viser, hvordan eksperimentet blev udført.
 
-\begin{minipage}{\linewidth}
-	\begin{minipage}[b]{.50\linewidth}
+\begin{minipage}[c]{\linewidth}
+	\begin{minipage}[b]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/illustrations/fitt_ex1}
-		\captionof{figure}{Fitts' første eksperiment \cite{fitts1954}}
+		\captionof{figure}{Illustration af Fitts' første eksperiment, med pegeredskab og seks lodrette plader \cite{fitts1954}}
 		\label{fig:FittsEx1}
 	\end{minipage}
-	\begin{minipage}[b]{0.50\linewidth}
-		\includegraphics[width=0.8\textwidth]{images/illustrations/fitt_ex2}
-		\captionof{figure}{Fitts' andet eksperiment \cite{fitts1954}}
+	\begin{minipage}[b]{.1\linewidth}
+		~
+	\end{minipage}
+	\begin{minipage}[b]{.45\linewidth}
+		\includegraphics[width=\textwidth]{images/illustrations/fitt_ex2}
+		\captionof{figure}{Illustration af Fitts' andet eksperiment med to pinde og otte runde plader \cite{fitts1954}}
 		\label{fig:FittsEx2}
 	\end{minipage}
 \end{minipage}
@@ -71,7 +76,7 @@ Hver af de 20 mulige forsøgsopstillinger blev udført i tilfældig rækkefølge
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\linewidth]{images/illustrations/fitt_ex3}
-\captionof{figure}{Fitts' tredje eksperiment \cite{fitts1954}}
+\captionof{figure}{Illustration af Fitts' tredje eksperiment med 8 pinde og 16 huller \cite{fitts1954}}
 \label{fig:FittsEx3}
 \end{figure}
 
@@ -116,7 +121,7 @@ Crossman og Goodeve \cite{crossman1983} forklarer Fitts lov som en overordnet be
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth]{images/illustrations/base_model_fitt}
-\caption{Illustration af Crossman og Goodeves forklaring af Fitts lov \cite{Meyer1988}.}
+\caption{Illustration af hastighed over distance, der viser hoved- og underbevægelser brugt af Crossman og Goodeve til at forklare Fitt's lov \cite{meyer1988}}
 \label{fig:CrossmanFitt}
 \end{figure}
 
@@ -132,7 +137,7 @@ I \cite{welford1968} beskriver Welford en række fundamentale forudsætninger fo
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth]{images/illustrations/welford_plot_1}
-\caption{Grafen som Welford bruger som grundlag for sine modifikationer.}
+\caption{Graf over $MT$ (y-akse) I forhold til $ID$ (x-akse), med punktplot over data fra et af Fitts' forsøg, og linje der viser hvordan Fitts' model passer på dataen.}
 \label{fig:WelfordGraf}
 \end{figure}
 Welford argumenterede for, at der skulle undlades at multiplicere $A$ med $2$, da det på data fra Fitts' første forsøg, ville resultere i en negativ $a$-værdi. Derved bliver Ligning \ref{eq:FittsLov} til
@@ -154,7 +159,7 @@ Ud fra de tre ovenstående modifikationer indførte Welford igen Fitts' data fra
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth]{images/illustrations/welford_plot_2}
-\caption{Fitts' data og den lineære kurve for Welfords model.}
+\caption{Graf over $MT$ (y-akse) I forhold til $ID$ (x-akse), med punktplot over data fra et af Fitts' forsøg, og linje der viser hvordan Welfords model passer på dataen.}
 \label{fig:WelfordGraf2}
 \end{figure}
 
@@ -175,7 +180,7 @@ En af de mest accepterede udledninger af Fitts' lov stammer fra modellen \emph{d
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth]{images/illustrations/mackenzie_plot_1}
-\caption{Index of difficulty i forhold til movement time ved forskellige værdier af $W$}
+\caption{Graf over $MT$ (y-akse) I forhold til $ID$ (x-akse), med punktplot over data ved forskellige værdier af $W$, og linje der viser hvordan Fitts' model passer på dataen.}
 \label{fig:MacKenziePlot1}
 \end{figure}
 MacKenzie beskriver, at et af problemerne med Fitts' Lov er den tætte relation mellem $ID$ og $MT$. Figur~\ref{fig:MacKenziePlot1} illustrerer, hvordan punkterne flader ud, ved lave værdier af $ID$, mens kurven beholder sit $1:1$-forhold mellem $ID$ og $MT$. Der er altså en usammenhæng mellem de observerede og forudsagte værdier, hvilket også er blevet observeret i flere andre studier som \cite{welford1960, buck1986, crossman1983, drury1975, klapp1975, langolf1976, meyer1988, wallace1978}\\
@@ -190,7 +195,7 @@ Forskellen mellem Fitts' originale formulering for $ID$, og MacKenzie's bud på 
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth]{images/illustrations/mackenzie_plot_2}
-\caption{Sammenligning af Fitts' ID og MacKenzies ID baseret på Shannon's formulering}
+\caption{Graf over $ID$ (y-akse) I forhold til $A$ (x-akse), med to linjer der viser en sammenligning af Fitts' og MacKenzies model ved fastholdt værdi af $W$.}
 \label{fig:MacKenziePlot2}
 \end{figure}
 MacKenzie ser hans formulering som værende en mindre forbedring i forhold til Welford's, og mener ikke at man vil kunne se den store forskel mellem Welfords og sin formulering, medmindre man har at gøre med $ID$ som er under 3 bits. Han kommer frem til de 3 bits ved at se på figur~\ref{fig:MacKenziePlot2}, hvor det ses, at de to formuleringer for $ID$ er parallelle med hinanden, indtil omkring 3 bits eller derunder.\\
@@ -202,7 +207,7 @@ Det generelle problem med MacKenzie's artikel er at han ikke kommer med noget te
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth]{images/illustrations/base_model_meyer}
-\caption{Stochastic optimized-submovement modellen - Den horisontale akse repræsentere afstand og den vertikale akse bevægelseshastighed. De faste linjer repræsentere primære underbevægelser, mens stiplede linjer er korrigerende underbevægelser. Bevægelserne tager udgangspunkt i en startende position (afstand = 0) og skal bevæge sig til et mål, med center i D og bredde W.}
+\caption{Stochastic optimized-submovement modellen - Den horisontale akse repræsenterer afstand og den vertikale akse repræsenterer bevægelseshastighed. De faste linjer repræsentere primære underbevægelser, mens stiplede linjer er korrigerende underbevægelser. Bevægelserne tager udgangspunkt i en startende position (afstand = 0) og skal bevæge sig til et mål, med center i D og bredde W.}
 \label{fig:MeyerTheory}
 \end{figure}
 Som beskrevet i forrige afsnit, så basere Fitts' lov sig på \emph{deterministic error-corrections} modellen. Meyer et. al foreslog en ny model, kaldet stochastic optimized-submovement modellen, som de baserede deres formel på \cite{meyer1988}. Som det ses af Figur \ref{fig:MeyerTheory} så basere denne model sig på at personer laver en primær underbevægelse og derefter, hvis der er behov for det, en korrigerende underbevægelse. Udfra denne model kan den gennemsnitlige tid, $T$, forudsiges til at være
@@ -220,7 +225,7 @@ Graferne for funktionerne i ligning \ref{eq:meyer} og \ref{eq:FittsLov} vil udvi
 \begin{figure}[h]
 \centering
 \includegraphics[width=.7\linewidth]{images/illustrations/meyer_plot_comparison}
-\caption{Udviklingen for henholdvis $\log_2(\frac{A}{W})$ og $\sqrt{\frac{A}{W}}$}
+\caption{Graf over $x$ og $y$ ved et fastdefineret interval, der illustrerer udviklingen af funktionerne $y=log2(x)$ og $y=sqrt(x)$.}
 \label{fig:log_vs_sqrt}
 \end{figure}
 
@@ -262,7 +267,7 @@ På trods af at de fire formuleringer er forskellige, så vil de kunne approksim
 \begin{figure}[h]
 \centering
 \includegraphics[width=\linewidth]{images/plots/plot_comparison_id}
-\caption{ID for de fire formuleringer som funktion af A/W}
+\caption{Graf over $ID$ (y-akse) I forhold til $A/W$ (x-akse) med linjer der viser udviklingen af $ID$-funktionen for de fire forskellige modeller.}
 \label{fig:Sammenligning}
 \end{figure}
 
@@ -304,25 +309,25 @@ I denne sektion vil vi beskrive hvordan tunnel-, spiral- og pegeopgaverne er des
 	\begin{minipage}{\textwidth}
 		\centering
 		\includegraphics[width=\textwidth, trim = .5cm 20cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_path}
-		\captionof{figure}{Eksperiment - Tunnel 1}
+		\captionof{figure}{Skærmbillede af den første tunnelopgave, med starten af en testpersons sti.}
 		\label{fig:ex_tunnel_1}
 	\end{minipage}
 	\begin{minipage}{\textwidth}
 		\centering
 		\includegraphics[width=\textwidth, trim = .5cm 20cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_2}
-		\captionof{figure}{Eksperiment - Tunnel 2}
+		\captionof{figure}{skærmbillede af den anden tunnelopgave.}
 		\label{fig:ex_tunnel_2}
 	\end{minipage}
 	\begin{minipage}{\textwidth}
 		\centering
 		\includegraphics[width=\textwidth, trim = .5cm 20cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_3}
-		\captionof{figure}{Eksperiment - Tunnel 3}
+		\captionof{figure}{Skærmbillede af den tredje tunnelopgave.}
 		\label{fig:ex_tunnel_3}
 	\end{minipage}
 	\begin{minipage}{\textwidth}
 		\centering
 		\includegraphics[width=\textwidth, trim = .5cm 20cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_4}
-		\captionof{figure}{Eksperiment - Tunnel 4}
+		\captionof{figure}{Skærmbillede af den fjerde tunnelopgave.}
 		\label{fig:ex_tunnel_4}
 	\end{minipage}
 \end{minipage}\\\\
@@ -336,7 +341,8 @@ I denne opgave skal testdeltageren føre deres markør igennem fire tunneller af
 		3 & 300 & 40 \\
 		4 & 400 & 50 \\
 	\end{tabular}
-	\captionof{table}{Længde og indmundingsbredde af tunneller}\label{tab:tunnelopgave}
+	\captionof{table}{Værdier af $A$ (længde) og $W$ (indmundingsbredde) af tunneller brugt i tunnelopgaverne}
+	\label{tab:tunnelopgave}
 \end{center}
 Ved begyndelsen af en tunnelopgave vil den venstre side af tunnellen være markeret med grøn for at tydeliggøre hvor opgaven starter. Når testdeltagerens markør passerer venstre side af tunnellen vil opgaven starte, og det vil nu være den højre side af tunnellen der er grøn, for at signalere hvor markøren nu skal flyttes hen. Når opgaven er i gang, vil der som på figur \ref{fig:ex_tunnel_1} blive vist en grøn linje der hvor markøren flyttes fra, i tilfælde af at testdeltageren rammer eller ryger uden for kanterne, vil de kunne fortsætte ubemærket.\\
 Når testpersonen passerer den højre side af tunnellen vil opgaven stoppe, og der vil blive vist en knap hvor testpersonen kan fortsætte til næste opgave, eller afslutte denne test hvis sidste opgave er gennemført. Ved afslutningen af de fire tunnelopgaver vil tunnellernes længde og bredde, og markørens bane, blive gemt - og til sidst sendt til vores database.
@@ -346,16 +352,16 @@ Når testpersonen passerer den højre side af tunnellen vil opgaven stoppe, og d
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=.4\linewidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_path}
-	\captionof{figure}{Eksperiment - Spiral 1}
+	\captionof{figure}{Skærmbillede af den første spiralopgave, med starten af en testpersons sti.}
 	\label{fig:ex_spiral_1}
 	\includegraphics[width=.4\linewidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_2}
-	\captionof{figure}{Eksperiment - Spiral 2}
+	\captionof{figure}{Skærmbillede af den anden spiralopgave.}
 	\label{fig:ex_spiral_2}
 	\includegraphics[width=.5\linewidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_3}
-	\captionof{figure}{Eksperiment - Spiral 3}
+	\captionof{figure}{Skærmbillede af den tredje spiralopgave.}
 	\label{fig:ex_spiral_3}
 	\includegraphics[width=.5\linewidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_4}
-	\captionof{figure}{Eksperiment - Spiral 4}
+	\captionof{figure}{Skærmbillede af den fjerde spiralopgave.}
 	\label{fig:ex_spiral_4}
 \end{minipage}\\\\
 I denne opgave skal testdeltageren føre deres markør igennem fire spiraler af varierende størrelse, og med varierende antal vindinger. De fire spiraler kan ses på figur \ref{fig:ex_spiral_1}, \ref{fig:ex_spiral_2}, \ref{fig:ex_spiral_3} og \ref{fig:ex_spiral_4}. De er skaleret cirka 80\% ned, men deres indbyrdes relative størrelser er beholdt. Antallet af vindinger i spiralerne er vist i figur \ref{tab:spiralopgave}. Antallet af vindingerne på spiralerne er taget fra \cite{accot1997}.
@@ -368,7 +374,8 @@ I denne opgave skal testdeltageren føre deres markør igennem fire spiraler af 
 		3 & 3 \\
 		4 & 4 \\
 	\end{tabular}
-	\captionof{table}{Antal vindinger på spiraler}\label{tab:spiralopgave}
+	\captionof{table}{Værdier af $A$ (antal vindinger) af spiraler brug i spiralopgaverne}
+	\label{tab:spiralopgave}
 \end{center}
 Ved begyndelsen af en spiralopgave vil spiralens udmunding være grøn for at tydeliggøre over for testpersonen hvor opgaven starter. Når testdeltagerens markør passerer den yderste vertikale linje vil opgaven starte, der vil blive vist en grøn streg der, hvor markøren flyttes fra, og den inderste vertikale linje vil derefter skifte til grøn for at signalere hvor testpersonen skal flytte sin markør hen. I tilfælde af at testdeltageren rammer kanten både ind- og udvendigt i spiralen, vil de kunne fortsætte ubemærket.\\
 Når testpersonen passerer den inderste vertikale linje i spiralen, vil opgaven stoppe. Der vil efterfølgende blive vist en knap hvor der kan fortsættes til næste spiral, eller afslutte og fortsætte til næste opgave. Ved afslutning af opgaven vil vi, som med tunnelopgaven, gemme tiden det har taget og banen brugt igennem spiralen, og sende denne til vores database.
@@ -382,13 +389,13 @@ Testdeltagerens bane til mål-cirklen er illustreret ved en grøn linje, der fø
 \begin{minipage}[t]{.5\linewidth}
 \centering
 \vspace{0pt}
-\captionof{figure}{Illustration af pegeopgavens start}
+\captionof{figure}{Illustration af cirklen I midten af skærmen ved pegeopgavens start.}
 \includegraphics[width=0.8\textwidth, trim = 8cm 20cm 8cm 15cm, clip]{images/screenshots/ex_step_6_pointing_start}
 \label{fig:pegeopgave_start}
-\caption{Efter at have klikket på center-cirklen}
+\caption{Illustration af cirklen I midten, og målet der skal rammes efter der klikkes på cirklen I midten af skærmen.}
 \includegraphics[width=0.8\textwidth, trim = 8cm 8cm 8cm 15cm, clip]{images/screenshots/ex_step_6_pointing_target_1}
 \label{fig:pegeopgave_target}
-\caption{Før klik på mål-cirklen}
+\caption{Illustration af cirklen I midten, målet der skal rammes, og stien som testpersonen har taget for at komme hen til målet}
 \includegraphics[width=0.8\textwidth, trim = 8cm 22cm 20cm 5cm, clip]{images/screenshots/ex_step_6_pointing_path}
 \label{fig:pegeopgave_path}
 \end{minipage}
@@ -423,7 +430,8 @@ Testdeltagerens bane til mål-cirklen er illustreret ved en grøn linje, der fø
         24 & 191 & 50 & 3.82  \\
         25 & 179 & 18 & 9.94  \\\hline
     \end{tabular}
-   \captionof{table}{Afstand og størrelse på målet}\label{tab:pegeopgave}
+   \captionof{table}{Værdier af $A$ (længde til mål), $W$ (bredde af mål) og udregnede $A/W$ for alle pegeopgaver.}
+   \label{tab:pegeopgave}
 \end{minipage}
 
 \newpage
@@ -465,7 +473,7 @@ Som det sidste vil vi også dele forsøget på vores egne Facebook-profiler.
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth, trim = 0cm 0cm 7cm 0cm, clip]{images/screenshots/ex_questions}
-\caption{Spørgsmål som blev stillet før crowdsourcing-deltagerne kunne udføre forsøget.}
+\caption{Skærmbillede af spørgsmål som blev stillet før crowdsourcing-deltagerne kunne udføre forsøget.}
 \label{fig:Questions}
 \end{figure}
 
