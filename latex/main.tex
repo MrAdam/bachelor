@@ -282,16 +282,10 @@ Det første vil være et kontrolleret laboratorieeksperiment hvor vi kontrollere
 Større dele af vores eksperiment har vi valgt at udføre ligesom tidligere udførte forsøg, da de er udført at folk med meget mere erfaring, og ekspertise på dette område end os.
 Det drejer sig om følgende dele af vores eksperiment:
 \begin{itemize}
-\item Spørgsmål som blev stillet før crowdsourcing-deltagerne kunne udføre forsøget\cite{goldberg2015}
-<<<<<<< HEAD
-\item Design af pegeopgave, inklusiv værdier af A, W og canvas\cite{goldberg2015}
-\item Størrelser af A og W til tunnelopgave\cite{accot1997}
-\item Antal vindinger af spiral til spiralopgave\cite{accot1997}
-=======
-\item Design af pegeopgave, inklusiv værdier af A og W \cite{goldberg2015}
+\item Spørgsmål som blev stillet før crowdsourcing-deltagerne kunne udføre forsøget \cite{goldberg2015}
+\item Design af pegeopgave, inklusiv værdier af A, W og canvas \cite{goldberg2015}
 \item Størrelser af A og W til tunnelopgave \cite{accot1997}
 \item Antal vindinger af spiral til spiralopgave \cite{accot1997}
->>>>>>> d26bf6e022e95117f1b351c6917b72d2e78e6dc7
 \end{itemize}
 Derudover har vi brugt samme udformning af tunnel- og spiralopgave, som i pegeopgaven. Det vil sige, at vi har samme farver til mål, og samme design af testfladen.
 
@@ -522,9 +516,9 @@ $AIC()$\footnote{R dokumentation om $AIC()$: \url{https://stat.ethz.ch/R-manual/
 
 \addcontentsline{toc}{section}{Indledende analyse}
 \section*{Indledende analyse}
-For at være sikre på, at vores data kan bruges til at sammenligne de fire formuleringer har vi først kigget på vores 10 testdeltagere hver for sig. Vi har fitted vores 10 testdeltageres data fra pegeopgaverne til Fitts lov hver for sig. Tre af disse plots kan ses i figurerne \ref{fig:testdeltager1}, \ref{fig:testdeltager6}, \ref{fig:testdeltager10}.  Det kan på graferne ses hvordan punkterne ligger tæt omkring modellen, angivet ved den blå linje. Men også, at enkelte datapunkter bryder tendensen, specielt på figur \ref{fig:testdeltager6}. 
+For at være sikre på, at vores data kan bruges til at sammenligne de fire formuleringer har vi først kigget på vores 10 testdeltagere hver for sig. Vi har fitted vores 10 testdeltageres data fra pegeopgaverne til Fitts lov hver for sig. Tre af disse plots kan ses i figurerne \ref{fig:testdeltager1}, \ref{fig:testdeltager6}, \ref{fig:testdeltager10}.  Det kan på graferne ses, hvordan punkterne ligger tæt omkring modellen, angivet ved den blå linje. Men også, at enkelte datapunkter bryder tendensen, specielt på figur \ref{fig:testdeltager6}. 
 
-På baggrund af de affine linjers overenstemmelse med størstedelen af datapunkterne har vi konkluderet, at vores data godt kan danne grundlag for en analyse af de fire formuleringer af Fitts lov. Vi vil dog fjerne alle datapunkter som afviger med mere end 3 gange standardafvigelsen, $\sigma$, som er kvadratroden af variansen på datasættet \cite{pearson1894}.
+På baggrund af de affine linjers overenstemmelse med størstedelen af datapunkterne har vi konkluderet, at vores data godt kan danne grundlag for en analyse af de fire formuleringer af Fitts lov. Vi vil dog analysere vores datasæt af to omgange, én med alle vores indsamlede data, og én, hvor vi har fjernet alle datapunkter, som afviger med mere end 3 gange standardafvigelsen, $\sigma$, som er kvadratroden af variansen på datasættet \cite{pearson1894}.
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.50\linewidth}
