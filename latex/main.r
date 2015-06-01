@@ -100,19 +100,19 @@ print(paste("Meyer's AIC", "=", AIC(model_meyer), sep = " "))
 # Fitts'
 ggplot(model_fitt, aes(x = id, y = time)) + 
   geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F)
-ggsave(file = "images/plots/plot_model_fitt.png")
+# ggsave(file = "images/plots/plot_model_fitt.png")
 # Welford's
 ggplot(model_fitt, aes(x = id, y = time)) + 
   geom_point() + stat_smooth(method = "lm", formula = y ~ 0 + x, se = F)
-ggsave(file = "images/plots/plot_model_welford.png")
+# ggsave(file = "images/plots/plot_model_welford.png")
 # MacKenzie's
 ggplot(model_fitt, aes(x = id, y = time)) + 
   geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F)
-ggsave(file = "images/plots/plot_model_mackenzie.png")
+# ggsave(file = "images/plots/plot_model_mackenzie.png")
 # Meyer's
 ggplot(model_fitt, aes(x = id, y = time)) + 
   geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F)
-ggsave(file = "images/plots/plot_model_meyer.png")
+# ggsave(file = "images/plots/plot_model_meyer.png")
 
 ##################
 # Plot Residuals #
@@ -122,22 +122,22 @@ ggplot(model_fitt, aes(x = .fitted, y = .resid)) +
   geom_hline(yintercept = 0, alpha = 0.75, color = "red") +
   geom_point() + geom_smooth(se = F) +
   labs(title = "Fitts's Residualplot", x = "Fittet", y = "Residualer")
-ggsave(file = "images/plots/plot_residual_fitt.png")
+# ggsave(file = "images/plots/plot_residual_fitt.png")
 # Welford's
 ggplot(model_welford, aes(x = .fitted, y = .resid)) +
   geom_hline(yintercept = 0, alpha = 0.75, color = "red") +
   geom_point() + geom_smooth(se = F) +
   labs(title = "Welford's Residualplot", x = "Fittet", y = "Residualer")
-ggsave(file = "images/plots/plot_residual_welford.png")
+# ggsave(file = "images/plots/plot_residual_welford.png")
 # MacKenzie's
 ggplot(model_mackenzie, aes(x = .fitted, y = .resid)) +
   geom_hline(yintercept = 0, alpha = 0.75, color = "red") +
   geom_point() + geom_smooth(se = F) +
   labs(title = "MacKenzie's Residualplot", x = "Fittet", y = "Residualer")
-ggsave(file = "images/plots/plot_residual_mackenzie.png")
+# ggsave(file = "images/plots/plot_residual_mackenzie.png")
 # Meyer's
 ggplot(model_meyer, aes(x = .fitted, y = .resid)) +
   geom_hline(yintercept = 0, alpha = 0.75, color = "red") +
   geom_point() + geom_smooth(se = F) +
   labs(title = "Meyer's Residualplot", x = "Fittet", y = "Residualer")
-ggsave(file = "images/plots/plot_residual_meyer.png")
+# ggsave(file = "images/plots/plot_residual_meyer.png")
