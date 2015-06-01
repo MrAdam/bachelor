@@ -482,8 +482,10 @@ Efterfølgende har vi lukket for muligheden for at deltage i vores forsøg den 3
 I dette afsnit vil vi analysere den indsamlede data ved brug af både kvantitative og kvalitative metoder. Vi vil mere præcist analysere testdeltagernes bevægelsesbaner og hastighedsprofiler. 
 \addcontentsline{toc}{section}{Modeludvælgelse}
 \section*{Modeludvælgelse}
-Som det kan ses af de fire formuleringer for Fitts' lov, så kan de alle sammen opfattes som affine modeller, med tiden $T$ som y-variabel og ID som x-variabel. Bemærk, at Welfords formel har en skæring med y-aksen i 0, dvs. $y=b\cdot x$.\\
-For at kunne finde ud af hvilken af de fire lineære modeller der beskriver vores data bedst, har vi valgt at tage udgangspunkt i \cite{wu2011experiments} der refererer til tre modeludvælgelseskriterier som værende almindeligt anvendte. Denne bog er citeret af 1624 forskellige bøger og artikler, hvilket understøtter vores valg af denne som troværdig kilde.\\
+Som det kan ses af de fire formuleringer for Fitts' lov, så kan de alle sammen opfattes som affine modeller, med tiden $T$ som y-variabel og ID som x-variabel. Bemærk, at Welfords formel har en skæring med y-aksen i 0, dvs. $y=b\cdot x$.
+
+For at kunne finde ud af hvilken af de fire lineære modeller der beskriver vores data bedst, har vi valgt at tage udgangspunkt i \cite{wu2011experiments} der refererer til tre modeludvælgelseskriterier som værende almindeligt anvendte. Denne bog er citeret af 1624 forskellige bøger og artikler, hvilket understøtter vores valg af denne som troværdig kilde.
+
 I \cite{wu2011experiments} afsnit1.7 bliver $C_p$, $AIC$ og $BIC$ beskrevet som almindeligt anvendte, og der bliver refereret til Ockhams ragekniv som værende et godt udgangspunkt ved modeludvælgelse, da det oftest er den simpleste model der passer bedst. Dette har vi brugt til selv at vælge $LSE$, da denne er simpel, og derfor er understøttet som metode, af Ockhams ragekniv.
 \begin{itemize}
 \item{Least Squared Errors (LSE) \cite{legendre1805}.}
@@ -491,9 +493,11 @@ I \cite{wu2011experiments} afsnit1.7 bliver $C_p$, $AIC$ og $BIC$ beskrevet som 
 \item{Akaike Information Criterion (AIC) \cite{akaike1973}.}
 \item{Bayesian Information Criterion (BIC) \cite{schwarz1978}.}
 \end{itemize}
-LSE er bestemt ved at finde gennemsnittet af kvadratet på afstandene fra punkterne til modellen, den model som har det laveste gennemsnit bliver vurderet som bedst. Et problem ved udelukkende at benytte dette kriterium er, at en model altid kan beskrive alle data punkter perfekt ved blot at inkludere flere parametre. Således, at modellen bliver et polynomium af højere end grad end det originale, dette er overfitting.\\
+LSE er bestemt ved at finde gennemsnittet af kvadratet på afstandene fra punkterne til modellen, den model som har det laveste gennemsnit bliver vurderet som bedst. Et problem ved udelukkende at benytte dette kriterium er, at en model altid kan beskrive alle data punkter perfekt ved blot at inkludere flere parametre. Således, at modellen bliver et polynomium af højere end grad end det originale, dette er overfitting.
+
 Mallow's $C_p$ kriteriet bliver beregnet ud fra LSE men inddrager også antallet af parametre i beregningen for netop at undgå overfitting. Tilsvarende gør sig gældende for AIC og BIC, de beregnes dog ved hjælp af maximum likelihood i stedet for LSE.\\
-For et givent datasæt $x$ og en tilhørende statistisk model vil likelihood funktionen beregne sandsynligheden for at modellens parametre $p$ vil resultere i $x$. Ved maximum likelihood findes de værdier for parametrene $p$, som maksimere likelihood funktionen. Det vil sige de værdier for parametrene $p$, som gør det observerede datasæt $x$ mest sandsynligt. Forskellen imellem AIC og BIC er, at BIC vægter antallet af parametre mere negativt end AIC.\\
+For et givent datasæt $x$ og en tilhørende statistisk model vil likelihood funktionen beregne sandsynligheden for at modellens parametre $p$ vil resultere i $x$. Ved maximum likelihood findes de værdier for parametrene $p$, som maksimere likelihood funktionen. Det vil sige de værdier for parametrene $p$, som gør det observerede datasæt $x$ mest sandsynligt. Forskellen imellem AIC og BIC er, at BIC vægter antallet af parametre mere negativt end AIC.
+
 Af de fire beskrevne modeller har vi valgt at bruge AIC, da det er den mest udbredte at basere sin modeludvælgelse på. Hvis vi lader $L$ være maximum likelihood værdierne for modellens parametre og $k$ antallet af parametre, så er AIC givet ved
 \begin{align}
 AIC = 2k - 2\ln(L)
@@ -504,9 +508,9 @@ $AIC()$\footnote{R dokumentation om $AIC()$: \url{https://stat.ethz.ch/R-manual/
 
 \addcontentsline{toc}{section}{Indledende analyse}
 \section*{Indledende analyse}
-For at være sikre på, at vores data kan bruges til at sammenligne de fire formuleringer har vi først kigget på vores 10 testdeltagere hver for sig. Vi har fitted vores 10 testdeltageres data fra pegeopgaverne til Fitts lov hver for sig. Tre af disse plots kan ses i figurerne \ref{fig:testdeltager1}, \ref{fig:testdeltager6}, \ref{fig:testdeltager10}.  Det kan på graferne ses hvordan punkterne ligger pænt omkring modellen, angivet ved den blå linje. Men også, at enkelte datapunkter bryder tendensen, specielt på figur \ref{fig:testdeltager6}. 
+For at være sikre på, at vores data kan bruges til at sammenligne de fire formuleringer har vi først kigget på vores 10 testdeltagere hver for sig. Vi har fitted vores 10 testdeltageres data fra pegeopgaverne til Fitts lov hver for sig. Tre af disse plots kan ses i figurerne \ref{fig:testdeltager1}, \ref{fig:testdeltager6}, \ref{fig:testdeltager10}.  Det kan på graferne ses hvordan punkterne ligger tæt omkring modellen, angivet ved den blå linje. Men også, at enkelte datapunkter bryder tendensen, specielt på figur \ref{fig:testdeltager6}. 
 
-På baggrund af de affine linjers overenstemmelse med største delen af datapunkterne har vi konkluderet, at vores data godt kan danne grundlag for en analyse af de fire formuleringer af Fitts lov. Vi vil dog fjerne alle datapunkter som afviger med mere end 3 gange standardafvigelsen, $\sigma$, som er givet ved kvadratroden af variansen på datasættet \cite{pearson1894}.
+På baggrund af de affine linjers overenstemmelse med størstedelen af datapunkterne har vi konkluderet, at vores data godt kan danne grundlag for en analyse af de fire formuleringer af Fitts lov. Vi vil dog fjerne alle datapunkter som afviger med mere end 3 gange standardafvigelsen, $\sigma$, som er kvadratroden af variansen på datasættet \cite{pearson1894}.
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.50\linewidth}
