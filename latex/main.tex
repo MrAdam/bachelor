@@ -585,10 +585,10 @@ Det er disse modeller som vores pegeopgaveanalyse vil tage udgangspunkt i. For a
 \addcontentsline{toc}{subsection}{R-kode}
 \subsection*{R-kode}
 Listing \ref{lst:filter} viser hvordan vi udfiltrerer alle data som ligger udenfor tre standardafvigelser, hvilket for normaltfordelt data vil betyde at vi beholder $99.7\%$ af vores data.
-\lstinputlisting[label={lst:filter}, caption=Filter til data, language=R, firstline=24, lastline=26]{analyse.r}
+\lstinputlisting[label={lst:filter}, caption=Filter til data, language=R, firstline=24, lastline=26]{main.r}
 Den relevante R-kode som bliver brugt til analysen, er vist i listing \ref{lst:function}
-\lstinputlisting[label={lst:function}, caption=Funktion til modelanalyse, language=R, firstline=33, lastline=51]{analyse.r}
-\lstinputlisting[label={lst:analysis}, caption=Kald til analysefunktion, language=R, firstline=53, lastline=62]{analyse.r}
+\lstinputlisting[label={lst:function}, caption=Funktion til modelanalyse, language=R, firstline=33, lastline=51]{main.r}
+\lstinputlisting[label={lst:analysis}, caption=Kald til analysefunktion, language=R, firstline=53, lastline=62]{main.r}
 Som det ses af listing \ref{lst:function}, udregner vi først $ID$ for vores data, baseret på de foruddefinerede værdier af $A$ og $W$. Herefter bruger vi $lm()$ til at fitte modellen til vores data, hvorefter vi plotter dataen og modellen i et residualplot.\\
 
 \addcontentsline{toc}{subsection}{AIC-analyse}
