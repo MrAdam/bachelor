@@ -532,30 +532,37 @@ $AIC()$\footnote{R dokumentation om $AIC()$: \url{https://stat.ethz.ch/R-manual/
 
 \addcontentsline{toc}{section}{Indledende analyse}
 \section*{Indledende analyse}
-For at være sikre på, at vores data fra det ukontrollerede crowdsourcing eksperiment kan bruges til at sammenligne de fire formuleringer har vi først kigget på vores 10 testdeltagere fra laboratieeksperimentet hver for sig. Vi har fitted vores 10 testdeltageres data fra pegeopgaverne til Fitts lov hver for sig. To af disse plots kan ses i figurerne \ref{fig:testdeltager1}, \ref{fig:testdeltager6}, \ref{fig:testdeltager10}.  Det kan på graferne ses, hvordan punkterne ligger tæt omkring modellen, angivet ved den blå linje. Men også, at enkelte datapunkter bryder tendensen, specielt på figur \ref{fig:testdeltager6}. 
+For at være sikre på, at vores data fra det ukontrollerede crowdsourcing eksperiment kan bruges til at sammenligne de fire formuleringer har vi først kigget på vores 10 testdeltagere fra laboratieeksperimentet hver for sig. Vi har fitted vores 10 testdeltageres data fra pegeopgaverne til Fitts lov hver for sig. To af disse plots kan ses i figurerne \ref{fig:testdeltager1}, \ref{fig:testdeltager3}.  Det kan på graferne ses, hvordan punkterne ligger tæt omkring modellen, angivet ved den blå linje. Men også, at enkelte datapunkter bryder tendensen, specielt på figur \ref{fig:testdeltager3}.
 
-På baggrund af de affine linjers overenstemmelse med størstedelen af datapunkterne fra det kontrollerede eksperiment har vi konkluderet, at det tilsvarende vil gøre sig gældende for vores ukontrollerede data, og derved godt kan danne grundlag for en analyse af de fire formuleringer af Fitts' lov. 
-
-Vi vil dog analysere vores datasæt af to omgange, én med alle vores indsamlede data, og én, hvor vi har fjernet alle datapunkter, som afviger med mere end 3 gange standardafvigelsen, $\sigma$, som er kvadratroden af variansen på datasættet \cite{pearson1894}.
+Vi har derfor forsøgt at fjernet alle datapunkter, som afviger med mere end 3 gange standardafvigelsen, $\sigma$, som er kvadratroden af variansen på datasættet \cite{pearson1894}. Ved at filtrere data med for stor afvigelse fra kan vi fitte en model, der beskriver størstedelen af vores data bedre. Figur \ref{fig:testdeltager7filter} og \ref{fig:testdeltager7unfilter} viser den tilpassede affine model for testdeltager 7 med og uden filtreret data.
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.50\linewidth}
-		\includegraphics[width=\textwidth]{images/plots/plot_testdeltager_1}
-		\captionof{figure}{Testdeltager 1}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_test_1}
+		\captionof{figure}{Testdeltager 1 med tiden ud af $y$-aksen og $ID$ på $x$-aksen}
 		\label{fig:testdeltager1}
 	\end{minipage}
 	\begin{minipage}[b]{0.50\linewidth}
-		\includegraphics[width=\textwidth]{images/plots/plot_testdeltager_6}
-		\captionof{figure}{Testdeltager 6}
-		\label{fig:testdeltager6}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_test_2}
+		\captionof{figure}{Testdeltager 3 med tiden ud af $y$-aksen og $ID$ på $x$-aksen}
+		\label{fig:testdeltager3}
 	\end{minipage}
 \end{minipage}
 
-\begin{minipage}{\textwidth}
-\centering
-\includegraphics[width=.25\textheight,width=0.5\textwidth]{images/plots/plot_testdeltager_10}
-\captionof{figure}{Testdeltager 10}
-\label{fig:testdeltager10}
+\newpage
+På baggrund af de affine linjers overenstemmelse med størstedelen af datapunkterne fra det kontrollerede eksperiment har vi konkluderet, at det tilsvarende vil gøre sig gældende for vores ukontrollerede data, og derved godt kan danne grundlag for en analyse af de fire formuleringer af Fitts' lov. Vi vil dog analysere datasættet af to omgange, med og uden filtrerede data. Da forskellen kan have en hvis betydning på de fire formuleringers tilpasning til datasættet.
+
+\begin{minipage}{\linewidth}
+	\begin{minipage}[b]{.50\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_test_comparison_filtered}
+		\captionof{figure}{Testdeltager 7 med filtreret datasæt}
+		\label{fig:testdeltager7filter}
+	\end{minipage}
+	\begin{minipage}[b]{0.50\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_test_comparison_unfiltered}
+		\captionof{figure}{Testdeltager 7 uden nogen filtrering}
+		\label{fig:testdeltager7unfilter}
+	\end{minipage}
 \end{minipage}
 
 \addcontentsline{toc}{section}{Modelanalyse af bevægelsesbaner}
