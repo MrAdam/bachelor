@@ -443,7 +443,7 @@ Testdeltagerens bane til mål-cirklen er illustreret ved en grøn linje, der fø
 \subsection*{Generelt for de tre opgaver}
 I alle opgaverne vil deltagerne blive informeret om, hvor mange opgaver de mangler at gennemføre, så de ved hvornår de er færdige, den grå tekst \textit{"Remaining circles"} i figur \ref{fig:pegeopgave_target} er et eksempel på, hvordan denne information så ud undervejs. Vi har medtaget det i håb om, at testdeltagere fra crowdsourcing forsøget ikke vil miste tålmodigheden midt i testen.  
 
-Hvis deltagerne bevæger pegeenheden uden for det canvas som opgaven skal udføres i vil denne del af banen ikke komme med i vores gemte data. For tunnel og spiralopgaverne er størrelsen på det omkring liggende canvas 1024x512 pixels, imens det for pegeopgaven er 512x512 pixels.
+Hvis deltagerne bevæger pegeenheden uden for det canvas som opgaven skal udføres i vil denne del af banen ikke komme med i vores gemte data. For tunnel og spiralopgaverne er størrelsen på det omkring liggende canvas 1024x512 pixels, imens det for pegeopgaven er 512x512 pixels. Disse størrelser er faste uanset størrelsen på testdeltagerens skærm.
 
 \addcontentsline{toc}{chapter}{Eksperimenter}
 \chapter*{Eksperimenter}
@@ -461,7 +461,9 @@ Herefter bliver testdeltageren bedt om at udføre tunnelopgaven - efterfulgt af 
 
 \addcontentsline{toc}{subsection}{Crowdsourcingeksperiment}
 \subsection*{Crowdsourcingeksperiment}
-Crowdsourcingeksperimentet vil foregå på internettet, og vi har derfor gjort vores program tilgængeligt online. Ved crowdsourcingeksperimentet vil hver deltager udfylde formularen, som ses i Figur \ref{fig:Questions}, før de kan fortsætte. Når formularen er udfyldt forsætter deltageren til opgaverne. Her skal der, ligesom laboratorieeksperimentet, udføres 4 spiralopgaver, efterfulgt af 4 tunnelopgaver og til sidst 25 pegeopgaver. Efter deltageren har udført alle opgaver vil deres data blive sendt til en server, hvorefter deltageren får en informationsmeddelelse.
+Crowdsourcingeksperimentet vil foregå på internettet, og vi har derfor gjort vores program tilgængeligt online. På grund af de faste canvas størrelser vil alle besøg fra smartphones eller tablets blive blokeret, og informeret om, at forsøget kun er tilgængeligt fra en computer. 
+
+Ved crowdsourcingeksperimentets start vil hver deltager udfylde formularen, som ses i Figur \ref{fig:Questions}, før de kan fortsætte. Når formularen er udfyldt forsætter deltageren til opgaverne. Her skal der, ligesom laboratorieeksperimentet, udføres 4 spiralopgaver, efterfulgt af 4 tunnelopgaver og til sidst 25 pegeopgaver. Efter deltageren har udført alle opgaver vil deres data blive sendt til en server, hvorefter deltageren får en informationsmeddelelse.
 Vi har valgt at dele vores eksperiment på et antal af reddit-sider, da det er et meget populært internetfora og muliggør, at vi kan nå ud til så mange mennesker som overhovedet muligt.
 \begin{itemize}
 \item reddit.com/r/denmark\\
@@ -491,7 +493,7 @@ Vi, P1, P2 og P3, udførte vores laboratorieeksperiment den 20. april 2015 på H
 \addcontentsline{toc}{subsection}{Crowdsourcingeksperiment}
 \subsection*{Crowdsourcingeksperiment}
 Forsøget gik godt - 264 personer gennemførte vores forsøg og har suppleret os med vital data. Vi fik delt vores forsøg på størstedelen af de tidligere beskrevne sider, dog med nogle få undtagelser. Generelt set var reddit det mest lukrative sted, hvorfra 140 personer har skrevet siden på som deres reference - hvorimod 74 skrev at de var blevet refereret fra Facebook.\\
-Det var ikke muligt at dele vores forsøg på $reddit.com/r/helpme$ og $reddit.com/r/care$, da vi ikke havde nok "karma" for at kunne lave et indlæg på disse sites.\\
+Det var ikke muligt at dele vores forsøg på $reddit.com/r/helpme$ og $reddit.com/r/care$, da vi ikke havde nok "karma"-point til at kunne lave et indlæg på disse sites.\\
 Efterfølgende har vi lukket for muligheden for at deltage i vores forsøg den 30/04/2015, og skrevet en besked på forsøgssiden hvor vi takker folk for deres deltagelse.
 
 \addcontentsline{toc}{chapter}{Analyse}
@@ -526,9 +528,11 @@ $AIC()$\footnote{R dokumentation om $AIC()$: \url{https://stat.ethz.ch/R-manual/
 
 \addcontentsline{toc}{section}{Indledende analyse}
 \section*{Indledende analyse}
-For at være sikre på, at vores data kan bruges til at sammenligne de fire formuleringer har vi først kigget på vores 10 testdeltagere hver for sig. Vi har fitted vores 10 testdeltageres data fra pegeopgaverne til Fitts lov hver for sig. Tre af disse plots kan ses i figurerne \ref{fig:testdeltager1}, \ref{fig:testdeltager6}, \ref{fig:testdeltager10}.  Det kan på graferne ses, hvordan punkterne ligger tæt omkring modellen, angivet ved den blå linje. Men også, at enkelte datapunkter bryder tendensen, specielt på figur \ref{fig:testdeltager6}. 
+For at være sikre på, at vores data fra det ukontrollerede crowdsourcing eksperiment kan bruges til at sammenligne de fire formuleringer har vi først kigget på vores 10 testdeltagere fra laboratieeksperimentet hver for sig. Vi har fitted vores 10 testdeltageres data fra pegeopgaverne til Fitts lov hver for sig. To af disse plots kan ses i figurerne \ref{fig:testdeltager1}, \ref{fig:testdeltager6}, \ref{fig:testdeltager10}.  Det kan på graferne ses, hvordan punkterne ligger tæt omkring modellen, angivet ved den blå linje. Men også, at enkelte datapunkter bryder tendensen, specielt på figur \ref{fig:testdeltager6}. 
 
-På baggrund af de affine linjers overenstemmelse med størstedelen af datapunkterne har vi konkluderet, at vores data godt kan danne grundlag for en analyse af de fire formuleringer af Fitts lov. Vi vil dog analysere vores datasæt af to omgange, én med alle vores indsamlede data, og én, hvor vi har fjernet alle datapunkter, som afviger med mere end 3 gange standardafvigelsen, $\sigma$, som er kvadratroden af variansen på datasættet \cite{pearson1894}.
+På baggrund af de affine linjers overenstemmelse med størstedelen af datapunkterne fra det kontrollerede eksperiment har vi konkluderet, at det tilsvarende vil gøre sig gældende for vores ukontrollerede data, og derved godt kan danne grundlag for en analyse af de fire formuleringer af Fitts' lov. 
+
+Vi vil dog analysere vores datasæt af to omgange, én med alle vores indsamlede data, og én, hvor vi har fjernet alle datapunkter, som afviger med mere end 3 gange standardafvigelsen, $\sigma$, som er kvadratroden af variansen på datasættet \cite{pearson1894}.
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.50\linewidth}
@@ -556,7 +560,7 @@ Vores modelanalyse af bevægelsesbaner tager udgangspunkt i AIC-modellen og de b
 
 Hver af de fire formuleringer af Fitts lov har vi tilpasset til vores data fra de 264 testdeltageres pegeopgaver ved lineær regression ved R's $lm()$ funktion. Til hver af modellerne har vi gjort brug af formuleringernes respektive $ID$ som $x$-koordinat og tiden, $t$, det tog testdeltageren at løse en pågældende pegeopgave. R-koden er at se i listing \ref{lst:function}. Datapunkterne og de fire modeller er vist i figur \ref{fig:welford_affine_line}, \ref{fig:fitt_affine_line}, \ref{fig:meyer_affine_line} og \ref{fig:mackenzie_affine_line}. Bemærk, hvordan datapunkterne danner 25 vertikale 'søjler', én for hvert af vores pegeopgavers $ID$.
 
-Det er disse modeller som vores pegeopgaveanalyse vil tage udgangspunkt i. For at finde ud af, hvilken af modellerne der er bedst, vil vi som tidligere beskrevet gøre brug af AIC, da det ikke er muligt ud fra disse figurer at sige noget om.
+Det er disse modeller som vores pegeopgaveanalyse vil tage udgangspunkt i. Ud fra figurerne er det ikke muligt at For at finde ud af, hvilken af modellerne der er bedst, vil vi som tidligere beskrevet gøre brug af AIC, da det ikke er muligt ud fra disse figurer at sige noget om.
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.50\linewidth}
