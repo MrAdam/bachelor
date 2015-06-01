@@ -27,21 +27,20 @@ tasks  <- subset(tasks, tasks$time > 0 & tasks$time <= limit)
 points <- subset(points, points$task %in% tasks$id)
 
 # Calculate the elapsedDistance
+#for (m_task in tasks$id) {
+#  m_points <- subset(points, points$task == m_task)
+#  for (point in m_points$id) {
+#    if (match(point, m_points$id) != 1) {
+#      prev_dst <- points[points$id == point - 1,]$elapsedDistance
+#      delta_dst <- points[points$id == point,]$deltaDistance
+#      points[points$id == point,]$elapsedDistance <- prev_dst + delta_dst
+#      points[points$id == point,]$speed <- (delta_dst/points[points$id == point,]$deltaTime)
+#    }
+#  }
+#}
+
 points$elapsedDistance = 0
 points$speed = 0
-for (m_task in tasks$id) {
-  m_points <- subset(points, points$task == m_task)
-  for (point in m_points$id) {
-    if (match(point, m_points$id) != 1) {
-      prev_dst <- points[points$id == point - 1,]$elapsedDistance
-      delta_dst <- points[points$id == point,]$deltaDistance
-      points[points$id == point,]$elapsedDistance <- prev_dst + delta_dst
-      points[points$id == point,]$speed <- (delta_dst/points[points$id == point,]$deltaTime)
-    }
-  }
-}
-
-# Calculate the deltaX and deltaY
 points$deltaX = 0
 points$deltaY = 0
 points$angleToNext = 0
@@ -53,6 +52,15 @@ for (m_task in tasks$id) {
   end_y <- tail(m_points, n=1)$y
   for (point in m_points$id) {
     if (match(point, m_points$id) != 1) {
+      # Calculate elapsed distance
+      prev_dst <- points[points$id == point - 1,]$elapsedDistance
+      delta_dst <- points[points$id == point,]$deltaDistance
+      points[points$id == point,]$elapsedDistance <- prev_dst + delta_dst
+      
+      # Calculate Speed
+      points[points$id == point,]$speed <- (delta_dst/points[points$id == point,]$deltaTime)
+      
+      # Calculate angle to the next point and angle to the end point
       prev_x <- points[points$id == point - 1,]$x
       prev_y <- points[points$id == point - 1,]$y
       curr_x <- points[points$id == point,]$x
@@ -64,11 +72,26 @@ for (m_task in tasks$id) {
     }
   }
 }
+newPoints = 0
+for (m_task in tasks[tasks$person == 15,]$id) {
+  newPoints = rbind(newPoints,subset(points, points$task == m_task))
+}
+
+sameTaskPoints = 0
+for (m_task in tasks[tasks$distance == 301 & tasks$width==16,]$id) {
+  sameTaskPoints = rbind(sameTaskPoints, subset(points, points$task == m_task))
+}
 
 # OMREGNING AF PIXELS/MILISEC TIL CM/SEC -> X/3.7795
 # Plot the data
-plot1 <- ggplot(subset(points, task == 14), aes(x = elapsedTime, y = deltaDistance)) + geom_point() + coord_fixed(ratio=4)
+plot1 <- ggplot(subset(points, task == 24), aes(x = elapsedTime, y = deltaDistance)) + geom_point() + coord_fixed(ratio=4)
 print(plot1)
+
+plotNew <- ggplot(newPoints, aes(x = elapsedTime, y = deltaDistance)) + geom_point() + coord_fixed(ratio=4)
+print(plotNew)
+
+plotSameTask <- ggplot(sameTaskPoints, aes(x = elapsedTime, y = deltaDistance)) + geom_point() + coord_fixed(ratio=4)
+print(plotSameTask)
 
 plot2 <- ggplot(subset(points, task == 14), aes(x = x, y = y)) + 
   geom_segment(aes(xend = x + cos(angleToNext)*speed*10, yend = y + sin(angleToNext)*speed*10), arrow = arrow(length = unit(0.2, "cm"))) + 

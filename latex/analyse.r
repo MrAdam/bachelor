@@ -7,7 +7,7 @@ library(gridExtra)
 
 # Load data from database
 options(warn=-1);
-connection <-dbConnect(dbDriver("MySQL"), user="root", host="127.0.0.1", dbname="bachelor_final");
+connection <-dbConnect(dbDriver("MySQL"), user="root", password="toor", host="127.0.0.1", dbname="bachelor_final");
 result <- dbSendQuery(connection, "SELECT * FROM person")
 persons <- dbFetch(result, n=-1)
 dbClearResult(result)
@@ -22,8 +22,9 @@ options(warn=0)
 
 # Filter the data
 filter <- function(tasks) {
-  limit <- sd(tasks$time) * 3
-  subset(tasks, tasks$time > 0 & tasks$time <= limit)
+  upper_limit <- sd(tasks$time) * 3 + mean(tasks$time)
+  lower_limit <- mean(tasks$time) - sd(tasks$time) * 3
+  subset(tasks, tasks$time >= lower_limit & tasks$time <= upper_limit)
 }
 tasks_navigating <- filter(tasks[tasks$type == "navigating", c("distance", "width", "time")])
 tasks_spiraling <- filter(tasks[tasks$type == "spiraling", c("distance", "width", "time")])
