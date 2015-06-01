@@ -273,9 +273,15 @@ Større dele af vores eksperiment har vi valgt at udføre ligesom tidligere udf�
 Det drejer sig om følgende dele af vores eksperiment:
 \begin{itemize}
 \item Spørgsmål som blev stillet før crowdsourcing-deltagerne kunne udføre forsøget\cite{goldberg2015}
+<<<<<<< HEAD
+\item Design af pegeopgave, inklusiv værdier af A, W og canvas\cite{goldberg2015}
+\item Størrelser af A og W til tunnelopgave\cite{accot1997}
+\item Antal vindinger af spiral til spiralopgave\cite{accot1997}
+=======
 \item Design af pegeopgave, inklusiv værdier af A og W \cite{goldberg2015}
 \item Størrelser af A og W til tunnelopgave \cite{accot1997}
 \item Antal vindinger af spiral til spiralopgave \cite{accot1997}
+>>>>>>> d26bf6e022e95117f1b351c6917b72d2e78e6dc7
 \end{itemize}
 Derudover har vi brugt samme udformning af tunnel- og spiralopgave, som i pegeopgaven. Det vil sige, at vi har samme farver til mål, og samme design af testfladen.
 
@@ -315,7 +321,7 @@ I denne sektion vil vi beskrive hvordan tunnel-, spiral- og pegeopgaverne er des
 		\label{fig:ex_tunnel_4}
 	\end{minipage}
 \end{minipage}\\\\
-I denne opgave skal testdeltageren føre deres markør igennem fire tunneller af varierende længe, og varierende indmundingsbredde. De fire tunneller kan ses på Figur \ref{fig:ex_tunnel_1}, \ref{fig:ex_tunnel_2}, \ref{fig:ex_tunnel_3} og \ref{fig:ex_tunnel_4}. Størrelserne målt i pixels for tunnellængde ($A$) og indmundingsbredde ($W$) er vist i tabel \ref{tab:tunnelopgave}. Udmundingsbredden er fastsat til 8 pixels bredde, hvilket stemmer overens med forsøget lavet i \cite{accot1997}
+I denne opgave skal testdeltageren føre deres markør igennem fire tunneller af varierende længe, og varierende indmundingsbredde. Alle tunnellerne er skaleret ned til 50\% af deres oprindelige størrelse, så deres indbyrdes relative størrelse er beholdt. De fire tunneller kan ses på Figur \ref{fig:ex_tunnel_1}, \ref{fig:ex_tunnel_2}, \ref{fig:ex_tunnel_3} og \ref{fig:ex_tunnel_4}.  Størrelserne målt i pixels for tunnellængde ($A$) og den venstre lodrette linje ($W$) er vist i tabel \ref{tab:tunnelopgave}. Den højre lodrette linje er fastsat til 8 pixels bredde, hvilket stemmer overens med forsøget lavet i \cite{accot1997}
 \begin{center}
 	\begin{tabular}{c c c}
 		Tunnel & A & W \\
@@ -327,7 +333,7 @@ I denne opgave skal testdeltageren føre deres markør igennem fire tunneller af
 	\end{tabular}
 	\captionof{table}{Længde og indmundingsbredde af tunneller}\label{tab:tunnelopgave}
 \end{center}
-Ved begyndelsen af en tunnelopgave vil den venstre side af tunnellen være markeret med grøn, for at tydeliggøre hvor opgaven starter. Når testdeltagerens markør passerer venstre side af tunnellen vil opgaven starte, og det vil nu være den højre side af tunnellen der er grøn, for at signalere hvor markøren nu skal flyttes hen. Når opgaven er i gang, vil der som på figur \ref{fig:ex_tunnel_1} blive vist en grøn linje der hvor markøren flyttes fra. I tilfælde af at testdeltageren rammer eller ryger uden for kanterne, vil de kunne fortsætte ubemærket.\\
+Ved begyndelsen af en tunnelopgave vil den venstre side af tunnellen være markeret med grøn for at tydeliggøre hvor opgaven starter. Når testdeltagerens markør passerer venstre side af tunnellen vil opgaven starte, og det vil nu være den højre side af tunnellen der er grøn, for at signalere hvor markøren nu skal flyttes hen. Når opgaven er i gang, vil der som på figur \ref{fig:ex_tunnel_1} blive vist en grøn linje der hvor markøren flyttes fra, i tilfælde af at testdeltageren rammer eller ryger uden for kanterne, vil de kunne fortsætte ubemærket.\\
 Når testpersonen passerer den højre side af tunnellen vil opgaven stoppe, og der vil blive vist en knap hvor testpersonen kan fortsætte til næste opgave, eller afslutte denne test hvis sidste opgave er gennemført. Ved afslutningen af de fire tunnelopgaver vil tunnellernes længde og bredde, og markørens bane, blive gemt - og til sidst sendt til vores database.
 
 \addcontentsline{toc}{subsection}{Spiralopgave}
@@ -347,7 +353,7 @@ Når testpersonen passerer den højre side af tunnellen vil opgaven stoppe, og d
 	\captionof{figure}{Eksperiment - Spiral 4}
 	\label{fig:ex_spiral_4}
 \end{minipage}\\\\
-I denne opgave skal testdeltageren føre deres markør igennem fire spiraler af varierende størrelse, og med varierende antal vindinger. De fire spiraler kan ses på figur \ref{fig:ex_spiral_1}, \ref{fig:ex_spiral_2}, \ref{fig:ex_spiral_3} og \ref{fig:ex_spiral_4}. Antallet af vindinger i spiralerne er vist i figur \ref{tab:spiralopgave}. Antallet af vindingerne på spiralerne er taget fra \cite{accot1997}.
+I denne opgave skal testdeltageren føre deres markør igennem fire spiraler af varierende størrelse, og med varierende antal vindinger. De fire spiraler kan ses på figur \ref{fig:ex_spiral_1}, \ref{fig:ex_spiral_2}, \ref{fig:ex_spiral_3} og \ref{fig:ex_spiral_4}. De er skaleret cirka 80\% ned, men deres indbyrdes relative størrelser er beholdt. Antallet af vindinger i spiralerne er vist i figur \ref{tab:spiralopgave}. Antallet af vindingerne på spiralerne er taget fra \cite{accot1997}.
 \begin{center}
 	\begin{tabular}{c c}
 		Spiral & A \\
@@ -359,14 +365,14 @@ I denne opgave skal testdeltageren føre deres markør igennem fire spiraler af 
 	\end{tabular}
 	\captionof{table}{Antal vindinger på spiraler}\label{tab:spiralopgave}
 \end{center}
-Ved begyndelsen af en spiralopgave vil spiralens udmunding være grøn, for at tydeliggøre over for testpersonen hvor opgaven starter. Når testdeltagerens markør passerer udmundingen vil opgaven starte, og indmundingen vil derefter skifte til grøn for at signalere hvor testpersonen skal flytte sin markør hen. Når udmundingen passeres startes opgaven, og der vil blive vist en grøn linje der hvor markøren flyttes fra. I tilfælde af at testdeltageren rammer kanten både ind- og udvendigt i spiralen, vil de kunne fortsætte ubemærket.\\
-Når testpersonen passerer indmundingen inderst i spiralen, vil opgaven stoppe. Der vil efterfølgende blive vist en knap hvor der kan fortsættes til næste spiral, eller afslutte og fortsætte til næste opgave. Ved afslutning af opgaven vil vi, som med tunnelopgaven, gemme tiden det har taget og banen brugt igennem spiralen, og sende denne til vores database.
+Ved begyndelsen af en spiralopgave vil spiralens udmunding være grøn for at tydeliggøre over for testpersonen hvor opgaven starter. Når testdeltagerens markør passerer den yderste vertikale linje vil opgaven starte, der vil blive vist en grøn streg der, hvor markøren flyttes fra, og den inderste vertikale linje vil derefter skifte til grøn for at signalere hvor testpersonen skal flytte sin markør hen. I tilfælde af at testdeltageren rammer kanten både ind- og udvendigt i spiralen, vil de kunne fortsætte ubemærket.\\
+Når testpersonen passerer den inderste vertikale linje i spiralen, vil opgaven stoppe. Der vil efterfølgende blive vist en knap hvor der kan fortsættes til næste spiral, eller afslutte og fortsætte til næste opgave. Ved afslutning af opgaven vil vi, som med tunnelopgaven, gemme tiden det har taget og banen brugt igennem spiralen, og sende denne til vores database.
 
 \addcontentsline{toc}{subsection}{Pegeopgave}
 \subsection*{Pegeopgave}
-I denne opgave vil testdeltageren blive præsenteret for en sekvens af 25 cirkulære mål af skiftene størrelse og position. Målene præsenteres i rækkefølgen som ses i Tabel \ref{tab:pegeopgave}. Hver test i sættet starter, når testdeltageren klikker inden for en fastplaceret cirkel i vinduets center og slutter når testdeltageren klikker indenfor målet. Hvert cirkulært mål varierer i distance fra center-cirklen og varierer i diameter, hvilket giver ændringer i A/W-sværhedsgrad som ses i tabel \ref{tab:pegeopgave}. Center-cirklen vil blive præsenteret i en grøn farve, se figur \ref{fig:pegeopgave_start}, og vil ved klik skifte til blå - alle mål-cirklerne er vist i grøn farve. Figur \ref{fig:pegeopgave_target} illustrerer, hvordan center- og mål-cirklerne er farvet. 
+I denne opgave vil testdeltageren blive præsenteret for en sekvens af 25 cirkulære mål af skiftende størrelse og position. Målene præsenteres i rækkefølgen som ses i Tabel \ref{tab:pegeopgave}. Hver test i sættet starter, når testdeltageren klikker inden for en fastplaceret cirkel i vinduets center og slutter når testdeltageren klikker indenfor målet. Hvert cirkulært mål varierer i distance fra center-cirklen og varierer i diameter, hvilket giver ændringer i A/W-sværhedsgrad som ses i tabel \ref{tab:pegeopgave}. Center-cirklen vil blive præsenteret i en grøn farve, se figur \ref{fig:pegeopgave_start}, og vil ved klik skifte til blå - alle mål-cirklerne er vist i grøn farve. Figur \ref{fig:pegeopgave_target} illustrerer, hvordan center- og mål-cirklerne er farvet. 
 
-Testdeltagerens bane til mål-cirklen er illustreret ved en grøn linje, der følger musen, et eksempel herpå ses i figur \ref{fig:pegeopgave_path}. Vi vil i løbet af opgaven registrere tiden det tager fra at testpersonen trykker på center-cirklen, til de trykker på målet. Dertil vil banen som testdeltageren bruger også blive registreret.
+Testdeltagerens bane til mål-cirklen er illustreret ved en grøn linje, der følger musen, et eksempel herpå ses i figur \ref{fig:pegeopgave_path}. Vi vil i løbet af opgaven registrere tiden det tager fra at testpersonen trykker på center-cirklen, til de trykker på målet. Dertil vil banen som testdeltageren bruger også blive registreret. De tre illustrationer af pegeopgaven er skaleret forskelligt for bedre at tydeliggøre, essensen i opgaven.
 
 \begin{minipage}[t]{.5\linewidth}
 \centering
@@ -420,7 +426,7 @@ Testdeltagerens bane til mål-cirklen er illustreret ved en grøn linje, der fø
 \subsection*{Generelt for de tre opgaver}
 I alle opgaverne vil deltagerne blive informeret om, hvor mange opgaver de mangler at gennemføre, så de ved hvornår de er færdige, den grå tekst \textit{"Remaining circles"} i figur \ref{fig:pegeopgave_target} er et eksempel på, hvordan denne information så ud undervejs. Vi har medtaget det i håb om, at testdeltagere fra crowdsourcing forsøget ikke vil miste tålmodigheden midt i testen.  
 
-Hvis deltagerne bevæger pegeenheden uden for det canvas som opgaven skal udføres i vil denne del af banen ikke komme med i vores gemte data.
+Hvis deltagerne bevæger pegeenheden uden for det canvas som opgaven skal udføres i vil denne del af banen ikke komme med i vores gemte data. For tunnel og spiralopgaverne er størrelsen på det omkring liggende canvas 1024x512 pixels, imens det for pegeopgaven er 512x512 pixels.
 
 \addcontentsline{toc}{chapter}{Eksperimenter}
 \chapter*{Eksperimenter}
@@ -439,13 +445,15 @@ Herefter bliver testdeltageren bedt om at udføre tunnelopgaven - efterfulgt af 
 \addcontentsline{toc}{subsection}{Crowdsourcingeksperiment}
 \subsection*{Crowdsourcingeksperiment}
 Crowdsourcingeksperimentet vil foregå på internettet, og vi har derfor gjort vores program tilgængeligt online. Ved crowdsourcingeksperimentet vil hver deltager udfylde formularen, som ses i Figur \ref{fig:Questions}, før de kan fortsætte. Når formularen er udfyldt forsætter deltageren til opgaverne. Her skal der, ligesom laboratorieeksperimentet, udføres 4 spiralopgaver, efterfulgt af 4 tunnelopgaver og til sidst 25 pegeopgaver. Efter deltageren har udført alle opgaver vil deres data blive sendt til en server, hvorefter deltageren får en informationsmeddelelse.
-Vi har valgt at dele vores eksperiment på et antal af reddit-sider, da det er et meget populært internetfora, og muliggør at vi kan nå ud til så mange mennesker som overhovedet muligt.
+Vi har valgt at dele vores eksperiment på et antal af reddit-sider, da det er et meget populært internetfora og muliggør, at vi kan nå ud til så mange mennesker som overhovedet muligt.
 \begin{itemize}
 \item reddit.com/r/denmark\\
-Vi valgte $/r/denmark$ fordi det er et aktivt subreddit.
-\item reddit.com/r/helpme\\
-\item reddit.com/r/care\\
-Vi valte $/r/helpme$ og $/r/care$, da begge disse subredits er lavet til at spørge folk om hjælp.
+Vi valgte $/r/denmark$ fordi det er et aktivt subreddit, som passer til vores forespørgsel, med næsten hundredetusind unikke visninger per måned.
+\end{itemize}
+For at nå ud til andet end danske brugere har vi valgt også at bruge de to følgende subreddits. De er beregnet til at spørge folk om hjælp, og er de to største med dette formål som vi kunne finde.
+\begin{itemize}
+\item reddit.com/r/helpme
+\item reddit.com/r/care
 \end{itemize}
 
 Som det sidste vil vi også dele forsøget på vores egne Facebook-profiler.
@@ -476,14 +484,14 @@ I dette afsnit vil vi analysere den indsamlede data ved brug af både kvantitati
 \section*{Modeludvælgelse}
 Som det kan ses af de fire formuleringer for Fitts' lov, så kan de alle sammen opfattes som affine modeller, med tiden $T$ som y-variabel og ID som x-variabel. Bemærk, at Welfords formel har en skæring med y-aksen i 0, dvs. $y=b\cdot x$.\\
 For at kunne finde ud af hvilken af de fire lineære modeller der beskriver vores data bedst, har vi taget udgangspunkt i \cite{wu2011experiments} der refererer til tre modeludvælgelseskriterier som værende almindeligt anvendte.\\
-I \cite{wu2011experiments} afsnit \textit{1.7 VARIABLE SELECTION IN REGRESSION ANALYSIS} bliver $C_p$, $AIC$ og $BIC$ beskrevet som almindeligt anvendte, og der bliver refereret til Ockhams ragekniv som værende et godt udgangspunkt ved modeludvælgelse, da det oftest er den simpleste model der passer bedst. Dette har vi brugt til selv at vælge $LSE$, da denne er simpel, og derfor er understøttet som metode, af Ockhams ragekniv.
+I \cite{wu2011experiments} afsnit 1.7 bliver $C_p$, $AIC$ og $BIC$ beskrevet som almindeligt anvendte, og der bliver refereret til Ockhams ragekniv som værende et godt udgangspunkt ved modeludvælgelse, da det oftest er den simpleste model der passer bedst. Dette har vi brugt til selv at vælge $LSE$, da denne er simpel, og derfor er understøttet som metode, af Ockhams ragekniv.
 \begin{itemize}
 \item{Least Squared Errors (LSE) \cite{legendre1805}.}
 \item{Mallow's $C_p$ \cite{mallow1973}.}
 \item{Akaike Information Criterion (AIC) \cite{akaike1973}.}
 \item{Bayesian Information Criterion (BIC) \cite{schwarz1978}.}
 \end{itemize}
-LSE er bestemt ved at finde gennemsnittet af kvadratet på afstandene fra punkterne til modellen, den model som har det laveste gennemsnit bliver vurderet som bedst. Et problem ved udelukkende at benytte dette kriterium er, at en model altid kan beskrive alle data punkter perfekt ved blot at inkludere flere parametre. Dette er hvad der kan klassificeres som overfitting.\\
+LSE er bestemt ved at finde gennemsnittet af kvadratet på afstandene fra punkterne til modellen, den model som har det laveste gennemsnit bliver vurderet som bedst. Et problem ved udelukkende at benytte dette kriterium er, at en model altid kan beskrive alle data punkter perfekt ved blot at inkludere flere parametre. Således, at modellen bliver et polynomium af højere end grad end det originale, dette er overfitting.\\
 Mallow's $C_p$ kriteriet bliver beregnet ud fra LSE men inddrager også antallet af parametre i beregningen for netop at undgå overfitting. Tilsvarende gør sig gældende for AIC og BIC, de beregnes dog ved hjælp af maximum likelihood i stedet for LSE.\\
 For et givent datasæt $x$ og en tilhørende statistisk model vil likelihood funktionen beregne sandsynligheden for at modellens parametre $p$ vil resultere i $x$. Ved maximum likelihood findes de værdier for parametrene $p$, som maksimere likelihood funktionen. Det vil sige de værdier for parametrene $p$, som gør det observerede datasæt $x$ mest sandsynligt. Forskellen imellem AIC og BIC er, at BIC vægter antallet af parametre mere negativt end AIC.\\
 Af de fire beskrevne modeller har vi valgt at bruge AIC, da det er den mest udbredte at basere sin modeludvælgelse på. Hvis vi lader $L$ være maximum likelihood værdierne for modellens parametre og $k$ antallet af parametre, så er AIC givet ved
