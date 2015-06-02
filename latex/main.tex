@@ -562,29 +562,44 @@ På baggrund af de affine linjers overenstemmelse med størstedelen af datapunkt
 \section*{Modelanalyse af bevægelsesbaner}
 Vores modelanalyse af bevægelsesbaner tager udgangspunkt i AIC-modellen og de bevægelsesbaner der er indsamlet ved crowdsourcingdeltagernes udførsel af opgaverne.
 
-Hver af de fire formuleringer af Fitts lov har vi tilpasset til vores data fra de 264 testdeltageres pegeopgaver ved lineær regression ved R's $lm()$ funktion. Til hver af modellerne har vi gjort brug af formuleringernes respektive $ID$ som $x$-koordinat og tiden, $t$, det tog testdeltageren at løse en pågældende pegeopgave. R-koden er at se i listing \ref{lst:function}. Datapunkterne og de fire modeller er vist i figur \ref{fig:welford_affine_line}, \ref{fig:fitt_affine_line}, \ref{fig:meyer_affine_line} og \ref{fig:mackenzie_affine_line}. Bemærk, hvordan datapunkterne danner 25 vertikale 'søjler', én for hvert af vores pegeopgavers $ID$.
+Hver af de fire formuleringer af Fitts lov har vi tilpasset til vores data fra de 264 testdeltageres pegeopgaver ved lineær regression ved R's $lm()$ funktion. Til hver af modellerne har vi gjort brug af formuleringernes respektive $ID$ som $x$-koordinat og tiden, $t$, det tog testdeltageren at løse en pågældende pegeopgave som $y$-koordinat. De fire matematiske modeller med de tilpassede konstanter er vist nedenfor.
+\begin{align*}
+\text{Fitts': } &T = 392.29 + 149.42\cdot \log_2\left(\frac{2A}{W}\right)\\
+\text{Welford's: } &T =  299.73\cdot \log_2\left(\frac{A+\frac{1}{2}W}{W}\right)\\
+\text{Mackenzie's: } &T = 418.58 + 176.87\cdot \log_2\left(\frac{A+W}{W}\right)\\
+\text{Meyer's: } &T = 504.48 + 157.13 \cdot \sqrt{\frac{A}{W}}
+\end{align*}
+
+ Bemærk at den additive konstant er målt i millisekunder ligesom vores registrerede tider fra datasættet. Datapunkterne og de affine kurver har vi plottet og vist i figur \ref{fig:welford_affine_line}, \ref{fig:fitt_affine_line}, \ref{fig:meyer_affine_line} og \ref{fig:mackenzie_affine_line}. Bemærk, hvordan datapunkterne danner 25 vertikale 'søjler', én for hvert af vores pegeopgavers $ID$.
 
 Det er disse modeller som vores pegeopgaveanalyse vil tage udgangspunkt i. Ud fra figurerne er det ikke muligt at For at finde ud af, hvilken af modellerne der er bedst, vil vi som tidligere beskrevet gøre brug af AIC, da det ikke er muligt ud fra disse figurer at sige noget om.
 
+
 \begin{minipage}{\linewidth}
-	\begin{minipage}[b]{.50\linewidth}
-		\captionof{figure}{Welford's affine model}
+	\begin{minipage}[b]{0.45\linewidth}
+		\captionof{figure}{Welford's lineære model med hans $ID$ ud af $x$-aksen og tiden ud af $y$-aksen}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_welford}
 		\label{fig:welford_affine_line}
 	\end{minipage}
-	\begin{minipage}[b]{0.50\linewidth}
-		\captionof{figure}{Fitts' affine model}
+	\begin{minipage}[b]{0.1\linewidth}
+	~
+	\end{minipage}
+	\begin{minipage}[b]{0.45\linewidth}
+		\captionof{figure}{Fitts' affine model med hans $ID$ ud af $x$-aksen og tiden ud af $y$-aksen}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_fitt}
 		\label{fig:fitt_affine_line}
 	\end{minipage}
-	\begin{minipage}[b]{.50\linewidth}
+	\begin{minipage}[b]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_meyer}
-		\captionof{figure}{Meyer's affine model}
+		\captionof{figure}{Meyer's affine model med hans $ID$ ud af $x$-aksen og tiden ud af $y$-aksen}
 		\label{fig:meyer_affine_line}
 	\end{minipage}
-	\begin{minipage}[b]{0.50\linewidth}
+	\begin{minipage}[b]{0.1\linewidth}
+	~
+	\end{minipage}
+	\begin{minipage}[b]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_mackenzie}
-		\captionof{figure}{Mackenzie's affine model}
+		\captionof{figure}{Mackenzie's affine model med hans $ID$ ud af $x$-aksen og tiden ud af $y$-aksen}
 		\label{fig:mackenzie_affine_line}
 	\end{minipage}
 \end{minipage}
