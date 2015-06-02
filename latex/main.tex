@@ -601,19 +601,19 @@ Som det ses af listing \ref{lst:function}, udregner vi først $ID$ for vores dat
 
 \addcontentsline{toc}{subsection}{AIC-analyse}
 \subsection*{AIC-analyse}
-Figur \ref{tab:table_analysis_aic} viser AIC for de fire modeller. De fire modellers AIC er høje, men det er underordnet da det afhænger af antallet af datapunkter, Det der derimod betyder noget er deres indbyrdes forhold. Det ses af tabellen at Meyer's har den laveste AIC og derfor er den model der passer bedst til den indsamlede data. MacKenzie's og Fitt's følger herefter med lidt højere AIC værdier, mens Welford's er den klart dårligste af de fire modeller. Vi har valgt at sætte Meyers AIC værdi som nulpunkt og så beregne forskellen til de andre herfra. 
+Figur \ref{tab:table_analysis_aic1} viser AIC for de fire modeller. De fire modellers AIC er høje, men det er underordnet da det afhænger af antallet af datapunkter, Det der derimod betyder noget er deres indbyrdes forhold. Det ses af tabellen at Meyer's har den laveste AIC og derfor er den model der passer bedst til den indsamlede data. MacKenzie's og Fitt's følger herefter med lidt højere AIC værdier, mens Welford's er den klart dårligste af de fire modeller. Vi har valgt at sætte Meyers AIC værdi som nulpunkt og så beregne forskellen til de andre herfra. 
 
 \begin{table}[h]
 \centering
 \begin{tabular}{lll}
-Model 		& AIC værdi & Forskel\\\hline
-Meyer 		& 92728.38 & 1.00000 \\
-Mackenzie 	& 92763.02 & 0.99946 \\
-Fitts 		& 92804.17 & 0.99898 \\
-Welford 	& 94510.34 & 0.98478
+Model 	  & AIC værdi & Forskel\\\hline
+Meyer 	  & 92728.38 & 0 \\
+Mackenzie & 92763.02 & 34.64 \\
+Fitts 	  & 92804.17 & 75.79 \\
+Welford   & 94510.34 & 1781.96
 \end{tabular}
 \caption{AIC værdier og indbyrdes forskel med udgangspunkt i Meyers som nulpunkt}
-\label{tab:table_analysis_aic}
+\label{tab:table_analysis_aic1}
 \end{table}
 
 \addcontentsline{toc}{subsection}{Residualanalyse}
@@ -659,8 +659,8 @@ AIC analysen viser at Fitts' oprindelig formulering klarer sig bedst, dog er de 
 
 \begin{table}[h]
 \centering
-\begin{tabular}{ccc}
-Model & AIC værdi & Forskel\\
+\begin{tabular}{lll}
+Model & AIC værdi & Forskel\\\hline
 Fitts & 17668.53 & 0\\
 Mackenzie & 17668.56 & 0.3 \\
 Accot \& Zhai & 17669.07 & 0.54\\
@@ -668,7 +668,7 @@ Meyer & 17669.50 & 0.87 \\
 Welford & 17679.18 & 10.65
 \end{tabular}
 \caption{AIC værdier og indbyrdes forskel med udgangspunkt i Fitts' som nulpunkt}
-\label{tab:table_analysis_aic}
+\label{tab:table_analysis_aic2}
 \end{table}
 
 \begin{minipage}{\linewidth}
