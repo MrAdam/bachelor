@@ -509,19 +509,19 @@ I \cite{wu2011experiments} afsnit 1.7 bliver $C_p$, $AIC$ og $BIC$ beskrevet som
 \item{Akaike Information Criterion (AIC) \cite{akaike1973}.}
 \item{Bayesian Information Criterion (BIC) \cite{schwarz1978}.}
 \end{itemize}
-LSE er bestemt ved at finde gennemsnittet af kvadratet på afstandene fra punkterne til modellen, den model som har det laveste gennemsnit bliver vurderet som bedst. Et problem ved udelukkende at benytte dette kriterium er, at en model altid kan beskrive alle data punkter perfekt ved blot at inkludere flere parametre. Således, at modellen bliver et polynomium af højere end grad end det originale, dette er overfitting.
+LSE er bestemt ved at finde gennemsnittet af kvadratet på afstandene fra punkterne til modellen, den model som har det laveste gennemsnit bliver vurderet som bedst. Et problem ved udelukkende at benytte dette kriterium er, at en model altid kan beskrive alle datapunkter perfekt ved blot at inkludere flere parametre. Således, at modellen bliver et polynomium af højere grad end det originale, dette kaldes overfitting.
 
 Mallow's $C_p$ kriteriet bliver beregnet ud fra LSE men inddrager også antallet af parametre i beregningen for netop at undgå overfitting. Tilsvarende gør sig gældende for AIC og BIC, de beregnes dog ved hjælp af maximum likelihood i stedet for LSE.
 
-For et givent datasæt $x$ og en tilhørende statistisk model vil likelihood funktionen beregne sandsynligheden for at modellens parametre $p$ vil resultere i $x$. Ved maximum likelihood findes de værdier for parametrene $p$, som maksimere likelihood funktionen. Det vil sige de værdier for parametrene $p$, som gør det observerede datasæt $x$ mest sandsynligt. Forskellen imellem AIC og BIC er, at BIC vægter antallet af parametre mere negativt end AIC.
+For et givent datasæt $x$ og en tilhørende statistisk model vil likelihoodfunktionen beregne sandsynligheden for at modellens parametre $p$ vil resultere i $x$. Ved maximum likelihood findes de værdier for parametrene $p$, som maksimere likelihood funktionen. Det vil sige de værdier for parametrene $p$, som gør det observerede datasæt $x$ mest sandsynligt. Forskellen på AIC og BIC er, at BIC vægter antallet af parametre mere negativt end AIC.
 
-Af de fire beskrevne modeller har vi valgt at bruge AIC, da det er den mest udbredte at basere sin modeludvælgelse på. Hvis vi lader $L$ være maximum likelihood værdierne for modellens parametre og $k$ antallet af parametre, så er AIC givet ved
+Af de fire beskrevne modeller har vi valgt at bruge AIC, da det er den mest udbredte at basere sin modeludvælgelse på. Hvis vi lader $L$ være maximum likelihood-værdierne for modellens parametre og $k$ antallet af parametre, så er AIC givet ved
 \begin{align}
-AIC = 2k - 2\ln(L)
+AIC = 2k - 2\ln(L) \label{eq:aic}
 \end{align}
-Vi har til vores analyse brugt programmeringssproget R, som både har lineær regression og AIC funktionalitet indbygget. $lm()$\footnote{R dokumentation om $lm()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/lm.html}} fitter en lineær model ud fra de (x,y) datasæt der gives som input. Modellen bliver baseret på least squares, og kan også tvinges til at gå igennem origo (for Welford).
+Vi har til vores analyse brugt programmeringssproget R, som både har lineær regression og AIC-funktionalitet indbygget. $lm()$\footnote{R dokumentation om $lm()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/lm.html}} fitter en lineær model ud fra de (x,y) datasæt der gives som input. Modellen bliver baseret på least squares, og kan også tvinges til at gå igennem origo (for Welford).
 
-$AIC()$\footnote{R dokumentation om $AIC()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/AIC.html}} bruger (13) som udgangspunkt til sine beregninger, og tager som input en model, der har metoden $logLik()$\footnote{R dokumentation om $logLik()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/logLik.html}}, hvilket $lm()$'s output-modeller har. $lm()$ og $AIC()$ gør det derfor muligt at sammenligne modellerne med R.
+$AIC()$\footnote{R dokumentation om $AIC()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/AIC.html}} bruger (\ref{eq:aic}) som udgangspunkt til sine beregninger, og tager som input en model, der har metoden $logLik()$\footnote{R dokumentation om $logLik()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/logLik.html}}, hvilket $lm()$'s output-modeller har. $lm()$ og $AIC()$ gør det derfor muligt at sammenligne modellerne med R.
 
 \addcontentsline{toc}{section}{Indledende analyse}
 \section*{Indledende analyse}
@@ -543,7 +543,7 @@ Vi har derfor forsøgt at fjernet alle datapunkter, som afviger med mere end 3 g
 \end{minipage}
 
 \newpage
-På baggrund af de affine linjers overenstemmelse med størstedelen af datapunkterne fra det kontrollerede eksperiment har vi konkluderet, at det tilsvarende vil gøre sig gældende for vores ukontrollerede data, og derved godt kan danne grundlag for en analyse af de fire formuleringer af Fitts' lov. Vi vil dog analysere datasættet af to omgange, med og uden filtrerede data. Da forskellen kan have en hvis betydning på de fire formuleringers tilpasning til datasættet.
+På baggrund af de affine linjers overenstemmelse med størstedelen af datapunkterne fra det kontrollerede eksperiment har vi konkluderet, at det tilsvarende vil gøre sig gældende for vores ukontrollerede data, og derved godt kan danne grundlag for en analyse af de fire formuleringer af Fitts' lov. Vores analyse vil basere sig på et filtreret datasæt ved den oven nævnte $\sigma$ metode, så eventuelle perifære data ikke medtages.
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.50\linewidth}
@@ -601,25 +601,19 @@ Som det ses af listing \ref{lst:function}, udregner vi først $ID$ for vores dat
 
 \addcontentsline{toc}{subsection}{AIC-analyse}
 \subsection*{AIC-analyse}
-%[1] "Fitt's AIC = 75572.3883401724"
-%[1] "Welford's AIC = 79415.0662411436"
-%[1] "Welford's Additive AIC = 75566.8402100114"
-%[1] "MacKenzie's AIC = 75567.185218973"
-%[1] "Meyer's AIC = 75620.1633109145"
-% TODO: Indsæt tabel med de relative størrelser i stedet for plot
-Figur \ref{tab:table_analysis_aic} viser AIC for de fire modeller. De fire modellers AIC er høje, men det er underordnet da det afhænger af antallet af datapunkter, Det der derimod betyder noget er deres indbyrdes forhold. Det ses af tabellen at Meyer's har den laveste AIC og derfor er den model der passer bedst til den indsamlede data. MacKenzie's og Fitt's følger herefter med lidt højere AIC værdier, mens Welford's er den klart dårligste af de fire modeller. Vi har valgt at sætte Meyers AIC værdi som nulpunkt og så beregne forskellen til de andre herfra. 
+Figur \ref{tab:table_analysis_aic1} viser AIC for de fire modeller. De fire modellers AIC er høje, men det er underordnet da det afhænger af antallet af datapunkter, Det der derimod betyder noget er deres indbyrdes forhold. Det ses af tabellen at Meyer's har den laveste AIC og derfor er den model der passer bedst til den indsamlede data. MacKenzie's og Fitt's følger herefter med lidt højere AIC værdier, mens Welford's er den klart dårligste af de fire modeller. Vi har valgt at sætte Meyers AIC værdi som nulpunkt og så beregne forskellen til de andre herfra. 
 
 \begin{table}[h]
 \centering
-\begin{tabular}{ccc}
-Model & AIC værdi & Forskel\\
-Meyer & 94598.08 & 0 \\
-Mackenzie & 94649.26 & 51.18 \\
-Fitts & 94694.76 &96.68 \\
-Welford & 96060.29 & 1462.21
+\begin{tabular}{lll}
+Model 	  & AIC værdi & Forskel\\\hline
+Meyer 	  & 92728.38 & 0 \\
+Mackenzie & 92763.02 & 34.64 \\
+Fitts 	  & 92804.17 & 75.79 \\
+Welford   & 94510.34 & 1781.96
 \end{tabular}
 \caption{AIC værdier og indbyrdes forskel med udgangspunkt i Meyers som nulpunkt}
-\label{tab:table_analysis_aic}
+\label{tab:table_analysis_aic1}
 \end{table}
 
 \addcontentsline{toc}{subsection}{Residualanalyse}
@@ -665,8 +659,8 @@ AIC analysen viser at Fitts' oprindelig formulering klarer sig bedst, dog er de 
 
 \begin{table}[h]
 \centering
-\begin{tabular}{ccc}
-Model & AIC værdi & Forskel\\
+\begin{tabular}{lll}
+Model & AIC værdi & Forskel\\\hline
 Fitts & 17668.53 & 0\\
 Mackenzie & 17668.56 & 0.3 \\
 Accot \& Zhai & 17669.07 & 0.54\\
@@ -674,7 +668,7 @@ Meyer & 17669.50 & 0.87 \\
 Welford & 17679.18 & 10.65
 \end{tabular}
 \caption{AIC værdier og indbyrdes forskel med udgangspunkt i Fitts' som nulpunkt}
-\label{tab:table_analysis_aic}
+\label{tab:table_analysis_aic2}
 \end{table}
 
 \begin{minipage}{\linewidth}
