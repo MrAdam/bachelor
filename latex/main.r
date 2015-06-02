@@ -69,6 +69,36 @@ final_tasks_filtered = rbind(
   filter(final_tasks[final_tasks$type == "spiraling",]),
   filter(final_tasks[final_tasks$type == "pointing",]))
 
+try_spiral = final_tasks[final_tasks$type == "spiraling",]
+try_spiral$width = 25
+try_spiral$distance = rep(c(127,190,252,315),264)
+
+w = 3.1
+n = 1
+integrand <- function(x) {sqrt((x+w)^6+9*(x+w)^4)/((x+2*pi+w)^3-(x+w)^3)}
+firstSpiral = integrate(integrand,2*pi,2*pi*(n+1))
+w = 3.1
+n = 2
+integrand <- function(x) {sqrt((x+w)^6+9*(x+w)^4)/((x+2*pi+w)^3-(x+w)^3)}
+secondSpiral = integrate(integrand,2*pi,2*pi*(n+1))
+w = 3.1
+n = 3
+integrand <- function(x) {sqrt((x+w)^6+9*(x+w)^4)/((x+2*pi+w)^3-(x+w)^3)}
+thirdSpiral = integrate(integrand,2*pi,2*pi*(n+1))
+w = 3.05
+n = 4
+integrand <- function(x) {sqrt((x+w)^6+9*(x+w)^4)/((x+2*pi+w)^3-(x+w)^3)}
+fourthSpiral = integrate(integrand,2*pi,2*pi*(n+1))
+
+accot_test = test_tasks[test_tasks$type == "spiraling",]
+accot_test$distance = rep(c(firstSpiral$value,secondSpiral$value,thirdSpiral$value,fourthSpiral$value),10)
+
+accot_spiral = try_spiral[c("id","person","width","time")]
+accot_spiral$distance = rep(c(firstSpiral$value,secondSpiral$value,thirdSpiral$value,fourthSpiral$value),264)
+
+try_spiral = filter(try_spiral)
+accot_spiral = filter(accot_spiral)
+
 #################
 # Define Models #
 #################
@@ -199,7 +229,7 @@ data$id = data$distance/(8-data$width) * log(8/data$width)
 model_accot_test = lm(time ~ id, data)
 ggplot(model_accot_test, aes(x = id, y = time)) + 
   geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 7")
- ggsave(file = "images/plots/plot_model_test_navigation_1.png")
+# ggsave(file = "images/plots/plot_model_test_navigation_1.png")
 remove(data, model_accot_test)
 
 data = test_tasks_filtered[test_tasks_filtered$type == "navigating" & test_tasks_filtered$person == 17,]
@@ -207,7 +237,7 @@ data$id = data$distance/(8-data$width) * log(8/data$width)
 model_accot_test = lm(time ~ id, data)
 ggplot(model_accot_test, aes(x = id, y = time)) + 
   geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 9")
- ggsave(file = "images/plots/plot_model_test_navigation_2.png")
+# ggsave(file = "images/plots/plot_model_test_navigation_2.png")
 remove(data, model_accot_test)
 
 ########################
@@ -227,7 +257,7 @@ id = log2((data$distance + 0.5 * 8) / (8))
 time <- data$time
 df <- data.frame(id, time)
 datamean_welford <- aggregate(.~id, data=df, mean)
-model_welford_navigating = lm(datamean_welford[,2] ~ datamean_welford[,1])
+model_welford_navigating = lm(datamean_welford[,2] ~ 0+datamean_welford[,1])
 remove(data)
 # MacKenzie's
 data = final_tasks_filtered[final_tasks_filtered$type == "navigating",]
@@ -286,6 +316,114 @@ ggplot(model_meyer_navigating, aes(x = datamean_meyer$id, y = datamean_meyer$tim
 ggplot(model_accot_navigating, aes(x = datamean_accot$id, y = datamean_accot$time)) + 
   geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Accot & zhai's tunnel model", x = "ID", y = "Time")
 #  ggsave(file = "images/plots/plot_model_tunnel_accot.png")
+
+#########################################
+#          Spiraling                    #
+#########################################
+######################
+# Spiraling Example #
+######################
+
+id = accot_test$distance[accot_test$person == 10]
+time = accot_test$time[accot_test$person == 10]
+model_accot_test = lm(time ~ id)
+ggplot(model_accot_test, aes(x = id, y = time)) + 
+  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 2")
+#ggsave(file = "images/plots/plot_model_test_spiraling_1.png")
+remove(model_accot_test)
+
+id = accot_test$distance[accot_test$person == 18]
+time = accot_test$time[accot_test$person == 18]
+model_accot_test = lm(time ~ id)
+ggplot(model_accot_test, aes(x = id, y = time)) + 
+  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 10")
+#ggsave(file = "images/plots/plot_model_test_spiraling_2.png")
+remove(model_accot_test)
+
+######################
+# Spiraling Models   #
+######################
+
+
+# Fitts'
+data = try_spiral
+id = log2((2 * data$distance) / (data$width))
+time <- data$time
+df <- data.frame(id, time)
+datamean_fitt <- aggregate(.~id, data=df, mean)
+model_fitt_spiral = lm(datamean_fitt[,2] ~ datamean_fitt[,1])
+model_fitt_spiral2 = lm(time ~ id)
+remove(data)
+# Welford's
+data = try_spiral
+id = log2((data$distance + 0.5 * data$width) / (data$width))
+time <- data$time
+df <- data.frame(id, time)
+datamean_welford <- aggregate(.~id, data=df, mean)
+model_welford_spiral = lm(datamean_welford[,2] ~ 0 + datamean_welford[,1])
+model_welford_spiral2 = lm(time ~ 0 + id)
+remove(data)
+# MacKenzie's
+data = try_spiral
+id = log2((data$distance + data$width) / (data$width))
+time <- data$time
+df <- data.frame(id, time)
+datamean_mackenzie <- aggregate(.~id, data=df, mean)
+model_mackenzie_spiral = lm(datamean_mackenzie[,2] ~ datamean_mackenzie[,1])
+model_mackenzie_spiral2 = lm(time ~ id)
+remove(data)
+# Meyer's
+data = try_spiral
+id = sqrt((data$distance) / (data$width))
+time <- data$time
+df <- data.frame(id, time)
+datamean_meyer <- aggregate(.~id, data=df, mean)
+model_meyer_spiral = lm(datamean_meyer[,2] ~ datamean_meyer[,1])
+model_meyer_spiral2 = lm(time ~ id)
+remove(data)
+# Accot og Zhai's
+data = accot_spiral
+id <- data$distance
+time <- data$time
+df <- data.frame(id, time)
+datamean_accot <- aggregate(.~id, data=df, mean)
+model_accot_spiral = lm(datamean_accot[,2] ~ datamean_accot[,1])
+model_accot_spiral2 = lm(time ~ id)
+remove(data)
+
+#######################
+#   Spiraling AIC     #
+#######################
+print(paste("Fitts' AIC", "=", AIC(model_fitt_spiral2), sep = " "))
+print(paste("Welford's AIC", "=", AIC(model_welford_spiral2), sep = " "))
+print(paste("MacKenzie's AIC", "=", AIC(model_mackenzie_spiral2), sep = " "))
+print(paste("Meyer's AIC", "=", AIC(model_meyer_spiral2), sep = " "))
+print(paste("Accot's AIC", "=", AIC(model_accot_spiral2), sep = " "))
+
+####################
+# Spiraling plot   #
+####################
+# Fitts'
+ggplot(model_fitt_spiral, aes(x = datamean_fitt$id, y = datamean_fitt$time)) + 
+  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Fitts' spiral model", x = "ID", y = "Time")
+#  ggsave(file = "images/plots/plot_model_spiral_fitt.png")
+# Welford's
+ggplot(model_welford_spiral, aes(x = datamean_welford$id, y = datamean_welford$time)) + 
+  geom_point() + stat_smooth(method = "lm", formula = y ~ 0 + x, se = F) + labs(title = "Welford's spiral model", x = "ID", y = "Time")
+#  ggsave(file = "images/plots/plot_model_spiral_welford.png")
+# MacKenzie's
+ggplot(model_mackenzie_spiral, aes(x = datamean_mackenzie$id, y = datamean_mackenzie$time)) + 
+  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Mackenzie's spiral model", x = "ID", y = "Time")
+#  ggsave(file = "images/plots/plot_model_spiral_mackenzie.png")
+# Meyer's
+ggplot(model_meyer_spiral, aes(x = datamean_meyer$id, y = datamean_meyer$time)) + 
+  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Meyer's spiral model", x = "ID", y = "Time")
+#  ggsave(file = "images/plots/plot_model_spiral_meyer.png")
+# Accot's
+ggplot(model_accot_spiral, aes(x = datamean_accot$id, y = datamean_accot$time)) + 
+  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Accot & zhai's spiral model", x = "ID", y = "Time")
+#  ggsave(file = "images/plots/plot_model_spiral_accot.png")
+
 ##########################################
 # Plot individual persons pointing tasks #
 ##########################################
@@ -306,7 +444,7 @@ final_points$speed = 0
 final_points$angleToNext = 0
 final_points$angleToEnd = 0
 m_tasks = final_tasks[final_tasks$type == "pointing" & final_tasks$person == 7, "id"]
-for (m_task in m_tasks) {
+for (m_task in 207:207) {
   print(m_task)
   m_points = final_points[final_points$task == m_task,]
   end_x <- tail(m_points, n = 1)$x

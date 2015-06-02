@@ -695,7 +695,7 @@ Hvis vi forsøger at tilpasse Accot og Zhai's formulering til vores kontrollered
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_test_navigation_1}
-		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 9, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 7, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:navigationtest1}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -750,18 +750,92 @@ Hvis vi forsøger at tilpasse Accot og Zhai's formulering til vores kontrollered
 \newpage
 \addcontentsline{toc}{subsection}{Analyse af spiralopgaver}
 \subsection*{Analyse af spiralopgaver}
-De to spiralmodeller er lavet på baggrund af Accot og Zhai's spiral og ses i figur \ref{fig:spiral_model_without} og \ref{fig:spiral_model_with}.
+De to spiralmodeller er lavet på baggrund af Accot og Zhai's spiral og ses i figur.
 \begin{align*}
 ID_s = \int_{2\pi}^{2\pi(n+1)}\frac{\sqrt{\left(\theta+w\right)^6+9\left(\theta+w\right)4}}{\left(\theta+2\pi+2\right)^3-\left(\theta+w\right)^3}d\theta
 \end{align*}
+
+\begin{align*}
+\text{Fitts': } &T = -24882.5+ 8217.7 \cdot \log_2\left(\frac{2A}{W}\right)\\
+\text{Welford's: } &T =  2808.54\cdot \log_2\left(\frac{A+\frac{1}{2}W}{W}\right)\\
+\text{Mackenzie's: } &T = -21606.0 + 9310.7\cdot \log_2\left(\frac{A+W}{W}\right)\\
+\text{Meyer's: } &T = -16269.1 + 8452.2 \cdot \sqrt{\frac{A}{W}}
+\end{align*}
+
+\begin{align*}
+\text{Accot \& Zhai: } T = 2097.09+553.25 \cdot \int_{2\pi}^{2\pi(n+1)}\frac{\sqrt{\left(\theta+w\right)^6+9\left(\theta+w\right)4}}{\left(\theta+2\pi+2\right)^3-\left(\theta+w\right)^3}d\theta
+\end{align*}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lll}
+Model & AIC værdi & Forskel\\\hline
+Accot \& Zhai & 20225.67 & 0\\
+Meyer & 20240.39 & 14.72 \\
+Mackenzie & 20256.62 & 30.95\\
+Welford & 20259.13 & 33.46\\
+Fitts & 20262.07 & 36.4
+\end{tabular}
+\caption{AIC værdier og indbyrdes forskel med udgangspunkt i Fitts' som nulpunkt}
+\label{tab:table_analysis_aic_tunnel}
+\end{table}
+
 \begin{minipage}{\linewidth}
-	\begin{minipage}[b]{0.50\linewidth}
-		\includegraphics[width=\textwidth]{images/plots/plot_model_spiral_with}
-		\captionof{figure}{Spiral model with additive}
-		\label{fig:spiral_model_with}
+	\begin{minipage}[b]{.45\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_test_spiraling_1}
+		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 2, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\label{fig:spiralingtest1}
+	\end{minipage}
+	\begin{minipage}[b]{0.1\linewidth}
+	~
+	\end{minipage}
+	\begin{minipage}[b]{0.45\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_test_spiraling_2}
+		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 10, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\label{fig:spiralingtest2}
 	\end{minipage}
 \end{minipage}
 
+\begin{minipage}{\linewidth}
+	\begin{minipage}[t]{.45\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_spiral_welford}
+		\captionof{figure}{Welford's affine model til gennemsnitstiden pr. $ID$, men $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\label{fig:welford_spiral_line}
+	\end{minipage}
+	\begin{minipage}[b]{0.1\linewidth}
+	~
+	\end{minipage}
+	\begin{minipage}[t]{0.45\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_spiral_fitt}
+		\captionof{figure}{Fitts' affine model til gennemsnitstiden pr. $ID$, men $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\label{fig:fitt_spiral_line}
+	\end{minipage}
+\end{minipage}
+\begin{minipage}{\linewidth}
+	\begin{minipage}[t]{.45\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_spiral_meyer}
+		\captionof{figure}{Meyer's affine model til gennemsnitstiden pr. $ID$, men $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\label{fig:meyer_spiral_line}
+	\end{minipage}
+	\begin{minipage}[b]{0.1\linewidth}
+	~
+	\end{minipage}
+	\begin{minipage}[t]{0.45\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_spiral_mackenzie}
+		\captionof{figure}{Mackenzie's affine model til gennemsnitstiden pr. $ID$, men $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\label{fig:mackenzie_spiral_line}
+	\end{minipage}
+\end{minipage}
+\begin{minipage}{\linewidth}
+	\begin{minipage}[t]{\linewidth}
+		\centering
+		\includegraphics[width=0.5\textwidth]{images/plots/plot_model_spiral_accot}
+		\captionof{figure}{Accot \& Zhai's affine model til gennemsnitstiden pr. $ID$, men $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\label{fig:accot_spiral_line}
+	\end{minipage}
+\end{minipage}
+
+\newpage
 \addcontentsline{toc}{section}{Modelanalyse af hastighedsprofiler}
 \section*{Modelanalyse af hastighedsprofiler}
 Vores modelanalyse af hastighedsprofiler tager udgangspunkt i en kvantitativ og en kvalitativ analyse af de indsamlede hastighedsprofiler fra crowdsourcingdeltagernes pegeopgaver.
@@ -812,7 +886,7 @@ På figur \ref{fig:plot_velocity_individual} og \ref{fig:plot_velocity_individua
 
 \addcontentsline{toc}{chapter}{Diskussion}
 \chapter*{Diskussion}
-Vi vil i dette afsnit diskutere både vores forsøgsopstilling og vores analyse.
+Vi vil i dette afsnit forsøge at diskutere vores fremgangsmåde og resultater fra både vores forsøgsopstilling og analyse.
 
 \addcontentsline{toc}{section}{Forsøgsopstilling}
 \section*{Forsøgsopstilling}
