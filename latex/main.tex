@@ -570,9 +570,9 @@ Hver af de fire formuleringer af Fitts lov har vi tilpasset til vores data fra d
 \text{Meyer's: } &T = 504.48 + 157.13 \cdot \sqrt{\frac{A}{W}}
 \end{align*}
 
- Bemærk at den additive konstant er målt i millisekunder ligesom vores registrerede tider fra datasættet. Datapunkterne og de affine kurver har vi plottet og vist i figur \ref{fig:welford_affine_line}, \ref{fig:fitt_affine_line}, \ref{fig:meyer_affine_line} og \ref{fig:mackenzie_affine_line}. Bemærk, hvordan datapunkterne danner 25 vertikale 'søjler', én for hvert af vores pegeopgavers $ID$.
+Bemærk at den additive konstant er målt i millisekunder ligesom vores registrerede tider fra datasættet. Ud fra de tre additive konstanter, kan det ses, at testdeltagerne i gennemsnit bruger cirka 450 millisekunder på at opfange opgaven før de bevæger deres pegeenhed. Datapunkterne og de fire affine modeller er plottet og vist i figur \ref{fig:welford_affine_line}, \ref{fig:fitt_affine_line}, \ref{fig:meyer_affine_line} og \ref{fig:mackenzie_affine_line}. Bemærk, hvordan datapunkterne danner 25 vertikale 'søjler', én for hvert af vores pegeopgavers $ID$.
 
-Det er disse modeller som vores pegeopgaveanalyse vil tage udgangspunkt i. Ud fra figurerne er det ikke muligt at For at finde ud af, hvilken af modellerne der er bedst, vil vi som tidligere beskrevet gøre brug af AIC, da det ikke er muligt ud fra disse figurer at sige noget om.
+Det er de fire matematiske modeller som vores pegeopgaveanalyse vil tage udgangspunkt i. Ud fra modellerne og figurerne er det dog svært at sige noget om, hvilke af modellerne der klarer sig bedre i at beskrive datapunkterne end resten. Vi vil derfor gøre brug af en AIC sammenligning og underbygge den med en residualanalyse.
 
 
 \begin{minipage}{\linewidth}
@@ -604,7 +604,6 @@ Det er disse modeller som vores pegeopgaveanalyse vil tage udgangspunkt i. Ud fr
 	\end{minipage}
 \end{minipage}
 
-\newpage
 \addcontentsline{toc}{subsection}{AIC-analyse}
 \subsection*{AIC-analyse}
 AIC anslår kvaliteten af hver model, relativt til hver af de andre modeller. Hvilket vil sige at AIC ikke kan sige noget om kvaliteten af en model I absolut forstand, og derfor ikke kan vurdere hvor godt en model passer på dataen - kun den relative kvalitet af hver model.
@@ -630,6 +629,11 @@ Welford   & 94510.34 & 1781.96
 
 \addcontentsline{toc}{subsection}{Residualanalyse}
 \subsection*{Residualanalyse}
+For at få en ekstra vurdering af præcisionen af modellerne, har vi valgt at lave en residualanalyse ved hjælp af residualplots. Residualerne I modellerne er variationen i $ID$ som modellerne ikke når at opfange, og de kan derved sige noget om hvor præcis modellerne er i forhold til den data vi har indsamlet.\\
+På figur \ref{fig:plot_residual_fitt}, \ref{fig:plot_residual_welford}. \ref{fig:plot_residual_mackenzie} og \ref{fig:plot_residual_meyer} ses alle fire modellers residualplot, med en rød linje defineret af en smoothing-funktion. Smoothing-funktionen er tilføjet som et visuelt hjælpemiddel der tydeligt kan vise hvordan residualerne fordeler sig omkring x-aksen. Jo mere centreret de er om aksen, og jo mere linære de er i forhold til aksen, jo bedre er modellen.\\
+Når vi kigger på de fire residualplot, så viser de samme resultater som AIC-analysen. Welford's residualplot viser at modellen passer dårlig på den indsamlede data. Fitt's og MacKenzie's ligner hinanden meget, mens Meyer's er den model der giver den bedste fit til den indsamlede data.\\
+Det ses af figur \ref{fig:plot_residual_welford} at Welford's især er dårligere ved lavere værdier af $ID$. Grunden til dette skal findes i at Welford's ikke har det additive $a$-led. Som Welford \cite{welford1968} selv forklare, så vil det manglende $a$-led ikke gøre stor forskel ved større værdier af $ID$. Fitt's og MacKenzie's residualer ligner hinanden rigtig meget.
+
 \begin{minipage}{\linewidth}
 	\begin{minipage}{.5\linewidth}
 		\includegraphics[width=\linewidth]{images/plots/plot_residual_fitt}
@@ -651,61 +655,103 @@ Welford   & 94510.34 & 1781.96
 		\captionof{figure}{Meyer's residualplot}
 		\label{fig:plot_residual_meyer}
 	\end{minipage}
-\end{minipage}\\\\
-For at få en ekstra vurdering af præcisionen af modellerne, har vi valgt at lave en residualanalyse ved hjælp af residualplots. Residualerne I modellerne er variationen i $ID$ som modellerne ikke når at opfange, og de kan derved sige noget om hvor præcis modellerne er i forhold til den data vi har indsamlet.\\
-På figur \ref{fig:plot_residual_fitt}, \ref{fig:plot_residual_welford}. \ref{fig:plot_residual_mackenzie} og \ref{fig:plot_residual_meyer} ses alle fire modellers residualplot, med en rød linje defineret af en smoothing-funktion. Smoothing-funktionen er tilføjet som et visuelt hjælpemiddel der tydeligt kan vise hvordan residualerne fordeler sig omkring x-aksen. Jo mere centreret de er om aksen, og jo mere linære de er i forhold til aksen, jo bedre er modellen.\\
-Når vi kigger på de fire residualplot, så viser de samme resultater som AIC-analysen. Welford's residualplot viser at modellen passer dårlig på den indsamlede data. Fitt's og MacKenzie's ligner hinanden meget, mens Meyer's er den model der giver den bedste fit til den indsamlede data.\\
-Det ses af figur \ref{fig:plot_residual_welford} at Welford's især er dårligere ved lavere værdier af $ID$. Grunden til dette skal findes i at Welford's ikke har det additive $a$-led. Som Welford \cite{welford1968} selv forklare, så vil det manglende $a$-led ikke gøre stor forskel ved større værdier af $ID$. Fitt's og MacKenzie's residualer ligner hinanden rigtig meget.
+\end{minipage}
 
 \addcontentsline{toc}{section}{Modelanalyse af navigationsopgaver}
 \section*{Modelanalyse af navigationsopgaver}
-I vores forsøg havde vi, udover pegeopgaven, også tunnel- og spiralopgaver. Vi vil i dette afsnit forsøge at passe de fire formuleringer af Fitts lov på vores navigationsopgaver, velvidende, at det ikke er den en type opgaver de er beregnet til. Accot og Zhai har i deres artikel \cite{accot1997} undersøgt lignende navigationsopgaver og fundet $ID$ specifikt for både tunnel- og spiralopgaver, hvilket vi vil bruge til at sammenligne med de fire formuleringer.
+I vores forsøg havde vi, udover pegeopgaven, også tunnel- og spiralopgaver. Vi vil i dette afsnit forsøge at tilpasse de fire formuleringer af Fitts lov på vores navigationsopgaver, velvidende om, at det ikke er den en type opgaver de er beregnet til. Accot og Zhai har i deres artikel \cite{accot1997} undersøgt lignende navigationsopgaver og fundet $ID$ specifikt for både tunnel- og spiralopgaver, hvilket vi vil bruge til at sammenligne med de fire formuleringer.
 
 \addcontentsline{toc}{subsection}{Analyse af tunnelopgaver}
 \subsection*{Analyse af tunnelopgaver}
-De fire formuleringer er, som benævnt, ikke lavet til navigationsopgaver, vi har dog alligevel tilpasset en lineær model med deres respektive ID, til vores tunneldata. Vi har valgt afstanden, $A$, til at være længden på tunnellen, og breden, $W$, til at være størrelse på tunnelens udmunding.  De fire plots kan ses i figur \ref{fig:welford_tunnel_line}, \ref{fig:fitt_tunnel_line}, \ref{fig:mackenzie_tunnel_line} og \ref{fig:meyer_tunnel_line}
+De fire formuleringer er, som benævnt, ikke lavet til navigationsopgaver, vi har dog alligevel tilpasset en lineær model med deres respektive ID, til vores tunneldata. Vi har valgt afstanden, $A$, til at være længden på tunnellen, og bredden, $W$, til at være størrelse på tunnelens højre lodrette linje, slutstregen, som altid er $8$ pixels. Ved lineær regression, $lm()$, med $R$ fik vi tilpasset nedenstående matematiske modeller af de fire formuleringer.
 
-Ligesom for pegeopgaven danner vores data én søjle for hvert $ID$, men sammenlignet de modeller fra pegeopgaven er forskellen på de fire navigationsmodeller umulig at få øje på. Accot og Zhai beskriver i deres artikel \cite{accot1997}, hvordan enindsnævrende tunnelopgave kan opdeles i små delelementer, som hver især udgør én lille navigationsopgave. Ved at gøre dette kan man finde $ID$ som summen af delelementernes $ID$, hvilket resulterer i $ID_{NT} = \frac{A}{W_2-W_1}\ln\left(\frac{W_2}{W_1}\right)$, hvor $W_2$ er størrelsen på udmundingen og $W_1$ er størrelsen på indmundingen. Dette giver anledning til $T=a+b\cdot ID_{NT}$. Tilpasses dette til vores data fås et plot som kan ses i figur \ref{fig:accot_tunnel_line}. 
+\begin{align*}
+\text{Fitts': } &T = 3532.2 + 581.9\cdot \log_2\left(\frac{2A}{W}\right)\\
+\text{Welford's: } &T =  1242.58\cdot \log_2\left(\frac{A+\frac{1}{2}W}{W}\right)\\
+\text{Mackenzie's: } &T = 4036.7 + 592.3\cdot \log_2\left(\frac{A+W}{W}\right)\\
+\text{Meyer's: } &T = 5863.07 + 210.48 \cdot \sqrt{\frac{A}{W}}
+\end{align*}
 
-AIC analysen viser at Fitts' oprindelig formulering klarer sig bedst, dog er de indbyrdes forskelle voldsomt små i forhold til forskellene for pegeopgaven, men endnu én gang er Welfords den dårligst beskrivende formulering af vores data.
+Helt naturligt er det additive led markant højere for tunnelopgaverne end for pegeopgaverne, da det gennemsnitligt har taget længere tid for vores testdeltagere at gennemføre dem. Gennemsnittet for tunnelopgaverne er på $7673.01$ millisekunder og $983.30$ millisekunder for pegeopgaverne. Det additive led kan dog ikke fortolkes som reaktionstiden for tunnelopgaverne, da tiden starter når testdeltageren passere venstre lodrette streg og derfor allerede er i bevægelse.
+
+Accot og Zhai beskriver i deres artikel \cite{accot1997}, hvordan en indsnævrende tunnelopgave kan opdeles i små delelementer, som hver især udgør én lille navigationsopgave. Ved at gøre dette kan man finde $ID$ som summen af delelementernes $ID$, hvilket resulterer i $ID_{NT} = \frac{A}{W_2-W_1}\ln\left(\frac{W_2}{W_1}\right)$, hvor $W_1$ er størrelsen på venstre lodrette streg, startstregen, og $W_2$ er størrelsen på højre lodrette streg, slutstregen. I følge Accot og Zhai er der en lineær afhængighed imellem tiden $T$ og dette $ID_{NT}$, hvilket giver anledning til følgende matematiske formulering $T = a+b\cdot ID_{NT}$. Tilpasses denne formulering med lineær regression til vores filtrerede datasæt får vi nedenstående model.
+
+\begin{align*}
+\text{Accot \& Zhai: } T = 6112.40+47.77 \cdot \left(\frac{A}{W_2-W_1}\cdot\ln\left(\frac{W_2}{W_1 }\right)\right)
+\end{align*}
+
+Det kan bemærkes, at den primære forskel imellem Accot og Zhai's formulering og de fire andre er det multiplikative led, $b$. Da $ID_{NT}$ antager væsentligt højere værdier er $b$ tilsvarende mindre. De fem affine modeller har vi valgt at plotte i forhold til gennemsnittet af tiden for hvert $ID$, for bedre at visualisere, modellernes præcision. Plottene kan ses i figur \ref{fig:welford_tunnel_line}, \ref{fig:fitt_tunnel_line}, \ref{fig:meyer_tunnel_line},\ref{fig:mackenzie_tunnel_line} og \ref{fig:accot_tunnel_line}. På $x$-aksen er modellens respektive $ID$ imens tiden, $T$, for at løse en opgave er givet ved $y$-aksen.
+
+Af graferne ser det ud til, at Welfords klarer sig markant dårligere end de fire andre formuleringer, som til gengæld ikke har nogen umiddelbar forskel. AIC analysen, \ref{tab:table_analysis_aic_tunnel} af de fem modeller viser netop dette, hvor Meyer's model klarer sig bedst, men med utrolig lille indbyrdes forskel imellem de bedste fire modeller. Kun Welford's formulering har en relativt markant dårligere præcision til dataene.
 
 \begin{table}[h]
 \centering
 \begin{tabular}{lll}
 Model & AIC værdi & Forskel\\\hline
-Fitts & 17668.53 & 0\\
-Mackenzie & 17668.56 & 0.3 \\
-Accot \& Zhai & 17669.07 & 0.54\\
-Meyer & 17669.50 & 0.87 \\
-Welford & 17679.18 & 10.65
+Meyer & 20549.61 & 0 \\
+Accot \& Zhai & 20549.62 & 0.01\\
+Fitts & 20549.68 & 0.07\\
+Mackenzie & 20549.68 & 0.07 \\
+Welford & 20558.46 & 8.84
 \end{tabular}
 \caption{AIC værdier og indbyrdes forskel med udgangspunkt i Fitts' som nulpunkt}
-\label{tab:table_analysis_aic2}
+\label{tab:table_analysis_aic_tunnel}
 \end{table}
 
+Hvis vi forsøger at tilpasse Accot og Zhai's formulering til vores kontrollerede testpersoners individuelle data, så kan det vises, hvor afvigende vores data for disse opgaver er. Figur \ref{fig:navigationtest1} viser den traditionelle stigning i tiden med tilsvarende stigning i $ID$, men på figur \ref{fig:navigationtest2} kan det ses, hvordan datapunkterne opfører sig stik modsat. Det vil sige, at testperson 9 var hurtigere til at klare opgaverne i takt med, at de blev sværere.
+
 \begin{minipage}{\linewidth}
-	\begin{minipage}[b]{.50\linewidth}
+	\begin{minipage}[b]{.45\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_test_navigation_1}
+		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 9, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\label{fig:navigationtest1}
+	\end{minipage}
+	\begin{minipage}[b]{0.1\linewidth}
+	~
+	\end{minipage}
+	\begin{minipage}[b]{0.45\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_test_navigation_2}
+		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 9, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\label{fig:navigationtest2}
+	\end{minipage}
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+	\begin{minipage}[t]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_welford}
-		\captionof{figure}{Welford's affine model}
+		\captionof{figure}{Welford's affine model til gennemsnitstiden pr. $ID$, men $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:welford_tunnel_line}
 	\end{minipage}
-	\begin{minipage}[b]{0.50\linewidth}
-		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_fitt}
-		\captionof{figure}{Fitts' affine model}
+	\begin{minipage}[b]{0.1\linewidth}
+	~
 	\end{minipage}
-	\begin{minipage}[b]{.50\linewidth}
+	\begin{minipage}[t]{0.45\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_fitt}
+		\captionof{figure}{Fitts' affine model til gennemsnitstiden pr. $ID$, men $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\label{fig:fitt_tunnel_line}
+	\end{minipage}
+\end{minipage}
+\begin{minipage}{\linewidth}
+	\begin{minipage}[t]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_meyer}
-		\captionof{figure}{Meyer's affine model}
+		\captionof{figure}{Meyer's affine model til gennemsnitstiden pr. $ID$, men $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:meyer_tunnel_line}
 	\end{minipage}
-	\begin{minipage}[b]{0.50\linewidth}
-		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_mackenzie}
-		\captionof{figure}{Mackenzie's affine model}
+	\begin{minipage}[b]{0.1\linewidth}
+	~
 	\end{minipage}
-	\begin{minipage}[b]{\linewidth}
+	\begin{minipage}[t]{0.45\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_mackenzie}
+		\captionof{figure}{Mackenzie's affine model til gennemsnitstiden pr. $ID$, men $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\label{fig:mackenzie_tunnel_line}
+	\end{minipage}
+\end{minipage}
+\begin{minipage}{\linewidth}
+	\begin{minipage}[t]{\linewidth}
 		\centering
 		\includegraphics[width=0.5\textwidth]{images/plots/plot_model_tunnel_accot}
-		\captionof{figure}{Accot \& Zhai's affine model}
+		\captionof{figure}{Accot \& Zhai's affine model til gennemsnitstiden pr. $ID$, men $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\label{fig:accot_tunnel_line}
 	\end{minipage}
 \end{minipage}
 

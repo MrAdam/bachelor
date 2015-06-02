@@ -16,7 +16,7 @@ graphics.off()
 # Import Test Data #
 ####################
 options(warn=-1)
-connection = dbConnect(dbDriver("MySQL"), user="root", password="toor", host="127.0.0.1", dbname="bachelor_test")
+connection = dbConnect(dbDriver("MySQL"), user="root", host="127.0.0.1", dbname="bachelor_tests")
 # Persons
 result = dbSendQuery(connection, "SELECT * FROM person")
 test_persons = dbFetch(result, n=-1)
@@ -36,7 +36,7 @@ options(warn=0)
 # Import Final Data #
 #####################
 options(warn=-1)
-connection = dbConnect(dbDriver("MySQL"), user="root", password="toor", host="127.0.0.1", dbname="bachelor_final")
+connection = dbConnect(dbDriver("MySQL"), user="root", host="127.0.0.1", dbname="bachelor_final")
 # Persons
 result = dbSendQuery(connection, "SELECT * FROM person")
 final_persons = dbFetch(result, n=-1)
@@ -71,6 +71,8 @@ final_tasks_filtered = rbind(
 
 #################
 # Define Models #
+#################
+#    Pointing   #
 #################
 # Fitts'
 data = final_tasks_filtered[final_tasks_filtered$type == "pointing",]
@@ -131,6 +133,8 @@ remove(data, model_fitt_test_filtered)
 ###################
 # Calculate AIC's #
 ###################
+#     Pointing    #
+###################
 print(paste("Fitts' AIC", "=", AIC(model_fitt), sep = " "))
 print(paste("Welford's AIC", "=", AIC(model_welford), sep = " "))
 print(paste("MacKenzie's AIC", "=", AIC(model_mackenzie), sep = " "))
@@ -138,6 +142,8 @@ print(paste("Meyer's AIC", "=", AIC(model_meyer), sep = " "))
 
 ###############
 # Plot Models #
+###############
+#   Pointing  #
 ###############
 # Fitts'
 ggplot(model_fitt, aes(x = id, y = time)) + 
@@ -183,3 +189,100 @@ ggplot(model_meyer, aes(x = .fitted, y = .resid)) +
   geom_point() + geom_smooth(se = F) +
   labs(title = "Meyer's Residualplot", x = "Fittet", y = "Residualer")
 # ggsave(file = "images/plots/plot_residual_meyer.png")
+
+######################
+# Navigation Example #
+######################
+
+data = test_tasks_filtered[test_tasks_filtered$type == "navigating" & test_tasks_filtered$person == 15,]
+data$id = data$distance/(8-data$width) * log(8/data$width)
+model_accot_test = lm(time ~ id, data)
+ggplot(model_accot_test, aes(x = id, y = time)) + 
+  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 7")
+ ggsave(file = "images/plots/plot_model_test_navigation_1.png")
+remove(data, model_accot_test)
+
+data = test_tasks_filtered[test_tasks_filtered$type == "navigating" & test_tasks_filtered$person == 17,]
+data$id = data$distance/(8-data$width) * log(8/data$width)
+model_accot_test = lm(time ~ id, data)
+ggplot(model_accot_test, aes(x = id, y = time)) + 
+  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 9")
+ ggsave(file = "images/plots/plot_model_test_navigation_2.png")
+remove(data, model_accot_test)
+
+########################
+#  Navigating Models   #
+########################
+# Fitts'
+data = final_tasks_filtered[final_tasks_filtered$type == "navigating",]
+id = log2((2 * data$distance) / (8))
+time <- data$time
+df <- data.frame(id, time)
+datamean_fitt <- aggregate(.~id, data=df, mean)
+model_fitt_navigating = lm(datamean_fitt[,2] ~ datamean_fitt[,1])
+remove(data)
+# Welford's
+data = final_tasks_filtered[final_tasks_filtered$type == "navigating",]
+id = log2((data$distance + 0.5 * 8) / (8))
+time <- data$time
+df <- data.frame(id, time)
+datamean_welford <- aggregate(.~id, data=df, mean)
+model_welford_navigating = lm(datamean_welford[,2] ~ datamean_welford[,1])
+remove(data)
+# MacKenzie's
+data = final_tasks_filtered[final_tasks_filtered$type == "navigating",]
+id = log2((data$distance + 8) / (8))
+time <- data$time
+df <- data.frame(id, time)
+datamean_mackenzie <- aggregate(.~id, data=df, mean)
+model_mackenzie_navigating = lm(datamean_mackenzie[,2] ~ datamean_mackenzie[,1])
+remove(data)
+# Meyer's
+data = final_tasks_filtered[final_tasks_filtered$type == "navigating",]
+id = sqrt((data$distance) / (8))
+time <- data$time
+df <- data.frame(id, time)
+datamean_meyer <- aggregate(.~id, data=df, mean)
+model_meyer_navigating = lm(datamean_meyer[,2] ~ datamean_meyer[,1])
+remove(data)
+# Accot&Zhai's
+data = final_tasks_filtered[final_tasks_filtered$type == "navigating",]
+id = (data$distance) / (8-data$width) * log(8/data$width)
+time <- data$time
+df <- data.frame(id, time)
+datamean_accot <- aggregate(.~id, data=df, mean)
+model_accot_navigating = lm(datamean_accot[,2] ~ datamean_accot[,1])
+remove(data)
+
+#######################
+#   Navigating AIC    #
+#######################
+print(paste("Fitts' AIC", "=", AIC(model_fitt_navigating), sep = " "))
+print(paste("Welford's AIC", "=", AIC(model_welford_navigating), sep = " "))
+print(paste("MacKenzie's AIC", "=", AIC(model_mackenzie_navigating), sep = " "))
+print(paste("Meyer's AIC", "=", AIC(model_meyer_navigating), sep = " "))
+print(paste("Accot's AIC", "=", AIC(model_accot_navigating), sep = " "))
+
+####################
+# Navigating plot  #
+####################
+# Fitts'
+ggplot(model_fitt_navigating, aes(x = datamean_fitt$id, y = datamean_fitt$time)) + 
+  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Fitts' tunnel model", x = "ID", y = "Time")
+#  ggsave(file = "images/plots/plot_model_tunnel_fitt.png")
+# Welford's
+ggplot(model_welford_navigating, aes(x = datamean_welford$id, y = datamean_welford$time)) + 
+  geom_point() + stat_smooth(method = "lm", formula = y ~ 0 + x, se = F) + labs(title = "Welford's tunnel model", x = "ID", y = "Time")
+#  ggsave(file = "images/plots/plot_model_tunnel_welford.png")
+# MacKenzie's
+ggplot(model_mackenzie_navigating, aes(x = datamean_mackenzie$id, y = datamean_mackenzie$time)) + 
+  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Mackenzie's tunnel model", x = "ID", y = "Time")
+#  ggsave(file = "images/plots/plot_model_tunnel_mackenzie.png")
+# Meyer's
+ggplot(model_meyer_navigating, aes(x = datamean_meyer$id, y = datamean_meyer$time)) + 
+  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Meyer's tunnel model", x = "ID", y = "Time")
+#  ggsave(file = "images/plots/plot_model_tunnel_meyer.png")
+# Accot's
+ggplot(model_accot_navigating, aes(x = datamean_accot$id, y = datamean_accot$time)) + 
+  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Accot & zhai's tunnel model", x = "ID", y = "Time")
+#  ggsave(file = "images/plots/plot_model_tunnel_accot.png")
