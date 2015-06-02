@@ -142,19 +142,19 @@ print(paste("Meyer's AIC", "=", AIC(model_meyer), sep = " "))
 # Fitts'
 ggplot(model_fitt, aes(x = id, y = time)) + 
   geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F)
-# ggsave(file = "images/plots/plot_model_fitt.png")
+#  ggsave(file = "images/plots/plot_model_fitt.png")
 # Welford's
-ggplot(model_fitt, aes(x = id, y = time)) + 
+ggplot(model_welford, aes(x = id, y = time)) + 
   geom_point() + stat_smooth(method = "lm", formula = y ~ 0 + x, se = F)
-# ggsave(file = "images/plots/plot_model_welford.png")
+#  ggsave(file = "images/plots/plot_model_welford.png")
 # MacKenzie's
-ggplot(model_fitt, aes(x = id, y = time)) + 
+ggplot(model_mackenzie, aes(x = id, y = time)) + 
   geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F)
-# ggsave(file = "images/plots/plot_model_mackenzie.png")
+#  ggsave(file = "images/plots/plot_model_mackenzie.png")
 # Meyer's
-ggplot(model_fitt, aes(x = id, y = time)) + 
+ggplot(model_meyer, aes(x = id, y = time)) + 
   geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F)
-# ggsave(file = "images/plots/plot_model_meyer.png")
+#  ggsave(file = "images/plots/plot_model_meyer.png")
 
 ##################
 # Plot Residuals #
