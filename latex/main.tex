@@ -6,22 +6,15 @@
 
 \addcontentsline{toc}{chapter}{Indledning}
 \chapter*{Indledning}
-Indenfor de seneste 10 år har datalogien oplevet en stor udvikling, med introduktionen og udbredelsen af smartphones, tablets og embedded systems. Dette har gjort folks hverdag meget mere afhængig af interaktion med teknologien, hvilket har ført til en enorm udvikling i udformningen af brugergrænseflader og deres funktionalitet. På trods af denne udvikling, så basere nogle af idéerne bag teknologien stadig på intuitive matematiske modeller for det menneskelige motoriske system. En af disse modeller beskriver tiden det tager en person at udføre en motorisk opgave udfra opgavens sværhedsgrad, og blev første gang beskrevet af Paul M. Fitts i \cite{fitts1954}. Fitts baserede sin analyse på tre eksperimenter, hvor 16 personer blev bedt om at udføre forskellige motoriske øvelser. Fitts fandt frem til en formel, hvor tiden er afhængig af hvor stor en sværhedsgrad, eller \textit{Index of Difficulty}, en given opgave har.
+Indenfor de seneste 10 år har datalogien oplevet en stor udvikling, med introduktionen og udbredelsen af smartphones, tablets og embedded systems. Dette har gjort folks hverdag meget mere afhængig af interaktion med teknologien, hvilket har ført til en enorm udvikling i udformningen af brugergrænseflader og deres funktionalitet. På trods af denne udvikling, så baserer nogle af idéerne bag teknologien sig stadig på intuitive matematiske modeller for det menneskelige motoriske system. En af disse modeller beskriver tiden det tager en person at udføre en motorisk opgave ud fra opgavens sværhedsgrad, og blev første gang beskrevet af Paul M. Fitts i \cite{fitts1954}. Fitts baserede sin analyse på tre eksperimenter, hvor 16 personer blev bedt om at udføre forskellige motoriske øvelser. Fitts fandt frem til en formel, hvor tiden det tager at pege på et mål, er afhængig af hvor stor en sværhedsgrad eller \textit{Index of Difficulty}, en given opgave har.\\
 
-Siden udgivelsen af Fitts' artikel har flere andre udgivelser foreslået ændringer, som kunne forbedre Fitts' Lov. Den første udgivelse som gerne ville ændre Fitts' Lov var \cite{welford1968}, hvor Alan T. Welford foreslog nogle teoretiske ændringer til Fitts' Lov, udfra hans observationer af Fitts' indsamlede data. Både Fitts og Welford beskrev formuleringerne udfra et rent menneskeligt motorisk synspunkt, men i slutningen af 70'erne begyndte menneske-datamaskine interaktion forskere at interessere sig for emnet, blandt andet med udgivelsen af \cite{card1978}. Siden da foreslog David E. Meyer af to omgange, \cite{meyer1988} \& \cite{meyer1990}, nogle fundamentale ændringer til den bagvedliggende model for Fitts' Lov. Dette førte til en variant af Fitts' Lov, som baserede sig på et $ID$ som indeholdte kvadratrod i stedet for den allerede kendte variant med logaritme. Meyer lavede først en række beregninger på data fra Fitts' forsøg, hvilket viste at hans formulering passede bedre på den indsamlede data. Herefter lavede han nogle simple forsøg, hvor testpersoner lavede simple håndledsbevægelser. Disse viste igen at den nye variant passede bedre til den indsamlede data.
+Siden udgivelsen af Fitts' artikel har flere andre udgivelser foreslået ændringer, som kunne forbedre Fitts' Lov. Den første udgivelse som ville ændre Fitts' Lov var \cite{welford1968}, hvor Alan T. Welford foreslog nogle teoretiske ændringer til Fitts' Lov, ud fra sine observationer af Fitts' indsamlede data. Både Fitts og Welford beskrev formuleringerne ud fra et rent menneskeligt motorisk synspunkt, men i slutningen af 70'erne begyndte menneske-datamaskine interaktionsforskere at interessere sig for emnet, blandt andet med udgivelsen af \cite{card1978}. Siden da foreslog David E. Meyer af to omgange, \cite{meyer1988} \& \cite{meyer1990}, nogle fundamentale ændringer til den bagvedliggende model for Fitts' Lov. Dette førte til en variant af Fitts' Lov, som baserede sig på et $ID$ som indeholdte kvadratrod i stedet for den allerede kendte variant med logaritme. Meyer lavede først en række beregninger på data fra Fitts' forsøg, hvilket viste at hans formulering passede bedre på den indsamlede data. Herefter lavede han nogle simple forsøg, hvor testpersoner lavede simple håndledsbevægelser. Disse viste igen at den nye variant passede bedre til den indsamlede data.\\
 
-I 1992 udgav Scott MacKenzie \cite{mackenzie1992}, hvori han beskrev en ny variant af Fitts' Lov. Denne variant er opbygget om Shannon's Sætning\cite{goldberg2015} og er siden blevet accepteret som den mest udbredte\cite{guiard2011}. MacKenzie udførte beregninger på data fra allerede udførte forsøg og viste at hans formulering ville passe bedre på de tidligere indsamlede data. På trods af at MacKenzie viste at hans formulering passede bedst på data fra tidligere forsøg, så har både \cite{drewes2010} og \cite{goldberg2015} vist at alle fire formuleringer ikke nødvendigvis passer til alle tilfælde af sværhedsgrader. Specielt noterede \cite{goldberg2015} at det kom an på sværhedsgraden, hvilken formulering der skulle bruges. MacKenzies var bedst at bruge ved høje sværhedsgrader, mens Meyers viste sig at være bedst anvendelig ved lavere sværhedsgrader.
+I 1992 udgav Scott MacKenzie \cite{mackenzie1992}, hvori han beskrev en ny variant af Fitts' Lov. Denne variant er opbygget omkring Shannon's Sætning\cite{goldberg2015} og er siden blevet accepteret som den mest udbredte\cite{guiard2011}. MacKenzie udførte beregninger på data fra allerede udførte forsøg og viste at hans formulering ville passe bedre på de tidligere indsamlede data. På trods af at MacKenzie viste at hans formulering passede bedst på data fra tidligere forsøg, så har både \cite{drewes2010} og \cite{goldberg2015} vist at alle fire formuleringer ikke nødvendigvis passer til alle tilfælde af sværhedsgrader. Specielt noterede \cite{goldberg2015} at det kom an på sværhedsgraden, hvilken formulering der skulle bruges. MacKenzies var bedst at bruge ved høje sværhedsgrader, mens Meyers viste sig at være bedst anvendelig ved lavere sværhedsgrader.\\
 
-Der har i løbet af de seneste to år været en stigende interesse for Fitts' Lov, da flere forskere er begyndt at se på om den også kan bruges ved touch-skærme eller øje bevægelse \cite{hong2015} \cite{zhao2015} \cite{jiang2014} \cite{greene2014}. Mens dette er interessante områder at bruge Fitts' Lov på, så er der stadig et stort behov for at dokumentere, at Fitts' Lov, eller en af varianterne, rent faktisk passer til brugergrænseflade interaktion. Denne rapports mål er at indsamle og analysere data for bevægelser med mus eller mousepad (!). Vi vil genskabe tidligere udførte forsøg af \cite{accot1997} og \cite{goldberg2015}. Til udførelsen af forsøgene vil vi både lave et kontrolleret laboratorieeksperiment og et ukontrolleret eksperiment som foregår online. Vi vil analysere den indsamlede data ved brug af de fire allerede kendte formuleringer, men vil også kigge på brugernes bevægelsesbaner, fart- og hastighedsprofiler. Dette er interessante områder, da der ikke er lavet nogle større afrapporteringer herom, hvilket også er noteret af \cite{goldberg2015}.
+Der har i løbet af de seneste to år været en stigende interesse for Fitts' Lov, da flere forskere er begyndt at se på om den også kan bruges ved touch-skærme eller øje bevægelse \cite{hong2015} \cite{zhao2015} \cite{jiang2014} \cite{greene2014}. Mens dette er interessante områder at bruge Fitts' Lov på, så er der stadig et stort behov for at dokumentere, at Fitts' Lov, eller en af varianterne, rent faktisk passer til brugergrænsefladeinteraktion. Denne rapports mål er at indsamle og analysere data for bevægelser med mus eller touchpad. Vi vil genskabe tidligere udførte forsøg af \cite{accot1997} og \cite{goldberg2015}. Til udførelsen af forsøgene vil vi både lave et kontrolleret laboratorieeksperiment og et ukontrolleret eksperiment som foregår online. Vi vil analysere den indsamlede data ved brug af de fire allerede kendte formuleringer, men vil også kigge på brugernes bevægelsesbaner, fart- og hastighedsprofiler. Dette er interessante områder, da der ikke er lavet nogle større afrapporteringer herom, hvilket også er noteret af \cite{goldberg2015}.\\
 
 I DONT KNOW WHAT ELSE! :)
-
-
-
-
-
-
-
 
 \section*{Noter}
 Længere indledning! - meget længere.
@@ -516,19 +509,19 @@ I \cite{wu2011experiments} afsnit 1.7 bliver $C_p$, $AIC$ og $BIC$ beskrevet som
 \item{Akaike Information Criterion (AIC) \cite{akaike1973}.}
 \item{Bayesian Information Criterion (BIC) \cite{schwarz1978}.}
 \end{itemize}
-LSE er bestemt ved at finde gennemsnittet af kvadratet på afstandene fra punkterne til modellen, den model som har det laveste gennemsnit bliver vurderet som bedst. Et problem ved udelukkende at benytte dette kriterium er, at en model altid kan beskrive alle data punkter perfekt ved blot at inkludere flere parametre. Således, at modellen bliver et polynomium af højere end grad end det originale, dette er overfitting.
+LSE er bestemt ved at finde gennemsnittet af kvadratet på afstandene fra punkterne til modellen, den model som har det laveste gennemsnit bliver vurderet som bedst. Et problem ved udelukkende at benytte dette kriterium er, at en model altid kan beskrive alle datapunkter perfekt ved blot at inkludere flere parametre. Således, at modellen bliver et polynomium af højere grad end det originale, dette kaldes overfitting.
 
 Mallow's $C_p$ kriteriet bliver beregnet ud fra LSE men inddrager også antallet af parametre i beregningen for netop at undgå overfitting. Tilsvarende gør sig gældende for AIC og BIC, de beregnes dog ved hjælp af maximum likelihood i stedet for LSE.
 
-For et givent datasæt $x$ og en tilhørende statistisk model vil likelihood funktionen beregne sandsynligheden for at modellens parametre $p$ vil resultere i $x$. Ved maximum likelihood findes de værdier for parametrene $p$, som maksimere likelihood funktionen. Det vil sige de værdier for parametrene $p$, som gør det observerede datasæt $x$ mest sandsynligt. Forskellen imellem AIC og BIC er, at BIC vægter antallet af parametre mere negativt end AIC.
+For et givent datasæt $x$ og en tilhørende statistisk model vil likelihoodfunktionen beregne sandsynligheden for at modellens parametre $p$ vil resultere i $x$. Ved maximum likelihood findes de værdier for parametrene $p$, som maksimere likelihood funktionen. Det vil sige de værdier for parametrene $p$, som gør det observerede datasæt $x$ mest sandsynligt. Forskellen på AIC og BIC er, at BIC vægter antallet af parametre mere negativt end AIC.
 
-Af de fire beskrevne modeller har vi valgt at bruge AIC, da det er den mest udbredte at basere sin modeludvælgelse på. Hvis vi lader $L$ være maximum likelihood værdierne for modellens parametre og $k$ antallet af parametre, så er AIC givet ved
+Af de fire beskrevne modeller har vi valgt at bruge AIC, da det er den mest udbredte at basere sin modeludvælgelse på. Hvis vi lader $L$ være maximum likelihood-værdierne for modellens parametre og $k$ antallet af parametre, så er AIC givet ved
 \begin{align}
-AIC = 2k - 2\ln(L)
+AIC = 2k - 2\ln(L) \label{eq:aic}
 \end{align}
-Vi har til vores analyse brugt programmeringssproget R, som både har lineær regression og AIC funktionalitet indbygget. $lm()$\footnote{R dokumentation om $lm()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/lm.html}} fitter en lineær model ud fra de (x,y) datasæt der gives som input. Modellen bliver baseret på least squares, og kan også tvinges til at gå igennem origo (for Welford).
+Vi har til vores analyse brugt programmeringssproget R, som både har lineær regression og AIC-funktionalitet indbygget. $lm()$\footnote{R dokumentation om $lm()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/lm.html}} fitter en lineær model ud fra de (x,y) datasæt der gives som input. Modellen bliver baseret på least squares, og kan også tvinges til at gå igennem origo (for Welford).
 
-$AIC()$\footnote{R dokumentation om $AIC()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/AIC.html}} bruger (13) som udgangspunkt til sine beregninger, og tager som input en model, der har metoden $logLik()$\footnote{R dokumentation om $logLik()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/logLik.html}}, hvilket $lm()$'s output-modeller har. $lm()$ og $AIC()$ gør det derfor muligt at sammenligne modellerne med R.
+$AIC()$\footnote{R dokumentation om $AIC()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/AIC.html}} bruger (\ref{eq:aic}) som udgangspunkt til sine beregninger, og tager som input en model, der har metoden $logLik()$\footnote{R dokumentation om $logLik()$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/logLik.html}}, hvilket $lm()$'s output-modeller har. $lm()$ og $AIC()$ gør det derfor muligt at sammenligne modellerne med R.
 
 \addcontentsline{toc}{section}{Indledende analyse}
 \section*{Indledende analyse}
@@ -608,22 +601,16 @@ Som det ses af listing \ref{lst:function}, udregner vi først $ID$ for vores dat
 
 \addcontentsline{toc}{subsection}{AIC-analyse}
 \subsection*{AIC-analyse}
-%[1] "Fitt's AIC = 75572.3883401724"
-%[1] "Welford's AIC = 79415.0662411436"
-%[1] "Welford's Additive AIC = 75566.8402100114"
-%[1] "MacKenzie's AIC = 75567.185218973"
-%[1] "Meyer's AIC = 75620.1633109145"
-% TODO: Indsæt tabel med de relative størrelser i stedet for plot
 Figur \ref{tab:table_analysis_aic} viser AIC for de fire modeller. De fire modellers AIC er høje, men det er underordnet da det afhænger af antallet af datapunkter, Det der derimod betyder noget er deres indbyrdes forhold. Det ses af tabellen at Meyer's har den laveste AIC og derfor er den model der passer bedst til den indsamlede data. MacKenzie's og Fitt's følger herefter med lidt højere AIC værdier, mens Welford's er den klart dårligste af de fire modeller. Vi har valgt at sætte Meyers AIC værdi som nulpunkt og så beregne forskellen til de andre herfra. 
 
 \begin{table}[h]
 \centering
-\begin{tabular}{ccc}
-Model & AIC værdi & Forskel\\
-Meyer & 94598.08 & 0 \\
-Mackenzie & 94649.26 & 51.18 \\
-Fitts & 94694.76 &96.68 \\
-Welford & 96060.29 & 1462.21
+\begin{tabular}{lll}
+Model 		& AIC værdi & Forskel\\\hline
+Meyer 		& 94598.08 & 1.00000 \\
+Mackenzie 	& 94649.26 & 0.99946 \\
+Fitts 		& 94694.76 & 0.99898 \\
+Welford 	& 96060.29 & 0.98478
 \end{tabular}
 \caption{AIC værdier og indbyrdes forskel med udgangspunkt i Meyers som nulpunkt}
 \label{tab:table_analysis_aic}
