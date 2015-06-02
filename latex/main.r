@@ -93,9 +93,9 @@ data$id = sqrt((data$distance) / (data$width))
 model_meyer = lm(time ~ id, data)
 remove(data)
 
-####
+#######################################
 # Plot Unfiltered/Filtered Comparison #
-####
+#######################################
 # Unfiltered Samples
 data = test_tasks[test_tasks$type == "pointing" & test_tasks$person == 8,]
 data$id = log2((2 * data$distance) / (data$width))
@@ -183,3 +183,72 @@ ggplot(model_meyer, aes(x = .fitted, y = .resid)) +
   geom_point() + geom_smooth(se = F) +
   labs(title = "Meyer's Residualplot", x = "Fittet", y = "Residualer")
 # ggsave(file = "images/plots/plot_residual_meyer.png")
+
+##########################################
+# Plot individual persons pointing tasks #
+##########################################
+tasks = final_tasks_filtered[final_tasks_filtered$type == "pointing" & final_tasks_filtered$person == 60,"id"]
+points = final_points[final_points$task %in% tasks,]
+p = ggplot() + theme(legend.position="none")
+for (id in unique(points$task)) {
+  temp = points[points$task == id,]
+  p = p + geom_path(data = temp, aes(x = x, y = y, colour = id))
+}
+#ggsave(file = "images/plots/plot_analysis_qualitative.png")
+
+###############
+# Lorem Ipsum #
+###############
+final_points$elapsedDistance = 0
+final_points$speed = 0
+final_points$angleToNext = 0
+final_points$angleToEnd = 0
+m_tasks = final_tasks[final_tasks$type == "pointing" & final_tasks$person == 7, "id"]
+for (m_task in m_tasks) {
+  print(m_task)
+  m_points = final_points[final_points$task == m_task,]
+  end_x <- tail(m_points, n = 1)$x
+  end_y <- tail(m_points, n = 1)$y
+  for (m_point in m_points$id[-1]) {
+    # Calculate elapsed distance
+    prev_dst = final_points[final_points$id == m_point - 1, "elapsedDistance"]
+    delta_dst = final_points[final_points$id == m_point, "deltaDistance"]
+    final_points[final_points$id == m_point, "elapsedDistance"] = prev_dst + delta_dst
+    # Calculate Speed
+    final_points[final_points$id == m_point, "speed"] = (delta_dst / final_points[final_points$id == m_point, "deltaTime"])
+    # Calculate angle to the next point and angle to the end point
+    prev_x = final_points[final_points$id == m_point - 1, "x"]
+    prev_y = final_points[final_points$id == m_point - 1, "y"]
+    curr_x = final_points[final_points$id == m_point, "x"]
+    curr_y = final_points[final_points$id == m_point, "y"]
+    delta_x = curr_x - prev_x
+    delta_y = curr_y - prev_y
+    final_points[final_points$id == m_point - 1, "angleToNext"] = atan2(delta_y, delta_x)
+    final_points[final_points$id == m_point, "angleToEnd"] = atan2(end_y - curr_y, end_x - curr_x)
+  }
+}
+
+#####################################################
+# Plot individual persons speed for a specific task #
+#####################################################
+points1 = subset(final_points, task == 207)
+points2 = subset(final_points, task == 213)
+points3 = subset(final_points, task == 209)
+points4 = subset(final_points, task == 210)
+plot1 = ggplot(points1, aes(x = elapsedDistance, y = speed)) + geom_line() + coord_fixed(ratio = 8)
+plot2 = ggplot(points2, aes(x = elapsedDistance, y = speed)) + geom_line() + coord_fixed(ratio = 8)
+plot3 = ggplot(points3, aes(x = elapsedDistance, y = speed)) + geom_line() + coord_fixed(ratio = 8)
+plot4 = ggplot(points4, aes(x = elapsedDistance, y = speed)) + geom_line() + coord_fixed(ratio = 8)
+grob = arrangeGrob(plot1, plot2, plot3, plot4, ncol = 1)
+ggsave(file = "images/plots/plot_speed_individual.png", grob)
+
+#####################
+# Plot vector paths #
+#####################
+data = final_points[final_points$task == 214, c("x", "y", "speed", "angleToNext", "angleToEnd")]
+m_plot = ggplot(data, aes(x, y)) + coord_fixed(ratio = 1) +
+  geom_segment(aes(xend = x + cos(angleToNext) * speed* 10, yend = y + sin(angleToNext) * speed * 10), arrow = arrow(length = unit(0.2, "cm")))
+#ggsave(file = "images/plots/plot_velocity_individual.png")
+m_plot = ggplot(data, aes(x, y)) + coord_fixed(ratio = 1) +
+  geom_segment(aes(xend = x + cos(angleToEnd) * speed * 10, yend = y + sin(angleToEnd) * speed * 10), arrow = arrow(length = unit(0.2, "cm")))
+#ggsave(file = "images/plots/plot_velocity_individual_target.png")
