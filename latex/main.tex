@@ -1,8 +1,14 @@
 \input{preface.tex}
 
-%\begin{abstract}
-
-%\end{abstract}
+\begin{abstract}
+\begin{itemize}
+	\item Fylder 10-20 linjer
+	\item Indeholder en beskrivelse af opgavens formål/proplemstilling, anvendte metoder, resultater og konklusioner
+	\item Ikke indeholder citater eller kildehenvisninger
+	\item Skrives i ét afsnit
+	\item Laves efter opgaven er skrevet
+\end{itemize}
+\end{abstract}
 
 \addcontentsline{toc}{chapter}{Indledning}
 \chapter*{Indledning}
@@ -14,25 +20,11 @@ I 1992 udgav Scott MacKenzie \cite{mackenzie1992}, hvori han beskrev en ny varia
 
 Der har i løbet af de seneste to år været en stigende interesse for Fitts' Lov, da flere forskere er begyndt at se på om den også kan bruges ved touch-skærme eller øje bevægelse \cite{hong2015} \cite{zhao2015} \cite{jiang2014} \cite{greene2014}. Mens dette er interessante områder at bruge Fitts' Lov på, så er der stadig et stort behov for at dokumentere, at Fitts' Lov, eller en af varianterne, rent faktisk passer til brugergrænsefladeinteraktion. Denne rapports mål er at indsamle og analysere data for bevægelser med mus eller touchpad. Vi vil genskabe tidligere udførte forsøg af \cite{accot1997} og \cite{goldberg2015}. Til udførelsen af forsøgene vil vi både lave et kontrolleret laboratorieeksperiment og et ukontrolleret eksperiment som foregår online. Vi vil analysere den indsamlede data ved brug af de fire allerede kendte formuleringer, men vil også kigge på brugernes bevægelsesbaner, fart- og hastighedsprofiler. Dette er interessante områder, da der ikke er lavet nogle større afrapporteringer herom, hvilket også er noteret af \cite{goldberg2015}.\\
 
-Fitts' Lov har stor udbredelse indenfor menneske-datamaskine interaktion og bruges mest til at forbedre brugergrænseflader. Som \cite{karafillis2012} noterer, så kan Fitts' Lov bruges som en rettesnor, når man designer brugergrænseflader. Dette kunne f.eks. være til at finde størrelser og placeringer af knapper. Det er i den forbindelse vigtigt at have kendskab til ``prime pixels'', som er kanterne af skærmen og markørens nuværende position. Disse pixels har et meget lavt $ID$ og kan indkoorpereres som centrale dele af design. Eksempler på dette er Windows' højreklik funktionalitet og `Start'-knap. Fitts' Lov er sågar brugbar, som en modificeret version, i drop-down menuer, som beskrevet af \cite{accot1997}.
-
-\section*{Noter}
-Længere indledning! - meget længere.
-Heilmeiers katekisme - tre-fire første punkter passer perfekt til indledning.
-Skrive hvorfor vi gør det, hvad det kan bruges til.
-Hvad vi gør, hvordan gør vi det anderledes?
-\begin{itemize}
-	\item What are you trying to do? Articulate your objectives using absolutely no jargon.
-	\item How is it done today, and what are the limits of current practice?
-	\item What's new in your approach and why do you think it will be successful?
-	\item Who cares?
-	\item If you're successful, what difference will it make?
-\end{itemize}~\\
-
+Fitts' Lov har stor udbredelse indenfor menneske-datamaskine interaktion og bruges mest til at forbedre brugergrænseflader. Som \cite{karafillis2012} noterer, så kan Fitts' Lov bruges som en rettesnor, når man designer brugergrænseflader. Dette kunne f.eks. være til at finde størrelser og placeringer af knapper. Det er i den forbindelse vigtigt at have kendskab til ``prime pixels'', som er kanterne af skærmen og markørens nuværende position. Disse pixels har et meget lavt $ID$ og kan indkorporeres som centrale dele af design. Eksempler på dette er Windows' højreklik funktionalitet og `Start'-knap. Fitts' Lov er sågar brugbar, som en modificeret version, i drop-down menuer, som beskrevet af \cite{accot1997}.
 
 \addcontentsline{toc}{section}{Forventninger til læseren}
 \section*{Forventninger til læseren}
-Der stilles en forventning til læseren om generel viden inden for statistik og sandsynlighed, med udgangspunkt i [cite].
+Der stilles forventinger til læseren om matematik på gymnasielt niveau, indledende statistik \& sandsynlighed og indledende kendskab til menneske-datamaskine interaktion. Det noteres desuden at sektionen Modeludvælgelse under Analyse kun gennemgås kursorisk.
 
 \addcontentsline{toc}{chapter}{Teori}
 \chapter*{Teori}
@@ -617,7 +609,7 @@ Det vi kan uddrage af denne analyse, er at vi har med nogle meget ensartede mode
 \begin{table}[h]
 \centering
 \begin{tabular}{lll}
-Model 	  & AIC værdi & Forskel\\\hline
+Model 	  & AIC-værdi & Forskel\\\hline
 Meyer 	  & 92728.38 & 0 \\
 Mackenzie & 92763.02 & 34.64 \\
 Fitts 	  & 92804.17 & 75.79 \\
@@ -781,38 +773,80 @@ Vores modelanalyse af hastighedsprofiler tager udgangspunkt i en kvantitativ og 
 
 \addcontentsline{toc}{subsection}{Kvalitativ analyse}
 \subsection*{Kvalitativ analyse}
-Vi har valgt at udføre en kvalitativ af bevægelsesbanerne, da det vil give os et større overblik over den indsamlede data og vise os hvilke tendenser der kan observeres.
-Den kvalitative analyse bygger på 57 tilfældigt crowdsourcingdeltagerne, hvilket svare til cirka $21\%$ af deltagerne. Af de 57 deltagere angav 32 at de brugte mus, mens 25 angav at deres pegeredskab var touchpad. Vores observationer basere sig på bevægelsesbanerne for hver deltager, et eksempel herpå ses i figur \ref{fig:movement_random_person}.
+Vi har valgt at udføre en kvalitativ analyse af bevægelsesbanerne, da det vil give os et større overblik over den indsamlede data og vise os hvilke tendenser der kan observeres.
+Den kvalitative analyse bygger på 57 tilfældigt crowdsourcingdeltagerne, hvilket svarer til cirka $21\%$ af deltagerne. Af de 57 deltagere angav 32 at de brugte mus, mens 25 angav at deres pegeredskab var touchpad. Vores observationer baserer sig på bevægelsesbanerne for hver deltager, et eksempel herpå ses i figur \ref{fig:movement_random_person}.
 
-Vi har observeret at deltagerne tager en stor underbevægelse, eventuelt opfulgt af mindre korrigerende underbevægelser. Typisk vil der for muse-brugerne være en korrigerende underbevægelse, mens touchpad-brugerne ofte bruger flere korrigerende underbevægelser. Generelt har muse-brugerne også mindre udsving i deres bevægelsesbaner end touchpad-brugerne. Dertil var der flere deltagere som startede enkelte baner, med at bevæge pegeredskabet i en forkert retning. 
+Vi har observeret at deltagerne tager en stor underbevægelse, eventuelt opfulgt af mindre korrigerende underbevægelser. Typisk vil der for muse-brugerne være en korrigerende underbevægelse, mens touchpad-brugerne ofte bruger flere korrigerende underbevægelser. Generelt har muse-brugerne også mindre udsving i deres bevægelsesbaner end touchpad-brugerne. Dertil var der flere deltagere som startede enkelte baner, med at bevæge pegeredskabet i en forkert retning.
 
-\addcontentsline{toc}{subsection}{Kvantitativ analyse}
-\subsection*{Kvantitativ analyse}
-Dette afsnit og tilhørende figurer er tilføjet så du ved, hvor langt i processen med hastighedsprofilerne vi er.
-
-Vi har lavet fartprofiler for testdeltagerne, set i figur \ref{fig:plot_speed_overall}, som viser hvordan testdeltagerne foretager en hovedbevægelse, og herefter én eller flere koregerende bevægelser - vi har også individuelle plots hvoraf det måske er lidt tydligere.
-
-Vi har lavet hastighedsprofiler for testdeltagere, indtilvidere kun én enkelt opgave af gangen \ref{fig:plot_velocity_random} og kun i forhold til den reelle retning, dvs. vi mangler stadig hastighedsprofiler i mod målet.
 \begin{minipage}{\linewidth}
 	\begin{minipage}{.5\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/plots/kvalitativ_analyse}
-		\captionof{figure}{Bevægelsesbaner for en tilfældig testdeltager}
+		\includegraphics[width=\linewidth]{images/plots/plot_analysis_qualitative}
+		\captionof{figure}{Plot over alle bevægelsesbaner lavet af en enkelt testdeltager under udførslen af denne deltagers pegeopgaver.}
 		\label{fig:movement_random_person}
 	\end{minipage}
 	\begin{minipage}{.5\linewidth}
 		\centering
-		\includegraphics[width=.75\linewidth]{images/plots/plot_velocity_random}
-		\captionof{figure}{Hastighedsprofil for en tilfældig testdeltager}
-		\label{fig:plot_velocity_random}
-	\end{minipage}
-	\begin{minipage}{\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{images/plots/plot_speed_overall}
-		\captionof{figure}{Samlet fartprofil for alle 10 testdeltagere}
+		\includegraphics[width=\linewidth]{images/plots/plot_speed_individual}
+		\captionof{figure}{Fire plots over fartprofilerne for fire tilfældige pegeopgaver fra en tilfældig testdeltager}
 		\label{fig:plot_speed_overall}
 	\end{minipage}
 \end{minipage}
+
+\addcontentsline{toc}{subsection}{Kvantitativ analyse}
+\subsection*{Kvantitativ analyse}
+For at kunne analysere de indsamlede data, har vi valgt at lave nogle beregninger på vores data som kan bruges til at lave en kvantitativ analyse. ud fra de indsamlede data har vi udregnet farten I de individuelle punkter i vores data, som vi har brugt til at illustrere fartudviklingen over fire tilfældigt udvalgte tests som kan ses på figur \ref{fig:plot_speed_overall}.
+
+Det ses på figur \ref{fig:plot_speed_overall} at der er en tendens til at farten har én primær stigning omkring midten af distancen, som kan beskrives som en hovedbevægelse, hvori der accelereres mod målet - dette tydeliggøres af figur \ref{fig:plot_velocity_individual} som illustrerer hastighedsprofilen for en anden tilfældig testdeltager. Der ses også en tendens til nogle at testpersonerne laver små hastighedsstigninger efter hovedstigningen, hvilket illustrerer de korrigerende underbevægelser som beskrevet tidligere i rapporten og i \cite{meyer1988}.\\
+
+På figur \ref{fig:plot_velocity_individual} og \ref{fig:plot_velocity_individual_target} har vi to vektorplots som viser en enkelt opgave fra en tilfældig testperson, hvor vektorerne illustrerer hhv. hastigheden og hastigheden mod målet, i hvert punkt. Disse hastighedsprofiler viser os hvordan testpersonen har justeret sin hastighed under en test, og .....
+
+\begin{minipage}{\linewidth}
+	\begin{minipage}{.5\linewidth}
+		\includegraphics[width=\linewidth, trim = 20cm 0cm 20cm 0cm, clip]{images/plots/plot_velocity_individual}
+		\captionof{figure}{Vektorplot over hastighedsprofilen for en tilfældig testdeltager.}
+		\label{fig:plot_velocity_individual}
+	\end{minipage}
+	\begin{minipage}{.5\linewidth}
+		\includegraphics[width=\linewidth, trim = 20cm 0cm 20cm 0cm, clip]{images/plots/plot_velocity_individual_target}
+		\captionof{figure}{Vektorplot over hastighedsprofilen mod målet for en tilfældig testdeltager.}
+		\label{fig:plot_velocity_individual_target}
+	\end{minipage}
+\end{minipage}
+
+
+\addcontentsline{toc}{chapter}{Diskussion}
+\chapter*{Diskussion}
+Vi vil i dette afsnit diskutere både vores forsøgsopstilling og vores analyse.
+
+\addcontentsline{toc}{section}{Forsøgsopstilling}
+\section*{Forsøgsopstilling}
+Vores valg af opslagssteder i det ukontrollerede forsøg kan have haft en indflydelse på den indsamlede data. Vi valgte at bruge Reddit, hvilket giver os en meget specifik målgruppe, da den typiske Reddit-bruger er .......! Dette er også udslagsgivende i vores indsamlede data, hvor gennemsnitsalderen er 24.5 år og 233 ud af 257 er mænd. Det er påvist af \cite{looser2005} at det ikke gør en stor forskel at deltagere bruger meget tid på videospil. Derfor burde det ikke have nogen nævneværdi indflydelse på vores forsøg, at $22\%$ af vores testdeltagere angav at de spillede videospil mellem 15 og 40 timer om ugen.
+
+Det er derimod væsentligt at se på hvilket pegeredskab testdeltagerne brugte, da der kan være forskelle på tiden, når personer bruger f.eks. mus i forhold til touchpad \cite{epps1986}. I vores data brugte 160 personer mus, mens 96 brugte touchpad. På trods af at der er flest der brugte mus, så er det stadig vigtigt at huske at cirka $35\%$ brugte touchpad, hvilket vil give dem et dårligere resultat.
+
+Vores testdata kom ikke kun fra Reddit, men også fra opslag på vores Facebook-væg. Dette medfører også et bias som kan være væsentligt, da det er vores familie og venner vi derved bruger. Familie og venner har ofte hørt om projektet før og kan derfor have en forventning om hvad der skal ske og hvad de burde gøre. Da både Reddit og Facebook hovedsageligt bruges af yngre personer, så vil vores målgruppe også være begrænset heraf. Vi har f.eks. kun ni testpersoner som er ældre end 40. 
+
+
+Ukontrolleret forsøg
+Mus vs andre devices
+Fjernelse af standardafvigelser
+Bias
+
+\addcontentsline{toc}{section}{Analyse}
+\section*{Analyse}
+
+
+Vores data har vist at tre af de fire modeller for Fitts' Lov er meget ens. 
+Hvor udbredte er de fire formler
+Sammenligne med Accot og Sheik
+Sammenligne med Two Large Datasets
+Er a og b realistiske
+Error rate
+AIC
+Residualplots
+
+BIAS
 
 %\addcontentsline{toc}{chapter}{Konklusion}
 %\chapter*{Konklusion}
