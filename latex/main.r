@@ -203,7 +203,7 @@ final_points$elapsedDistance = 0
 final_points$speed = 0
 final_points$angleToNext = 0
 final_points$angleToEnd = 0
-m_tasks = final_tasks[final_tasks$type == "pointing" & final_tasks$person == 7, "id"]
+m_tasks = final_tasks[final_tasks$type == "pointing" & final_tasks$person == 8, "id"]
 for (m_task in m_tasks) {
   print(m_task)
   m_points = final_points[final_points$task == m_task,]
@@ -217,14 +217,14 @@ for (m_task in m_tasks) {
     # Calculate Speed
     final_points[final_points$id == m_point, "speed"] = (delta_dst / final_points[final_points$id == m_point, "deltaTime"])
     # Calculate angle to the next point and angle to the end point
-    prev_x = final_points[final_points$id == m_point - 1, "x"]
-    prev_y = final_points[final_points$id == m_point - 1, "y"]
-    curr_x = final_points[final_points$id == m_point, "x"]
-    curr_y = final_points[final_points$id == m_point, "y"]
-    delta_x = curr_x - prev_x
-    delta_y = curr_y - prev_y
-    final_points[final_points$id == m_point - 1, "angleToNext"] = atan2(delta_y, delta_x)
-    final_points[final_points$id == m_point, "angleToEnd"] = atan2(end_y - curr_y, end_x - curr_x)
+#     prev_x = final_points[final_points$id == m_point - 1, "x"]
+#     prev_y = final_points[final_points$id == m_point - 1, "y"]
+#     curr_x = final_points[final_points$id == m_point, "x"]
+#     curr_y = final_points[final_points$id == m_point, "y"]
+#     delta_x = curr_x - prev_x
+#     delta_y = curr_y - prev_y
+#     final_points[final_points$id == m_point - 1, "angleToNext"] = atan2(delta_y, delta_x)
+#     final_points[final_points$id == m_point, "angleToEnd"] = atan2(end_y - curr_y, end_x - curr_x)
   }
 }
 
@@ -239,16 +239,25 @@ plot1 = ggplot(points1, aes(x = elapsedDistance, y = speed)) + geom_line() + coo
 plot2 = ggplot(points2, aes(x = elapsedDistance, y = speed)) + geom_line() + coord_fixed(ratio = 8)
 plot3 = ggplot(points3, aes(x = elapsedDistance, y = speed)) + geom_line() + coord_fixed(ratio = 8)
 plot4 = ggplot(points4, aes(x = elapsedDistance, y = speed)) + geom_line() + coord_fixed(ratio = 8)
-grob = arrangeGrob(plot1, plot2, plot3, plot4, ncol = 1)
-ggsave(file = "images/plots/plot_speed_individual.png", grob)
+# ggsave(file = "images/plots/plot_speed_individual.png", grob)
+
+#############
+#   DEBUG   #
+#############
+for (i in 240:264) {
+  print(ggplot() + geom_line(data = subset(final_points, task == i), aes(elapsedDistance, speed)))
+}
+#############
+# END DEBUG #
+#############
 
 #####################
 # Plot vector paths #
 #####################
-data = final_points[final_points$task == 214, c("x", "y", "speed", "angleToNext", "angleToEnd")]
-m_plot = ggplot(data, aes(x, y)) + coord_fixed(ratio = 1) +
-  geom_segment(aes(xend = x + cos(angleToNext) * speed* 10, yend = y + sin(angleToNext) * speed * 10), arrow = arrow(length = unit(0.2, "cm")))
-#ggsave(file = "images/plots/plot_velocity_individual.png")
-m_plot = ggplot(data, aes(x, y)) + coord_fixed(ratio = 1) +
-  geom_segment(aes(xend = x + cos(angleToEnd) * speed * 10, yend = y + sin(angleToEnd) * speed * 10), arrow = arrow(length = unit(0.2, "cm")))
-#ggsave(file = "images/plots/plot_velocity_individual_target.png")
+# data = final_points[final_points$task == 214, c("x", "y", "speed", "angleToNext", "angleToEnd")]
+# m_plot = ggplot(data, aes(x, y)) + coord_fixed(ratio = 1) +
+#   geom_segment(aes(xend = x + cos(angleToNext) * speed * 10, yend = y + sin(angleToNext) * speed * 10), arrow = arrow(length = unit(0.2, "cm")))
+# ggsave(file = "images/plots/plot_velocity_individual.png")
+# m_plot = ggplot(data, aes(x, y)) + coord_fixed(ratio = 1) +
+#   geom_segment(aes(xend = x + cos(angleToEnd) * speed * 10, yend = y + sin(angleToEnd) * speed * 10), arrow = arrow(length = unit(0.2, "cm")))
+# ggsave(file = "images/plots/plot_velocity_individual_target.png")
