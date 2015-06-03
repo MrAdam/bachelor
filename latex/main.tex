@@ -3,7 +3,7 @@
 \begin{abstract}
 \begin{itemize}
 	\item Fylder 10-20 linjer
-	\item Indeholder en beskrivelse af opgavens formål/proplemstilling, anvendte metoder, resultater og konklusioner
+	\item Indeholder en beskrivelse af opgavens formål/problemstilling, anvendte metoder, resultater og konklusioner
 	\item Ikke indeholder citater eller kildehenvisninger
 	\item Skrives i ét afsnit
 	\item Laves efter opgaven er skrevet
@@ -549,7 +549,7 @@ På baggrund af de affine linjers overenstemmelse med størstedelen af datapunkt
 	\end{minipage}
 \end{minipage}
 
-\addcontentsline{toc}{section}{Modelanalyse af bevægelsesbaner}
+\addcontentsline{toc}{section}{Modelanalyse af pegeopgaver}
 \section*{Modelanalyse af bevægelsesbaner}
 Vores modelanalyse af bevægelsesbaner tager udgangspunkt i AIC-modellen og de bevægelsesbaner der er indsamlet ved crowdsourcingdeltagernes udførsel af opgaverne.
 
@@ -842,9 +842,16 @@ Fitts & 20262.07 & 36.4
 \end{minipage}
 
 \newpage
-\addcontentsline{toc}{section}{Modelanalyse af hastighedsprofiler}
+\addcontentsline{toc}{section}{modelanalyse af hastighedsprofiler}
 \section*{Modelanalyse af hastighedsprofiler}
-Vores modelanalyse af hastighedsprofiler tager udgangspunkt i en kvantitativ og en kvalitativ analyse af de indsamlede hastighedsprofiler fra crowdsourcingdeltagernes pegeopgaver.
+Vores modelanalyse af hastighedsprofiler tager udgangspunkt i en kvalitativ og efterfølgende kvantitativ analyse af de indsamlede bevægelsesbaner fra crowdsourcingdeltagernes pegeopgaver.
+
+\addcontentsline{toc}{subsection}{Kvalitativ analyse}
+\subsection*{Kvalitativ analyse}
+Vi har valgt at udføre en kvalitativ analyse af bevægelsesbanerne og testdeltagernes spørgeskemaer, da det vil give os et større overblik over den indsamlede data og vise os hvilke tendenser der kan observeres.
+Den kvalitative analyse bygger på 57 tilfældige crowdsourcingdeltagerne, hvilket svarer til cirka $21\%$ af deltagerne. Af de 57 deltagere angav 32 at de brugte mus, mens 25 angav at deres pegeredskab var touchpad. Disse tal stemmer overens den procentvise fordeling af pegeenhed for alle testdeltagere, vist i tabel \ref{tab:persons_average}. Vores observationer baserer sig på bevægelsesbanerne for hver deltager, et eksempel herpå ses i figur \ref{fig:movement_random_person}.
+
+Vi har observeret at deltagerne tager en stor underbevægelse, eventuelt opfulgt af mindre korrigerende underbevægelser. Typisk vil der for muse-brugerne være én korrigerende underbevægelse, mens touchpad-brugerne ofte bruger flere korrigerende underbevægelser. Generelt har muse-brugerne også mindre udsving i deres bevægelsesbaner end touchpad-brugerne. Dertil var der flere deltagere som startede enkelte baner, med at bevæge pegeredskabet i en forkert retning.
 
 \begin{table}[h]
 	\centering
@@ -856,16 +863,9 @@ Vores modelanalyse af hastighedsprofiler tager udgangspunkt i en kvantitativ og 
 		                &                   & $15-40$ timer: \hfill22\% & $15-40$ timer: \hfill24\% &                     &\\
 		                &                   & $>40$ timer: \hfill3\%    & $>40$ timer: \hfill71\%   &                     &
 	\end{tabular}
-	\caption{TODO: Tabel med oversigt over gennemsnitsværdier og fordeling af testpersoners valg i spørgeskemaet.}
+	\caption{Tabel med oversigt over gennemsnitsværdier og fordeling af testpersoners valg i spørgeskemaet.}
 	\label{tab:persons_average}
 \end{table}
-
-\addcontentsline{toc}{subsection}{Kvalitativ analyse}
-\subsection*{Kvalitativ analyse}
-Vi har valgt at udføre en kvalitativ analyse af bevægelsesbanerne, da det vil give os et større overblik over den indsamlede data og vise os hvilke tendenser der kan observeres.
-Den kvalitative analyse bygger på 57 tilfældigt crowdsourcingdeltagerne, hvilket svarer til cirka $21\%$ af deltagerne. Af de 57 deltagere angav 32 at de brugte mus, mens 25 angav at deres pegeredskab var touchpad. Vores observationer baserer sig på bevægelsesbanerne for hver deltager, et eksempel herpå ses i figur \ref{fig:movement_random_person}.
-
-Vi har observeret at deltagerne tager en stor underbevægelse, eventuelt opfulgt af mindre korrigerende underbevægelser. Typisk vil der for muse-brugerne være en korrigerende underbevægelse, mens touchpad-brugerne ofte bruger flere korrigerende underbevægelser. Generelt har muse-brugerne også mindre udsving i deres bevægelsesbaner end touchpad-brugerne. Dertil var der flere deltagere som startede enkelte baner, med at bevæge pegeredskabet i en forkert retning.
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}{.45\linewidth}
@@ -930,7 +930,7 @@ Vi vil i dette afsnit diskutere vores fremgangsmåde og resultater fra både vor
 
 \addcontentsline{toc}{section}{Forsøgsopstilling}
 \section*{Forsøgsopstilling}
-Vores valg af opslagssteder i det ukontrollerede forsøg kan have haft en indflydelse på den indsamlede data. Vi valgte at bruge Reddit, hvilket giver os en meget specifik målgruppe, da den typiske Reddit-bruger er .......! Dette er også udslagsgivende i vores indsamlede data, hvor gennemsnitsalderen er 24.5 år og 233 ud af 257 er mænd. Det er førhen blevet påvist at folk der spiller computer vil have være hurtigere\cite{wyeld2013}. I vores undersøgelse er dette dog ikke tilfældet, da tabel \ref{SOME TABEL} viser at gennemsnitstiderne for alle grupperinger af videogames tider er meget ens.
+Vores valg af opslagssteder i det ukontrollerede forsøg kan have haft en indflydelse på den indsamlede data. Vi valgte at bruge Reddit, hvilket giver os en meget specifik målgruppe, da den typiske Reddit-bruger er mand imellem 18 og 29 år\footnote{http://www.pewinternet.org/2013/07/03/6-of-online-adults-are-reddit-users/, besøgt: 03-06-2015}. Dette er også udslagsgivende i vores indsamlede data, hvor gennemsnitsalderen er 24.5 år og 233 ud af 257 er mænd. Det er førhen blevet påvist, at folk der spiller computer vil have være hurtigere\cite{wyeld2013}. I vores undersøgelse er dette også tilfældet, da tabel \ref{tab:times_average} viser at gennemsnitstiderne for at gennemføre en opgave falder desto mere computer deltageren spiller.
 
 Det er derimod væsentligt at se på hvilket pegeredskab testdeltagerne brugte, da der kan være forskelle på tiden, når personer bruger f.eks. mus i forhold til touchpad \cite{epps1986}. I vores data brugte 160 personer mus, mens 96 brugte touchpad. På trods af at der er flest der brugte mus, så er det stadig vigtigt at huske at cirka $35\%$ brugte touchpad, hvilket vil give dem et dårligere resultat.
 
@@ -938,45 +938,37 @@ Vores testdata kom ikke kun fra Reddit, men også fra opslag på vores Facebook-
 
 \addcontentsline{toc}{section}{Analyse}
 \section*{Analyse}
-DISKUSSION AF TUNNEL
-I vores analyse af tunnelopgaverne viste tabel \ref{tab:tunnelopgave} at Meyer's formulering havde den bedste AIC. Der var dog så lille forskel mellem den og Accot \& Zhai, Fitts' og MacKenzie's, at man ikke kan sige at Meyer's er bedst. Welford's viste sig at være dårligere end de fire andre, men forskellen var dog ikke så stor. Det er vigtigt at nævne at vores data til tunnelopgaverne ikke nødvendigvis er repræsentativ, da vi har flere eksempler på personer som fik bedre tider jo større $ID$, et eksempel herpå kan ses i \ref{fig:navigationtest2}. I forhold til \cite{accot1997} så har vi kun haft fire tunnelopgaver, mens de brugte 16. Dette fører til at vi har et væsentlig mindre span af $ID$ og væsentlig mindre data at basere vores analyse på. Det kan være med til at gøre vores konklusion om tunnelopgaverne mindre pålidelige.
+% Diskussion af tunnel
+I vores analyse af tunnelopgaverne viste tabel \ref{tab:table_analysis_aic_tunnel} at Meyer's formulering havde den bedste AIC. Der var dog så lille forskel mellem den og Accot \& Zhai, Fitts' og MacKenzie's, at man ikke kan sige at Meyer's er bedst. Welford's viste sig at være dårligere end de fire andre, men forskellen var dog ikke så stor. Det er vigtigt at nævne at vores data til tunnelopgaverne ikke nødvendigvis er repræsentativ, da vi har flere eksempler på personer som fik bedre tider jo større $ID$, et eksempel herpå kan ses i \ref{fig:navigationtest2}. I forhold til \cite{accot1997} så har vi kun haft fire tunnelopgaver, mens de brugte 16. Dette fører til at vi har et væsentlig mindre span af $ID$ og væsentlig mindre data at basere vores analyse på. Det kan være med til at gøre vores konklusion om tunnelopgaverne mindre pålidelige.
 
-DISKUSSION AF SPIRAL
+% Diskussion af spiral
+Analysen af spiralopgaverne viste, at Accot og Zhai's formulering beskrev dataene bedst, jvf. AIC værdierne fra tabel \ref{tab:table_analysis_aic_spiral}. Dette er præcis, hvad vi forventede, da deres er $ID$ er bestemt specifikt for denne type opgave. Ligesom for tunnelopgaverne gjorde vi kun brug af 4 i stedet for 16 opgaver, hvilket gør datasættet væsentligt mindre og måske endda for lille. I modsætning til tunnelopgaverne så har spiralopgavernes størrelser mere indflydelse på tiden. Hvis spiralen bliver større eller snævrere tager det længere tid for alle testdeltagerene at gennemføre. Sammenligningen med de fire originale formuleringer af Fitts' lov er dog svær at drage konklusioner ud fra. De motoriske analyser som de bygger på, med én hovedbevægelse efterfulgt af én eller flere underbevægelser er ikke tilfældet for spiralopgaven.
 
+% Diskussion af AIC
 
-DISKUSSION AF AIC
+Analysen af pegeopgaver viste, ligesom analysen af tunnelopgaverne, at Meyer's formulering passede bedst på vores indsamlede data. Der er dog ikke meget forskel fra denne og Fitts' og MacKenzie's. Vi mener derfor at små variationer i vores data ville kunne gøre en stor forskel for hvilken af de tre formuleringer som er bedst. Welford's formulering har væsentlig højere AIC-værdier end de tre andre og kan derfor betegnes som den dårligste af de fire. Residualgraferne giver de samme resultater som AIC-analysen. Meyer's passer bedst på vores data, tæt fulgt af Fitts' og MacKenzie's, mens Welford's passer dårligere end de andre.\\
 
-DISKUSSION AF RESIDUALPLOTS
-
-DISKUSSION AF a OG b
-
-DISKUSSION I FORHOLD TIL TWO LARGE DATASETS
-
-DISKUSSION AF PASSER DET HELE? KAN FiTTS BRUGES?
+I vores analyse fandt vi frem til værdien af $a$ og $b$ i hver af de fire formuleringer. De tre værdier af $a$ beskriver den tid det vil tage for en person at påbegynde opgaven. Denne ligger mellem cirka $400$ og $500$ millisekunder, hvilket også passer med hvad \cite{crossman1957} og \cite{welford1968} tidligere har fundet frem til. Det multiplikative led, $b$, beskriver hvor meget længere tid brugeren ville bruge på en opgave, hvis opgavens $ID$ bliver 1 større. Dette led ligger for Fitts', MacKenzie's og Meyer's omkring $150-200$, mens det for Welford's ligger omkring $300$. Grunden til at Welford's multiplikative led ligger højere, er at Welford's formulering ikke har det additive led og derfor vil den skulle stige mere, for at passe nogenlunde på vores data.\\
 
 
-I vores analyse fandt vi frem til værdien af $a$ og $b$ i hver af de fire formuleringer. De tre værdier af $a$ beskriver den tid det vil tage for en person at påbegynde opgaven. Denne ligger mellem cirka $400$ og $500$ millisekunder, hvilket også passer med hvad \cite{crossman1957} og \cite{welford1968} tidligere har fundet frem til. Det multiplikative led, $b$, beskriver hvor meget længere tid brugeren ville bruge på en opgave, hvis opgavens $ID$ bliver 1 større. Dette led ligger for Fitts', MacKenzie's og Meyer's omkring $150-200$, mens det for Welford's ligger omkring $300$. Grunden til at Welford's multiplikative led ligger højere, er at Welford's formulering ikke har det additive led og derfor vil den skulle stige mere, for at passe nogenlunde på vores data.
+Da vi har baseret vores forsøg på \cite{goldberg2015} vil vi også sammenligne vores resultater med deres. \cite{goldberg2015} fandt frem til at Meyer's var den bedste formel, når sværhedsgraden var lille, mens Fitts' formulering var den bedste, når sværhedsgraden var stor. Deres resultater var inkonsistente derimellem. Når de kiggede på MacKenzie's formulering, så var den klart bedre end både Fitts' og Meyer's. Dette modsiger vores resultater, hvor Meyer's var bedst. Grunden til dette kan være at vi generelt kigger på et område, hvor små variationer i dataen gør en stor forskel for hvilken formulering der passer bedst. Da vi på samme tid har med mennesker at gøre, så er der mange variable som kan have en indflydelse på hvor hurtigt de kan gøre det.\\
 
-For vores tunnel- og spiralopgaver har vi baseret vores forsøg på tidligere udførte forsøg af \cite{accot1997}. Det er her vigtigt at nævne at \cite{accot1997} havde 16 tunnelopgaver og 16 spiralopgaver, mens vi kun havde fire tunnelopgaver og fire spiralopgaver. Dette har ført til at vi har fået langt mindre data og vil også gøre at vores affine modeller ikke nødvendigvis vil passe lige så godt som \cite{accot1997} gjorde. Dette afspejles også af at formlerne givet i \cite{accot1997} i vores forsøg ikke gør den store forskel, når vi sammenligner dem med AIC. Derudover havde vi flere testpersoner som gik imod forventning og blev hurtigere jo større $ID$. Dette viser også at Fitts' Lov, selv i Accot \& Zhai's modificeret version, ikke nødvendigvis kan bruges på navigationsopgaver.
-
-Vores AIC værdier viste at Meyer's var den bedste af de fire formuleringer, men viste samtidig også at den var meget tæt fulgt af Fitts' og MacKenzie's. Det viser at der ikke skal meget varians i dataen til, før at det vil være en af de to andre som er bedst. Meyer's formulering har til gengæld en væsentlig højere AIC værdi og vi kan derfor sige at den passer dårligere til dataen end nogle af de andre. Vores residualplots viser samme mønster. Meyer's formulering passer bedst til den indsamlede data, men små variationer i dataen ville kunne gøre både Fitts' og MacKenzie's bedre. Igen ses det at Welford's formulering passer væsentlig dårligere til dataen. Dette ses især ved lavere værdier af $ID$, hvilket også passer med at Welford's mangler det additive led og derfor først vil approksimere de andre ved højere værdier.
-
-Da vi har baseret vores forsøg på \cite{goldberg2015} vil vi også sammenligne vores resultater med deres. \cite{goldberg2015} fandt frem til at Meyer's var den bedste formel, når sværhedsgraden var lille, mens Fitts' formulering var den bedste, når sværhedsgraden var stor. Deres resultater var inkonsistente derimellem. Når de kiggede på MacKenzie's formulering, så var den klart bedre end både Fitts' og Meyer's. Dette modsiger vores resultater, hvor Meyer's var bedst. Grunden til dette kan være at vi generelt kigger på et område, hvor små variationer i dataen gør en stor forskel for hvilken formulering der passer bedst. Da vi på samme tid har med mennesker at gøre, så er der mange variable som kan have en indflydelse på hvor hurtigt de kan gøre det. Disse variabler kunne f.eks. være træthed, opmærksomhed, skærmens lysstyrke, fysiske skader ol.
-
-NOGET MED AT DET IKKE PASSER PERFEKT OG ALDRIG VIL! FITTS' LOV ER INCOMPLETE OG ER INDTIL VIDERE DATASPECIFIK!
+Generelt skal vi huske, at Fitts' lov beskriver komplekse menneskelige motoriske evner. Der vil derfor altid være forskel i indsamlede data, da forskellige personer har forskellige motoriske evner. Både indre og ydre faktorer kan have en effekt på hvor hurtigt en person kan udføre en given opgave. Der har siden Fitts' originale artikel blev udgivet i 1954 været lavet mange forsøg, for at bevise eller forbedre Fitts' lov. Denne er dog langt fra perfekt og skal derfor måske mere ses som en rettesnor, snarere end en egentlig lov.
 
 \addcontentsline{toc}{chapter}{Konklusion}
 \chapter*{Konklusion}
+Vi kan på baggrund af vores analyse og diskussion konkludere, at Meyers formulering beskriver vores pegeopgave og tunnelopgave data bedst, men at Accot og Zhai's formulering bedst beskriver vores spiraldata. Generelt er det dog små ændringer i datapunkterne der kan ændre på, hvilken af formuleringerne, der klarer sig bedst.
 
-\textbf{Konklusionen er afslutningen på din akademiske opgave. Her fortæller du din læser hvad du har fundet ud af i din undersøgelse/analyse, og hvorfor det er vigtigt.}
-Konklusionen kan indeholde:
-\begin{itemize}
-	\item opgavens hovedpunkter og resultater i kort form
-	\item svar på problemformuleringen
-	\item vurdering af metode i form af en nuancering og evaluering af din fremgangsmåde
-	\item perspektivering af emnet – hvis der er basis for det
-\end{itemize}
+Welfords formulering klarer sig overordnet set dårligst, hvilket skyldes, at vores opgaver ikke er svære nok til at udelade det additive led.
 
+%\textbf{Konklusionen er afslutningen på din akademiske opgave. Her fortæller du din læser hvad du har fundet ud af i din undersøgelse/analyse, og hvorfor det er vigtigt.}
+%Konklusionen kan indeholde:
+%\begin{itemize}
+%	\item opgavens hovedpunkter og resultater i kort form
+%	\item svar på problemformuleringen
+%	\item vurdering af metode i form af en nuancering og evaluering af din fremgangsmåde
+%	\item perspektivering af emnet – hvis der er basis for det
+%\end{itemize}
 
 \nocite{*}
 \input{appendices.tex}
