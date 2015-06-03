@@ -899,11 +899,11 @@ På figur \ref{fig:plot_velocity_individual} og \ref{fig:plot_velocity_individua
 
 \addcontentsline{toc}{chapter}{Diskussion}
 \chapter*{Diskussion}
-Vi vil i dette afsnit forsøge at diskutere vores fremgangsmåde og resultater fra både vores forsøgsopstilling og analyse.
+Vi vil i dette afsnit diskutere vores fremgangsmåde og resultater fra både vores forsøgsopstilling og analyse.
 
 \addcontentsline{toc}{section}{Forsøgsopstilling}
 \section*{Forsøgsopstilling}
-Vores valg af opslagssteder i det ukontrollerede forsøg kan have haft en indflydelse på den indsamlede data. Vi valgte at bruge Reddit, hvilket giver os en meget specifik målgruppe, da den typiske Reddit-bruger er .......! Dette er også udslagsgivende i vores indsamlede data, hvor gennemsnitsalderen er 24.5 år og 233 ud af 257 er mænd. Det er påvist af \cite{looser2005} at det ikke gør en stor forskel at deltagere bruger meget tid på videospil. Derfor burde det ikke have nogen nævneværdi indflydelse på vores forsøg, at $22\%$ af vores testdeltagere angav at de spillede videospil mellem 15 og 40 timer om ugen.
+Vores valg af opslagssteder i det ukontrollerede forsøg kan have haft en indflydelse på den indsamlede data. Vi valgte at bruge Reddit, hvilket giver os en meget specifik målgruppe, da den typiske Reddit-bruger er .......! Dette er også udslagsgivende i vores indsamlede data, hvor gennemsnitsalderen er 24.5 år og 233 ud af 257 er mænd. Det er førhen blevet påvist at folk der spiller computer vil have være hurtigere\cite{wyeld2013}. I vores undersøgelse er dette dog ikke tilfældet, da tabel \ref{SOME TABEL} viser at gennemsnitstiderne for alle grupperinger af videogames tider er meget ens.
 
 Det er derimod væsentligt at se på hvilket pegeredskab testdeltagerne brugte, da der kan være forskelle på tiden, når personer bruger f.eks. mus i forhold til touchpad \cite{epps1986}. I vores data brugte 160 personer mus, mens 96 brugte touchpad. På trods af at der er flest der brugte mus, så er det stadig vigtigt at huske at cirka $35\%$ brugte touchpad, hvilket vil give dem et dårligere resultat.
 
@@ -911,6 +911,23 @@ Vores testdata kom ikke kun fra Reddit, men også fra opslag på vores Facebook-
 
 \addcontentsline{toc}{section}{Analyse}
 \section*{Analyse}
+DISKUSSION AF TUNNEL
+I vores analyse af tunnelopgaverne viste tabel \ref{tab:tunnelopgave} at Meyer's formulering havde den bedste AIC. Der var dog så lille forskel mellem den og Accot \& Zhai, Fitts' og MacKenzie's, at man ikke kan sige at Meyer's er bedst. Welford's viste sig at være dårligere end de fire andre, men forskellen var dog ikke så stor. Det er vigtigt at nævne at vores data til tunnelopgaverne ikke nødvendigvis er repræsentativ, da vi har flere eksempler på personer som fik bedre tider jo større $ID$, et eksempel herpå kan ses i \ref{fig:navigationtest2}. I forhold til \cite{accot1997} så har vi kun haft fire tunnelopgaver, mens de brugte 16. Dette fører til at vi har et væsentlig mindre span af $ID$ og væsentlig mindre data at basere vores analyse på. Det kan være med til at gøre vores konklusion om tunnelopgaverne mindre pålidelige.
+
+DISKUSSION AF SPIRAL
+
+
+DISKUSSION AF AIC
+
+DISKUSSION AF RESIDUALPLOTS
+
+DISKUSSION AF a OG b
+
+DISKUSSION I FORHOLD TIL TWO LARGE DATASETS
+
+DISKUSSION AF PASSER DET HELE? KAN FiTTS BRUGES?
+
+
 I vores analyse fandt vi frem til værdien af $a$ og $b$ i hver af de fire formuleringer. De tre værdier af $a$ beskriver den tid det vil tage for en person at påbegynde opgaven. Denne ligger mellem cirka $400$ og $500$ millisekunder, hvilket også passer med hvad \cite{crossman1957} og \cite{welford1968} tidligere har fundet frem til. Det multiplikative led, $b$, beskriver hvor meget længere tid brugeren ville bruge på en opgave, hvis opgavens $ID$ bliver 1 større. Dette led ligger for Fitts', MacKenzie's og Meyer's omkring $150-200$, mens det for Welford's ligger omkring $300$. Grunden til at Welford's multiplikative led ligger højere, er at Welford's formulering ikke har det additive led og derfor vil den skulle stige mere, for at passe nogenlunde på vores data.
 
 For vores tunnel- og spiralopgaver har vi baseret vores forsøg på tidligere udførte forsøg af \cite{accot1997}. Det er her vigtigt at nævne at \cite{accot1997} havde 16 tunnelopgaver og 16 spiralopgaver, mens vi kun havde fire tunnelopgaver og fire spiralopgaver. Dette har ført til at vi har fået langt mindre data og vil også gøre at vores affine modeller ikke nødvendigvis vil passe lige så godt som \cite{accot1997} gjorde. Dette afspejles også af at formlerne givet i \cite{accot1997} i vores forsøg ikke gør den store forskel, når vi sammenligner dem med AIC. Derudover havde vi flere testpersoner som gik imod forventning og blev hurtigere jo større $ID$. Dette viser også at Fitts' Lov, selv i Accot \& Zhai's modificeret version, ikke nødvendigvis kan bruges på navigationsopgaver.
