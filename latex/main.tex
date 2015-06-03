@@ -806,7 +806,7 @@ Fitts & 20262.07 & 36.4
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_spiral_welford}
-		\captionof{figure}{Welford's affine model til gennemsnitstiden pr. $ID$, men $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Welford's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:welford_spiral_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -814,14 +814,14 @@ Fitts & 20262.07 & 36.4
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_spiral_fitt}
-		\captionof{figure}{Fitts' affine model til gennemsnitstiden pr. $ID$, men $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Fitts' affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:fitt_spiral_line}
 	\end{minipage}
 \end{minipage}
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_spiral_meyer}
-		\captionof{figure}{Meyer's affine model til gennemsnitstiden pr. $ID$, men $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Meyer's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:meyer_spiral_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -829,7 +829,7 @@ Fitts & 20262.07 & 36.4
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_spiral_mackenzie}
-		\captionof{figure}{Mackenzie's affine model til gennemsnitstiden pr. $ID$, men $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Mackenzie's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:mackenzie_spiral_line}
 	\end{minipage}
 \end{minipage}
@@ -837,7 +837,7 @@ Fitts & 20262.07 & 36.4
 	\begin{minipage}[t]{\linewidth}
 		\centering
 		\includegraphics[width=0.5\textwidth]{images/plots/plot_model_spiral_accot}
-		\captionof{figure}{Accot \& Zhai's affine model til gennemsnitstiden pr. $ID$, men $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Accot \& Zhai's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:accot_spiral_line}
 	\end{minipage}
 \end{minipage}
@@ -855,13 +855,16 @@ Den kvalitative analyse bygger på 57 tilfældigt crowdsourcingdeltagerne, hvilk
 Vi har observeret at deltagerne tager en stor underbevægelse, eventuelt opfulgt af mindre korrigerende underbevægelser. Typisk vil der for muse-brugerne være en korrigerende underbevægelse, mens touchpad-brugerne ofte bruger flere korrigerende underbevægelser. Generelt har muse-brugerne også mindre udsving i deres bevægelsesbaner end touchpad-brugerne. Dertil var der flere deltagere som startede enkelte baner, med at bevæge pegeredskabet i en forkert retning.
 
 \begin{minipage}{\linewidth}
-	\begin{minipage}{.5\linewidth}
+	\begin{minipage}{.45\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/plots/plot_analysis_qualitative}
 		\captionof{figure}{Plot over alle bevægelsesbaner lavet af en enkelt testdeltager under udførslen af denne deltagers pegeopgaver.}
 		\label{fig:movement_random_person}
 	\end{minipage}
-	\begin{minipage}{.5\linewidth}
+	\begin{minipage}[b]{0.1\linewidth}
+	~
+	\end{minipage}
+	\begin{minipage}{.45\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/plots/plot_speed_individual}
 		\captionof{figure}{Fire plots over fartprofilerne for fire tilfældige pegeopgaver fra en tilfældig testdeltager}
@@ -878,12 +881,15 @@ Det ses på figur \ref{fig:plot_speed_overall} at der er en tendens til at farte
 På figur \ref{fig:plot_velocity_individual} og \ref{fig:plot_velocity_individual_target} har vi to vektorplots som viser en enkelt opgave fra en tilfældig testperson, hvor vektorerne illustrerer hhv. hastigheden og hastigheden mod målet, i hvert punkt. Disse hastighedsprofiler viser os hvordan testpersonen har justeret sin hastighed under en test, og .....
 
 \begin{minipage}{\linewidth}
-	\begin{minipage}{.5\linewidth}
+	\begin{minipage}{.45\linewidth}
 		\includegraphics[width=\linewidth, trim = 20cm 0cm 20cm 0cm, clip]{images/plots/plot_velocity_individual}
 		\captionof{figure}{Vektorplot over hastighedsprofilen for en tilfældig testdeltager.}
 		\label{fig:plot_velocity_individual}
 	\end{minipage}
-	\begin{minipage}{.5\linewidth}
+	\begin{minipage}[b]{0.1\linewidth}
+	~
+	\end{minipage}
+	\begin{minipage}{.45\linewidth}
 		\includegraphics[width=\linewidth, trim = 20cm 0cm 20cm 0cm, clip]{images/plots/plot_velocity_individual_target}
 		\captionof{figure}{Vektorplot over hastighedsprofilen mod målet for en tilfældig testdeltager.}
 		\label{fig:plot_velocity_individual_target}
