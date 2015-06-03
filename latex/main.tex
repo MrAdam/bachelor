@@ -547,7 +547,7 @@ På baggrund af de affine linjers overenstemmelse med størstedelen af datapunkt
 	\end{minipage}
 \end{minipage}
 
-\addcontentsline{toc}{section}{Modelanalyse af bevægelsesbaner}
+\addcontentsline{toc}{section}{Modelanalyse af pegeopgaver}
 \section*{Modelanalyse af bevægelsesbaner}
 Vores modelanalyse af bevægelsesbaner tager udgangspunkt i AIC-modellen og de bevægelsesbaner der er indsamlet ved crowdsourcingdeltagernes udførsel af opgaverne.
 
@@ -944,8 +944,7 @@ Analysen af spiralopgaverne viste, at Accot og Zhai's formulering beskrev dataen
 
 % Diskussion af AIC
 
-
-Analysen af bevægelsesbaner viste, ligesom analysen af tunnelopgaverne, at Meyer's formulering passede bedst på vores indsamlede data. Der er dog ikke meget forskel fra denne og Fitts' og MacKenzie's. Vi mener derfor at små variationer i vores data ville kunne gøre en stor forskel for hvilken af de tre formuleringer som er bedst. Welford's formulering har væsentlig højere AIC-værdier end de tre andre og kan derfor betegnes som den dårligste af de fire. Residualgraferne giver de samme resultater som AIC-analysen. Meyer's passer bedst på vores data, tæt fulgt af Fitts' og MacKenzie's, mens Welford's passer dårligere end de andre.\\
+Analysen af pegeopgaver viste, ligesom analysen af tunnelopgaverne, at Meyer's formulering passede bedst på vores indsamlede data. Der er dog ikke meget forskel fra denne og Fitts' og MacKenzie's. Vi mener derfor at små variationer i vores data ville kunne gøre en stor forskel for hvilken af de tre formuleringer som er bedst. Welford's formulering har væsentlig højere AIC-værdier end de tre andre og kan derfor betegnes som den dårligste af de fire. Residualgraferne giver de samme resultater som AIC-analysen. Meyer's passer bedst på vores data, tæt fulgt af Fitts' og MacKenzie's, mens Welford's passer dårligere end de andre.\\
 
 I vores analyse fandt vi frem til værdien af $a$ og $b$ i hver af de fire formuleringer. De tre værdier af $a$ beskriver den tid det vil tage for en person at påbegynde opgaven. Denne ligger mellem cirka $400$ og $500$ millisekunder, hvilket også passer med hvad \cite{crossman1957} og \cite{welford1968} tidligere har fundet frem til. Det multiplikative led, $b$, beskriver hvor meget længere tid brugeren ville bruge på en opgave, hvis opgavens $ID$ bliver 1 større. Dette led ligger for Fitts', MacKenzie's og Meyer's omkring $150-200$, mens det for Welford's ligger omkring $300$. Grunden til at Welford's multiplikative led ligger højere, er at Welford's formulering ikke har det additive led og derfor vil den skulle stige mere, for at passe nogenlunde på vores data.\\
 
@@ -956,15 +955,18 @@ Generelt skal vi huske, at Fitts' lov beskriver komplekse menneskelige motoriske
 
 \addcontentsline{toc}{chapter}{Konklusion}
 \chapter*{Konklusion}
+Vi kan på baggrund af vores analyse og diskussion konkludere, at Meyers formulering beskriver vores pegeopgave og tunnelopgave data bedst, men at Accot og Zhai's formulering bedst beskriver vores spiraldata. Generelt er det dog små ændringer i datapunkterne der kan ændre på, hvilken af formuleringerne, der klarer sig bedst.
 
-\textbf{Konklusionen er afslutningen på din akademiske opgave. Her fortæller du din læser hvad du har fundet ud af i din undersøgelse/analyse, og hvorfor det er vigtigt.}
-Konklusionen kan indeholde:
-\begin{itemize}
-	\item opgavens hovedpunkter og resultater i kort form
-	\item svar på problemformuleringen
-	\item vurdering af metode i form af en nuancering og evaluering af din fremgangsmåde
-	\item perspektivering af emnet – hvis der er basis for det
-\end{itemize}
+Welfords formulering klarer sig overordnet set dårligst, hvilket skyldes, at vores opgaver ikke er svære nok til at udelade det additive led.
+
+%\textbf{Konklusionen er afslutningen på din akademiske opgave. Her fortæller du din læser hvad du har fundet ud af i din undersøgelse/analyse, og hvorfor det er vigtigt.}
+%Konklusionen kan indeholde:
+%\begin{itemize}
+%	\item opgavens hovedpunkter og resultater i kort form
+%	\item svar på problemformuleringen
+%	\item vurdering af metode i form af en nuancering og evaluering af din fremgangsmåde
+%	\item perspektivering af emnet – hvis der er basis for det
+%\end{itemize}
 
 \nocite{*}
 \input{appendices.tex}
