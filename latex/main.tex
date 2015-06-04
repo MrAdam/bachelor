@@ -510,36 +510,42 @@ $AIC()$\footnote{R dokumentation om $AIC()$: \url{https://stat.ethz.ch/R-manual/
 
 \addcontentsline{toc}{section}{Indledende analyse}
 \section*{Indledende analyse}
-For at være sikre på, at vores data fra det ukontrollerede crowdsourcing eksperiment kan bruges til at sammenligne de fire formuleringer har vi først kigget på vores 10 testdeltagere fra laboratieeksperimentet hver for sig. Vi har fitted vores 10 testdeltageres data fra pegeopgaverne til Fitts lov hver for sig. To af disse plots kan ses i figurerne \ref{fig:testdeltager1}, \ref{fig:testdeltager3}.  Det kan på graferne ses, hvordan punkterne ligger tæt omkring modellen, angivet ved den blå linje. Men også, at enkelte datapunkter bryder tendensen, specielt på figur \ref{fig:testdeltager3}.
+For at være sikre på, at vores data fra det ukontrollerede crowdsourcing eksperiment kan bruges til at sammenligne de fire formuleringer har vi først kigget på vores 10 testdeltagere fra laboratieeksperimentet hver for sig. Vi har fitted vores 10 testdeltageres data fra pegeopgaverne til Fitts lov hver for sig. To af disse plots kan ses i figur \ref{fig:testdeltager1} og \ref{fig:testdeltager3}.  Det kan på graferne ses, hvordan punkterne ligger tæt omkring modellen, angivet ved den blå linje. Men også, at enkelte datapunkter bryder tendensen, specielt på figur \ref{fig:testdeltager3}.
 
-Vi har derfor forsøgt at fjernet alle datapunkter, som afviger med mere end 3 gange standardafvigelsen, $\sigma$, som er kvadratroden af variansen på datasættet \cite{pearson1894}. Ved at filtrere data med for stor afvigelse fra kan vi fitte en model, der beskriver størstedelen af vores data bedre. Figur \ref{fig:testdeltager7filter} og \ref{fig:testdeltager7unfilter} viser den tilpassede affine model for testdeltager 7 med og uden filtreret data.
+Vi har derfor forsøgt at fjernet alle datapunkter, som afviger med mere end 3 gange standardafvigelsen, $\sigma$, som er kvadratroden af variansen på datasættet \cite{pearson1894}. Ved at filtrere data med for stor afvigelse fra kan vi fitte en model, der beskriver størstedelen af vores data bedre. Figur \ref{fig:testdeltager7unfilter} og \ref{fig:testdeltager7filter} viser den tilpassede affine model for testdeltager 7 med og uden filtreret data.
 
 \begin{minipage}{\linewidth}
-	\begin{minipage}[b]{.50\linewidth}
+	\begin{minipage}[b]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_test_1}
-		\captionof{figure}{Testdeltager 1 med tiden ud af $y$-aksen og $ID$ på $x$-aksen}
+		\captionof{figure}{Testdeltager 1's 25 pegeopgave data med tiden ud af $y$-aksen og $ID$ på $x$-aksen}
 		\label{fig:testdeltager1}
 	\end{minipage}
-	\begin{minipage}[b]{0.50\linewidth}
+	\begin{minipage}[b]{0.1\linewidth}
+	~
+	\end{minipage}
+	\begin{minipage}[b]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_test_2}
-		\captionof{figure}{Testdeltager 3 med tiden ud af $y$-aksen og $ID$ på $x$-aksen}
+		\captionof{figure}{Testdeltager 3's 25 pegeopgave data med tiden ud af $y$-aksen og $ID$ på $x$-aksen}
 		\label{fig:testdeltager3}
 	\end{minipage}
 \end{minipage}
 
 \newpage
-På baggrund af de affine linjers overenstemmelse med størstedelen af datapunkterne fra det kontrollerede eksperiment har vi konkluderet, at det tilsvarende vil gøre sig gældende for vores ukontrollerede data, og derved godt kan danne grundlag for en analyse af de fire formuleringer af Fitts' lov. Vores analyse vil basere sig på et filtreret datasæt ved den oven nævnte $\sigma$ metode, så eventuelle perifære data ikke medtages.
+På baggrund af de affine linjers overenstemmelse med datapunkterne fra det kontrollerede eksperiment har vi konkluderet, at dataene fra vores ukontrollerede forsøg også kan beskrives af de fire formuleringer. Vi vil derfor analysere de fire formuleringer af Fitts' lov med vores data fra det ukontrollerede crowdsourcing forsøg. Vores analyse vil basere sig på et filtreret datasæt ved den oven nævnte $\sigma$ metode, så eventuelle perifære data medtages ikke. I resten af analysen vil de 264 testdeltageres opgaver betyde den filtrerede del af det fulde datasæt.
 
 \begin{minipage}{\linewidth}
-	\begin{minipage}[b]{.50\linewidth}
-		\includegraphics[width=\textwidth]{images/plots/plot_model_test_comparison_filtered}
-		\captionof{figure}{Testdeltager 7 med filtreret datasæt}
-		\label{fig:testdeltager7filter}
-	\end{minipage}
-	\begin{minipage}[b]{0.50\linewidth}
+	\begin{minipage}[t]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_test_comparison_unfiltered}
-		\captionof{figure}{Testdeltager 7 uden nogen filtrering}
+		\captionof{figure}{Testdeltager 7's 25 pegeopgave data uden nogen filtrering}
 		\label{fig:testdeltager7unfilter}
+	\end{minipage}
+	\begin{minipage}[b]{0.1\linewidth}
+	~
+	\end{minipage}
+	\begin{minipage}[t]{.45\linewidth}
+		\includegraphics[width=\textwidth]{images/plots/plot_model_test_comparison_filtered}
+		\captionof{figure}{Testdeltager 7's 25 pegeopgave data med filtreret datasæt. Kun 24 datapunkter tilbage}
+		\label{fig:testdeltager7filter}
 	\end{minipage}
 \end{minipage}
 
@@ -555,9 +561,9 @@ Hver af de fire formuleringer af Fitts lov har vi tilpasset til vores data fra d
 \text{Meyer's: } &T = 504.48 + 157.13 \cdot \sqrt{\frac{A}{W}}
 \end{align*}
 
-Bemærk at den additive konstant er målt i millisekunder ligesom vores registrerede tider fra datasættet. Ud fra de tre additive konstanter, kan det ses, at testdeltagerne i gennemsnit bruger cirka 450 millisekunder på at opfange opgaven før de bevæger deres pegeenhed. Datapunkterne og de fire affine modeller er plottet og vist i figur \ref{fig:welford_affine_line}, \ref{fig:fitt_affine_line}, \ref{fig:meyer_affine_line} og \ref{fig:mackenzie_affine_line}. Bemærk, hvordan datapunkterne danner 25 vertikale 'søjler', én for hvert af vores pegeopgavers $ID$.
+Bemærk, at den additive konstant er målt i millisekunder ligesom vores registrerede tider fra datasættet. Ud fra de tre additive konstanter, kan det ses, at testdeltagerne i gennemsnit bruger cirka 450 millisekunder på at opfange opgaven før de bevæger deres pegeenhed. Datapunkterne og de fire affine modeller er plottet og vist i figur \ref{fig:welford_affine_line}, \ref{fig:fitt_affine_line}, \ref{fig:meyer_affine_line} og \ref{fig:mackenzie_affine_line}. Hvert datapunkt er én testdeltagers opgave løsning. Bemærk, hvordan datapunkterne danner 25 vertikale 'søjler', én for hvert af vores pegeopgavers $ID$.
 
-Det er de fire matematiske modeller som vores pegeopgaveanalyse vil tage udgangspunkt i. Ud fra modellerne og figurerne er det dog svært at sige noget om, hvilke af modellerne der klarer sig bedre i at beskrive datapunkterne end resten. Vi vil derfor gøre brug af en AIC sammenligning og underbygge den med en residualanalyse.
+Det er de fire matematiske modeller som vores pegeopgaveanalyse vil tage udgangspunkt i. Ud fra modellerne og figurerne er det dog svært at sige noget om, hvilken af modellerne der klarer sig bedst i at beskrive datapunkterne. For at få et mere håndgribeligt resultat at analysere dette ud fra, vil vi gøre brug af en AIC sammenligning og underbygge den med en residualanalyse.
 
 
 \begin{minipage}{\linewidth}
@@ -644,11 +650,11 @@ Det ses af figur \ref{fig:plot_residual_welford} at Welford's især er dårliger
 
 \addcontentsline{toc}{section}{Modelanalyse af navigationsopgaver}
 \section*{Modelanalyse af navigationsopgaver}
-I vores forsøg havde vi, udover pegeopgaven, også tunnel- og spiralopgaver. Vi vil i dette afsnit forsøge at tilpasse de fire formuleringer af Fitts lov på vores navigationsopgaver, velvidende om, at det ikke er den en type opgaver de er beregnet til. Accot og Zhai har i deres artikel \cite{accot1997} undersøgt lignende navigationsopgaver og fundet $ID$ specifikt for både tunnel- og spiralopgaver, hvilket vi vil bruge til at sammenligne med de fire formuleringer.
+I vores forsøg havde vi, udover pegeopgaven, også tunnel- og spiralopgaver. Vi vil i dette afsnit forsøge at tilpasse de fire formuleringer af Fitts lov på vores navigationsopgaver, velvidende om, at det ikke er en type opgaver de er beregnet til. Accot og Zhai har i deres artikel \cite{accot1997} undersøgt lignende navigationsopgaver og fundet et $ID$ specifikt for både tunnel- og spiralopgaver, hvilket vi vil bruge til at sammenligne med de fire formuleringer.
 
 \addcontentsline{toc}{subsection}{Analyse af tunnelopgaver}
 \subsection*{Analyse af tunnelopgaver}
-De fire formuleringer er, som benævnt, ikke lavet til navigationsopgaver, vi har dog alligevel tilpasset en lineær model med deres respektive ID, til vores tunneldata. Vi har valgt afstanden, $A$, til at være længden på tunnellen, og bredden, $W$, til at være størrelse på tunnelens højre lodrette linje, slutstregen, som altid er $8$ pixels. Ved lineær regression, $lm()$, med $R$ fik vi tilpasset nedenstående matematiske modeller af de fire formuleringer.
+De fire formuleringer er, som benævnt, ikke lavet til navigationsopgaver, vi har dog alligevel tilpasset en lineær model med deres respektive ID, til vores 264 testdeltageres tunnelopgaver. Vi har valgt afstanden, $A$, til at være længden på tunnellen, $A=[20,30,40,50]$ pixel. Bredden, $W$, har vi valgt som størrelsen på tunnelens højre lodrette linje, slutstregen, der altid er $8$ pixels. Ved lineær regression, $lm()$, med $R$ fik vi tilpasset nedenstående matematiske modeller af de fire formuleringer.
 
 \begin{align*}
 \text{Fitts': } &T = 3532.2 + 581.9\cdot \log_2\left(\frac{2A}{W}\right)\\
@@ -657,15 +663,19 @@ De fire formuleringer er, som benævnt, ikke lavet til navigationsopgaver, vi ha
 \text{Meyer's: } &T = 5863.07 + 210.48 \cdot \sqrt{\frac{A}{W}}
 \end{align*}
 
-Helt naturligt er det additive led markant højere for tunnelopgaverne end for pegeopgaverne, da det gennemsnitligt har taget længere tid for vores testdeltagere at gennemføre dem. Gennemsnittet for tunnelopgaverne er på $7673.01$ millisekunder og $983.30$ millisekunder for pegeopgaverne. Det additive led kan dog ikke fortolkes som reaktionstiden for tunnelopgaverne, da tiden starter når testdeltageren passere venstre lodrette streg og derfor allerede er i bevægelse.
+Helt naturligt er det additive led markant højere for tunnelopgaverne end for pegeopgaverne, da det gennemsnitligt har taget længere tid for vores testdeltagere at gennemføre dem. Gennemsnitstiden for de 264 testdeltageres tunnelopgaver er $7673.01$ millisekunder imod $983.30$ millisekunder for pegeopgaverne. Det additive led kan dog ikke fortolkes som reaktionstiden for tunnelopgaverne. Dette skyldes, at tiden bliver registreret fra testdeltageren passerer venstre lodrette streg i tunnellen, og derved allerede er i bevægelse ved $T=0$.
 
-Accot og Zhai beskriver i deres artikel \cite{accot1997}, hvordan en indsnævrende tunnelopgave kan opdeles i små delelementer, som hver især udgør én lille navigationsopgave. Ved at gøre dette kan man finde $ID$ som summen af delelementernes $ID$, hvilket resulterer i $ID_{NT} = \frac{A}{W_2-W_1}\ln\left(\frac{W_2}{W_1}\right)$, hvor $W_1$ er størrelsen på venstre lodrette streg, startstregen, og $W_2$ er størrelsen på højre lodrette streg, slutstregen. I følge Accot og Zhai er der en lineær afhængighed imellem tiden $T$ og dette $ID_{NT}$, hvilket giver anledning til følgende matematiske formulering $T = a+b\cdot ID_{NT}$. Tilpasses denne formulering med lineær regression til vores filtrerede datasæt får vi nedenstående model.
+Accot og Zhai beskriver i deres artikel \cite{accot1997}, hvordan en indsnævrende tunnelopgave kan opdeles i små delelementer, som hver især udgør én lille navigationsopgave. Ved at gøre dette kan man finde $ID$ som summen af delelementernes $ID$, hvilket resulterer i $ID_{NT} = \frac{A}{W_2-W_1}\ln\left(\frac{W_2}{W_1}\right)$. $W_1$ er størrelsen på venstre lodrette streg, startstregen, og $W_2$ er størrelsen på højre lodrette streg, slutstregen, imens $A$ er længden af tunnelen. I følge Accot og Zhai er der en lineær sammenhæng imellem tiden $T$ og dette $ID_{NT}$, hvilket giver anledning til følgende formulering $T = a+b\cdot ID_{NT}$. Tilpasses denne formulering med lineær regression til vores 264 testdeltageres tunnelopgaver findes nedenstående matematiske model.
 
 \begin{align*}
 \text{Accot \& Zhai: } T = 6112.40+47.77 \cdot \left(\frac{A}{W_2-W_1}\cdot\ln\left(\frac{W_2}{W_1 }\right)\right)
 \end{align*}
 
-Det kan bemærkes, at den primære forskel imellem Accot og Zhai's formulering og de fire andre er det multiplikative led, $b$. Da $ID_{NT}$ antager væsentligt højere værdier er $b$ tilsvarende mindre. De fem affine modeller har vi valgt at plotte i forhold til gennemsnittet af tiden for hvert $ID$, for bedre at visualisere, modellernes præcision. Plottene kan ses i figur \ref{fig:welford_tunnel_line}, \ref{fig:fitt_tunnel_line}, \ref{fig:meyer_tunnel_line},\ref{fig:mackenzie_tunnel_line} og \ref{fig:accot_tunnel_line}. På $x$-aksen er modellens respektive $ID$ imens tiden, $T$, for at løse en opgave er givet ved $y$-aksen.
+Det kan bemærkes, at den primære forskel imellem Accot og Zhai's formulering og de fire andre er det multiplikative led, $b$. Da $ID_{NT}$ antager væsentligt højere værdier end de fire andre $ID$'er, så er $b$ også tilsvarende mindre. 
+
+
+
+De fem affine modeller har vi valgt at plotte i forhold til gennemsnittet af tiden for hvert $ID$, for bedre at visualisere, modellernes præcision. Plottene kan ses i figur \ref{fig:welford_tunnel_line}, \ref{fig:fitt_tunnel_line}, \ref{fig:meyer_tunnel_line},\ref{fig:mackenzie_tunnel_line} og \ref{fig:accot_tunnel_line}. På $x$-aksen er modellens respektive $ID$ imens tiden, $T$, for at løse en opgave er givet ved $y$-aksen.
 
 Af graferne ser det ud til, at Welfords klarer sig markant dårligere end de fire andre formuleringer, som til gengæld ikke har nogen umiddelbar forskel. AIC analysen, \ref{tab:table_analysis_aic_tunnel} af de fem modeller viser netop dette, hvor Meyer's model klarer sig bedst, men med utrolig lille indbyrdes forskel imellem de bedste fire modeller. Kun Welford's formulering har en relativt markant dårligere præcision til dataene.
 
@@ -679,7 +689,21 @@ Fitts & 20549.68 & 0.07\\
 Mackenzie & 20549.68 & 0.07 \\
 Welford & 20558.46 & 8.84
 \end{tabular}
-\caption{AIC værdier og indbyrdes forskel med udgangspunkt i Fitts' som nulpunkt}
+\caption{AIC værdier for de 264 testdeltageres tunnelopgaver. Deres indbyrdes forskel er beregnet med udgangspunkt i Meyer's formulering som nulpunkt.}
+\label{tab:table_analysis_aic_tunnel}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lll}
+Model & AIC værdi & Forskel\\\hline
+Meyer & 33.68 & 0 \\
+Accot \& Zhai & 38.17 & 4.49\\
+Mackenzie & 46.58 & 12.9 \\
+Fitts & 46.87 & 13.19\\
+Welford & 64.97 & 31.29
+\end{tabular}
+\caption{AIC værdier for gennemsnittet af tiderne for de 264 testdeltageres tunnelopgaver ved hvert $ID$. Deres indbyrdes forskel er beregnet med udgangspunkt i Meyer's formulering som nulpunkt.}
 \label{tab:table_analysis_aic_tunnel}
 \end{table}
 

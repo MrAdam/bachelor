@@ -133,31 +133,31 @@ data = test_tasks[test_tasks$type == "pointing" & test_tasks$person == 8,]
 data$id = log2((2 * data$distance) / (data$width))
 model_fitt_test = lm(time ~ id, data)
 ggplot(model_fitt_test, aes(x = id, y = time)) + 
-  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 8")
-# ggsave(file = "images/plots/plot_model_test_1.png")
+  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 1")
+ ggsave(file = "images/plots/plot_model_test_1.png")
 remove(data, model_fitt_test)
 data = test_tasks[test_tasks$type == "pointing" & test_tasks$person == 11,]
 data$id = log2((2 * data$distance) / (data$width))
 model_fitt_test = lm(time ~ id, data)
 ggplot(model_fitt_test, aes(x = id, y = time)) + 
-  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 11")
-# ggsave(file = "images/plots/plot_model_test_2.png")
+  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 3")
+ ggsave(file = "images/plots/plot_model_test_2.png")
 remove(data, model_fitt_test)
 # Unfiltered
 data = test_tasks[test_tasks$type == "pointing" & test_tasks$person == 15,]
 data$id = log2((2 * data$distance) / (data$width))
 model_fitt_test = lm(time ~ id, data)
 ggplot(model_fitt_test, aes(x = id, y = time)) + 
-  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 15 - Ufiltreret")
-# ggsave(file = "images/plots/plot_model_test_comparison_unfiltered.png")
+  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 7 - Ufiltreret")
+ ggsave(file = "images/plots/plot_model_test_comparison_unfiltered.png")
 remove(data, model_fitt_test)
 # Filtered
 data = test_tasks_filtered[test_tasks_filtered$type == "pointing" & test_tasks_filtered$person == 15,]
 data$id = log2((2 * data$distance) / (data$width))
 model_fitt_test_filtered = lm(time ~ id, data)
 ggplot(model_fitt_test_filtered, aes(x = id, y = time)) + 
-  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 15 - Filtreret")
-# ggsave(file = "images/plots/plot_model_test_comparison_filtered.png")
+  geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 7 - Filtreret")
+ ggsave(file = "images/plots/plot_model_test_comparison_filtered.png")
 remove(data, model_fitt_test_filtered)
 
 ###################
