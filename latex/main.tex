@@ -6,13 +6,35 @@ Human motion models for pointing tasks are used in the design of many everyday i
 
 \addcontentsline{toc}{chapter}{Indledning}
 \chapter*{Indledning}
-Inden for menneske-datamaskine interaktion er Fitt's Lov meget udbredt som optimerings- og forbedringsværktøj ved design af brugerflader. Som noteret i \cite{karafillis2012}, så kan Fitts' Lov bruges som en rettesnor når man designer brugergrænseflader - dette kunne f.eks. være til at finde størrelser og placeringer af knapper. Det er i den forbindelse vigtigt at have kendskab til "prime pixels", som er de pixels der ligger i kanterne af skærmen, og ved markørens nuværende position. Disse pixels vil altid være hurtige og nemme for en person at tilgå med sin markør, enten ved at kaste markøren ud mod kanten, eller også ved at højreklikke uden at flytte sin markør. Den nemme tilgængelighed af disse pixels gør at de ofte bliver integreret som centrale dele af brugerfladedesign. Eksempler på dette ses overalt i interaktionen med moderne styresystemer, hvor størstedelen af dem benytter sig af markørens nuværende position til at vise en menu hvis brugeren højreklikker. Der er også en tendens til at styresystemers proceslinje bliver lagt langs øvre eller nedre kant af skærmen - igen pga. den lette tilgængelighed af disse "prime pixels" for brugeren. Fleksibiliteten af Fitts' Lov ses ved den store variation af brugerflader hvor den kan bruges, blandt andet i drop-down menuer, som beskrevet af \cite{accot1997}.\\
 
-Indenfor de seneste 10 år har datalogien oplevet en stor udvikling, med introduktionen og udbredelsen af smartphones, tablets og embedded systems. Dette har gjort folks hverdag meget mere afhængig af interaktion med teknologien, hvilket har ført til en enorm udvikling i udformningen af brugergrænseflader og deres funktionalitet. På trods af denne udvikling, så baserer nogle af idéerne bag teknologien sig stadig på intuitive matematiske modeller for det menneskelige motoriske system. En af disse modeller beskriver tiden det tager én person at udføre en motorisk opgave ud fra opgavens sværhedsgrad, og blev første gang beskrevet af Paul M. Fitts i \cite{fitts1954}. Fitts baserede sin analyse på tre eksperimenter, hvor 16 personer blev bedt om at udføre forskellige motoriske øvelser. Fitts fandt frem til en formel, hvor tiden det tager at pege på et mål, er afhængig af hvor stor en sværhedsgrad eller \textit{Index of Difficulty}, en given opgave har.\\
+\begin{wrapfigure}{r}{.35\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{images/illustrations/prime_pixels}
+	\caption{Illustration af kanter, hjørner og museposition hvor "prime pixels" befinder sig, samt linjer der viser den hurtige lige vej til disse}
+	\label{fig:primepixels}
+\end{wrapfigure}
 
-Siden udgivelsen af Fitts' artikel har flere andre udgivelser foreslået ændringer, som kunne forbedre Fitts' Lov. Den første udgivelse som ville ændre Fitts' Lov var \cite{welford1968}, hvor Alan T. Welford foreslog nogle teoretiske ændringer til Fitts' Lov, ud fra sine observationer af Fitts' indsamlede data. Både Fitts og Welford beskrev formuleringerne ud fra et rent menneskeligt motorisk synspunkt, men i slutningen af 70'erne begyndte menneske-datamaskine interaktionsforskere at interessere sig for emnet, blandt andet med udgivelsen af \cite{card1978}. Siden da foreslog David E. Meyer af to omgange, \cite{meyer1988} \& \cite{meyer1990}, nogle fundamentale ændringer til den bagvedliggende model for Fitts' Lov. Dette førte til en variant af Fitts' Lov, som baserede sig på et $ID$ som indeholdte kvadratrod i stedet for den allerede kendte variant med logaritme. Meyer lavede først en række beregninger på data fra Fitts' forsøg, hvilket viste at hans formulering passede bedre på den indsamlede data. Herefter lavede han nogle simple forsøg, hvor testpersoner lavede simple håndledsbevægelser. Disse viste igen at den nye variant passede bedre til den indsamlede data.\\
+Inden for menneske-datamaskine interaktion er Fitt's Lov meget udbredt som optimerings- og forbedringsværktøj ved design af brugerflader. Loven bruges til at udregne tiden det tager at flytte markøren til et element, ud fra elementets størrelse og afstanden til det. Som noteret i \cite{karafillis2012}, så kan Fitts' Lov bruges som en rettesnor når man designer brugergrænseflader - dette kunne f.eks. være til at finde størrelser og placeringer af knapper. Det er i den forbindelse vigtigt at have kendskab til "prime pixels", som er de pixels der ligger i kanten og hjørnerne af skærmen, og ved markørens nuværende position, som illustreret på figur \ref{fig:primepixels}. Disse pixels vil altid være hurtige og nemme for en person at tilgå med sin markør, enten ved at kaste markøren ud mod kanten, eller også ved at højreklikke uden at flytte sin markør. Den nemme tilgængelighed af disse pixels gør at de ofte bliver integreret som centrale dele af brugerfladedesign. Eksempler på dette ses overalt i interaktionen med moderne styresystemer, hvor størstedelen af dem benytter sig af markørens nuværende position til at vise en menu hvis brugeren højreklikker. Der er også en tendens til at styresystemers proceslinje bliver lagt langs øvre eller nedre kant af skærmen - igen pga. den lette tilgængelighed af disse "prime pixels" for brugeren. Fleksibiliteten af Fitts' Lov ses ved den store variation af brugerflader hvor den kan bruges, blandt andet i drop-down menuer, som beskrevet af \cite{accot1997}. Brugen af Fitt's Lov i drop-down menuer ses på figur \ref{fig:dropdown}, hvor der illustreres at der for hvert trin i menuen vil være en pegeopgave hvor Fitts' Lov kan benyttes.\\
 
-I 1992 udgav Scott MacKenzie \cite{mackenzie1992}, hvori han beskrev en ny variant af Fitts' Lov. Denne variant er opbygget omkring Shannon's Sætning \cite{goldberg2015} og er siden blevet accepteret som den mest udbredte \cite{guiard2011}. MacKenzie udførte beregninger på data fra allerede udførte forsøg og viste at hans formulering ville passe bedre på de tidligere indsamlede data. På trods af at MacKenzie viste at hans formulering passede bedst på data fra tidligere forsøg, så har både \cite{drewes2010} og \cite{goldberg2015} vist at alle fire formuleringer ikke nødvendigvis passer til alle tilfælde af sværhedsgrader. Specielt noterede \cite{goldberg2015} at det kom an på sværhedsgraden, hvilken formulering der skulle bruges. MacKenzies var bedst at bruge ved høje sværhedsgrader, mens Meyers viste sig at være bedst anvendelig ved lavere sværhedsgrader.\\
+\begin{wrapfigure}{l}{.35\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{images/illustrations/dropdown}
+	\caption{Illustration af navigation igennem drop-down menu, samt $w$- og $h$-etiket til at illustrere $A$ og $W$ værdierne ved brug af Fitts' Lov}
+	\label{fig:dropdown}
+\end{wrapfigure}
+
+Siden lanceringen af den første successfulde smartphone i 2007, er der sket en voldsom udvikling i antallet af enheder der har berøringsfølsomme skærme som den primære inputmetode. Med denne udvikling har der været et behov for at udvikle nye måder at interagere med systemerne på. De tendenser til at benytte sig af "prime pixels" i brugerfladedesign på styresystemer går igen med berøringsfølsomme skærme, da de tre største mobilstyresystemer i dag, nemlig Android, iOS og Windows Phone alle sammen benytter sig af navigationselementer der ligger i kanten af skærmen. Et eksempel på dette ses på figur \ref{fig:notifications} som viser hvordan man skal trække fingeren ned fra den øvre kant af skærmen for at tilgå de hurtige indstillinger, og se sine notifikationer. Dette er igen et godt eksempel på et brugerfladedesign hvor der er taget højde for at tiden det tager at interagere med et element på skærmen skal være så kort som overhovedet muligt - især med de elementer som bruges oftest. Med den stigende tendens til større skærme på smartphones, vil der være et større behov for at optimere brugerfladerne på disse enheder - hvor Fitt's Lov vil være et godt bud på en formel der kan bruges.\\
+
+\begin{wrapfigure}{r}{.25\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{images/illustrations/navigation_dragdown}	
+	\caption{Illustration af adgang til hurtigindstillinger og notifikationscenter ved at trække ned fra overkanten af den berøringsfølsomme skærm}
+	\label{fig:notifications}
+\end{wrapfigure}
+
+Siden udgivelsen af Fitts' originale artikel der beskrev hans forsøg, og udledte formel deraf, har flere andre udgivelser foreslået ændringer, som kunne forbedre Fitts' Lov. Den første udgivelse som ville ændre Fitts' Lov var \cite{welford1968}, hvor Alan T. Welford foreslog nogle teoretiske ændringer til Fitts' Lov, ud fra sine observationer af Fitts' indsamlede data. Både Fitts og Welford beskrev formuleringerne ud fra et rent menneskeligt motorisk synspunkt, men i slutningen af 70'erne begyndte menneske-datamaskine interaktionsforskere at interessere sig for emnet, blandt andet med udgivelsen af \cite{card1978}. Siden da foreslog David E. Meyer af to omgange, \cite{meyer1988} \& \cite{meyer1990}, nogle fundamentale ændringer til den bagvedliggende model for Fitts' Lov. Dette førte til en variant af Fitts' Lov, som baserede sig på et $ID$ som indeholdte kvadratrod i stedet for den allerede kendte variant med logaritme. Meyer lavede først en række beregninger på data fra Fitts' forsøg, hvilket viste at hans formulering passede bedre på den indsamlede data. Herefter lavede han nogle simple forsøg, hvor testpersoner lavede simple håndledsbevægelser. Disse viste igen at den nye variant passede bedre til den indsamlede data.
+
+I 1992 udgav Scott MacKenzie \cite{mackenzie1992}, hvori han beskrev en ny variant af Fitts' Lov. Denne variant udviser samme form som Shannon's Sætning \cite{goldberg2015} og er siden blevet accepteret som den mest udbredte \cite{guiard2011}. MacKenzie udførte beregninger på data fra allerede udførte forsøg og viste at hans formulering ville passe bedre på de tidligere indsamlede data. På trods af, at MacKenzie viste at hans formulering passede bedst på data fra tidligere forsøg, så har både \cite{drewes2010} og \cite{goldberg2015} vist at alle fire formuleringer ikke nødvendigvis passer til alle tilfælde af sværhedsgrader. Specielt noterede \cite{goldberg2015} at det kom an på sværhedsgraden, hvilken formulering der skulle bruges. MacKenzies var bedst at bruge ved høje sværhedsgrader, mens Meyers viste sig at være bedst anvendelig ved lavere sværhedsgrader.\\
 
 Der har i løbet af de seneste to år været en stigende interesse for Fitts' Lov, da flere forskere er begyndt at se på om den også kan bruges ved touch-skærme eller øje bevægelse \cite{hong2015} \cite{zhao2015} \cite{jiang2014} \cite{greene2014}. Mens dette er interessante områder at bruge Fitts' Lov på, så er der stadig et stort behov for at dokumentere, at Fitts' Lov, eller en af varianterne, rent faktisk passer til brugergrænsefladeinteraktion. Denne rapports mål er at indsamle og analysere data for bevægelser med mus eller touchpad. Vi vil genskabe tidligere udførte forsøg af \cite{accot1997} og \cite{goldberg2015}. Til udførelsen af forsøgene vil vi både lave et kontrolleret laboratorieeksperiment og et ukontrolleret eksperiment som foregår online. Vi vil analysere den indsamlede data ved brug af de fire allerede kendte formuleringer, men vil også kigge på brugernes bevægelsesbaner, fart- og hastighedsprofiler. Dette er interessante områder, da der ikke er lavet nogle større afrapporteringer herom, hvilket også er noteret af \cite{goldberg2015}.\\
 
@@ -597,17 +619,19 @@ Det er de fire matematiske modeller som vores pegeopgaveanalyse vil tage udgangs
 
 \addcontentsline{toc}{subsection}{AIC-analyse}
 \subsection*{AIC-analyse}
-AIC anslår kvaliteten af hver model, relativt til hver af de andre modeller. Hvilket vil sige at AIC ikke kan sige noget om kvaliteten af en model I absolut forstand, og derfor ikke kan vurdere hvor godt en model passer på dataen - kun den relative kvalitet af hver model.\\\\
+AIC anslår kvaliteten af hver model, relativt til hver af de andre modeller. Hvilket vil sige at AIC ikke kan sige noget om kvaliteten af en model I absolut forstand, og derfor ikke kan vurdere hvor godt en model passer på dataen - kun den relative kvalitet af modellerne.
 
-Tabel \ref{tab:table_analysis_aic1} viser AIC-værdier for alle pegeopgaver, og den relative forskel i mellem dem, for de fire modeller. Eftersom den absolute AIC-værdi ikke I sig selv siger noget, kigger vi kun på forskellen mellem dem. Tabel \ref{tab:table_analysis_aic2} viser AIC-værdier for alle pegeopgaver for 10 tilfældigt udvalgte personer, mens tabel \ref{tab:table_analysis_aic3} viser den relative forskel i mellem de fire modellers AIC-værdier for de samme personer.\\
+Tabel \ref{tab:table_analysis_aic1} viser AIC-værdier for de fire modeller tilpasset til alle testdeltageres pegeopgaver, og den relative forskel i mellem dem. Eftersom den absolute AIC-værdi ikke I sig selv siger noget, kigger vi kun på forskellen mellem dem. Tabel \ref{tab:table_analysis_aic2} viser AIC-værdier for alle pegeopgaver for 10 tilfældigt udvalgte personer, imens tabel \ref{tab:table_analysis_aic3} viser den relative forskel i mellem de fire modellers AIC-værdier for de samme personer.
 
-Når man ser på AIC-værdier, så er det den relative forskel i mellem værdierne for hver model som er vigtig. Vi kan bruge $\Delta_i$, som beskrivelse af forskellen mellem en models AIC-værdier og den mindste AIC-værdi,
-\begin{align} 
+Den relative forskel i mellem modellerne beskriver vi ved $\Delta_i$, hvilket er beregnet som forskellen i mellem AIC værdien for den $i$'te model og AIC værdien for modellen med den mindste AIC værdi, se ligning \ref{eq:delta_aic}. Denne måde at beregne de relative forskelle er foreslået i \cite{burnham2004}.
+\begin{align}
 \Delta_i = AIC_i - AIC_{min}
-\end{align}
-$\Delta$-værdierne vil derved være den information vi vil midste, ved at bruge en model fremfor en anden\cite{burnham2004}. Modeller med $\Delta_i \leq 2$ vi ikke kunne skælnes mellem, mens modeller med $\Delta_i > 10$ kan siges at være dårligere. Modeller med $4 \leq \Delta_i \leq 7$ kan ikke udelades, men kan heller ikke erstatte minimumsmodellen fuldt\cite{burnham2004}.\\
+\label{eq:delta_aic}
+\end{align} 
+De $\Delta$-værdier, som fremkommer af denne beregning vil være den information der mistes, ved at bruge en model fremfor en anden \cite{burnham2004}. Modeller med $\Delta_i \leq 2$ vil ikke kunne afskrives at kunne være lige så beskrivende som modellen med $AIC_{min}$, imens modeller med $\Delta_i > 10$ godt kan udelukkes fra fremtidige analyser af de pågældende data. Modeller med $4 \leq \Delta_i \leq 7$ kan ikke udelades, men kan heller ikke erstatte modellen med $AIC_{min}$ til fulde \cite{burnham2004}.
 
-Forskellene i tabel \ref{tab:table_analysis_aic1} er alle over 10 og vi kan derfor sige at Meyer's formulering beskriver den indsamlede data bedst. Forskellene for de 10 tilfældigt udvalgte personer, som ses i tabel \ref{tab:table_analysis_aic3}, ligger generelt lavere end forskellene i tabel \ref{tab:table_analysis_aic1}. På de fleste af personerne er har Meyer's, MacKenzie's og Fitts' en forskel som er mindre end eller lig med 2, hvilket gør at de beskriver den indsamlede data lige godt. Forskellene for Welford's formulering er generelt højere, dog kun få over 10, hvilket gør at vi ikke kan udelukke den som værende mere beskrivende for vores data, men at den ikke beskriver vores data så præcist som de tre andre. 
+De indbyrdes forskelle i tabel \ref{tab:table_analysis_aic1} er alle over 10 og vi kan derfor konkludere, at Meyer's formulering beskriver den indsamlede data bedst. Forskellene for de 10 tilfældigt udvalgte personer, som ses i tabel \ref{tab:table_analysis_aic3}, ligger generelt lavere end forskellene i tabel \ref{tab:table_analysis_aic1}. På de fleste af personerne er har Meyer's, MacKenzie's og Fitts' en forskel som er mindre end eller lig med 2, hvilket gør at de beskriver den indsamlede data lige godt. Forskellene for Welford's formulering er generelt højere, dog kun få over 10, hvilket gør, at vi ikke kan udelukke den som værende mere beskrivende for vores data, men at den ikke beskriver vores data så præcist som de tre andre. 
+
 \begin{table}[h]
 \centering
 \begin{tabular}{lll}
@@ -765,7 +789,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_welford}
-		\captionof{figure}{Welford's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Welford's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:welford_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -773,14 +797,14 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_fitt}
-		\captionof{figure}{Fitts' affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Fitts' affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:fitt_tunnel_line}
 	\end{minipage}
 \end{minipage}
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_meyer}
-		\captionof{figure}{Meyer's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Meyer's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:meyer_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -788,7 +812,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_mackenzie}
-		\captionof{figure}{Mackenzie's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Mackenzie's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:mackenzie_tunnel_line}
 	\end{minipage}
 \end{minipage}
@@ -796,7 +820,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 	\begin{minipage}[t]{\linewidth}
 		\centering
 		\includegraphics[width=0.5\textwidth]{images/plots/plot_model_tunnel_accot}
-		\captionof{figure}{Accot \& Zhai's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Accot \& Zhai's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:accot_tunnel_line}
 	\end{minipage}
 \end{minipage}
@@ -835,27 +859,42 @@ For vores spiralopgaver gjorde vi brug af $n=[1,2,3,4]$ og en bredde $w=[3.1,3.1
 \end{minipage}
 
 \newpage
-Ved at tilpasse Accot og Zhai's $ID$ til vores filtrerede og ukontrollerede datapunkter fandt vi frem til den matematiske model i ligning \ref{eq:accotspiral}. Det kan bemærkes, at de to konstante led for denne model er markant anderledes end de tilsvarende for de fire andre formuleringer.  AIC analysen i tabel \ref{tab:table_analysis_aic_spiral} viser, hvordan Accot og Zhai's formulering klarer sig væsentligt bedre end de fire andre. Dette er også, hvad vi forventede, da de formuleringer ikke er beregnet til denne type navigationsopgaver.
+Ved at tilpasse Accot og Zhai's $ID$ til vores 264 testdeltageres spiralopgaver fandt vi frem til den matematiske model i ligning \ref{eq:accotspiral}. Det kan bemærkes, at de to konstante led for denne model er markant anderledes end de tilsvarende for de fire andre formuleringer.  AIC analyserne i tabel \ref{tab:table_analysis_aic_spiral_all} og \ref{tab:table_analysis_spiral_mean} viser, hvordan Accot og Zhai's formulering klarer sig væsentligt bedre end de fire andre. Det gælder både for alle datapunkterne og for gennemsnits værdierne. Dette er også, hvad vi forventede, da de formuleringer ikke er beregnet til denne type navigationsopgaver, imens Accot og Zhai's er tiltænkt specifikt til denne type.
 \begin{align}
 \text{Accot \& Zhai: } T = 2097.09+553.25 \cdot \int_{2\pi}^{2\pi(n+1)}\frac{\sqrt{\left(\theta+w\right)^6+9\left(\theta+w\right)4}}{\left(\theta+2\pi+2\right)^3-\left(\theta+w\right)^3}d\theta
 \label{eq:accotspiral}
 \end{align}
 
-For at visualisere de fem modellers tilpasning til data, har vi taget gennemsnittet af tiden pr. $ID$ og tilpasset de fem formuleringer hertil. De tilsvarende fem affine kurver og datapunkter kan ses i figur \ref{fig:welford_spiral_line}-\ref{fig:accot_spiral_line}.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{lll}
-Model & AIC værdi & Forskel\\\hline
-Accot \& Zhai & 20225.67 & 0\\
-Meyer & 20240.39 & 14.72 \\
-Mackenzie & 20256.62 & 30.95\\
-Welford & 20259.13 & 33.46\\
-Fitts & 20262.07 & 36.4
-\end{tabular}
-\caption{AIC værdier og indbyrdes forskel med udgangspunkt i Fitts' som nulpunkt}
-\label{tab:table_analysis_aic_spiral}
-\end{table}
+Ligesom for vores tunnelopgaver har vi valgt at visualisere de fem modellers tilpasning til spiralopgaverne, ved at bruge gennemsnits tiden for hver $ID$ som datapunkter. De fem affine kurver og tilhørende fire datapunkter kan ses i figur \ref{fig:welford_spiral_line}-\ref{fig:accot_spiral_line}.\\\\
+\begin{minipage}[t]{\linewidth}
+	\begin{minipage}[t]{0.45\linewidth}
+		\begin{tabular}{lll}
+			Model & AIC værdi & Forskel\\\hline
+			Accot \& Zhai & 20225.67 & 0\\
+			Meyer & 20240.39 & 14.72 \\
+			Mackenzie & 20256.62 & 30.95\\
+			Fitts & 20262.07 & 36.4\\
+			Welford & 20613.96 & 388.29
+		\end{tabular}
+		\captionof{table}{AIC værdier for de 264 testdeltageres spiralopgaver. Deres indbyrdes forskel er beregnet med udgangspunkt i Accot \& Zhai's formulering som nulpunkt.}
+		\label{tab:table_analysis_aic_spiral_all}
+	\end{minipage}
+	\begin{minipage}[t]{0.1\linewidth}
+	~
+	\end{minipage}
+	\begin{minipage}[t]{0.45\linewidth}
+		\begin{tabular}{lll}
+			Model & AIC værdi & Forskel\\\hline
+			Accot \& Zhai & 61.91 & 0\\
+			Meyer & 68.12 & 6.21 \\
+			Mackenzie & 70.66 & 8.75\\
+			Fitts & 71.25 & 9.34\\
+			Welford & 79.11 & 17.2
+		\end{tabular}
+		\captionof{table}{AIC værdier for gennemsnittet af tiderne for de 264 testdeltageres spiralopgaver ved hvert $ID$. Deres indbyrdes forskel er beregnet med udgangspunkt iAccot \& Zhai's formulering som nulpunkt.}
+		\label{tab:table_analysis_aic_spiral_mean}
+	\end{minipage}
+\end{minipage}
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
