@@ -102,6 +102,38 @@ accot_spiral = filter(accot_spiral)
 #################
 # Define Models #
 #################
+# Single person #
+#################
+# Fitts'
+data = final_tasks_filtered[final_tasks_filtered$type == "pointing" & final_tasks_filtered$distance == 67 & final_tasks_filtered$width == 20,]
+data$id = log2((2 * data$distance) / (data$width))
+model_fitt_person = lm(time ~ id, data)
+remove(data)
+# Welford's
+data = final_tasks_filtered[final_tasks_filtered$type == "pointing" & final_tasks_filtered$distance == 67 & final_tasks_filtered$width == 20,]
+data$id = log2((data$distance + 0.5 * data$width) / (data$width))
+model_welford_person = lm(time ~ 0 + id, data)
+remove(data)
+# MacKenzie's
+data = final_tasks_filtered[final_tasks_filtered$type == "pointing" & final_tasks_filtered$distance == 67 & final_tasks_filtered$width == 20,]
+data$id = log2((data$distance + data$width) / (data$width))
+model_mackenzie_person = lm(time ~ id, data)
+remove(data)
+# Meyer's
+data = final_tasks_filtered[final_tasks_filtered$type == "pointing" & final_tasks_filtered$distance == 67 & final_tasks_filtered$width == 20,]
+data$id = sqrt((data$distance) / (data$width))
+model_meyer_person = lm(time ~ id, data)
+remove(data)
+
+print(paste("Fitts' AIC", "=", AIC(model_fitt_person), sep = " "))
+print(paste("Welford's AIC", "=", AIC(model_welford_person), sep = " "))
+print(paste("MacKenzie's AIC", "=", AIC(model_mackenzie_person), sep = " "))
+print(paste("Meyer's AIC", "=", AIC(model_meyer_person), sep = " "))
+
+
+#################
+# Define Models #
+#################
 #    Pointing   #
 #################
 # Fitts'
@@ -434,8 +466,8 @@ for (id in unique(points$task)) {
   temp = points[points$task == id,]
   p = p + geom_path(data = temp, aes(x = x, y = y, colour = id))
 }
-#ggsave(file = "images/plots/plot_analysis_qualitative.png")
-
+ggsave(file = "images/plots/plot_analysis_qualitative.png")
+print(p)
 ###############
 # Lorem Ipsum #
 ###############
