@@ -619,13 +619,18 @@ Det er de fire matematiske modeller som vores pegeopgaveanalyse vil tage udgangs
 
 \addcontentsline{toc}{subsection}{AIC-analyse}
 \subsection*{AIC-analyse}
-AIC anslår kvaliteten af hver model, relativt til hver af de andre modeller. Hvilket vil sige at AIC ikke kan sige noget om kvaliteten af en model I absolut forstand, og derfor ikke kan vurdere hvor godt en model passer på dataen - kun den relative kvalitet af hver model.
+AIC anslår kvaliteten af hver model, relativt til hver af de andre modeller. Hvilket vil sige at AIC ikke kan sige noget om kvaliteten af en model I absolut forstand, og derfor ikke kan vurdere hvor godt en model passer på dataen - kun den relative kvalitet af modellerne.
 
-Tabel \ref{tab:table_analysis_aic1} viser AIC-værdierne, og den relative forskel i mellem dem, for de fire modeller. Eftersom den absolute AIC-værdi ikke I sig selv siger noget, kigger vi kun på forskellen mellem dem.
+Tabel \ref{tab:table_analysis_aic1} viser AIC-værdier for de fire modeller tilpasset til alle testdeltageres pegeopgaver, og den relative forskel i mellem dem. Eftersom den absolute AIC-værdi ikke I sig selv siger noget, kigger vi kun på forskellen mellem dem. Tabel \ref{tab:table_analysis_aic2} viser AIC-værdier for alle pegeopgaver for 10 tilfældigt udvalgte personer, imens tabel \ref{tab:table_analysis_aic3} viser den relative forskel i mellem de fire modellers AIC-værdier for de samme personer.
 
-Det ses af tabel \ref{tab:table_analysis_aic1} at vi bruger modellen med den laveste værdi, altså Meyer's, som nulpunkt. Det ses deraf at forskellen mellem de tre modeller med den laveste AIC-værdi (Meyer, MacKenzie, Fitts) ikke er betydelig, I forhold til forskellen mellem disse og Welford's model.
+Den relative forskel i mellem modellerne beskriver vi ved $\Delta_i$, hvilket er beregnet som forskellen i mellem AIC værdien for den $i$'te model og AIC værdien for modellen med den mindste AIC værdi, se ligning \ref{eq:delta_aic}. Denne måde at beregne de relative forskelle er foreslået i \cite{burnham2004}.
+\begin{align}
+\Delta_i = AIC_i - AIC_{min}
+\label{eq:delta_aic}
+\end{align} 
+De $\Delta$-værdier, som fremkommer af denne beregning vil være den information der mistes, ved at bruge en model fremfor en anden \cite{burnham2004}. Modeller med $\Delta_i \leq 2$ vil ikke kunne afskrives at kunne være lige så beskrivende som modellen med $AIC_{min}$, imens modeller med $\Delta_i > 10$ godt kan udelukkes fra fremtidige analyser af de pågældende data. Modeller med $4 \leq \Delta_i \leq 7$ kan ikke udelades, men kan heller ikke erstatte modellen med $AIC_{min}$ til fulde \cite{burnham2004}.
 
-Det vi kan uddrage af denne analyse, er at vi har med nogle meget ensartede modeller at gøre, I forhold til hvordan de passer på dataen, dog med undtagelse af Welford's model.
+De indbyrdes forskelle i tabel \ref{tab:table_analysis_aic1} er alle over 10 og vi kan derfor konkludere, at Meyer's formulering beskriver den indsamlede data bedst. Forskellene for de 10 tilfældigt udvalgte personer, som ses i tabel \ref{tab:table_analysis_aic3}, ligger generelt lavere end forskellene i tabel \ref{tab:table_analysis_aic1}. På de fleste af personerne er har Meyer's, MacKenzie's og Fitts' en forskel som er mindre end eller lig med 2, hvilket gør at de beskriver den indsamlede data lige godt. Forskellene for Welford's formulering er generelt højere, dog kun få over 10, hvilket gør, at vi ikke kan udelukke den som værende mere beskrivende for vores data, men at den ikke beskriver vores data så præcist som de tre andre. 
 
 \begin{table}[h]
 \centering
@@ -636,8 +641,46 @@ Mackenzie & 92763.02 & 34.64 \\
 Fitts 	  & 92804.17 & 75.79 \\
 Welford   & 94510.34 & 1781.96
 \end{tabular}
-\caption{AIC værdier og indbyrdes forskel med udgangspunkt i Meyers som nulpunkt}
+\caption{AIC værdier for alle personers pegeopgaver og indbyrdes forskel med udgangspunkt i Meyers som nulpunkt}
 \label{tab:table_analysis_aic1}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lllll}
+Person & Meyer  & MacKenzie & Fitts  & Welford \\\hline
+107    & 353.94 & 355.67    & 356.61 & 357.17  \\
+108    & 338.06 & 339.06    & 339.56 & 351.69  \\
+56     & 357.82 & 358.15    & 358.42 & 359.68  \\
+246    & 357.16 & 357.35    & 357.56 & 366.10  \\
+68     & 343.20 & 344.42    & 344.86 & 352.58  \\
+140    & 325.15 & 325.07    & 325.12 & 350.23  \\
+25     & 330.44 & 333.60    & 334.84 & 335.92  \\
+164    & 349.84 & 351.44    & 352.02 & 354.79  \\
+255    & 355.91 & 356.39    & 356.76 & 355.85  \\
+59     & 360.84 & 360.66    & 360.79 & 365.70
+\end{tabular}
+\caption{AIC værdier for alle pegeopgaver for 10 tilfældigt udvalgte personer}
+\label{tab:table_analysis_aic2}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lllll}
+Person & Meyer  & MacKenzie & Fitts  & Welford \\\hline
+107    & 0      & 1.72      & 2.67   & 3.23    \\
+108    & 0      & 1.00      & 1.50   & 13.63   \\
+56     & 0      & 0.33      & 0.60   & 1.86    \\
+246    & 0      & 0.19      & 0.40   & 8,94    \\
+68     & 0      & 1.22      & 1.66   & 9.38    \\
+140    & 0.08   & 0         & 0.05   & 25.16   \\
+25     & 0      & 3.16      & 4.40   & 5.48    \\
+164    & 0      & 1.60      & 2.18   & 4.95    \\
+255    & 0.06   & 0.54      & 0.91   & 0       \\
+59     & 0.18   & 0         & 0.13   & 5.04
+\end{tabular}
+\caption{Indbyrdes forskel mellem AIC-værdierne for 10 tilfældigt udvalgte personer. Forskellen er udregnet med udgangspunkt i den model med lavest AIC-værdi.}
+\label{tab:table_analysis_aic3}
 \end{table}
 
 \addcontentsline{toc}{subsection}{Residualanalyse}
@@ -672,7 +715,7 @@ Det ses af figur \ref{fig:plot_residual_welford} at Welford's især er dårliger
 
 \addcontentsline{toc}{section}{Modelanalyse af navigationsopgaver}
 \section*{Modelanalyse af navigationsopgaver}
-I vores forsøg havde vi, udover pegeopgaven, også tunnel- og spiralopgaver. Vi vil i dette afsnit forsøge at tilpasse de fire formuleringer af Fitts lov på vores navigationsopgaver, velvidende om, at det ikke er en type opgaver de er beregnet til. Accot og Zhai har i deres artikel \cite{accot1997} undersøgt lignende navigationsopgaver og fundet et $ID$ specifikt for både tunnel- og spiralopgaver, hvilket vi vil bruge til at sammenligne med de fire formuleringer.
+I vores forsøg havde vi, udover pegeopgaven, også tunnel- og spiralopgaver. Vi vil i dette afsnit forsøge at tilpasse de fire formuleringer af Fitts lov på vores navigationsopgaver, velvidende om, at det ikke er en type opgaver de er beregnet til. Accot og Zhai har undersøgt lignende navigationsopgaver og fundet et $ID$ specifikt for både tunnel- og spiralopgaver, hvilket vi vil bruge til at sammenligne med de fire formuleringer\cite{accot1997}.
 
 \addcontentsline{toc}{subsection}{Analyse af tunnelopgaver}
 \subsection*{Analyse af tunnelopgaver}
@@ -693,48 +736,44 @@ Accot og Zhai beskriver i deres artikel \cite{accot1997}, hvordan en indsnævren
 \text{Accot \& Zhai: } T = 6112.40+47.77 \cdot \left(\frac{A}{W_2-W_1}\cdot\ln\left(\frac{W_2}{W_1 }\right)\right)
 \end{align*}
 
-Det kan bemærkes, at den primære forskel imellem Accot og Zhai's formulering og de fire andre er det multiplikative led, $b$. Da $ID_{NT}$ antager væsentligt højere værdier end de fire andre $ID$'er, så er $b$ også tilsvarende mindre. 
+Det kan bemærkes, at den primære forskel imellem Accot og Zhai's formulering og de fire andre er det multiplikative led, $b$. Da $ID_{NT}$ antager væsentligt højere værdier end de fire andre $ID$'er, så er $b$ også tilsvarende mindre. For at visualisere de fem formuleringers tilpasning til dataene har vi valgt, at beregne gennemsnitstiden for alle testdeltagerne per $ID$. Dette giver anledning til fire datapunkter, ét for hver tunnelopgave, som kan ses i figur \ref{fig:welford_tunnel_line}, \ref{fig:fitt_tunnel_line}, \ref{fig:meyer_tunnel_line},\ref{fig:mackenzie_tunnel_line} og \ref{fig:accot_tunnel_line} sammen med de tilpassede affine kurver. På $x$-aksen er modellernes respektive $ID$ imens tiden, $T$ er angivet ved $y$-aksen. 
 
-
-
-De fem affine modeller har vi valgt at plotte i forhold til gennemsnittet af tiden for hvert $ID$, for bedre at visualisere, modellernes præcision. Plottene kan ses i figur \ref{fig:welford_tunnel_line}, \ref{fig:fitt_tunnel_line}, \ref{fig:meyer_tunnel_line},\ref{fig:mackenzie_tunnel_line} og \ref{fig:accot_tunnel_line}. På $x$-aksen er modellens respektive $ID$ imens tiden, $T$, for at løse en opgave er givet ved $y$-aksen.
-
-Af graferne ser det ud til, at Welfords klarer sig markant dårligere end de fire andre formuleringer, som til gengæld ikke har nogen umiddelbar forskel. AIC analysen, \ref{tab:table_analysis_aic_tunnel} af de fem modeller viser netop dette, hvor Meyer's model klarer sig bedst, men med utrolig lille indbyrdes forskel imellem de bedste fire modeller. Kun Welford's formulering har en relativt markant dårligere præcision til dataene.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{lll}
-Model & AIC værdi & Forskel\\\hline
-Meyer & 20549.61 & 0 \\
-Accot \& Zhai & 20549.62 & 0.01\\
-Fitts & 20549.68 & 0.07\\
-Mackenzie & 20549.68 & 0.07 \\
-Welford & 20558.46 & 8.84
-\end{tabular}
-\caption{AIC værdier for de 264 testdeltageres tunnelopgaver. Deres indbyrdes forskel er beregnet med udgangspunkt i Meyer's formulering som nulpunkt.}
-\label{tab:table_analysis_aic_tunnel}
-\end{table}
-
-\begin{table}[h]
-\centering
-\begin{tabular}{lll}
-Model & AIC værdi & Forskel\\\hline
-Meyer & 33.68 & 0 \\
-Accot \& Zhai & 38.17 & 4.49\\
-Mackenzie & 46.58 & 12.9 \\
-Fitts & 46.87 & 13.19\\
-Welford & 64.97 & 31.29
-\end{tabular}
-\caption{AIC værdier for gennemsnittet af tiderne for de 264 testdeltageres tunnelopgaver ved hvert $ID$. Deres indbyrdes forskel er beregnet med udgangspunkt i Meyer's formulering som nulpunkt.}
-\label{tab:table_analysis_aic_tunnel}
-\end{table}
-
-Hvis vi forsøger at tilpasse Accot og Zhai's formulering til vores kontrollerede testpersoners individuelle data, så kan det vises, hvor afvigende vores data for disse opgaver er. Figur \ref{fig:navigationtest1} viser den traditionelle stigning i tiden med tilsvarende stigning i $ID$, men på figur \ref{fig:navigationtest2} kan det ses, hvordan datapunkterne opfører sig stik modsat. Det vil sige, at testperson 9 var hurtigere til at klare opgaverne i takt med, at de blev sværere.
+Af graferne ser det ud til, at Welfords formulering klarer sig markant dårligere i at beskrive vores data end de fire andre formuleringer. For at undersøge dette har vi lavet AIC analyse af formuleringerne tilpasset det fule datasæt, \ref{tab:table_analysis_aic_tunnel_all}, og gennemsnits datapunkterne, \ref{tab:table_analysis_aic_tunnel_mean}. Begge tabeller viser en klar tendens i og med, at Meyers formulering klarer sig bedst imens Welfords klarer sig dårligst i at beskrive vores data. Begge tabeller viser den samme rækkefølge for formuleringernes indbyrdes placering, men de relative forskelle varierer.\\\\
+\begin{minipage}[t]{\linewidth} 
+	\begin{minipage}[t]{0.45\linewidth}
+			\begin{tabular}{lll}
+				Model & AIC værdi & Forskel\\\hline
+				Meyer & 20549.61 & 0 \\
+				Accot \& Zhai & 20549.62 & 0.01\\
+				Mackenzie & 20549.68 & 0.07 \\
+				Fitts & 20549.68 & 0.07\\
+				Welford & 20558.46 & 8.84
+			\end{tabular}
+			\captionof{table}{AIC værdier for de 264 testdeltageres tunnelopgaver. Deres indbyrdes forskel er beregnet med udgangspunkt i Meyer's formulering som nulpunkt.}
+			\label{tab:table_analysis_aic_tunnel_all}
+	\end{minipage}
+	\begin{minipage}[t]{0.1\linewidth}
+	~
+	\end{minipage}
+	\begin{minipage}[t]{0.45\linewidth}
+			\begin{tabular}{lll}
+				Model & AIC værdi & Forskel\\\hline
+				Meyer & 33.68 & 0 \\
+				Accot \& Zhai & 38.17 & 4.49\\
+				Mackenzie & 46.58 & 12.9 \\
+				Fitts & 46.87 & 13.19\\
+				Welford & 64.97 & 31.29
+			\end{tabular}
+			\captionof{table}{AIC værdier for gennemsnittet af tiderne for de 264 testdeltageres tunnelopgaver ved hvert $ID$. Deres indbyrdes forskel er beregnet med udgangspunkt i Meyer's formulering som nulpunkt.}
+			\label{tab:table_analysis_aic_tunnel_mean}
+	\end{minipage}
+\end{minipage}\\\\
+Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er det ikke den, som beskriver vores data bedst. Dette kan være på grund af det relativt lave antal af tunnelopgaver, kun 4. Endvidere kan det være på grund af store forskelle i vores testdeltageres løsninger af opgaverne. Hvis vi tilpasser Accot og Zhai's formulering til vores kontrollerede testpersoners individuelle data, så kan det visualiseres, hvor stor afvigelse der er testdeltagerne imellem. Figur \ref{fig:navigationtest1} viser den traditionelle stigning i tiden med tilsvarende stigning i $ID$, men på figur \ref{fig:navigationtest2} kan det ses, hvordan datapunkterne opfører sig stik modsat. Det vil sige, at testperson 9 var hurtigere til at klare opgaverne i takt med, at de blev sværere.
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_test_navigation_1}
-		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 7, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 7's 4 tunnelopgaver, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:navigationtest1}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -742,7 +781,7 @@ Hvis vi forsøger at tilpasse Accot og Zhai's formulering til vores kontrollered
 	\end{minipage}
 	\begin{minipage}[b]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_test_navigation_2}
-		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 9, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 9's 4 tunnelopgaver, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:navigationtest2}
 	\end{minipage}
 \end{minipage}
@@ -750,7 +789,7 @@ Hvis vi forsøger at tilpasse Accot og Zhai's formulering til vores kontrollered
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_welford}
-		\captionof{figure}{Welford's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Welford's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:welford_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -758,14 +797,14 @@ Hvis vi forsøger at tilpasse Accot og Zhai's formulering til vores kontrollered
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_fitt}
-		\captionof{figure}{Fitts' affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Fitts' affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:fitt_tunnel_line}
 	\end{minipage}
 \end{minipage}
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_meyer}
-		\captionof{figure}{Meyer's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Meyer's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:meyer_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -773,7 +812,7 @@ Hvis vi forsøger at tilpasse Accot og Zhai's formulering til vores kontrollered
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_mackenzie}
-		\captionof{figure}{Mackenzie's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Mackenzie's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:mackenzie_tunnel_line}
 	\end{minipage}
 \end{minipage}
@@ -781,7 +820,7 @@ Hvis vi forsøger at tilpasse Accot og Zhai's formulering til vores kontrollered
 	\begin{minipage}[t]{\linewidth}
 		\centering
 		\includegraphics[width=0.5\textwidth]{images/plots/plot_model_tunnel_accot}
-		\captionof{figure}{Accot \& Zhai's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Accot \& Zhai's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:accot_tunnel_line}
 	\end{minipage}
 \end{minipage}
@@ -820,27 +859,42 @@ For vores spiralopgaver gjorde vi brug af $n=[1,2,3,4]$ og en bredde $w=[3.1,3.1
 \end{minipage}
 
 \newpage
-Ved at tilpasse Accot og Zhai's $ID$ til vores filtrerede og ukontrollerede datapunkter fandt vi frem til den matematiske model i ligning \ref{eq:accotspiral}. Det kan bemærkes, at de to konstante led for denne model er markant anderledes end de tilsvarende for de fire andre formuleringer.  AIC analysen i tabel \ref{tab:table_analysis_aic_spiral} viser, hvordan Accot og Zhai's formulering klarer sig væsentligt bedre end de fire andre. Dette er også, hvad vi forventede, da de formuleringer ikke er beregnet til denne type navigationsopgaver.
+Ved at tilpasse Accot og Zhai's $ID$ til vores 264 testdeltageres spiralopgaver fandt vi frem til den matematiske model i ligning \ref{eq:accotspiral}. Det kan bemærkes, at de to konstante led for denne model er markant anderledes end de tilsvarende for de fire andre formuleringer.  AIC analyserne i tabel \ref{tab:table_analysis_aic_spiral_all} og \ref{tab:table_analysis_spiral_mean} viser, hvordan Accot og Zhai's formulering klarer sig væsentligt bedre end de fire andre. Det gælder både for alle datapunkterne og for gennemsnits værdierne. Dette er også, hvad vi forventede, da de formuleringer ikke er beregnet til denne type navigationsopgaver, imens Accot og Zhai's er tiltænkt specifikt til denne type.
 \begin{align}
 \text{Accot \& Zhai: } T = 2097.09+553.25 \cdot \int_{2\pi}^{2\pi(n+1)}\frac{\sqrt{\left(\theta+w\right)^6+9\left(\theta+w\right)4}}{\left(\theta+2\pi+2\right)^3-\left(\theta+w\right)^3}d\theta
 \label{eq:accotspiral}
 \end{align}
 
-For at visualisere de fem modellers tilpasning til data, har vi taget gennemsnittet af tiden pr. $ID$ og tilpasset de fem formuleringer hertil. De tilsvarende fem affine kurver og datapunkter kan ses i figur \ref{fig:welford_spiral_line}-\ref{fig:accot_spiral_line}.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{lll}
-Model & AIC værdi & Forskel\\\hline
-Accot \& Zhai & 20225.67 & 0\\
-Meyer & 20240.39 & 14.72 \\
-Mackenzie & 20256.62 & 30.95\\
-Welford & 20259.13 & 33.46\\
-Fitts & 20262.07 & 36.4
-\end{tabular}
-\caption{AIC værdier og indbyrdes forskel med udgangspunkt i Fitts' som nulpunkt}
-\label{tab:table_analysis_aic_spiral}
-\end{table}
+Ligesom for vores tunnelopgaver har vi valgt at visualisere de fem modellers tilpasning til spiralopgaver, ved at bruge gennemsnits tiden for hver $ID$ som datapunkter. De fem affine kurver og tilhørende fire datapunkter kan ses i figur \ref{fig:welford_spiral_line}-\ref{fig:accot_spiral_line}.\\\\
+\begin{minipage}[t]{\linewidth}
+	\begin{minipage}[t]{0.45\linewidth}
+		\begin{tabular}{lll}
+			Model & AIC værdi & Forskel\\\hline
+			Accot \& Zhai & 20225.67 & 0\\
+			Meyer & 20240.39 & 14.72 \\
+			Mackenzie & 20256.62 & 30.95\\
+			Fitts & 20262.07 & 36.4\\
+			Welford & 20613.96 & 388.29
+		\end{tabular}
+		\captionof{table}{AIC værdier for de 264 testdeltageres spiralopgaver. Deres indbyrdes forskel er beregnet med udgangspunkt i Accot \& Zhai's formulering som nulpunkt.}
+		\label{tab:table_analysis_aic_spiral_all}
+	\end{minipage}
+	\begin{minipage}[t]{0.1\linewidth}
+	~
+	\end{minipage}
+	\begin{minipage}[t]{0.45\linewidth}
+		\begin{tabular}{lll}
+			Model & AIC værdi & Forskel\\\hline
+			Accot \& Zhai & 61.91 & 0\\
+			Meyer & 68.12 & 6.21 \\
+			Mackenzie & 70.66 & 8.75\\
+			Fitts & 71.25 & 9.34\\
+			Welford & 79.11 & 17.2
+		\end{tabular}
+		\captionof{table}{AIC værdier for gennemsnittet af tiderne for de 264 testdeltageres spiralopgaver ved hvert $ID$. Deres indbyrdes forskel er beregnet med udgangspunkt iAccot \& Zhai's formulering som nulpunkt.}
+		\label{tab:table_analysis_aic_spiral_mean}
+	\end{minipage}
+\end{minipage}
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
@@ -993,6 +1047,10 @@ I vores analyse fandt vi frem til værdien af $a$ og $b$ i hver af de fire formu
 Da vi har baseret vores forsøg på \cite{goldberg2015} vil vi også sammenligne vores resultater med deres. \cite{goldberg2015} fandt frem til at Meyer's var den bedste formel, når sværhedsgraden var lille, mens Fitts' formulering var den bedste, når sværhedsgraden var stor. Deres resultater var inkonsistente derimellem. Når de kiggede på MacKenzie's formulering, så var den klart bedre end både Fitts' og Meyer's. Dette modsiger vores resultater, hvor Meyer's var bedst. Grunden til dette kan være at vi generelt kigger på et område, hvor små variationer i dataen gør en stor forskel for hvilken formulering der passer bedst. Da vi på samme tid har med mennesker at gøre, så er der mange variable som kan have en indflydelse på hvor hurtigt de kan gøre det.\\
 
 Generelt skal vi huske, at Fitts' lov beskriver komplekse menneskelige motoriske evner. Der vil derfor altid være forskel i indsamlede data, da forskellige personer har forskellige motoriske evner. Både indre og ydre faktorer kan have en effekt på hvor hurtigt en person kan udføre en given opgave. Der har siden Fitts' originale artikel blev udgivet i 1954 været lavet mange forsøg, for at bevise eller forbedre Fitts' lov. Denne er dog langt fra perfekt og skal derfor måske mere ses som en rettesnor, snarere end en egentlig lov.
+
+\begin{itemize}
+\item{Diskuter AIC imod AICc for gennemsnits dataene}
+\end{itemize}
 
 \addcontentsline{toc}{chapter}{Konklusion}
 \chapter*{Konklusion}
