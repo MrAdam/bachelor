@@ -837,14 +837,13 @@ For vores spiralopgaver gjorde vi brug af $n=[1,2,3,4]$ og en bredde $w=[3.1,3.1
 \end{minipage}
 
 \newpage
-Ved at tilpasse Accot og Zhai's $ID$ til vores filtrerede og ukontrollerede datapunkter fandt vi frem til den matematiske model i ligning \ref{eq:accotspiral}. Det kan bemærkes, at de to konstante led for denne model er markant anderledes end de tilsvarende for de fire andre formuleringer.  AIC analysen i tabel \ref{tab:table_analysis_aic_spiral} viser, hvordan Accot og Zhai's formulering klarer sig væsentligt bedre end de fire andre. Dette er også, hvad vi forventede, da de formuleringer ikke er beregnet til denne type navigationsopgaver.
+Ved at tilpasse Accot og Zhai's $ID$ til vores 264 testdeltageres spiralopgaver fandt vi frem til den matematiske model i ligning \ref{eq:accotspiral}. Det kan bemærkes, at de to konstante led for denne model er markant anderledes end de tilsvarende for de fire andre formuleringer.  AIC analyserne i tabel \ref{tab:table_analysis_aic_spiral_all} og \ref{tab:table_analysis_spiral_mean} viser, hvordan Accot og Zhai's formulering klarer sig væsentligt bedre end de fire andre. Det gælder både for alle datapunkterne og for gennemsnits værdierne. Dette er også, hvad vi forventede, da de formuleringer ikke er beregnet til denne type navigationsopgaver, imens Accot og Zhai's er tiltænkt specifikt til denne type.
 \begin{align}
 \text{Accot \& Zhai: } T = 2097.09+553.25 \cdot \int_{2\pi}^{2\pi(n+1)}\frac{\sqrt{\left(\theta+w\right)^6+9\left(\theta+w\right)4}}{\left(\theta+2\pi+2\right)^3-\left(\theta+w\right)^3}d\theta
 \label{eq:accotspiral}
 \end{align}
 
-For at visualisere de fem modellers tilpasning til data, har vi taget gennemsnittet af tiden pr. $ID$ og tilpasset de fem formuleringer hertil. De tilsvarende fem affine kurver og datapunkter kan ses i figur \ref{fig:welford_spiral_line}-\ref{fig:accot_spiral_line}.
-
+Ligesom for vores tunnelopgaver har vi valgt at visualisere de fem modellers tilpasning til spiralopgaver, ved at bruge gennemsnits tiden for hver $ID$ som datapunkter. De fem affine kurver og tilhørende fire datapunkter kan ses i figur \ref{fig:welford_spiral_line}-\ref{fig:accot_spiral_line}.\\
 \begin{minipage}[t]{\linewidth}
 	\begin{minipage}[t]{0.45\linewidth}
 		\begin{tabular}{lll}
