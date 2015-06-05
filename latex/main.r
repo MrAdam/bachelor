@@ -134,14 +134,14 @@ data$id = log2((2 * data$distance) / (data$width))
 model_fitt_test = lm(time ~ id, data)
 ggplot(model_fitt_test, aes(x = id, y = time)) + 
   geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 1")
- ggsave(file = "images/plots/plot_model_test_1.png")
+# ggsave(file = "images/plots/plot_model_test_1.png")
 remove(data, model_fitt_test)
 data = test_tasks[test_tasks$type == "pointing" & test_tasks$person == 11,]
 data$id = log2((2 * data$distance) / (data$width))
 model_fitt_test = lm(time ~ id, data)
 ggplot(model_fitt_test, aes(x = id, y = time)) + 
   geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 3")
- ggsave(file = "images/plots/plot_model_test_2.png")
+# ggsave(file = "images/plots/plot_model_test_2.png")
 remove(data, model_fitt_test)
 # Unfiltered
 data = test_tasks[test_tasks$type == "pointing" & test_tasks$person == 15,]
@@ -149,7 +149,7 @@ data$id = log2((2 * data$distance) / (data$width))
 model_fitt_test = lm(time ~ id, data)
 ggplot(model_fitt_test, aes(x = id, y = time)) + 
   geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 7 - Ufiltreret")
- ggsave(file = "images/plots/plot_model_test_comparison_unfiltered.png")
+# ggsave(file = "images/plots/plot_model_test_comparison_unfiltered.png")
 remove(data, model_fitt_test)
 # Filtered
 data = test_tasks_filtered[test_tasks_filtered$type == "pointing" & test_tasks_filtered$person == 15,]
@@ -157,7 +157,7 @@ data$id = log2((2 * data$distance) / (data$width))
 model_fitt_test_filtered = lm(time ~ id, data)
 ggplot(model_fitt_test_filtered, aes(x = id, y = time)) + 
   geom_point() + stat_smooth(method = "lm", formula = y ~ x, se = F) + labs(title = "Testperson 7 - Filtreret")
- ggsave(file = "images/plots/plot_model_test_comparison_filtered.png")
+# ggsave(file = "images/plots/plot_model_test_comparison_filtered.png")
 remove(data, model_fitt_test_filtered)
 
 ###################
@@ -399,6 +399,13 @@ print(paste("Welford's AIC", "=", AIC(model_welford_spiral2), sep = " "))
 print(paste("MacKenzie's AIC", "=", AIC(model_mackenzie_spiral2), sep = " "))
 print(paste("Meyer's AIC", "=", AIC(model_meyer_spiral2), sep = " "))
 print(paste("Accot's AIC", "=", AIC(model_accot_spiral2), sep = " "))
+
+# sprialing AIC 2
+print(paste("Fitts' AIC", "=", AIC(model_fitt_spiral), sep = " "))
+print(paste("Welford's AIC", "=", AIC(model_welford_spiral), sep = " "))
+print(paste("MacKenzie's AIC", "=", AIC(model_mackenzie_spiral), sep = " "))
+print(paste("Meyer's AIC", "=", AIC(model_meyer_spiral), sep = " "))
+print(paste("Accot's AIC", "=", AIC(model_accot_spiral), sep = " "))
 
 ####################
 # Spiraling plot   #

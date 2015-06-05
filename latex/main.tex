@@ -601,14 +601,14 @@ AIC anslår kvaliteten af hver model, relativt til hver af de andre modeller. Hv
 
 Tabel \ref{tab:table_analysis_aic1} viser AIC-værdier for de fire modeller tilpasset til alle testdeltageres pegeopgaver, og den relative forskel i mellem dem. Eftersom den absolute AIC-værdi ikke I sig selv siger noget, kigger vi kun på forskellen mellem dem. Tabel \ref{tab:table_analysis_aic2} viser AIC-værdier for alle pegeopgaver for 10 tilfældigt udvalgte personer, imens tabel \ref{tab:table_analysis_aic3} viser den relative forskel i mellem de fire modellers AIC-værdier for de samme personer.
 
-Den relative forskel i mellem modellerne beskriver vi ved $\Delta_i$, hvilket er beregnet som forskellen i mellem AIC værdien for den $i$'te model og AIC værdien for modellen med den mindste AIC værdi, se ligning \ref{delta_aic}. Denne måde at beregne de relative forskelle er foreslået i \cite{burnham2004}.
+Den relative forskel i mellem modellerne beskriver vi ved $\Delta_i$, hvilket er beregnet som forskellen i mellem AIC værdien for den $i$'te model og AIC værdien for modellen med den mindste AIC værdi, se ligning \ref{eq:delta_aic}. Denne måde at beregne de relative forskelle er foreslået i \cite{burnham2004}.
 \begin{align}
 \Delta_i = AIC_i - AIC_{min}
 \label{eq:delta_aic}
 \end{align} 
 De $\Delta$-værdier, som fremkommer af denne beregning vil være den information der mistes, ved at bruge en model fremfor en anden \cite{burnham2004}. Modeller med $\Delta_i \leq 2$ vil ikke kunne afskrives at kunne være lige så beskrivende som modellen med $AIC_{min}$, imens modeller med $\Delta_i > 10$ godt kan udelukkes fra fremtidige analyser af de pågældende data. Modeller med $4 \leq \Delta_i \leq 7$ kan ikke udelades, men kan heller ikke erstatte modellen med $AIC_{min}$ til fulde \cite{burnham2004}.
 
-De indbyrdes forskelle i tabel \ref{tab:table_analysis_aic1} er alle over 10 og vi kan derfor konkludere, at Meyer's formulering beskriver den indsamlede data bedst. Forskellene for de 10 tilfældigt udvalgte personer, som ses i tabel \ref{tab_table_analysis_aic3}, ligger generelt lavere end forskellene i tabel \ref{tab_table_analysis_aic1}. På de fleste af personerne er har Meyer's, MacKenzie's og Fitts' en forskel som er mindre end eller lig med 2, hvilket gør at de beskriver den indsamlede data lige godt. Forskellene for Welford's formulering er generelt højere, dog kun få over 10, hvilket gør, at vi ikke kan udelukke den som værende mere beskrivende for vores data, men at den ikke beskriver vores data så præcist som de tre andre. 
+De indbyrdes forskelle i tabel \ref{tab:table_analysis_aic1} er alle over 10 og vi kan derfor konkludere, at Meyer's formulering beskriver den indsamlede data bedst. Forskellene for de 10 tilfældigt udvalgte personer, som ses i tabel \ref{tab:table_analysis_aic3}, ligger generelt lavere end forskellene i tabel \ref{tab:table_analysis_aic1}. På de fleste af personerne er har Meyer's, MacKenzie's og Fitts' en forskel som er mindre end eller lig med 2, hvilket gør at de beskriver den indsamlede data lige godt. Forskellene for Welford's formulering er generelt højere, dog kun få over 10, hvilket gør, at vi ikke kan udelukke den som værende mere beskrivende for vores data, men at den ikke beskriver vores data så præcist som de tre andre. 
 
 \begin{table}[h]
 \centering
@@ -767,7 +767,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_welford}
-		\captionof{figure}{Welford's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Welford's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:welford_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -775,14 +775,14 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_fitt}
-		\captionof{figure}{Fitts' affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Fitts' affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:fitt_tunnel_line}
 	\end{minipage}
 \end{minipage}
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_meyer}
-		\captionof{figure}{Meyer's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Meyer's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:meyer_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -790,7 +790,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_mackenzie}
-		\captionof{figure}{Mackenzie's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Mackenzie's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:mackenzie_tunnel_line}
 	\end{minipage}
 \end{minipage}
@@ -798,7 +798,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 	\begin{minipage}[t]{\linewidth}
 		\centering
 		\includegraphics[width=0.5\textwidth]{images/plots/plot_model_tunnel_accot}
-		\captionof{figure}{Accot \& Zhai's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Accot \& Zhai's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:accot_tunnel_line}
 	\end{minipage}
 \end{minipage}
@@ -845,19 +845,35 @@ Ved at tilpasse Accot og Zhai's $ID$ til vores filtrerede og ukontrollerede data
 
 For at visualisere de fem modellers tilpasning til data, har vi taget gennemsnittet af tiden pr. $ID$ og tilpasset de fem formuleringer hertil. De tilsvarende fem affine kurver og datapunkter kan ses i figur \ref{fig:welford_spiral_line}-\ref{fig:accot_spiral_line}.
 
-\begin{table}[h]
-\centering
-\begin{tabular}{lll}
-Model & AIC værdi & Forskel\\\hline
-Accot \& Zhai & 20225.67 & 0\\
-Meyer & 20240.39 & 14.72 \\
-Mackenzie & 20256.62 & 30.95\\
-Welford & 20259.13 & 33.46\\
-Fitts & 20262.07 & 36.4
-\end{tabular}
-\caption{AIC værdier og indbyrdes forskel med udgangspunkt i Fitts' som nulpunkt}
-\label{tab:table_analysis_aic_spiral}
-\end{table}
+\begin{minipage}[t]{\linewidth}
+	\begin{minipage}[t]{0.45\linewidth}
+		\begin{tabular}{lll}
+			Model & AIC værdi & Forskel\\\hline
+			Accot \& Zhai & 20225.67 & 0\\
+			Meyer & 20240.39 & 14.72 \\
+			Mackenzie & 20256.62 & 30.95\\
+			Fitts & 20262.07 & 36.4\\
+			Welford & 20613.96 & 388.29
+		\end{tabular}
+		\captionof{table}{AIC værdier for de 264 testdeltageres spiralopgaver. Deres indbyrdes forskel er beregnet med udgangspunkt i Accot \& Zhai's formulering som nulpunkt.}
+		\label{tab:table_analysis_aic_spiral_all}
+	\end{minipage}
+	\begin{minipage}[t]{0.1\linewidth}
+	~
+	\end{minipage}
+	\begin{minipage}[t]{0.45\linewidth}
+		\begin{tabular}{lll}
+			Model & AIC værdi & Forskel\\\hline
+			Accot \& Zhai & 61.91 & 0\\
+			Meyer & 68.12 & 6.21 \\
+			Mackenzie & 70.66 & 8.75\\
+			Fitts & 71.25 & 9.34\\
+			Welford & 79.11 & 17.2
+		\end{tabular}
+		\captionof{table}{AIC værdier for gennemsnittet af tiderne for de 264 testdeltageres spiralopgaver ved hvert $ID$. Deres indbyrdes forskel er beregnet med udgangspunkt iAccot \& Zhai's formulering som nulpunkt.}
+		\label{tab:table_analysis_aic_spiral_mean}
+	\end{minipage}
+\end{minipage}
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
