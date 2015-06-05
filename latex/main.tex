@@ -671,48 +671,44 @@ Accot og Zhai beskriver i deres artikel \cite{accot1997}, hvordan en indsnævren
 \text{Accot \& Zhai: } T = 6112.40+47.77 \cdot \left(\frac{A}{W_2-W_1}\cdot\ln\left(\frac{W_2}{W_1 }\right)\right)
 \end{align*}
 
-Det kan bemærkes, at den primære forskel imellem Accot og Zhai's formulering og de fire andre er det multiplikative led, $b$. Da $ID_{NT}$ antager væsentligt højere værdier end de fire andre $ID$'er, så er $b$ også tilsvarende mindre. 
+Det kan bemærkes, at den primære forskel imellem Accot og Zhai's formulering og de fire andre er det multiplikative led, $b$. Da $ID_{NT}$ antager væsentligt højere værdier end de fire andre $ID$'er, så er $b$ også tilsvarende mindre. For at visualisere de fem formuleringers tilpasning til dataene har vi valgt, at beregne gennemsnitstiden for alle testdeltagerne per $ID$. Dette giver anledning til fire datapunkter, ét for hver tunnelopgave, som kan ses i figur \ref{fig:welford_tunnel_line}, \ref{fig:fitt_tunnel_line}, \ref{fig:meyer_tunnel_line},\ref{fig:mackenzie_tunnel_line} og \ref{fig:accot_tunnel_line} sammen med de tilpassede affine kurver. På $x$-aksen er modellernes respektive $ID$ imens tiden, $T$ er angivet ved $y$-aksen. 
 
-
-
-De fem affine modeller har vi valgt at plotte i forhold til gennemsnittet af tiden for hvert $ID$, for bedre at visualisere, modellernes præcision. Plottene kan ses i figur \ref{fig:welford_tunnel_line}, \ref{fig:fitt_tunnel_line}, \ref{fig:meyer_tunnel_line},\ref{fig:mackenzie_tunnel_line} og \ref{fig:accot_tunnel_line}. På $x$-aksen er modellens respektive $ID$ imens tiden, $T$, for at løse en opgave er givet ved $y$-aksen.
-
-Af graferne ser det ud til, at Welfords klarer sig markant dårligere end de fire andre formuleringer, som til gengæld ikke har nogen umiddelbar forskel. AIC analysen, \ref{tab:table_analysis_aic_tunnel} af de fem modeller viser netop dette, hvor Meyer's model klarer sig bedst, men med utrolig lille indbyrdes forskel imellem de bedste fire modeller. Kun Welford's formulering har en relativt markant dårligere præcision til dataene.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{lll}
-Model & AIC værdi & Forskel\\\hline
-Meyer & 20549.61 & 0 \\
-Accot \& Zhai & 20549.62 & 0.01\\
-Fitts & 20549.68 & 0.07\\
-Mackenzie & 20549.68 & 0.07 \\
-Welford & 20558.46 & 8.84
-\end{tabular}
-\caption{AIC værdier for de 264 testdeltageres tunnelopgaver. Deres indbyrdes forskel er beregnet med udgangspunkt i Meyer's formulering som nulpunkt.}
-\label{tab:table_analysis_aic_tunnel}
-\end{table}
-
-\begin{table}[h]
-\centering
-\begin{tabular}{lll}
-Model & AIC værdi & Forskel\\\hline
-Meyer & 33.68 & 0 \\
-Accot \& Zhai & 38.17 & 4.49\\
-Mackenzie & 46.58 & 12.9 \\
-Fitts & 46.87 & 13.19\\
-Welford & 64.97 & 31.29
-\end{tabular}
-\caption{AIC værdier for gennemsnittet af tiderne for de 264 testdeltageres tunnelopgaver ved hvert $ID$. Deres indbyrdes forskel er beregnet med udgangspunkt i Meyer's formulering som nulpunkt.}
-\label{tab:table_analysis_aic_tunnel}
-\end{table}
-
-Hvis vi forsøger at tilpasse Accot og Zhai's formulering til vores kontrollerede testpersoners individuelle data, så kan det vises, hvor afvigende vores data for disse opgaver er. Figur \ref{fig:navigationtest1} viser den traditionelle stigning i tiden med tilsvarende stigning i $ID$, men på figur \ref{fig:navigationtest2} kan det ses, hvordan datapunkterne opfører sig stik modsat. Det vil sige, at testperson 9 var hurtigere til at klare opgaverne i takt med, at de blev sværere.
+Af graferne ser det ud til, at Welfords formulering klarer sig markant dårligere i at beskrive vores data end de fire andre formuleringer. For at undersøge dette har vi lavet AIC analyse af formuleringerne tilpasset det fule datasæt, \ref{tab:table_analysis_aic_tunnel_all}, og gennemsnits datapunkterne, \ref{tab:table_analysis_aic_tunnel_mean}. Begge tabeller viser en klar tendens i og med, at Meyers formulering klarer sig bedst imens Welfords klarer sig dårligst i at beskrive vores data. Begge tabeller viser den samme rækkefølge for formuleringernes indbyrdes placering, men de relative forskelle varierer.\\\\
+\begin{minipage}[t]{\linewidth} 
+	\begin{minipage}[t]{0.45\linewidth}
+			\begin{tabular}{lll}
+				Model & AIC værdi & Forskel\\\hline
+				Meyer & 20549.61 & 0 \\
+				Accot \& Zhai & 20549.62 & 0.01\\
+				Mackenzie & 20549.68 & 0.07 \\
+				Fitts & 20549.68 & 0.07\\
+				Welford & 20558.46 & 8.84
+			\end{tabular}
+			\captionof{table}{AIC værdier for de 264 testdeltageres tunnelopgaver. Deres indbyrdes forskel er beregnet med udgangspunkt i Meyer's formulering som nulpunkt.}
+			\label{tab:table_analysis_aic_tunnel_all}
+	\end{minipage}
+	\begin{minipage}[t]{0.1\linewidth}
+	~
+	\end{minipage}
+	\begin{minipage}[t]{0.45\linewidth}
+			\begin{tabular}{lll}
+				Model & AIC værdi & Forskel\\\hline
+				Meyer & 33.68 & 0 \\
+				Accot \& Zhai & 38.17 & 4.49\\
+				Mackenzie & 46.58 & 12.9 \\
+				Fitts & 46.87 & 13.19\\
+				Welford & 64.97 & 31.29
+			\end{tabular}
+			\captionof{table}{AIC værdier for gennemsnittet af tiderne for de 264 testdeltageres tunnelopgaver ved hvert $ID$. Deres indbyrdes forskel er beregnet med udgangspunkt i Meyer's formulering som nulpunkt.}
+			\label{tab:table_analysis_aic_tunnel_mean}
+	\end{minipage}
+\end{minipage}\\\\
+Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er det ikke den, som beskriver vores data bedst. Dette kan være på grund af det relativt lave antal af tunnelopgaver, kun 4. Endvidere kan det være på grund af store forskelle i vores testdeltageres løsninger af opgaverne. Hvis vi tilpasser Accot og Zhai's formulering til vores kontrollerede testpersoners individuelle data, så kan det visualiseres, hvor stor afvigelse der er testdeltagerne imellem. Figur \ref{fig:navigationtest1} viser den traditionelle stigning i tiden med tilsvarende stigning i $ID$, men på figur \ref{fig:navigationtest2} kan det ses, hvordan datapunkterne opfører sig stik modsat. Det vil sige, at testperson 9 var hurtigere til at klare opgaverne i takt med, at de blev sværere.
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_test_navigation_1}
-		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 7, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 7's 4 tunnelopgaver, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:navigationtest1}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -720,7 +716,7 @@ Hvis vi forsøger at tilpasse Accot og Zhai's formulering til vores kontrollered
 	\end{minipage}
 	\begin{minipage}[b]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_test_navigation_2}
-		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 9, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 9's 4 tunnelopgaver, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
 		\label{fig:navigationtest2}
 	\end{minipage}
 \end{minipage}
@@ -971,6 +967,10 @@ I vores analyse fandt vi frem til værdien af $a$ og $b$ i hver af de fire formu
 Da vi har baseret vores forsøg på \cite{goldberg2015} vil vi også sammenligne vores resultater med deres. \cite{goldberg2015} fandt frem til at Meyer's var den bedste formel, når sværhedsgraden var lille, mens Fitts' formulering var den bedste, når sværhedsgraden var stor. Deres resultater var inkonsistente derimellem. Når de kiggede på MacKenzie's formulering, så var den klart bedre end både Fitts' og Meyer's. Dette modsiger vores resultater, hvor Meyer's var bedst. Grunden til dette kan være at vi generelt kigger på et område, hvor små variationer i dataen gør en stor forskel for hvilken formulering der passer bedst. Da vi på samme tid har med mennesker at gøre, så er der mange variable som kan have en indflydelse på hvor hurtigt de kan gøre det.\\
 
 Generelt skal vi huske, at Fitts' lov beskriver komplekse menneskelige motoriske evner. Der vil derfor altid være forskel i indsamlede data, da forskellige personer har forskellige motoriske evner. Både indre og ydre faktorer kan have en effekt på hvor hurtigt en person kan udføre en given opgave. Der har siden Fitts' originale artikel blev udgivet i 1954 været lavet mange forsøg, for at bevise eller forbedre Fitts' lov. Denne er dog langt fra perfekt og skal derfor måske mere ses som en rettesnor, snarere end en egentlig lov.
+
+\begin{itemize}
+\item{Diskuter AIC imod AICc for gennemsnits dataene}
+\end{itemize}
 
 \addcontentsline{toc}{chapter}{Konklusion}
 \chapter*{Konklusion}
