@@ -459,14 +459,14 @@ ggplot(model_accot_spiral, aes(x = datamean_accot$id, y = datamean_accot$time)) 
 ##########################################
 # Plot individual persons pointing tasks #
 ##########################################
-tasks = final_tasks_filtered[final_tasks_filtered$type == "pointing" & final_tasks_filtered$person == 248,"id"]
+tasks = final_tasks_filtered[final_tasks_filtered$type == "pointing" & final_tasks_filtered$person == 140,"id"]
 points = final_points[final_points$task %in% tasks,]
 p = ggplot() + theme(legend.position="none")
 for (id in unique(points$task)) {
   temp = points[points$task == id,]
   p = p + geom_path(data = temp, aes(x = x, y = y, colour = id))
 }
-#ggsave(file = "images/plots/plot_analysis_qualitative.png")
+#ggsave(file = "images/plots/plot_analysis_qualitative_2.png")
 print(p)
 ###############
 # Lorem Ipsum #
@@ -475,7 +475,7 @@ final_points$elapsedDistance = 0
 final_points$speed = 0
 final_points$angleToNext = 0
 final_points$angleToEnd = 0
-m_tasks = final_tasks[final_tasks$type == "pointing" & final_tasks$person == 34, "id"]
+m_tasks = final_tasks[final_tasks$type == "pointing" & final_tasks$person == 15, "id"]
 for (m_task in m_tasks) {
   print(m_task)
   m_points = final_points[final_points$task == m_task,]
@@ -503,12 +503,12 @@ for (m_task in m_tasks) {
 #####################################################
 # Plot individual persons speed for a specific task #
 #####################################################
-points1 = subset(final_points, task == m_tasks[5])
-points2 = subset(final_points, task == m_tasks[10])
-points3 = subset(final_points, task == m_tasks[16])
+points1 = subset(final_points, task == m_tasks[20])
+points2 = subset(final_points, task == m_tasks[23])
+points3 = subset(final_points, task == m_tasks[8])
 points4 = subset(final_points, task == m_tasks[22])
 plot1 = ggplot(points1, aes(x = elapsedDistance, y = speed)) + geom_line() + coord_fixed(ratio = 8)
-plot2 = ggplot(points2, aes(x = elapsedDistance, y = speed)) + geom_line() + coord_fixed(ratio = 3)
+plot2 = ggplot(points2, aes(x = elapsedDistance, y = speed)) + geom_line() + coord_fixed(ratio = 8)
 plot3 = ggplot(points3, aes(x = elapsedDistance, y = speed)) + geom_line() + coord_fixed(ratio = 7)
 plot4 = ggplot(points4, aes(x = elapsedDistance, y = speed)) + geom_line() + coord_fixed(ratio = 8)
 print(plot1)
@@ -516,22 +516,22 @@ print(plot2)
 print(plot3)
 print(plot4)
 g <- arrangeGrob(plot1, plot2, plot3,plot4, nrow=4) #generates g
-ggsave(file="images/plots/plot_speed_individual_34.png", g)
+ggsave(file="images/plots/plot_speed_individual_15.png", g)
 
-points1 = subset(final_points, task == m_tasks[5])
-points2 = subset(final_points, task == m_tasks[10])
-points3 = subset(final_points, task == m_tasks[16])
+points1 = subset(final_points, task == m_tasks[20])
+points2 = subset(final_points, task == m_tasks[23])
+points3 = subset(final_points, task == m_tasks[8])
 points4 = subset(final_points, task == m_tasks[22])
-plot1 = ggplot(points1, aes(x = elapsedTime, y = speed)) + geom_line() + coord_fixed(ratio = 12)
-plot2 = ggplot(points2, aes(x = elapsedTime, y = speed)) + geom_line() + coord_fixed(ratio = 10)
-plot3 = ggplot(points3, aes(x = elapsedTime, y = speed)) + geom_line() + coord_fixed(ratio = 10)
-plot4 = ggplot(points4, aes(x = elapsedTime, y = speed)) + geom_line() + coord_fixed(ratio = 40)
+plot1 = ggplot(points1, aes(x = elapsedTime, y = speed)) + geom_line() + coord_fixed(ratio = 20)
+plot2 = ggplot(points2, aes(x = elapsedTime, y = speed)) + geom_line() + coord_fixed(ratio = 15)
+plot3 = ggplot(points3, aes(x = elapsedTime, y = speed)) + geom_line() + coord_fixed(ratio = 20)
+plot4 = ggplot(points4, aes(x = elapsedTime, y = speed)) + geom_line() + coord_fixed(ratio = 45)
 print(plot1)
 print(plot2)
 print(plot3)
 print(plot4)
 g <- arrangeGrob(plot1, plot2, plot3,plot4, nrow=4) #generates g
-ggsave(file="images/plots/plot_speed_time_individual_34.png", g)
+ggsave(file="images/plots/plot_speed_time_individual_15.png", g)
 
 
 #####################
