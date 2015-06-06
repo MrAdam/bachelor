@@ -459,7 +459,7 @@ ggplot(model_accot_spiral, aes(x = datamean_accot$id, y = datamean_accot$time)) 
 ##########################################
 # Plot individual persons pointing tasks #
 ##########################################
-k <- c(140,248,77,45,225,161,235,239,113,263,166,72,151,170,176,154,257,114,3,78,171,219)
+k <- c(140,248,77,45,226,161,235,239,113,263,166,72,151,170,176,154,257,114,3,78,171,219)
 for (personId in k) {
   tasks = final_tasks_filtered[final_tasks_filtered$type == "pointing" & final_tasks_filtered$person == personId,"id"]
   points = final_points[final_points$task %in% tasks,]
@@ -482,7 +482,7 @@ final_points$elapsedDistance = 0
 final_points$speed = 0
 final_points$angleToNext = 0
 final_points$angleToEnd = 0
-m_tasks = final_tasks[final_tasks$type == "pointing" & final_tasks$person == 45, "id"]
+m_tasks = final_tasks[final_tasks$type == "pointing" & final_tasks$person == 226, "id"]
 for (m_task in m_tasks) {
   print(m_task)
   m_points = final_points[final_points$task == m_task,]
