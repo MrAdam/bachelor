@@ -948,16 +948,18 @@ Vores modelanalyse af hastighedsprofiler tager udgangspunkt i en kvalitativ anal
 
 \addcontentsline{toc}{subsection}{Kvalitativ analyse}
 \subsection*{Kvalitativ analyse}
-Den kvalitative analyse baserer sig på 22 tilfældigt udvalgte crowdsourcingdeltagere. Vi har plottet testdeltagernes bevægelsesbaner for alle deres pegeopgaver, hvilket gør det muligt at se sammenhænge i mellem testdeltagerne. Figur \ref{fig:movement_random_person_1} og \ref{fig:movement_random_person_2} viser hver ét eksempel, på en testdeltagers bevægelsesbaner. De resterende 20 plots kan ses i bilag \ref{sec:movementlines}. Bevægelsesbaner med et højt $ID$ er mørkeblå, i mens bevægelsesbaner med et lavt $ID$ er lyseblå.
+Den kvalitative analyse baserer sig på 22 tilfældigt udvalgte crowdsourcingdeltagere. De 22 testdeltagere er valgt med en random generator og har følgende id'er i databasen; $3,45,72,77,78,113,114,140,151$ $154,161,166,170,171,176,219,225,235,239,248,257,263$. Vi har plottet testdeltagernes bevægelsesbaner for alle deres pegeopgaver, hvilket gør det muligt at se sammenhænge i mellem testdeltagerne. Figur \ref{fig:movement_random_person_1} og \ref{fig:movement_random_person_2} viser hver ét eksempel, på en testdeltagers bevægelsesbaner. De resterende 20 plots kan ses i bilag \ref{sec:movementlines}. Bevægelsesbaner med et højt $ID$ er mørkeblå, i mens bevægelsesbaner med et lavt $ID$ er lyseblå.
 
-Vi ser en tendens til, at testdeltagerne bruger én primær underbevægelse for at komme hen mod målet, efterfulgt af én eller flere korrigerende mindre underbevægelser for at ramme målet. Der er en tendens til, at bevægelser i opgaver med højere $ID$ vil have flere korrigerende underbevægelser end bevægelser i opgaver med lavere $ID$. Nogle testdeltagere ser ud til først at føre markøren i en forkert retning og så derefter føre markøren mod målet. Enkelte deltagere har også nogen få opgaver, hvor de kun har én primær underbevægelse uden nogen efterfølgende korrigerende bevægelser. Disse to observationer skal dog ikke ses som en generel tendens.
+Vi ser en tendens til, at testdeltagerne bruger én primær underbevægelse for at komme hen mod målet, efterfulgt af én eller flere korrigerende mindre underbevægelser for at ramme målet. Der er en tendens til, at bevægelser i opgaver med højere $ID$ vil have flere korrigerende underbevægelser end bevægelser i opgaver med lavere $ID$. 
 
-Udfra de førnævnte tendenser kan vi opstille to hypoteser. Den første hypotese er at testdeltagerne bruger en primær underbevægelse til at bevæge markøren mod målet og en eller flere korrigerende underbevægelser for at ramme målet. Den anden hypotese er at en opgave med højere $ID$ vil resultere i flere korrigerende underbevægelser.\\\\
+Flere af deltagerne har også nogen få opgaver, hvor de kun har én primær underbevægelse uden nogen efterfølgende korrigerende bevægelser. Nogle testdeltagere har startet med at føre markøren i den forkerte retning og har derfor været nødt til at vende rundt og føre markøren i den rigtige retning, derved har de haft to større underbevægelser. Disse to observationer skal dog ikke ses som en generel tendens. Enkelte af testdeltagerne har haft opgaver, hvor de førte musen udenfor canvas og disse baner er derfor ikke fuldendte.
+
+På baggrund af de observerede tendenser har vi fundet frem til to hypoteser, som vi vil forsøge at få bekræftet. Den første hypotese er, at testdeltagerne bruger én primær underbevægelse til at bevæge markøren mod målet efterfulgt af én eller flere korrigerende underbevægelser for at ramme målet. Den anden hypotese er, at en opgave med højere $ID$ vil resultere i flere korrigerende underbevægelser.\\\\
 \begin{minipage}{\linewidth}
 	\begin{minipage}{.45\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/plots/plot_analysis_qualitative}
-		\captionof{figure}{Plot over alle bevægelsesbaner lavet af testdeltager 248 under udførslen af denne deltagers pegeopgaver.}
+		\includegraphics[width=\linewidth]{images/plots/plot_analysis_qualitative_140}
+		\captionof{figure}{Plot over alle bevægelsesbaner lavet af testdeltager 140 under udførslen af denne deltagers pegeopgaver.}
 		\label{fig:movement_random_person_1}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -965,8 +967,8 @@ Udfra de førnævnte tendenser kan vi opstille to hypoteser. Den første hypotes
 	\end{minipage}
 	\begin{minipage}{.45\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/plots/plot_analysis_qualitative_2}
-		\captionof{figure}{Plot over alle bevægelsesbaner lavet af testdeltager 140 under udførslen af denne deltagers pegeopgaver}
+		\includegraphics[width=\linewidth]{images/plots/plot_analysis_qualitative_248}
+		\captionof{figure}{Plot over alle bevægelsesbaner lavet af testdeltager 248 under udførslen af denne deltagers pegeopgaver}
 		\label{fig:movement_random_person_2}
 	\end{minipage}
 \end{minipage}
