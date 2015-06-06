@@ -948,29 +948,11 @@ Vores modelanalyse af hastighedsprofiler tager udgangspunkt i en kvalitativ anal
 
 \addcontentsline{toc}{subsection}{Kvalitativ analyse}
 \subsection*{Kvalitativ analyse}
-Vi har valgt at udføre en kvalitativ analyse af bevægelsesbanerne og testdeltagernes spørgeskemaer, da det vil give os et større overblik over den indsamlede data og vise os hvilke tendenser der kan observeres.
-Den kvalitative analyse bygger på 57 tilfældige crowdsourcingdeltagere, hvilket svarer til cirka $21\%$ af deltagerne. Af de 57 deltagere angav 32 at de brugte mus, mens 25 angav at deres pegeredskab var touchpad. Disse tal stemmer overens med den procentvise fordeling af pegeenhed for alle testdeltagere, vist i tabel \ref{tab:persons_average}. Vores observationer baserer sig på bevægelsesbanerne for hver deltager, et eksempel herpå ses i figur \ref{fig:movement_random_person}.
+Den kvalitative analyse bygger på 20 tilfældigt udvalgte crowdsourcingdeltagere. For at beskrive lave analysen har vi plottede deltagernes bevægelsesbaner for alle deres pegeopgaver. Et eksempel på et plot ses i figur \ref{fig:movement_random_person}, mens alle 20 plots kan ses i bilag \ref{sec:movementlines}. Bevægelsesbaner med høj $ID$ er mørkeblå, mens bevægelsesbaner med lav $ID$ er lyseblå.
 
-\addcontentsline{toc}{subsection}{Kvalitativ analyse}
-\subsection*{Kvalitativ analyse}
-Vi har valgt at udføre en kvalitativ analyse af bevægelsesbanerne og testdeltagernes spørgeskemaer, da det vil give et større overblik over den indsamlede data og vise, hvilke eventuelle tendenser, der kan observeres.
-Den kvalitative analyse bygger på 57 tilfældige crowdsourcingdeltagerne, hvilket svarer til cirka $21\%$ af deltagerne. Af de 57 deltagere angav 32 at de brugte mus, mens 25 angav at deres pegeredskab var touchpad. Disse tal stemmer overens den procentvise fordeling af pegeenhed for alle testdeltagere, vist i tabel \ref{tab:persons_average}. Vores observationer baserer sig på bevægelsesbanerne for hver deltager, et eksempel herpå ses i figur \ref{fig:movement_random_person}.
+Vi ser en tendens til at testdeltagerne bruger en hovedunderbevægelse til at kommer hen mod målet, efterfulgt af en eller flere korrigerende underbevægelser for at ramme målet. Der er en tendens til at bevægelser med højere $ID$ vil have flere korrigerende underbevægelser end bevægelser med lavere $ID$. Nogle testdeltagere ser ud til første at føre markøren i en forkert retning og så derefter fører makøren mod målet. Enkelte deltagere har også enkelte opgaver, hvor de kun har en underbevægelse og ingen korrigerende bevægelser. Disse to observationer skal dog ikke ses som en generel tendens.
 
-Vi har observeret at deltagerne tager en stor underbevægelse, eventuelt opfulgt af mindre korrigerende underbevægelser. Typisk vil der for muse-brugerne være én korrigerende underbevægelse, mens touchpad-brugerne ofte bruger flere korrigerende underbevægelser. Generelt har muse-brugerne også mindre udsving i deres bevægelsesbaner end touchpad-brugerne. Dertil var der flere deltagere som startede enkelte baner, med at bevæge pegeredskabet i en forkert retning.
-
-\begin{table}[h]
-	\centering
-	\begin{tabular}{llllll}
-		Alder           & Køn               & Computerspil              & Computere                 & Hånd                & Pegeenhed            \\\hline
-		gns: \hfill24.5 & mand: \hfill88\%  & $<1$ time: \hfill24\%     & $<1$ time: \hfill2\%      & venstre: \hfill14\% & mus: \hfill61\%      \\
-		min: \hfill13   & kvinde: \hfill9\% & $1-5$ timer: \hfill24\%   & $1-5$ timer: \hfill1\%    & højre: \hfill83\%   & touchpad: \hfill36\% \\
-		max: \hfill62   & andet: \hfill3\%  & $5-15$ timer: \hfill27\%  & $5-15$ timer: \hfill2\%   & andet: \hfill3\%    & andet: \hfill3\%     \\
-		                &                   & $15-40$ timer: \hfill22\% & $15-40$ timer: \hfill24\% &                     &\\
-		                &                   & $>40$ timer: \hfill3\%    & $>40$ timer: \hfill71\%   &                     &
-	\end{tabular}
-	\caption{Tabel med oversigt over gennemsnitsværdier og fordeling af testpersoners valg i spørgeskemaet.}
-	\label{tab:persons_average}
-\end{table}
+Udfra de førnævnte tendenser kan vi opstille to hypoteser. Den første hypotese er at testdeltagerne bruger en primær underbevægelse til at bevæge markøren mod målet og en eller flere korrigerende underbevægelser for at ramme målet. Den anden hypotese er at en opgave med højere $ID$ vil resultere i flere korrigerende underbevægelser.  
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}{.45\linewidth}
@@ -992,6 +974,20 @@ Vi har observeret at deltagerne tager en stor underbevægelse, eventuelt opfulgt
 
 \addcontentsline{toc}{subsection}{Kvantitativ analyse}
 \subsection*{Kvantitativ analyse}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{llllll}
+		Alder           & Køn               & Computerspil              & Computere                 & Hånd                & Pegeenhed            \\\hline
+		gns: \hfill24.5 & mand: \hfill88\%  & $<1$ time: \hfill24\%     & $<1$ time: \hfill2\%      & venstre: \hfill14\% & mus: \hfill61\%      \\
+		min: \hfill13   & kvinde: \hfill9\% & $1-5$ timer: \hfill24\%   & $1-5$ timer: \hfill1\%    & højre: \hfill83\%   & touchpad: \hfill36\% \\
+		max: \hfill62   & andet: \hfill3\%  & $5-15$ timer: \hfill27\%  & $5-15$ timer: \hfill2\%   & andet: \hfill3\%    & andet: \hfill3\%     \\
+		                &                   & $15-40$ timer: \hfill22\% & $15-40$ timer: \hfill24\% &                     &\\
+		                &                   & $>40$ timer: \hfill3\%    & $>40$ timer: \hfill71\%   &                     &
+	\end{tabular}
+	\caption{Tabel med oversigt over gennemsnitsværdier og fordeling af testpersoners valg i spørgeskemaet.}
+	\label{tab:persons_average}
+\end{table}
+
 For at kunne analysere de indsamlede data, har vi valgt at lave nogle beregninger på vores data som kan bruges til at lave en kvantitativ analyse. Ud fra de indsamlede data har vi udregnet farten i de individuelle punkter i vores data, som vi har brugt til at illustrere fartudviklingen over fire tilfældigt udvalgte tests som kan ses på figur \ref{fig:plot_speed_overall}.
 
 Det ses på figur \ref{fig:plot_speed_overall} at der er en tendens til at farten har én primær stigning omkring midten af distancen, som kan beskrives som en hovedbevægelse, hvori der accelereres mod målet - dette tydeliggøres af figur \ref{fig:plot_velocity_individual} som illustrerer hastighedsprofilen for en anden tilfældig testdeltager. Der ses også en tendens til, at nogle af testpersonerne laver små hastighedsstigninger efter hovedstigningen, hvilket illustrerer de korrigerende underbevægelser som beskrevet tidligere i rapporten og i \cite{meyer1988}.\\
