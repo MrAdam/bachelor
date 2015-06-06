@@ -522,7 +522,7 @@ print(plot2)
 print(plot3)
 print(plot4)
 g <- arrangeGrob(plot1, plot2, plot3,plot4, nrow=4) #generates g
-ggsave(file="images/plots/plot_speed_individual_166.png", g)
+ggsave(file="images/plots/plot_speed_individual_226.png", g)
 
 points1 = subset(final_points, task == m_tasks[20])
 points2 = subset(final_points, task == m_tasks[23])
@@ -530,14 +530,14 @@ points3 = subset(final_points, task == m_tasks[8])
 points4 = subset(final_points, task == m_tasks[22])
 plot1 = ggplot(points1, aes(x = elapsedTime, y = speed)) + geom_line() + coord_fixed(ratio = 40)
 plot2 = ggplot(points2, aes(x = elapsedTime, y = speed)) + geom_line() + coord_fixed(ratio = 60)
-plot3 = ggplot(points3, aes(x = elapsedTime, y = speed)) + geom_line() + coord_fixed(ratio = 10)
+plot3 = ggplot(points3, aes(x = elapsedTime, y = speed)) + geom_line() + coord_fixed(ratio = 40)
 plot4 = ggplot(points4, aes(x = elapsedTime, y = speed)) + geom_line() + coord_fixed(ratio = 40)
 print(plot1)
 print(plot2)
 print(plot3)
 print(plot4)
 g <- arrangeGrob(plot1, plot2, plot3,plot4, nrow=4) #generates g
-ggsave(file="images/plots/plot_speed_time_individual_166.png", g)
+ggsave(file="images/plots/plot_speed_time_individual_226.png", g)
 
 
 #####################
@@ -545,34 +545,9 @@ ggsave(file="images/plots/plot_speed_time_individual_166.png", g)
 #####################
 m_task = final_tasks[final_tasks$type == "pointing" & final_tasks$person == 45, "id"]
   data = final_points[final_points$task == m_task[20], c("x", "y", "speed", "angleToNext", "angleToEnd")]
-m_plot_target_1 = ggplot(data, aes(x, y)) + coord_fixed(ratio = 1) +
+m_plot_target = ggplot(data, aes(x, y)) + coord_fixed(ratio = 1) +
   geom_segment(aes(xend = x + cos(angleToNext) * speed * 10, yend = y + sin(angleToNext) * speed * 10), arrow = arrow(length = unit(0.2, "cm")))
-m_plot_1 = ggplot(data, aes(x, y)) + coord_fixed(ratio = 1) +
+ggsave(file="images/plots/plot_velocity_individual_45.png")
+m_plot = ggplot(data, aes(x, y)) + coord_fixed(ratio = 1) +
   geom_segment(aes(xend = x + cos(angleToEnd) * speed * 10, yend = y + sin(angleToEnd) * speed * 10), arrow = arrow(length = unit(0.2, "cm")))
-  data = final_points[final_points$task == m_task[23], c("x", "y", "speed", "angleToNext", "angleToEnd")]
-m_plot_target_2 = ggplot(data, aes(x, y)) + coord_fixed(ratio = 1) +
-  geom_segment(aes(xend = x + cos(angleToNext) * speed * 10, yend = y + sin(angleToNext) * speed * 10), arrow = arrow(length = unit(0.2, "cm")))
-m_plot_2 = ggplot(data, aes(x, y)) + coord_fixed(ratio = 1) +
-  geom_segment(aes(xend = x + cos(angleToEnd) * speed * 10, yend = y + sin(angleToEnd) * speed * 10), arrow = arrow(length = unit(0.2, "cm")))
-  data = final_points[final_points$task == m_task[8], c("x", "y", "speed", "angleToNext", "angleToEnd")]
-m_plot_target_3 = ggplot(data, aes(x, y)) + coord_fixed(ratio = 1) +
-  geom_segment(aes(xend = x + cos(angleToNext) * speed * 10, yend = y + sin(angleToNext) * speed * 10), arrow = arrow(length = unit(0.2, "cm")))
-m_plot_3 = ggplot(data, aes(x, y)) + coord_fixed(ratio = 1) +
-  geom_segment(aes(xend = x + cos(angleToEnd) * speed * 10, yend = y + sin(angleToEnd) * speed * 10), arrow = arrow(length = unit(0.2, "cm")))
-  data = final_points[final_points$task == m_task[22], c("x", "y", "speed", "angleToNext", "angleToEnd")]
-m_plot_target_4 = ggplot(data, aes(x, y)) + coord_fixed(ratio = 1) +
-  geom_segment(aes(xend = x + cos(angleToNext) * speed * 10, yend = y + sin(angleToNext) * speed * 10), arrow = arrow(length = unit(0.2, "cm")))
-m_plot_4 = ggplot(data, aes(x, y)) + coord_fixed(ratio = 1) +
-  geom_segment(aes(xend = x + cos(angleToEnd) * speed * 10, yend = y + sin(angleToEnd) * speed * 10), arrow = arrow(length = unit(0.2, "cm")))
-print(m_plot_1)
-print(m_plot_2)
-print(m_plot_3)
-print(m_plot_4)
-print(m_plot_target_1)
-print(m_plot_target_2)
-print(m_plot_target_3)
-print(m_plot_target_4)
-g <- arrangeGrob(m_plot_1, m_plot_2, m_plot_3, m_plot_4, nrow=2, ncol=2) #generates g
-ggsave(file="images/plots/plot_velocity_individual_target_45.png", g)
-g <- arrangeGrob(m_plot_target_1, m_plot_target_2, m_plot_target_3, m_plot_target_4, nrow=2, ncol=2) #generates g
-ggsave(file="images/plots/plot_velocity_individual_45.png", g)
+ggsave(file="images/plots/plot_velocity_individual_target_45.png")

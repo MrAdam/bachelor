@@ -865,7 +865,7 @@ For vores spiralopgaver gjorde vi brug af $n=[1,2,3,4]$ og en bredde $w=[3.1,3.1
 \end{minipage}
 
 \newpage
-Ved at tilpasse Accot og Zhai's $ID$ til vores 264 testdeltageres spiralopgaver fandt vi frem til den matematiske model i ligning \ref{eq:accotspiral}. Det kan bemærkes, at de to konstante led for denne model er markant anderledes end de tilsvarende for de fire andre formuleringer.  AIC analyserne i tabel \ref{tab:table_analysis_aic_spiral_all} og \ref{tab:table_analysis_spiral_mean} viser, hvordan Accot og Zhai's formulering klarer sig væsentligt bedre end de fire andre. Det gælder både for alle datapunkterne og for gennemsnits værdierne. Dette er også, hvad vi forventede, da de formuleringer ikke er beregnet til denne type navigationsopgaver, imens Accot og Zhai's er tiltænkt specifikt til denne type.
+Ved at tilpasse Accot og Zhai's $ID$ til vores 264 testdeltageres spiralopgaver fandt vi frem til den matematiske model i ligning \ref{eq:accotspiral}. Det kan bemærkes, at de to konstante led for denne model er markant anderledes end de tilsvarende for de fire andre formuleringer.  AIC analyserne i tabel \ref{tab:table_analysis_aic_spiral_all} og \ref{tab:table_analysis_aic_spiral_mean} viser, hvordan Accot og Zhai's formulering klarer sig væsentligt bedre end de fire andre. Det gælder både for alle datapunkterne og for gennemsnits værdierne. Dette er også, hvad vi forventede, da de formuleringer ikke er beregnet til denne type navigationsopgaver, imens Accot og Zhai's er tiltænkt specifikt til denne type.
 \begin{align}
 \text{Accot \& Zhai: } T = 2097.09+553.25 \cdot \int_{2\pi}^{2\pi(n+1)}\frac{\sqrt{\left(\theta+w\right)^6+9\left(\theta+w\right)4}}{\left(\theta+2\pi+2\right)^3-\left(\theta+w\right)^3}d\theta
 \label{eq:accotspiral}
@@ -975,6 +975,8 @@ På baggrund af de observerede tendenser har vi fundet frem til to hypoteser, so
 
 \addcontentsline{toc}{subsection}{Kvantitativ analyse}
 \subsection*{Kvantitativ analyse}
+For at finde ud af om, vores 22 tilfældigt udvalgte testpersoner er repræsentative for resten af testdeltagerne, har vi valgt at undersøge deres spørgeskemasvar. De procentvise fordelinger af grupperingerne i køn, pegeenhed med mere for alle testdeltagere, har vi udregnet og opstillet I tabel \ref{tab:persons_average}. Tilsvarende har vi gjort i tabel \ref{tab:sample_persons_average} med data fra vores 22 udvalgte testdeltagere. Ved sammenligning af dataene i de to tabeller, finder vi vores 22 testdeltagere repræsentative for vores datasæt.
+
 \begin{table}[h]
 	\centering
 	\begin{tabular}{llllll}
@@ -1003,6 +1005,14 @@ På baggrund af de observerede tendenser har vi fundet frem til to hypoteser, so
 	\label{tab:sample_persons_average}
 \end{table}
 
+For at undersøge vores hypoteser fra den kvalitative analyse har vi lavet fartprofiler for de 22 testdeltagere. Dette har vi gjort ved at udregne farten som forskellen i distancen over forskellen i tid; $\frac{\Delta \text{distance}}{\Delta \text{time}}$, hvilket er målt i pixels per millisekund. Vi har valgt at visualisere fartprofilerne for fire opgaver, hhv. $20,23,8$ og $22$, de er valgt fordi de har henholdvis de højeste og laveste $ID$ af vores 25 opgaver. $20$ og $23$ har de højeste værdier på $5.66$ og $5.54$, imens $8$ og $22$ har de laveste værdier på $1.94$ og $1.32$. Farten er visualiseret i forhold til den tilbagelagte afstand eller forløbne tid fra starten af opgaven. De to øverste plots illustrere opgave $20$ og $23$ imens de to nederste illustrerer opgave $8$ og $22$.
+
+Figur \ref{fig:speed_distance_testperson_140} og \ref{fig:speed_distance_testperson_248} er eksempler på farten i forhold til den tilbagelagte afstand, imens figur \ref{fig:speed_time_testperson_140} og \ref{fig:speed_time_testperson_248} er farten i forhold til den forløbne tid. 8 af de resterende plots kan ses i bilag \ref{sec:speed_plots}. Grunden til, at vi har valgt at medtage fartprofiler i forhold til både distance og tid er, at det giver os et mere nuanceret billede af, vores testpersoners bevægelse. Vi bemærker, hvordan graferne i figurerne generelt udviser en stigning fra starten af opgaven til et globalt maksimum, hvorefter farten aftager og nærmer sig 0. Dette er et tegn på én primær underbevægelse, da deltageren næsten stopper bevægelsen. Længden på denne underbevægelse varierer fra 40 til 300 pixels og farten ligger i mellem 0 og 8 pixels per millisekund.
+
+Grafen vil efter aftagningen foretage nul eller flere stigninger til lokale maksimum, som kan betegnes som korrigerende underbevægelser. Dette bekræfter derfor vores hypotese om, at testpersonerne har én primær underbevægelse efterfulgt af korrigerende underbevægelser, hvilket også er beskrevet tidligere i rapporten. Ydermere bemærker vi, at graferne for opgaver med høje $ID$ viser flere korrigerende underbevægelser end graferne for opgaver med lavere $ID$.
+
+Vi notere os, at graferne udviser de egenskaber for både distance og tid.
+
 \begin{minipage}{\linewidth}
 \begin{minipage}{.475\linewidth}
 	\centering
@@ -1026,7 +1036,7 @@ På baggrund af de observerede tendenser har vi fundet frem til to hypoteser, so
 	\centering
 	\includegraphics[width=\linewidth]{images/plots/plot_speed_time_individual_140}
 	\captionof{figure}{Plot af testdeltager 140's fart i forhold til den forløbne tid på opgaverne 20, 23, 8 og 22.}
-	\label{fig:speed_distance_testperson_140}
+	\label{fig:speed_time_testperson_140}
 	\end{minipage}
 	\begin{minipage}[b]{0.05\linewidth}
 	~
@@ -1035,16 +1045,11 @@ På baggrund af de observerede tendenser har vi fundet frem til to hypoteser, so
 		\centering
 		\includegraphics[width=\linewidth]{images/plots/plot_speed_time_individual_248}
 		\captionof{figure}{Plot af testdeltager 248's fart i forhold til den forløbne tid på opgaverne 20, 23, 8 og 22.}
-		\label{fig:speed_distance_testperson_248}
+		\label{fig:speed_time_testperson_248}
 	\end{minipage}
 \end{minipage}
 
-
-For at kunne analysere de indsamlede data, har vi valgt at lave nogle beregninger på vores data som kan bruges til at lave en kvantitativ analyse. Ud fra de indsamlede data har vi udregnet farten i de individuelle punkter i vores data, som vi har brugt til at illustrere fartudviklingen over fire tilfældigt udvalgte tests som kan ses på figur \ref{fig:plot_speed_overall}.
-
-Det ses på figur \ref{fig:plot_speed_overall} at der er en tendens til at farten har én primær stigning omkring midten af distancen, som kan beskrives som en hovedbevægelse, hvori der accelereres mod målet - dette tydeliggøres af figur \ref{fig:plot_velocity_individual} som illustrerer hastighedsprofilen for en anden tilfældig testdeltager. Der ses også en tendens til, at nogle af testpersonerne laver små hastighedsstigninger efter hovedstigningen, hvilket illustrerer de korrigerende underbevægelser som beskrevet tidligere i rapporten og i \cite{meyer1988}.\\
-
-På figur \ref{fig:plot_velocity_individual} og \ref{fig:plot_velocity_individual_target} har vi to vektorplots som viser en enkelt opgave fra en tilfældig testperson, hvor vektorerne illustrerer hhv. hastigheden og hastigheden mod målet, i hvert punkt. Disse hastighedsprofiler viser os hvordan testpersonen har justeret sin hastighed under en test, og .....
+VEKTORPLOTS HER!
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}{.45\linewidth}
