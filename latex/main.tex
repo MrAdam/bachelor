@@ -169,11 +169,11 @@ Figur \ref{fig:WelfordGraf} viser data fra ét af Fitts' eksperimenter og den ti
 \begin{align}\label{eq:WelfordsLov}
 T = K \cdot log\left(\frac{A + \frac{1}{2}W}{W}\right) = K \cdot log\left(\frac{A}{W} + 0.5\right)
 \end{align}
-(\ref{eq:WelfordsLov}) er sidenhen blevet kendt som Welfords lov og har betydning for hvordan tiden, $T$, opfattes. Tiden vil i Ligning \ref{eq:WelfordsLov} blive afhænging af en Weber Fraction \cite{welford1958}, da testpersonen skal skelne mellem længderne til målets fjerneste og næreste kant. Testpersonen skal altså udvælge en længde, $W$, ud fra den totale længde mellem startpunktet og målets fjerneste kant. Det er her vigtigt at notere, at Ligning \ref{eq:WelfordsLov} også opretholder den fordel, som Fitts hævdede der var ved at multiplicere $A$ med $2$. Dette ses ud fra det mest ekstreme tilfælde, hvor bevægelsens startpunkt er på målets kant, da $A = \frac{1}{2}W$ vil gælde, hvorved $T = K \cdot log\left(\frac{A + \frac{1}{2}W}{W}\right) = K \cdot log\left(\frac{W}{W}\right)$. Da $W > 0$ vil $log(W) > 0$.
+(\ref{eq:WelfordsLov}) er sidenhen blevet kendt som Welfords lov og har betydning for, hvordan tiden, $T$, opfattes. Tiden vil i Ligning \ref{eq:WelfordsLov} blive afhænging af en Weber Fraction \cite{welford1958}, da testpersonen skal skelne mellem længderne til målets fjerneste og næreste kant. Testpersonen skal altså udvælge en længde, $W$, ud fra den totale længde mellem startpunktet og målets fjerneste kant. Det er her vigtigt at notere, at Ligning \ref{eq:WelfordsLov} også opretholder den fordel, som Fitts hævdede der var ved at multiplicere $A$ med $2$. Dette ses ud fra det mest ekstreme tilfælde, hvor bevægelsens startpunkt er på målets kant, da $A = \frac{1}{2}W$ vil gælde, hvorved $T = K \cdot log\left(\frac{A + \frac{1}{2}W}{W}\right) = K \cdot log\left(\frac{W}{W}\right)$. Da $W > 0$ vil $log(W) > 0$.
 
-Den sidste observation, der blev gjort, var at kurven i figur~\ref{fig:WelfordGraf} viser en tydelig udfladning ved lavere værdier af $x$. Welford noterede at det sandsynligvis var grundet en begrænsende faktor som beskriver en minimumstid per bevægelse, hvor kort eller uhindret bevægelse end måtte være. Welford's egne undersøgelser har påvist at denne begrænsende faktor har betydning for, hvor meget af målet der rent faktisk bliver brugt. Når målene er brede og længden mellem dem kort, så vil testpersonen kun bruge en sub-længde af målets fulde længde. Han overfører mere information end (\ref{eq:WelfordsLov}) ville beskrive, fordi den effektive W er kortere. Den kortere bredde kan i nogen omfang afspejles i en reduktion af fejl og, hvis reduktionen sker med behørigt hensyn, så holder (\ref{eq:WelfordsLov}) stadig.
+Den sidste observation, der blev gjort, var at kurven i figur~\ref{fig:WelfordGraf} viser en tydelig udfladning ved lavere værdier af $x$. Welford noterede at det sandsynligvis var grundet en begrænsende faktor, som beskriver en minimumstid per bevægelse, hvor kort eller uhindret bevægelse end måtte være. Welford's egne undersøgelser har påvist at denne begrænsende faktor har betydning for, hvor meget af målet der rent faktisk bliver brugt. Når målene er brede og længden mellem dem kort, vil testpersonen kun bruge en sub-længde af målets fulde længde. Han overfører mere information end (\ref{eq:WelfordsLov}) ville beskrive, fordi den effektive W er kortere. Den kortere bredde kan i nogen omfang afspejles i en reduktion af fejl og, hvis reduktionen sker med behørigt hensyn, holder (\ref{eq:WelfordsLov}) stadig.
 
-Ud fra de tre ovenstående modifikationer indførte Welford igen Fitts' data fra hans første forsøg i et koordinatsystem. Denne gang havde dataen dog været igennem fejlreduktion og blev indsat op imod Welford's formulering, hvilket viste at (\ref{eq:WelfordsLov}) var bedre til at beskrive dataen end (\ref{eq:FittsLov}). Den affine kurve som Welford kom frem til er at se i figur\ref{fig:WelfordGraf2}.
+Ud fra de tre ovenstående modifikationer indførte Welford igen Fitts' data fra hans første forsøg i et koordinatsystem. Denne gang havde dataen dog været igennem fejlreduktion og blev indsat op imod Welford's formulering, hvilket viste at (\ref{eq:WelfordsLov}) var bedre til at beskrive dataen end (\ref{eq:FittsLov}). Den affine kurve som Welford kom frem til er at se i figur \ref{fig:WelfordGraf2}.
 
 \begin{figure}[h]
 \centering
@@ -207,43 +207,44 @@ En af de mest accepterede udledninger af Fitts' lov stammer fra modellen \emph{d
 \label{fig:MacKenziePlot1}
 \end{figure}
 MacKenzie beskriver, at et af problemerne med Fitts' Lov er den tætte relation mellem $ID$ og $MT$. Figur~\ref{fig:MacKenziePlot1} illustrerer, hvordan punkterne flader ud, ved lave værdier af $ID$, mens kurven beholder sit $1:1$-forhold mellem $ID$ og $MT$. Der er altså en usammenhæng mellem de observerede og forudsagte værdier, hvilket også er blevet observeret i flere andre studier som \cite{welford1960, buck1986, crossman1983, drury1975, klapp1975, langolf1976, meyer1988, wallace1978}\\
-Han fremhæver dog, at der er lavet en del studier af Fitts' lov, og at der er blevet præsenteret en del alternative formuleringer, som forsøger at få de faktiske data til at passe bedre til modellen. Specielt fremhæver han Welford's~\cite{welford1960,welford1968}, da den er udbredt som alternativ til Fitts' originale formulering. MacKenzie nævner den ekstreme lighed mellem Welford og Shannons formulering, og beskriver hvordan det for nyligt er blevet vist at Paul Fitts originale formulerings forhold mellem $A$ og $W$ havde baggrund i en approksimation af Shannon's sætning~\cite[p. 388]{fitts1954}, som var blevet introduceret med en advarsel om at brugbarheden kun gjaldt ved et højt signal-til-støj forhold. Dette giver selvfølgelig problemer når der i Fitts' originale forsøg bliver brugt et forhold helt ned til 1:1 mellem A og W. MacKenzie foreslår at man benytter sig af en form der minder meget om Welford's, men her er en direkte analogi til Shannon's formulering:
+Han fremhæver dog, at der er lavet en del studier af Fitts' lov, og at der er blevet præsenteret en del alternative formuleringer, som forsøger at få de faktiske data til at passe bedre til modellen. Specielt fremhæver han Welford's~\cite{welford1960,welford1968}, da den er udbredt som alternativ til Fitts' originale formulering. MacKenzie nævner den ekstreme lighed mellem Welford og Shannons formulering, og beskriver hvordan det for nyligt er blevet vist at Paul Fitts originale formulerings forhold mellem $A$ og $W$ havde baggrund i en approksimation af Shannon's sætning~\cite[p. 388]{fitts1954}, som var blevet introduceret med en advarsel om at brugbarheden kun gjaldt ved et højt signal-til-støj forhold. Dette giver selvfølgelig problemer, når der i Fitts' originale forsøg bliver brugt et forhold helt ned til 1:1 mellem A og W. MacKenzie foreslår, at man benytter sig af en form der minder meget om Welford's, men her er en direkte analogi til Shannon's formulering:
 \begin{align}
 \text{Shannon: }C=B\times&\log{\frac{S+N}{N}}\\
 \text{Welford: }MT=a+b\times&\log{\frac{A+0.5W}{W}}\\
 \text{MacKenzie: }MT=a+b\times&\log{\frac{A+W}{W}}
 \end{align}
 
-Forskellen mellem Fitts' originale formulering for $ID$, og MacKenzie's bud på en ny formulering lavet som en direkte analogi til Shannon's bliver sammenlignet i figur~\ref{fig:MacKenziePlot2}, hvor det er tydeligt, at der ved lavere værdier af $A$ sker en udfladning af kurven, hvilket passer med data punkterne i figur~\ref{fig:MacKenziePlot1}, jvf. det første data punkt som ikke ligger på den affine linje.\\
+Forskellen mellem Fitts' originale formulering for $ID$, og MacKenzie's bud på en ny formulering lavet som en direkte analogi til Shannon's bliver sammenlignet i figur~\ref{fig:MacKenziePlot2}, hvor det er tydeligt, at der ved lavere værdier af $A$ sker en udfladning af kurven, hvilket passer med data punkterne i figur~\ref{fig:MacKenziePlot1}, jvf. det første data punkt, som ikke ligger på den affine linje.\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth]{images/illustrations/mackenzie_plot_2}
 \caption{Graf over $ID$ (y-akse) i forhold til $A$ (x-akse), med to linjer der viser en sammenligning af Fitts' og MacKenzies model ved fastholdt værdi af $W$.}
 \label{fig:MacKenziePlot2}
 \end{figure}
-MacKenzie ser hans formulering som værende en mindre forbedring i forhold til Welford's, og mener ikke at man vil kunne se den store forskel mellem Welfords og sin formulering, medmindre man har at gøre med $ID$ som er under 3 bits. Han kommer frem til de 3 bits ved at se på figur~\ref{fig:MacKenziePlot2}, hvor det ses, at de to formuleringer for $ID$ er parallelle med hinanden, indtil omkring 3 bits eller derunder.\\
+MacKenzie ser sin formulering som værende en mindre forbedring i forhold til Welford's, og mener ikke at man vil kunne se den store forskel mellem Welford's og hans egen formulering, medmindre man har at gøre med $ID$ som er under 3 bits. Han kommer frem til de 3 bits ved at se på figur~\ref{fig:MacKenziePlot2}, hvor det ses, at de to formuleringer for $ID$ er parallelle med hinanden, indtil omkring 3 bits eller derunder.\\
 
-Det generelle problem med MacKenzie's artikel er, at han ikke kommer med noget teoretisk grundlag for hans formulering, og derved ikke kan forklare hvorfor hans formulering er mere præcis end andre, eller hvorfor det netop er bedre med en direkte analogi til Shannon's i forhold til Welford's. I artiklen~\cite{drewes2010} bliver der stillet spørgsmålstegn ved dette. Men hvis man ser bort fra det manglende teoretiske grundlag, så er MacKenzies formulering stadig en af de mest udbredte og brugte varianter af Fitt's lov, og har vist sig at passe godt på udførte forsøg~\cite{goldberg2015}.
+Det generelle problem med MacKenzie's artikel er, at han ikke kommer med noget teoretisk grundlag for sin formulering, og derved ikke kan forklare hvorfor hans formulering er mere præcis end andres, eller hvorfor det netop er bedre med en direkte analogi til Shannon's i forhold til Welford's. I artiklen~\cite{drewes2010} bliver der stillet spørgsmålstegn ved dette. Men hvis man ser bort fra det manglende teoretiske grundlag, er MacKenzies formulering stadig en af de mest udbredte og brugte varianter af Fitt's lov, og har vist sig at passe godt på udførte forsøg~\cite{goldberg2015}.
 
 \addcontentsline{toc}{subsection}{Meyers formulering}
 \subsection*{Meyers formulering}
+Som beskrevet i forrige afsnit, baserer Fitts' lov sig på \emph{deterministic error-corrections} modellen. Meyer et al. foreslog en ny model, kaldet stochastic optimized-submovement modellen, som de baserede deres formel på \cite{meyer1988}. Som det ses af figur \ref{fig:MeyerTheory}, baserer denne model sig på, at personer laver en primær underbevægelse og derefter, hvis der er behov for det, en korrigerende underbevægelse. Udfra denne model kan den gennemsnitlige tid, $T$, forudsiges til at være
+\begin{equation}
+\label{eq:meyer}
+T = a + b \sqrt{\frac{A}{W}}
+\end{equation}
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth]{images/illustrations/base_model_meyer}
 \caption{Stochastic optimized-submovement modellen - Den horisontale akse repræsenterer afstand og den vertikale akse repræsenterer bevægelseshastighed. De faste linjer repræsenterer primære underbevægelser, mens stiplede linjer er korrigerende underbevægelser. Bevægelserne tager udgangspunkt i en startende position (afstand = 0) og skal bevæge sig til et mål, med center i D og bredde W.}
 \label{fig:MeyerTheory}
 \end{figure}
-Som beskrevet i forrige afsnit, så baserer Fitts' lov sig på \emph{deterministic error-corrections} modellen. Meyer et al. foreslog en ny model, kaldet stochastic optimized-submovement modellen, som de baserede deres formel på \cite{meyer1988}. Som det ses af Figur \ref{fig:MeyerTheory} så baserer denne model sig på at personer laver en primær underbevægelse og derefter, hvis der er behov for det, en korrigerende underbevægelse. Udfra denne model kan den gennemsnitlige tid, $T$, forudsiges til at være
-\begin{equation}
-\label{eq:meyer}
-T = a + b \sqrt{\frac{A}{W}}
-\end{equation}
 
 Meyer et al. udfører et teoretisk og to praktiske forsøg, hvor der i det teoretiske forsøg bliver gjort flere udregninger med forskellige værdier af A og W, som viser en god approksimation i forhold til Fitts' formulering. De praktiske forsøg gør brug af simplere motoriske opgaver end dem kendt fra Fitts' egne forsøg. Den eneste rummelige frihed i Meyers forsøg er håndledenes rotation. Igennem hele artiklen benytter Meyer sig af, at en motorisk opgave er delt ind i en primær underbevægelse, og nogle efterfølgende korrigerende underbevægelser. Dette har dog ikke nogen betydning for sammenligningen med Fitts’ formulering, da den totale tid af alle underbevægelser vil approksimere den logaritmiske funktion af A/W, hvilket medfører at Fitts model også passer på modeller med iterative fejlkorrigerende underbevægelser.
 
 Graferne for funktionerne i ligning \ref{eq:meyer} og \ref{eq:FittsLov} vil udvise samme form. Grunden til dette er, at begge funktioner er monotont voksende, når $\frac{A}{W}$ bliver større. $\sqrt{\frac{A}{W}}$ vokser dog hurtigere end den tilsvarende logaritmiske funktion, hvilket kan ses af figur \ref{fig:log_vs_sqrt}. 
 
-\cite{goldberg2015} noterer dog, at der er nogle ulemper ved denne formel. Hvis testdeltageren når målet i en enkelt bevægelse, så vil modellen følge en lineær udvikling i stedet for en eksponentiel udvikling. Dette passer ikke godt med observerede værdier. For en fast positiv værdi af $\frac{A}{W}$ vil Meyers formel gå mod $1$, når antallet af underbevægelser går mod uendelig.
+\cite{goldberg2015} noterer dog, at der er nogle ulemper ved denne formel. Hvis testdeltageren når målet i en enkelt bevægelse, vil modellen følge en lineær udvikling i stedet for en eksponentiel udvikling. Dette passer ikke godt med observerede værdier. For en fast positiv værdi af $\frac{A}{W}$ vil Meyers formel gå mod $1$, når antallet af underbevægelser går mod uendelig.
 
 \begin{figure}[h]
 \centering
@@ -254,7 +255,7 @@ Graferne for funktionerne i ligning \ref{eq:meyer} og \ref{eq:FittsLov} vil udvi
 
 \addcontentsline{toc}{section}{Sammenligning}
 \section*{Sammenligning}
-For at få en bedre forståelse af de fire formuleringer af Fitts' lov, vil vi i dette afsnit se på hvordan de matematisk ligner hinanden. Det første vi vil gøre er, at prøve at omformulere Welford's formulering, da den ikke indeholder et additivt `a'-led. 
+For at få en bedre forståelse af de fire formuleringer af Fitts' lov, vil vi i dette afsnit se på hvordan de matematisk ligner hinanden. Det første vi vil gøre er, at prøve at omformulere Welford's formulering, da den ikke indeholder et additivt $a$-led. 
 \begin{align*}
 T &= K\cdot\log\left(\frac{A+0.5W}{W}\right)\Leftrightarrow\\
 T &= K\left(1-1+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
@@ -263,16 +264,16 @@ T &= -K+K\left(\log(2)+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
 T &= -K+K\left(\log\left(2\left(\cdot\frac{A+0.5W}{W}\right)\right)\right)\Leftrightarrow\\
 T &= -K+K\cdot\log\left(\frac{2A+W}{W}\right)
 \end{align*}
-På trods af at det er muligt at omformulere Welford's formulering, så vil det ikke være brugbart i praksis. Omformuleringen gør, at det additive led, $a = -K$, er blevet negativt, hvilket betyder at tiden det tager at påbegynde en opgave er negativ. Vi vil derfor fremadrettet kun bruge Welford's formulering uden den additive konstant.
+På trods af at det er muligt at omformulere Welford's formulering, så vil det ikke være brugbart i praksis. Omformuleringen gør, at det additive led, $a = -K$, er blevet negativt, hvilket betyder, at tiden det tager at påbegynde en opgave er negativ. Vi vil derfor fremadrettet kun bruge Welford's formulering uden den additive konstant.
 
-Når vi kigger på de fire formuleringer, så kan vi vise, at de ikke er ens, ved at vælge et fast $A = 5$ og $W = 1$ og finde ét punkt, hvor de to funktionsværdier er forskellige. Vi sætter $a=0$ og finder tiden i skæringen med $y$-aksen.
+Når vi kigger på de fire formuleringer, kan vi vise, at de ikke er ens, ved at vælge et fast $A = 5$ og $W = 1$ og finde ét punkt, hvor de to funktionsværdier er forskellige. Vi sætter $a=0$ og finder tiden i skæringen med $y$-aksen.
 \begin{align*}
 \text{Fitts: } &T=b\cdot\log\left(\frac{2\cdot5}{2}\right)\\
 \text{Welford: } &T=k\cdot\log\left(\frac{5+0.5\cdot 2}{2}\right)\\
 \text{Mackenzie: } &T=b\cdot\log\left(\frac{5 + 2}{2}\right)\\
 \text{Meyer: } &T=b\cdot\sqrt{\frac{5}{2}}
 \end{align*}
-Ved at sætte to af ligninerne for $T$ lig hinanden kan vi vise, at de to formuleringer ikke er ens.
+Ved at sætte to af ligningerne for $T$ lig hinanden kan vi vise, at de to formuleringer ikke er ens.
 \begin{align*}
 b_{Fit}\cdot\log\left(\frac{2\cdot5}{2}\right)&=b_{Mac}\cdot\log\left(\frac{5 + 2}{2}\right)\\
 b_{Mac} &= \frac{b_{Fit}\cdot\log\left(\frac{2\cdot5}{2}\right)}{\log\left(\frac{5 + 2}{2}\right)}
@@ -285,12 +286,12 @@ Indsætter vi denne værdi for $b_{Mac}$ i Mackenzies formulering, kan vi finde 
 
 Denne sammenligning af formuleringerne to og to kan gøres for dem alle fire, men det vil vi undlade at gøre her, og blot formode, at det rent faktisk er tilfældet for dem alle sammen. De fire formuleringer er derfor ikke ens og vi vil derfor få forskellige resultater når vi bruger dem på den indsamlede data.
 
-På trods af at de fire formuleringer er forskellige, så vil de kunne approksimere hinanden. Vi har derfor plottet de fire formuleringer i ét interval, for at se om de approksimerer hinanden. Figur \ref{fig:Sammenligning} viser $ID$ som funktion af $A/W$ og viser at Meyer's, Welford's og MacKenzie's approksimerer hinanden for $A/W$-værdier mellem 0 og 25. Grafen for Fitts ligger højere end de tre andre og approksimerer ikke de andre.
+På trods af at de fire formuleringer er forskellige, vil de kunne approksimere hinanden. Vi har derfor plottet de fire formuleringer i ét interval, for at se om de approksimerer hinanden. Figur \ref{fig:Sammenligning} viser $ID$ som funktion af $A/W$ og viser at Meyer's, Welford's og MacKenzie's approksimerer hinanden for $A/W$-værdier mellem 0 og 25. Grafen for Fitts ligger højere end de tre andre og approksimerer ikke de andre.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\linewidth]{images/plots/plot_comparison_id}
-\caption{Graf over $ID$ (y-akse) i forhold til $A/W$ (x-akse) med linjer der viser udviklingen af $ID$-funktionen for de fire forskellige modeller.}
+\caption{Graf over $ID$ (y-akse) i forhold til $A/W$ (x-akse) med linjer, der viser udviklingen af $ID$-funktionen for de fire forskellige modeller.}
 \label{fig:Sammenligning}
 \end{figure}
 
@@ -301,8 +302,8 @@ I dette afsnit beskriver vi det design der er brugt i vores forsøg. Derudover v
 \addcontentsline{toc}{section}{Forsøgsopstilling}
 \section*{Forsøgsopstilling}
 Vi har valgt at udføre to brugerundersøgelser, for at have både et kontrolleret og et ukontrolleret datasæt med deltagernes bevægelsesbaner.
-Det første vil være et kontrolleret laboratorieeksperiment hvor vi kontrollerer flest mulige variable, mens det andet er et ukontrolleret crowdsourcing- og webbaseret eksperiment hvor vi får en større mængde data, men ikke har den samme kontrol over eksperimentets variable.\\\\
-Større dele af vores eksperiment har vi valgt at udføre ligesom tidligere udførte forsøg, da de er udført af folk med meget mere erfaring, og ekspertise på dette område end os.
+Det første vil være et kontrolleret laboratorieeksperiment, hvor vi kontrollerer flest mulige variable, mens det andet er et ukontrolleret crowdsourcing- og webbaseret eksperiment, hvor vi får en større mængde data, men ikke har den samme kontrol over eksperimentets variable.\\\\
+Større dele af vores eksperiment har vi valgt at udføre ligesom tidligere udførte forsøg, da de er udført af eksperter med langt mere erfaring i dette område end os.
 Det drejer sig om følgende dele af vores eksperiment:
 \begin{itemize}
 \item Spørgsmål som blev stillet før crowdsourcing-deltagerne kunne udføre forsøget \cite{goldberg2015}
@@ -318,7 +319,7 @@ Vi har valgt at bruge JavaScript til at udvikle vores forsøg, da vi alle er bek
 
 \addcontentsline{toc}{section}{Opgavetyper}
 \section*{Opgavetyper}
-I denne sektion vil vi beskrive hvordan tunnel-, spiral- og pegeopgaverne er designet. Undervejs i dette afsnit har vi inkluderet visuelle eksempler der er beskåret. I bilag \ref{sec:screenshots} har vi vedlagt figurer, der illustrerer de samme, og flere, eksempler uden nogen beskæring, så canvas, tekst og knapper er med.
+I denne sektion vil vi beskrive, hvordan tunnel-, spiral- og pegeopgaverne er designet. Undervejs i dette afsnit har vi inkluderet visuelle eksempler der er beskåret. I bilag \ref{sec:screenshots} har vi vedlagt figurer, der illustrerer de samme, og flere, eksempler uden nogen beskæring, så canvas, tekst og knapper er med.
 
 \addcontentsline{toc}{subsection}{Tunnelopgave}
 \subsection*{Tunnelopgave}
@@ -348,7 +349,7 @@ I denne sektion vil vi beskrive hvordan tunnel-, spiral- og pegeopgaverne er des
 		\label{fig:ex_tunnel_4}
 	\end{minipage}
 \end{minipage}\\\\
-I denne opgave skal testdeltageren føre deres markør igennem fire tunneller af varierende længde, og varierende indmundingsbredde. Alle tunnellerne er skaleret ned til 50\% af deres oprindelige størrelse, så deres indbyrdes relative størrelse er beholdt. De fire tunneller kan ses på Figur \ref{fig:ex_tunnel_1}, \ref{fig:ex_tunnel_2}, \ref{fig:ex_tunnel_3} og \ref{fig:ex_tunnel_4}.  Størrelserne målt i pixels for tunnellængde ($A$) og den venstre lodrette linje ($W$) er vist i tabel \ref{tab:tunnelopgave}. Den højre lodrette linje er fastsat til 8 pixels bredde, hvilket stemmer overens med forsøget lavet i \cite{accot1997}
+I denne opgave skal testdeltageren føre sin markør igennem fire tunneller af varierende længde, og varierende indmundingsbredde. Alle tunnellerne er skaleret ned til 50\% af deres oprindelige størrelse, så deres indbyrdes relative størrelse er beholdt. De fire tunneller kan ses på Figur \ref{fig:ex_tunnel_1}, \ref{fig:ex_tunnel_2}, \ref{fig:ex_tunnel_3} og \ref{fig:ex_tunnel_4}.  Størrelserne målt i pixels for tunnellængde ($A$) og den venstre lodrette linje ($W$) er vist i tabel \ref{tab:tunnelopgave}. Den højre lodrette linje er fastsat til 8 pixels bredde, hvilket stemmer overens med forsøget lavet i \cite{accot1997}
 \begin{center}
 	\begin{tabular}{c c c}
 		Tunnel & A & W \\
@@ -361,8 +362,8 @@ I denne opgave skal testdeltageren føre deres markør igennem fire tunneller af
 	\captionof{table}{Værdier af $A$ (længde) og $W$ (venstre lodrette streg) af tunneller brugt i tunnelopgaverne}
 	\label{tab:tunnelopgave}
 \end{center}
-Ved begyndelsen af en tunnelopgave vil den venstre side af tunnellen være markeret med grøn for at tydeliggøre hvor opgaven starter. Når testdeltagerens markør passerer venstre side af tunnellen vil opgaven starte, og det vil nu være den højre side af tunnellen der er grøn, for at signalere hvor markøren nu skal flyttes hen. Når opgaven er i gang, vil der som på figur \ref{fig:ex_tunnel_1} blive vist en grøn linje der hvor markøren flyttes fra, i tilfælde af at testdeltageren rammer eller ryger uden for kanterne, vil de kunne fortsætte ubemærket.\\
-Når testpersonen passerer den højre side af tunnellen vil opgaven stoppe, og der vil blive vist en knap hvor testpersonen kan fortsætte til næste opgave, eller afslutte denne test hvis sidste opgave er gennemført. Ved afslutningen af de fire tunnelopgaver vil tunnellernes længde og bredde, og markørens bane, blive gemt - og til sidst sendt til vores database.
+Ved begyndelsen af en tunnelopgave vil den venstre side af tunnellen være markeret med grøn for at tydeliggøre, hvor opgaven starter. Når testdeltagerens markør passerer venstre side af tunnellen vil opgaven starte, og det vil nu være den højre side af tunnellen der er grøn, for at signalere hvor markøren herefter skal flyttes hen. Når opgaven er i gang, vil der som på figur \ref{fig:ex_tunnel_1}, blive vist en grøn linje der hvor markøren flyttes fra; i tilfælde af at testdeltageren rammer eller ryger uden for kanterne, vil de kunne fortsætte ubemærket.\\
+Når testpersonen passerer den højre side af tunnellen vil opgaven stoppe, og der vil blive vist en knap, hvor testpersonen kan fortsætte til næste opgave, eller afslutte denne test, hvis sidste opgave er gennemført. Ved afslutningen af de fire tunnelopgaver vil tunnellernes længde og bredde, og markørens bane, blive gemt - og til sidst sendt til vores database.
 
 \addcontentsline{toc}{subsection}{Spiralopgave}
 \subsection*{Spiralopgave}
@@ -381,7 +382,7 @@ Når testpersonen passerer den højre side af tunnellen vil opgaven stoppe, og d
 	\captionof{figure}{Skærmbillede af den fjerde spiralopgave.}
 	\label{fig:ex_spiral_4}
 \end{minipage}\\\\
-I denne opgave skal testdeltageren føre deres markør igennem fire spiraler af varierende størrelse, og med varierende antal vindinger. De fire spiraler kan ses på figur \ref{fig:ex_spiral_1}, \ref{fig:ex_spiral_2}, \ref{fig:ex_spiral_3} og \ref{fig:ex_spiral_4}. De er skaleret cirka 80\% ned, men deres indbyrdes relative størrelser er beholdt. Antallet af vindinger i spiralerne er vist i tabel \ref{tab:spiralopgave}. Antallet af vindingerne på spiralerne er taget fra \cite{accot1997}.
+I denne opgave skal testdeltageren føre sin markør igennem fire spiraler af varierende størrelse, og med varierende antal vindinger. De fire spiraler kan ses på figur \ref{fig:ex_spiral_1}, \ref{fig:ex_spiral_2}, \ref{fig:ex_spiral_3} og \ref{fig:ex_spiral_4}. De er skaleret cirka 80\% ned, men deres indbyrdes relative størrelser er beholdt. Antallet af vindinger i spiralerne er vist i tabel \ref{tab:spiralopgave}. Antallet af vindingerne på spiralerne er taget fra \cite{accot1997}.
 \begin{center}
 	\begin{tabular}{c c c}
 		Spiral & A & W \\
@@ -394,14 +395,14 @@ I denne opgave skal testdeltageren føre deres markør igennem fire spiraler af 
 	\captionof{table}{Værdier af $A$ (antal vindinger) af spiraler brug i spiralopgaverne}
 	\label{tab:spiralopgave}
 \end{center}
-Ved begyndelsen af en spiralopgave vil spiralens udmunding være grøn for at tydeliggøre over for testpersonen hvor opgaven starter. Når testdeltagerens markør passerer den yderste vertikale linje vil opgaven starte, der vil blive vist en grøn streg der, hvor markøren flyttes fra, og den inderste vertikale linje vil derefter skifte til grøn for at signalere hvor testpersonen skal flytte sin markør hen. I tilfælde af at testdeltageren rammer kanten både ind- og udvendigt i spiralen, vil de kunne fortsætte ubemærket.\\
-Når testpersonen passerer den inderste vertikale linje i spiralen, vil opgaven stoppe. Der vil efterfølgende blive vist en knap hvor der kan fortsættes til næste spiral, eller afslutte og fortsætte til næste opgave. Ved afslutning af opgaven vil vi, som med tunnelopgaven, gemme tiden det har taget og banen brugt igennem spiralen, og sende denne til vores database.
+Ved begyndelsen af en spiralopgave vil spiralens udmunding være grøn for at tydeliggøre over for testpersonen, hvor opgaven starter. Når testdeltagerens markør passerer den yderste vertikale linje vil opgaven starte, der vil blive vist en grøn streg der, hvor markøren flyttes fra, og den inderste vertikale linje vil derefter skifte til grøn for at signalere, hvor testpersonen skal flytte sin markør hen. I tilfælde af at testdeltageren rammer kanten både ind- og udvendigt i spiralen, vil de kunne fortsætte ubemærket.\\
+Når testpersonen passerer den inderste vertikale linje i spiralen, vil opgaven stoppe. Der vil efterfølgende blive vist en knap, hvor der kan fortsættes til næste spiral, eller afslutte og fortsætte til næste opgave. Ved afslutning af opgaven vil vi, som med tunnelopgaven, gemme tiden det har taget og banen brugt igennem spiralen, og sende denne til vores database.
 
 \addcontentsline{toc}{subsection}{Pegeopgave}
 \subsection*{Pegeopgave}
 I denne opgave vil testdeltageren blive præsenteret for en sekvens af 25 cirkulære mål af skiftende størrelse og position. Målene præsenteres i rækkefølgen som ses i Tabel \ref{tab:pegeopgave}. Hver test i sættet starter, når testdeltageren klikker inden for en fastplaceret cirkel i vinduets center og slutter når testdeltageren klikker indenfor målet. Hvert cirkulært mål varierer i distance fra center-cirklen og varierer i diameter, hvilket giver ændringer i A/W-sværhedsgrad som ses i tabel \ref{tab:pegeopgave}. Center-cirklen vil blive præsenteret i en grøn farve, se figur \ref{fig:pegeopgave_start}, og vil ved klik skifte til blå - alle mål-cirklerne er vist i grøn farve. Figur \ref{fig:pegeopgave_target} illustrerer, hvordan center- og mål-cirklerne er farvet. 
 
-Testdeltagerens bane til mål-cirklen er illustreret ved en grøn linje, der følger musen, et eksempel herpå ses i figur \ref{fig:pegeopgave_path}. Vi vil i løbet af opgaven registrere tiden det tager fra at testpersonen trykker på center-cirklen, til de trykker på målet. Dertil vil banen som testdeltageren bruger også blive registreret. De tre illustrationer af pegeopgaven er skaleret forskelligt for bedre at tydeliggøre, essensen i opgaven.
+Testdeltagerens bane til mål-cirklen er illustreret ved en grøn linje, der følger musen, et eksempel herpå ses i figur \ref{fig:pegeopgave_path}. Vi vil i løbet af opgaven registrere tiden det tager fra testpersonen trykker på center-cirklen, til de trykker på målet. Dertil vil banen som testdeltageren bruger også blive registreret. De tre illustrationer af pegeopgaven er skaleret forskelligt for bedre at tydeliggøre, essensen i opgaven.
 
 \begin{minipage}[t]{.5\linewidth}
 \centering
@@ -456,7 +457,7 @@ Testdeltagerens bane til mål-cirklen er illustreret ved en grøn linje, der fø
 \subsection*{Generelt for de tre opgaver}
 I alle opgaverne vil deltagerne blive informeret om, hvor mange opgaver de mangler at gennemføre, så de ved hvornår de er færdige, den grå tekst \textit{"Remaining circles"} i figur \ref{fig:pegeopgave_target} er et eksempel på, hvordan denne information så ud undervejs. Vi har medtaget det i håb om, at testdeltagere fra crowdsourcing forsøget ikke vil miste tålmodigheden midt i testen.  
 
-Hvis deltagerne bevæger pegeenheden uden for det canvas som opgaven skal udføres i, vil denne del af banen ikke komme med i vores gemte data. For tunnel og spiralopgaverne er størrelsen på det omkring liggende canvas 1024x512 pixels, imens det for pegeopgaven er 512x512 pixels. Disse størrelser er faste uanset størrelsen på testdeltagerens skærm.
+Hvis deltagerne bevæger pegeenheden uden for det canvas som opgaven skal udføres i, vil denne del af banen ikke komme med i vores gemte data. For tunnel og spiralopgaverne er størrelsen på det omkringliggende canvas 1024x512 pixels, imens det for pegeopgaven er 512x512 pixels. Disse størrelser er faste uanset størrelsen på testdeltagerens skærm.
 
 \addcontentsline{toc}{chapter}{Eksperimenter}
 \chapter*{Eksperimenter}
@@ -475,7 +476,7 @@ Herefter bliver testdeltageren bedt om at udføre tunnelopgaven - efterfulgt af 
 \subsection*{Crowdsourcingeksperiment}
 Crowdsourcingeksperimentet vil foregå på internettet, og vi har derfor gjort vores program tilgængeligt online. På grund af de faste canvas størrelser vil alle besøg fra smartphones eller tablets blive blokeret, og informeret om, at forsøget kun er tilgængeligt fra en computer. 
 
-Ved crowdsourcingeksperimentets start vil hver deltager udfylde formularen, som ses i Figur \ref{fig:Questions}, før de kan fortsætte. Når formularen er udfyldt forsætter deltageren til opgaverne. Her skal der, ligesom laboratorieeksperimentet, udføres 4 spiralopgaver, efterfulgt af 4 tunnelopgaver og til sidst 25 pegeopgaver. Efter deltageren har udført alle opgaver vil deres data blive sendt til en server, hvorefter deltageren får en informationsmeddelelse.
+Ved crowdsourcingeksperimentets start vil hver deltager udfylde formularen, som ses i Figur \ref{fig:Questions}, før de kan fortsætte. Når formularen er udfyldt fortsætter deltageren til opgaverne. Her skal der, ligesom laboratorieeksperimentet, udføres 4 spiralopgaver, efterfulgt af 4 tunnelopgaver og til sidst 25 pegeopgaver. Efter deltageren har udført alle opgaver vil personens data blive sendt til en server, hvorefter deltageren får en informationsmeddelelse.
 Vi har valgt at dele vores eksperiment på et antal af reddit-sider, da det er et meget populært internetfora og muliggør, at vi kan nå ud til så mange mennesker som overhovedet muligt.
 \begin{itemize}
 \item reddit.com/r/denmark\\
@@ -500,13 +501,13 @@ Som det sidste vil vi også dele forsøget på vores egne Facebook-profiler. Tek
 
 \addcontentsline{toc}{subsection}{Laboratorieeksperiment}
 \subsection*{Laboratorieeksperiment}
-Vi, P1, P2 og P3, udførte vores laboratorieeksperiment den 20. april 2015 på H.C. Ørsted instituttet. På trods af, at der på dagen ikke var mange mennesker til stede, så fik vi alligevel 10 personer igennem vores eksperiment i løbet af fire timer. De 10 testdeltagere var af varierende køn og nationalitet. Alle testdeltagere blev hvervet af P1 og blev derefter introduceret til eksperimentet af enten P2 eller P3. Herefter udførte alle testdeltagere forsøget uden behov for yderlig assistance. Testdeltagerne syntes godt om forsøget. Alt i alt forløb vores forsøg som forventet, uden problemer eller forstyrrelser.
+Vi, P1, P2 og P3, udførte vores laboratorieeksperiment den 20. april 2015 på H.C. Ørsted instituttet. På trods af, at der på dagen ikke var mange mennesker til stede, fik vi alligevel 10 personer igennem vores eksperiment i løbet af fire timer. De 10 testdeltagere var af varierende nationalitet, og begge køn var repræsenteret. Alle testdeltagere blev hvervet af P1 og blev derefter introduceret til eksperimentet af enten P2 eller P3. Herefter udførte alle testdeltagere forsøget uden behov for yderlig assistance. Testdeltagerne syntes godt om forsøget. Alt i alt forløb vores forsøg som forventet, uden problemer eller forstyrrelser.
 
 \addcontentsline{toc}{subsection}{Crowdsourcingeksperiment}
 \subsection*{Crowdsourcingeksperiment}
 Forsøget gik godt - 264 personer gennemførte vores forsøg og har suppleret os med vital data. Vi fik delt vores forsøg på størstedelen af de tidligere beskrevne sider, dog med nogle få undtagelser. Generelt set var reddit det mest lukrative sted, hvorfra 140 personer har skrevet siden på som deres reference - hvorimod 74 skrev at de var blevet refereret fra Facebook.\\
-Det var ikke muligt at dele vores forsøg på $reddit.com/r/helpme$ og $reddit.com/r/care$, da vi ikke havde nok "karma"-point til at kunne lave et indlæg på disse sites.\\
-Efterfølgende har vi lukket for muligheden for at deltage i vores forsøg den 30/04/2015, og skrevet en besked på forsøgssiden hvor vi takker folk for deres deltagelse.
+Det var ikke muligt at dele vores forsøg på $reddit.com/r/helpme$ og $reddit.com/r/care$, da vi ikke havde nok 'karma'-point til at kunne lave et indlæg på disse sites.\\
+Efterfølgende har vi lukket for muligheden for at deltage i vores forsøg den 30/04/2015, og skrevet en besked på forsøgssiden, hvor vi takker folk for deres deltagelse.
 
 \addcontentsline{toc}{chapter}{Analyse}
 \chapter*{Analyse}
@@ -515,9 +516,9 @@ I dette afsnit vil vi analysere den indsamlede data ved brug af både kvantitati
 Den tilsvarende R-kode som er brugt til analysen, kan findes i vores bilag.
 \addcontentsline{toc}{section}{Modeludvælgelse}
 \section*{Modeludvælgelse}
-Som det kan ses af de fire formuleringer for Fitts' lov, så kan de alle sammen opfattes som affine modeller, med tiden $T$ som y-variabel og ID som x-variabel. Bemærk, at Welfords formel har en skæring med y-aksen i 0, dvs. $y=b\cdot x$.
+Som det kan ses af de fire formuleringer for Fitts' lov, kan de alle fire opfattes som affine modeller, med tiden $T$ som y-variabel og ID som x-variabel. Bemærk, at Welfords formel har en skæring med y-aksen i 0, dvs. $y=b\cdot x$.
 
-For at kunne finde ud af hvilken af de fire lineære modeller der beskriver vores data bedst, har vi taget udgangspunkt i \cite{wu2011experiments} der refererer til tre modeludvælgelseskriterier som værende almindeligt anvendte.
+For at kunne finde ud af, hvilken af de fire lineære modeller der beskriver vores data bedst, har vi taget udgangspunkt i \cite{wu2011experiments}, der refererer til tre modeludvælgelseskriterier som værende almindeligt anvendte.
 
 I \cite{wu2011experiments} afsnit 1.7 bliver $C_p$, $AIC$ og $BIC$ beskrevet som almindeligt anvendte, og der bliver refereret til Ockhams ragekniv som værende et godt udgangspunkt ved modeludvælgelse, da det oftest er den simpleste model der passer bedst. Dette har vi brugt til selv at vælge $LSE$, da denne er simpel, og derfor er understøttet som metode, af Ockhams ragekniv.
 \begin{itemize}
@@ -563,7 +564,7 @@ Vi har derfor forsøgt at fjerne alle datapunkter, som afviger med mere end 3 ga
 \end{minipage}
 
 \newpage
-På baggrund af de affine linjers overenstemmelse med datapunkterne fra det kontrollerede eksperiment har vi konkluderet, at dataene fra vores ukontrollerede forsøg også kan beskrives af de fire formuleringer. Vi vil derfor analysere de fire formuleringer af Fitts' lov med vores data fra det ukontrollerede crowdsourcing forsøg. Vores analyse vil basere sig på et filtreret datasæt ved den oven nævnte $\sigma$ metode, så eventuelle perifære data ikke medtages. I resten af analysen vil de 264 testdeltageres opgaver betyde den filtrerede del af det fulde datasæt.
+På baggrund af de affine linjers overenstemmelse med datapunkterne fra det kontrollerede eksperiment har vi konkluderet, at dataene fra vores ukontrollerede forsøg også kan beskrives af de fire formuleringer. Vi vil derfor analysere de fire formuleringer af Fitts' lov med vores data fra det ukontrollerede crowdsourcing forsøg. Vores analyse vil basere sig på et filtreret datasæt ved den ovennævnte $\sigma$ metode, så eventuelle perifære data ikke medtages. I resten af analysen vil de 264 testdeltageres opgaver betyde den filtrerede del af det fulde datasæt.
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{0.45\linewidth}
@@ -629,18 +630,18 @@ Det er de fire matematiske modeller som vores pegeopgaveanalyse vil tage udgangs
 
 \addcontentsline{toc}{subsection}{AIC-analyse}
 \subsection*{AIC-analyse}
-AIC anslår kvaliteten af hver model, relativt til hver af de andre modeller. Hvilket vil sige, at AIC ikke kan sige noget om kvaliteten af en model I absolut forstand, og derfor ikke kan vurdere hvor godt en model passer på dataen - kun den relative kvalitet af modellerne.
+AIC anslår kvaliteten af hver model, relativt til hver af de andre modeller. Hvilket vil sige, at AIC ikke kan sige noget om kvaliteten af en model i absolut forstand, og derfor ikke kan vurdere hvor godt en model passer på dataen - kun den relative kvalitet af modellerne.
 
-Tabel \ref{tab:table_analysis_aic1} viser AIC-værdier for de fire modeller tilpasset til alle testdeltageres pegeopgaver, og den relative forskel i mellem dem. Eftersom den absolute AIC-værdi ikke I sig selv siger noget, kigger vi kun på forskellen mellem dem. Tabel \ref{tab:table_analysis_aic2} viser AIC-værdier for alle pegeopgaver for 10 tilfældigt udvalgte personer, imens tabel \ref{tab:table_analysis_aic3} viser den relative forskel i mellem de fire modellers AIC-værdier for de samme personer.
+Tabel \ref{tab:table_analysis_aic1} viser AIC-værdier for de fire modeller tilpasset alle testdeltageres pegeopgaver, og den relative forskel imellem dem. Eftersom den absolute AIC-værdi ikke i sig selv siger noget, kigger vi kun på forskellen mellem dem. Tabel \ref{tab:table_analysis_aic2} viser AIC-værdier for alle pegeopgaver for 10 tilfældigt udvalgte personer, imens tabel \ref{tab:table_analysis_aic3} viser den relative forskel i mellem de fire modellers AIC-værdier for de samme personer.
 
-Den relative forskel i mellem modellerne beskriver vi ved $\Delta_i$, hvilket er beregnet som forskellen i mellem AIC værdien for den $i$'te model og AIC værdien for modellen med den mindste AIC værdi, se ligning \ref{eq:delta_aic}. Denne måde at beregne de relative forskelle er foreslået i \cite{burnham2004}.
+Den relative forskel imellem modellerne beskriver vi ved $\Delta_i$, hvilket er beregnet som forskellen i mellem AIC værdien for den $i$'te model og AIC værdien for modellen med den mindste AIC værdi, se ligning \ref{eq:delta_aic}. Denne måde at beregne de relative forskelle er foreslået i \cite{burnham2004}.
 \begin{align}
 \Delta_i = AIC_i - AIC_{min}
 \label{eq:delta_aic}
 \end{align} 
 De $\Delta$-værdier, som fremkommer af denne beregning vil være den information der mistes, ved at bruge en model fremfor en anden \cite{burnham2004}. Modeller med $\Delta_i \leq 2$ vil ikke kunne afskrives at kunne være lige så beskrivende som modellen med $AIC_{min}$, imens modeller med $\Delta_i > 10$ godt kan udelukkes fra fremtidige analyser af de pågældende data. Modeller med $4 \leq \Delta_i \leq 7$ kan ikke udelades, men kan heller ikke erstatte modellen med $AIC_{min}$ til fulde \cite{burnham2004}.
 
-De indbyrdes forskelle i tabel \ref{tab:table_analysis_aic1} er alle over 10 og vi kan derfor konkludere, at Meyer's formulering beskriver den indsamlede data bedst. Forskellene for de 10 tilfældigt udvalgte personer, som ses i tabel \ref{tab:table_analysis_aic3}, ligger generelt lavere end forskellene i tabel \ref{tab:table_analysis_aic1}. På de fleste af personerne er har Meyer's, MacKenzie's og Fitts' en forskel som er mindre end eller lig med 2, hvilket gør at de beskriver den indsamlede data lige godt. Forskellene for Welford's formulering er generelt højere, dog kun få over 10, hvilket gør, at vi ikke kan udelukke den som værende mere beskrivende for vores data, men at den ikke beskriver vores data så præcist som de tre andre. 
+De indbyrdes forskelle i tabel \ref{tab:table_analysis_aic1} er alle over 10 og vi kan derfor konkludere, at Meyer's formulering beskriver den indsamlede data bedst. Forskellene for de 10 tilfældigt udvalgte personer, som ses i tabel \ref{tab:table_analysis_aic3}, ligger generelt lavere end forskellene i tabel \ref{tab:table_analysis_aic1}. For de fleste af personerne har Meyer's, MacKenzie's og Fitts' en forskel, som er mindre end eller lig med 2, hvilket gør at de beskriver den indsamlede data lige godt. Forskellene for Welford's formulering er generelt højere, dog kun få over 10, hvilket gør, at vi ikke kan udelukke den som værende mere beskrivende for vores data, men at den ikke beskriver vores data så præcist som de tre andre. 
 
 \begin{table}[h]
 \centering
@@ -695,9 +696,12 @@ Person & Meyer  & MacKenzie & Fitts  & Welford \\\hline
 
 \addcontentsline{toc}{subsection}{Residualanalyse}
 \subsection*{Residualanalyse}
-For at få en ekstra vurdering af præcisionen af modellerne, har vi valgt at lave en residualanalyse ved hjælp af residualplots. Residualerne I modellerne er variationen i $ID$ som modellerne ikke når at opfange, og de kan derved sige noget om hvor præcis modellerne er i forhold til den data vi har indsamlet.\\
-På figur \ref{fig:plot_residual_fitt}, \ref{fig:plot_residual_welford}. \ref{fig:plot_residual_mackenzie} og \ref{fig:plot_residual_meyer} ses alle fire modellers residualplot, med en rød linje defineret af en smoothing-funktion. Smoothing-funktionen er tilføjet som et visuelt hjælpemiddel der tydeligt kan vise hvordan residualerne fordeler sig omkring x-aksen. Jo mere centreret de er om aksen, og jo mere linære de er i forhold til aksen, jo bedre er modellen.\\
-Når vi kigger på de fire residualplot, så viser de samme resultater som AIC-analysen. Welford's residualplot viser at modellen passer dårlig på den indsamlede data. Fitt's og MacKenzie's ligner hinanden meget, mens Meyer's er den model der giver den bedste fit til den indsamlede data.\\
+For at få en ekstra vurdering af præcisionen af modellerne, har vi valgt at lave en residualanalyse ved hjælp af residualplots. Residualerne i modellerne er variationen i $ID$ som modellerne ikke når at opfange, og de kan derved sige noget om hvor præcis modellerne er i forhold til den data vi har indsamlet.
+
+På figur \ref{fig:plot_residual_fitt}, \ref{fig:plot_residual_welford}. \ref{fig:plot_residual_mackenzie} og \ref{fig:plot_residual_meyer} ses alle fire modellers residualplot, med en rød linje defineret af en smoothing-funktion. Smoothing-funktionen er tilføjet som et visuelt hjælpemiddel der tydeligt kan vise hvordan residualerne fordeler sig omkring x-aksen. Jo mere centreret de er om aksen, og jo mere linære de er i forhold til aksen, jo bedre er modellen.
+
+Når vi kigger på de fire residualplot, så viser de samme resultater som AIC-analysen. Welford's residualplot viser, at modellen passer dårligt på den indsamlede data. Fitt's og MacKenzie's ligner hinanden meget, mens Meyer's er den model der giver den bedste fit til den indsamlede data.
+
 Det ses af figur \ref{fig:plot_residual_welford}, at Welford's især er dårligere ved lavere værdier af $ID$. Grunden til dette skal findes i, at Welford's ikke har det additive $a$-led. Som Welford \cite{welford1968} selv forklarer, så vil det manglende $a$-led ikke gøre stor forskel ved større værdier af $ID$. Fitt's og MacKenzie's residualer ligner hinanden rigtig meget.
 
 \begin{minipage}{\linewidth}
@@ -725,7 +729,7 @@ Det ses af figur \ref{fig:plot_residual_welford}, at Welford's især er dårlige
 
 \addcontentsline{toc}{section}{Modelanalyse af navigationsopgaver}
 \section*{Modelanalyse af navigationsopgaver}
-I vores forsøg havde vi, udover pegeopgaven, også tunnel- og spiralopgaver. Vi vil i dette afsnit forsøge at tilpasse de fire formuleringer af Fitts' lov på vores navigationsopgaver, velvidende om, at det ikke er en type opgaver de er beregnet til. Accot og Zhai har undersøgt lignende navigationsopgaver og fundet et $ID$ specifikt for både tunnel- og spiralopgaver, hvilket vi vil bruge til at sammenligne med de fire formuleringer\cite{accot1997}.
+I vores forsøg havde vi, udover pegeopgaven, også tunnel- og spiralopgaver. Vi vil i dette afsnit forsøge at tilpasse de fire formuleringer af Fitts' lov på vores navigationsopgaver, velvidende, at det ikke er en type opgaver de er beregnet til. Accot og Zhai har undersøgt lignende navigationsopgaver og fundet et $ID$ specifikt for både tunnel- og spiralopgaver, hvilket vi vil bruge til at sammenligne med de fire formuleringer\cite{accot1997}.
 
 \addcontentsline{toc}{subsection}{Analyse af tunnelopgaver}
 \subsection*{Analyse af tunnelopgaver}
@@ -746,7 +750,7 @@ Accot og Zhai beskriver i deres artikel \cite{accot1997}, hvordan en indsnævren
 \text{Accot \& Zhai: } T = 6112.40+47.77 \cdot \left(\frac{A}{W_2-W_1}\cdot\ln\left(\frac{W_2}{W_1 }\right)\right)
 \end{align*}
 
-Det kan bemærkes, at den primære forskel imellem Accot og Zhai's formulering og de fire andre er det multiplikative led, $b$. Da $ID_{NT}$ antager væsentligt højere værdier end de fire andre $ID$'er, så er $b$ også tilsvarende mindre. For at visualisere de fem formuleringers tilpasning til dataene har vi valgt, at beregne gennemsnitstiden for alle testdeltagerne per $ID$. Dette giver anledning til fire datapunkter, ét for hver tunnelopgave, som kan ses i figur \ref{fig:welford_tunnel_line}, \ref{fig:fitt_tunnel_line}, \ref{fig:meyer_tunnel_line},\ref{fig:mackenzie_tunnel_line} og \ref{fig:accot_tunnel_line} sammen med de tilpassede affine kurver. På $x$-aksen er modellernes respektive $ID$ imens tiden, $T$ er angivet ved $y$-aksen. 
+Det kan bemærkes, at den primære forskel imellem Accot og Zhai's formulering og de fire andre er det multiplikative led, $b$. Da $ID_{NT}$ antager væsentligt højere værdier end de fire andre $ID$'er, så er $b$ også tilsvarende mindre. For at visualisere de fem formuleringers tilpasning til dataene har vi valgt at beregne gennemsnitstiden for alle testdeltagerne per $ID$. Dette giver anledning til fire datapunkter, ét for hver tunnelopgave, som kan ses i figur \ref{fig:welford_tunnel_line}, \ref{fig:fitt_tunnel_line}, \ref{fig:meyer_tunnel_line},\ref{fig:mackenzie_tunnel_line} og \ref{fig:accot_tunnel_line} sammen med de tilpassede affine kurver. På $x$-aksen er modellernes respektive $ID$ imens tiden, $T$ er angivet ved $y$-aksen. 
 
 Af graferne ser det ud til, at Welfords formulering klarer sig markant dårligere i at beskrive vores data end de fire andre formuleringer. For at undersøge dette har vi lavet AIC analyse af formuleringerne tilpasset det fulde datasæt, \ref{tab:table_analysis_aic_tunnel_all}, og gennemsnits datapunkterne, \ref{tab:table_analysis_aic_tunnel_mean}. Begge tabeller viser en klar tendens i og med, at Meyers formulering klarer sig bedst imens Welfords klarer sig dårligst i at beskrive vores data. Begge tabeller viser den samme rækkefølge for formuleringernes indbyrdes placering, men de relative forskelle varierer.\\\\
 \begin{minipage}[t]{\linewidth} 
@@ -948,15 +952,15 @@ Ligesom for vores tunnelopgaver har vi valgt at visualisere de fem modellers til
 \newpage
 \addcontentsline{toc}{section}{modelanalyse af hastighedsprofiler}
 \section*{Modelanalyse af hastighedsprofiler}
-Vores modelanalyse af hastighedsprofiler tager udgangspunkt i en kvalitativ analyse. Vi vil gennemgå testdeltagernes bevægelsesbaner for pegeopgaverne, for at finde eventuelle tendenser, som vi kan opstille hypoteser ud fra. Hypoteserne vil vi forsøge, at be- eller afkræfte ved statistisk, beregninger og testdeltagernes spørgeskemasvar i en efterfølgende kvantitativ analyse.
+Vores modelanalyse af hastighedsprofiler tager udgangspunkt i en kvalitativ analyse. Vi vil gennemgå testdeltagernes bevægelsesbaner for pegeopgaverne, for at finde eventuelle tendenser, som vi kan opstille hypoteser ud fra. Hypoteserne vil vi forsøge, at be- eller afkræfte ved statistik, beregninger og testdeltagernes spørgeskemasvar i en efterfølgende kvantitativ analyse.
 
 \addcontentsline{toc}{subsection}{Kvalitativ analyse}
 \subsection*{Kvalitativ analyse}
-Den kvalitative analyse baserer sig på 22 tilfældigt udvalgte crowdsourcingdeltagere. De 22 testdeltagere er valgt med en random generator og har følgende id'er i databasen; $3,45,72,77,78,113,114,140,151$ $154,161,166,170,171,176,219,226,235,239,248,257,263$. Vi har plottet testdeltagernes bevægelsesbaner for alle deres pegeopgaver, hvilket gør det muligt at se sammenhænge i mellem testdeltagerne. Figur \ref{fig:movement_random_person_1} og \ref{fig:movement_random_person_2} viser hver ét eksempel, på en testdeltagers bevægelsesbaner. De resterende 20 plots kan ses i bilag \ref{sec:movementlines}. Bevægelsesbaner med et højt $ID$ er mørkeblå, i mens bevægelsesbaner med et lavt $ID$ er lyseblå.
+Den kvalitative analyse baserer sig på 22 tilfældigt udvalgte crowdsourcingdeltagere. De 22 testdeltagere er valgt med en random generator og har følgende id'er i databasen; $3,45,72,77,78,113,114,140,151$ $154,161,166,170,171,176,219,226,235,239,248,257,263$. Vi har plottet testdeltagernes bevægelsesbaner for alle deres pegeopgaver, hvilket gør det muligt at se sammenhænge imellem testdeltagerne. Figur \ref{fig:movement_random_person_1} og \ref{fig:movement_random_person_2} viser hver ét eksempel, på en testdeltagers bevægelsesbaner. De resterende 20 plots kan ses i bilag \ref{sec:movementlines}. Bevægelsesbaner med et højt $ID$ er mørkeblå, i mens bevægelsesbaner med et lavt $ID$ er lyseblå.
 
 Vi ser en tendens til, at testdeltagerne bruger én primær underbevægelse for at komme hen mod målet, efterfulgt af én eller flere korrigerende mindre underbevægelser for at ramme målet. Der er en tendens til, at bevægelser i opgaver med højere $ID$ vil have flere korrigerende underbevægelser end bevægelser i opgaver med lavere $ID$. 
 
-Flere af deltagerne har også nogen få opgaver, hvor de kun har én primær underbevægelse uden nogen efterfølgende korrigerende bevægelser. Nogle testdeltagere har startet med at føre markøren i den forkerte retning og har derfor været nødt til at vende rundt og føre markøren i den rigtige retning, derved har de haft to større underbevægelser. Disse to observationer skal dog ikke ses som en generel tendens. Enkelte af testdeltagerne har haft opgaver, hvor de førte musen udenfor canvas og disse baner er derfor ikke fuldendte.
+Flere af deltagerne har også nogle få opgaver, hvor de kun har én primær underbevægelse uden nogen efterfølgende korrigerende bevægelser. Nogle testdeltagere har startet med at føre markøren i den forkerte retning og har derfor været nødt til at vende rundt og føre markøren i den rigtige retning, derved har de haft to større underbevægelser. Disse to observationer skal dog ikke ses som en generel tendens. Enkelte af testdeltagerne har haft opgaver, hvor de førte musen udenfor canvas og disse baner er derfor ikke fuldendte.
 
 På baggrund af de observerede tendenser har vi fundet frem til to hypoteser, som vi vil forsøge at få bekræftet. Den første hypotese er, at testdeltagerne bruger én primær underbevægelse til at bevæge markøren mod målet efterfulgt af én eller flere korrigerende underbevægelser for at ramme målet. Den anden hypotese er, at en opgave med højere $ID$ vil resultere i flere korrigerende underbevægelser.\\\\
 \begin{minipage}{\linewidth}
@@ -979,7 +983,7 @@ På baggrund af de observerede tendenser har vi fundet frem til to hypoteser, so
 
 \addcontentsline{toc}{subsection}{Kvantitativ analyse}
 \subsection*{Kvantitativ analyse}
-For at finde ud af om, vores 22 tilfældigt udvalgte testpersoner er repræsentative for resten af testdeltagerne, har vi valgt at undersøge deres spørgeskemasvar. De procentvise fordelinger af grupperingerne i køn, pegeenhed med mere for alle testdeltagere, har vi udregnet og opstillet I tabel \ref{tab:persons_average}. Tilsvarende har vi gjort i tabel \ref{tab:sample_persons_average} med data fra vores 22 udvalgte testdeltagere. Ved sammenligning af dataene i de to tabeller, finder vi vores 22 testdeltagere repræsentative for vores datasæt.
+For at finde ud af, om vores 22 tilfældigt udvalgte testpersoner er repræsentative for resten af testdeltagerne, har vi valgt at undersøge deres spørgeskemasvar. De procentvise fordelinger af grupperingerne i køn, pegeenhed med mere for alle testdeltagere, har vi udregnet og opstillet I tabel \ref{tab:persons_average}. Tilsvarende har vi gjort i tabel \ref{tab:sample_persons_average} med data fra vores 22 udvalgte testdeltagere. Ved sammenligning af dataene i de to tabeller, finder vi vores 22 testdeltagere repræsentative for vores datasæt.
 
 \begin{table}[h]
 	\centering
@@ -1015,7 +1019,7 @@ Figur \ref{fig:speed_distance_testperson_140} og \ref{fig:speed_distance_testper
 
 Grafen vil efter aftagningen foretage nul eller flere stigninger til lokale maksimum, som kan betegnes som korrigerende underbevægelser. Dette bekræfter derfor vores hypotese om, at testpersonerne har én primær underbevægelse efterfulgt af korrigerende underbevægelser, hvilket også er beskrevet tidligere i rapporten. Ydermere bemærker vi, at graferne for opgaver med høje $ID$ viser flere korrigerende underbevægelser end graferne for opgaver med lavere $ID$.
 
-Som tidligere nævnt i rapporten, så har de fire formuleringer af Fitts' lov et additivt led, som beskriver reaktionstiden for testdeltagerne. Disse værdier varierede fra 300 til 500 millisekunder, hvilket stemmer overens med graferne i figur \ref{fig:speed_time_testperson_140} og \ref{fig:speed_time_testperson_248}, her starter deltagerne også først efter 200 til 500 millisekunder. Bemærk, at grafen på nogle af figurerne allerede starter omkring tiden 0 og fortsætter med en fart på 0, dette skyldes, at testdeltageren har bevæget sin pegeenhed på samme tid med, at deltageren klikkede for at starte opgaven. Derved er der blevet registreret et datapunkt, dog uden, at testdeltageren egentlig er startet med at manøvrere imod målet. Udover dette så noterer vi os, at graferne udviser de samme egenskaber for både distance og tid.
+Som tidligere nævnt i rapporten, har de fire formuleringer af Fitts' lov et additivt led, som beskriver reaktionstiden for testdeltagerne. Disse værdier varierede fra 300 til 500 millisekunder, hvilket stemmer overens med graferne i figur \ref{fig:speed_time_testperson_140} og \ref{fig:speed_time_testperson_248}, her starter deltagerne også først efter 200 til 500 millisekunder. Bemærk, at grafen på nogle af figurerne allerede starter omkring tiden 0 og fortsætter med en fart på 0, dette skyldes, at testdeltageren har bevæget sin pegeenhed på samme tid med, at deltageren klikkede for at starte opgaven. Derved er der blevet registreret et datapunkt, dog uden, at testdeltageren egentlig er startet med at manøvrere imod målet. Udover dette noterer vi os, at graferne udviser de samme egenskaber for både distance og tid.
 
 \begin{minipage}{\linewidth}
 \begin{minipage}{.475\linewidth}
@@ -1101,7 +1105,7 @@ Fordelene ved at bruge crowdsourcing taler dog klart for også at gøre brug af 
 
 Vores valg af opslagssteder til det ukontrollerede forsøg kan have haft en indflydelse på den indsamlede data. Vi valgte at bruge Reddit, hvilket giver os en meget specifik målgruppe, da den typiske Reddit-bruger er mand imellem 18 og 29 år\footnote{\href{http://www.pewinternet.org/2013/07/03/6-of-online-adults-are-reddit-users/}, besøgt: 03-06-2015}. Dette er også udslagsgivende i vores indsamlede data, hvor gennemsnitsalderen er 24.5 år og 233 ud af 257 er mænd.
 
-Vores testdata kom ikke kun fra Reddit, men også fra opslag på vores Facebook-væg. Dette medfører også et bias som kan være væsentligt, da det er vores familie og venner vi derved bruger. Familie og venner har ofte hørt om projektet før og kan derfor have en forventning om hvad der skal ske og hvad de burde gøre. Da både Reddit og Facebook hovedsageligt bruges af yngre personer, så vil vores målgruppe også være begrænset heraf. Hvis vi skulle undgå dette ville vi være nødt til at lave flere kontrollerede forsøg med aldersgrænse for testdeltagerne, eller bruge crowdsourcing sider, der henvender sig til den ældre befolkningsgruppe.
+Vores testdata kom ikke kun fra Reddit, men også fra opslag på vores Facebook-væg. Dette medfører også et bias som kan være væsentligt, da det er vores familie og venner vi derved bruger. Familie og venner har ofte hørt om projektet før og kan derfor have en forventning om hvad der skal ske og hvad de burde gøre. Da både Reddit og Facebook hovedsageligt bruges af yngre personer, vil vores målgruppe også være begrænset heraf. Vi har for eksempel kun ni testpersoner, som er ældre end 40. Hvis vi skulle undgå dette ville vi være nødt til at lave flere kontrollerede forsøg med aldersgrænse for testdeltagerne, eller bruge crowdsourcing sider, der henvender sig til den ældre befolkningsgruppe.
 
 \begin{wrapfigure}{l}{.40\linewidth}
 	\centering
@@ -1161,9 +1165,9 @@ Vi kan på baggrund af denne analyse konkludere, at Meyer's formulering beskrive
 
 \addcontentsline{toc}{section}{Fremtidigt arbejde}
 \section*{Fremtidigt arbejde}
-Ved videre udarbejdelse af projektet, kunne det have været interessant at foretage en mere dybdegående analyse af hastighedsprofilerne. Ved at studere flere af testdeltagernes tilhørende vektorplots kunne der have været større grobund for at se en sammenhæng imellem dem og Fitts' lov. Endvidere ville vi gerne have haft mulighed for, at sammenligne testdeltagernes tider i forhold til flere af deres spørgeskemasvar, så som forskel på mænd og kvinder, højre eller venstre hånd og så videre.
+Ved videre udarbejdelse af projektet, kunne det have været interessant at foretage en mere dybdegående analyse af hastighedsprofilerne. Ved at studere flere af testdeltagernes tilhørende vektorplots kunne der have været større grobund for at se en sammenhæng imellem dem og Fitts' lov. Endvidere ville vi gerne have haft mulighed for at sammenligne testdeltagernes tider i forhold til flere af deres spørgeskemasvar, såsom forskel på mænd og kvinder, højre eller venstre hånd og så videre.
 
-I forhold til tunnel og spiralopgaverne så ville det være naturligt at tilføje flere af denne type opgaver, for bedre at kunne undersøge om Accot og Zhai's formuleringer rent faktisk stemmer bedre overens med denne type opgaver i forhold til Fitts' lov. Hertil kunne man også godt kigge på fart og hastighedsprofiler. Blandt andet formoder vi, at navigationsopgaver har flere primære underbevægelser i stedet for kun én, hvilket går imod teorien bag de klassiske formuleringer af Fitts' lov.
+I forhold til tunnel og spiralopgaverne ville det være naturligt at tilføje flere af denne type opgaver, for bedre at kunne undersøge om Accot og Zhai's formuleringer rent faktisk stemmer bedre overens med denne type opgaver i forhold til Fitts' lov. Hertil kunne man også godt kigge på fart og hastighedsprofiler. Blandt andet formoder vi, at navigationsopgaver har flere primære underbevægelser i stedet for kun én, hvilket går imod teorien bag de klassiske formuleringer af Fitts' lov.
 
 Med den teknologiske udvikling kunne det også være relevant at undersøge Fitts' lov i forhold til skærme med 'motion sensors'. Nærmere betegnet om forholdet imellem tiden det tager at udføre opgaven og sværhedsgraden af opgaven er det samme når man er fri for at bruge en pegeenhed eller røre ved skærmen.
 
