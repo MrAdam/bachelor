@@ -553,7 +553,7 @@ AIC = 2k - 2\ln(L) \label{eq:aic}
 \end{align}
 Vi har til vores analyse brugt programmeringssproget R, som både har lineær regression og AIC-funktionalitet indbygget. Funktionen $lm$\footnote{R dokumentation om $lm$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/lm.html}} fitter en affin model ud fra de $(x,y)$ datasæt der gives som input. Modellen bliver baseret på least squares, og kan også tvinges til at gå gennem origo (for Welford).
 
-Funktionen $AIC$\footnote{R dokumentation om $AIC$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/AIC.html}} bruger (\ref{eq:aic}) som udgangspunkt til sine beregninger, og tager som input en model, der har metoden $logLik$\footnote{R dokumentation om $logLik$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/logLik.html}}, hvilket $lm$'s output-modeller har. $lm$ og $AIC$ gør det derfor muligt at sammenligne modellerne med R.
+Funktionen $AIC$\footnote{R dokumentation om $AIC$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/AIC.html}} bruger (\ref{eq:aic}) til sine beregninger, og tager som input en model, der har metoden $logLik$\footnote{R dokumentation om $logLik$: \url{https://stat.ethz.ch/R-manual/R-patched/library/stats/html/logLik.html}}, hvilket $lm$'s output-modeller har. $lm$ og $AIC$ gør det derfor muligt at sammenligne modellerne med R.
 
 \addcontentsline{toc}{section}{Indledende analyse}
 \section*{Indledende analyse}
