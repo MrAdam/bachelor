@@ -134,14 +134,14 @@ Da det virker uoverskueligt i sådan en formel at dividere med IP, substitueres 
 t &= \frac{\log_2\left(\frac{2A}{W}\right)}{\frac{1}{b}} \Leftrightarrow\\ 
 t &= b \cdot \log_2\left(\frac{2A}{W}\right)
 \end{align*}
-Når man regner med det menneskelige motoriske system, så skal der medregnes den tid det tager for et menneske at opfatte at en opgave er startet. Fitts fandt frem til dette led, $a$, ved at benytte lineær regression på sine data.
+Når man regner med det menneskelige motoriske system, skal der medregnes den tid det tager for et menneske at opfatte at en opgave er startet. Fitts fandt frem til dette led, $a$, ved at benytte lineær regression på sine data.
 \begin{equation}
 \label{eq:FittsLov}
 T = a + b \cdot log_2\left(\frac{2A}{W}\right)
 \end{equation}
 Dette er hvad der i dag kendes som Fitts lov.
 
-Crossman og Goodeve \cite{crossman1983} forklarer Fitts lov som en overordnet bevægelse fra startpositionen i mod målet, hvorefter der ved én eller flere underbevægelser korrigeres for den fejl der blev foretaget ved den overordnede bevægelse. En illustration af bevægelsens hastighed over afstanden er vist i figur \ref{fig:CrossmanFitt} med en serie af tre delbevægelser, hvoraf den overordnede bevægelse begynder i startpositionen med afstand 0.
+Crossman og Goodeve \cite{crossman1983} forklarer Fitts lov som en overordnet bevægelse fra startpositionen imod målet, hvorefter der ved én eller flere underbevægelser korrigeres for den fejl, der blev foretaget ved den overordnede bevægelse. En illustration af bevægelsens hastighed over afstanden er vist i figur \ref{fig:CrossmanFitt} med en serie af tre delbevægelser, hvoraf den overordnede bevægelse begynder i startpositionen med afstand 0.
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth]{images/illustrations/base_model_fitt}
@@ -157,7 +157,7 @@ Siden udgivelsen af Fitts’ artikel, har flere forskere forsøgt at finde en fo
 \addcontentsline{toc}{subsection}{Welfords formulering}
 \subsection*{Welfords formulering}
 
-I \cite{welford1968} beskriver Welford en række fundamentale forudsætninger for det menneskelige motoriske system. Her kiggede han blandt andet på Fitts' lov, og de data han indsamlede i sit første forsøg. Han mente at Fitts' lov i princippet gengav den indsamlede data præcist, men han så også tre utilfredsstillende egenskaber, hvilket fik ham til at foreslå følgende modifikationer.
+I \cite{welford1968} beskriver Welford en række fundamentale forudsætninger for det menneskelige motoriske system. Her kiggede han blandt andet på Fitts' lov, og de data han indsamlede i sit første forsøg. Han mente at Fitts' lov i princippet gengav den indsamlede data præcist, men han så også tre utilfredsstillende egenskaber, hvilket fik ham til at foreslå følgende modifikationer:
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth]{images/illustrations/welford_plot_1}
