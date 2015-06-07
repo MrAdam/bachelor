@@ -854,7 +854,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 \newpage
 \addcontentsline{toc}{subsection}{Analyse af spiralopgaver}
 \subsection*{Analyse af spiralopgaver}
-For at kunne tilpasse vores fire originale formuleringer af Fitts' lov, har vi defineret afstanden af $A$ som længden på spiralens bane i pixels. Disse afstande er bestemt på baggrund af antal vindinger til $A = [127,190,252,315]$. Bredden på målet, $W$, har vi valgt som længden på den inderste vandrette linje i spiralen, slutstregen, som altid er 25 pixels bred. Ved disse værdier kan vi tilpasse formuleringernes tilhørende $ID$ og tiden $T$ per opgave til en lineær model, med $lm$, for alle vores filtrerede og ukontrollerede datapunkter. De fire matematiske modelfremstillinger med respektive konstanter er vist nedenfor.
+For at kunne tilpasse vores fire originale formuleringer af Fitts' lov, har vi defineret afstanden af $A$ som længden på spiralens bane i pixels. Disse afstande er bestemt på baggrund af antallet af vindinger i spiralen og resulterer i $A = [127,190,252,315]$. Bredden på målet, $W$, har vi valgt som længden på den inderste vandrette linje i spiralen, slutstregen, som altid er 25 pixels bred. Ved disse værdier kan vi tilpasse formuleringernes tilhørende $ID$ og tiden $T$ per opgave til en lineær model, med $lm$, for alle vores filtrerede og ukontrollerede datapunkter. De fire matematiske modelfremstillinger med respektive konstanter er vist nedenfor.
 \begin{align*}
 \text{Fitts': } &T = -24882.5+ 8217.7 \cdot \log_2\left(\frac{2A}{W}\right)\\
 \text{Welford's: } &T =  2808.54\cdot \log_2\left(\frac{A+\frac{1}{2}W}{W}\right)\\
