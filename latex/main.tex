@@ -1,12 +1,12 @@
 \input{preface.tex}
 
-\addcontentsline{toc}{section}{Abstract}
-\section*{\centering~Abstract}
+\subsection*{\centering~Abstract}
 
 We present an analysis of a dataset acquired from a uncontrolled online user study including 264 participants, backed up by a ten person controlled lab study. Using Akaike Information Criterion (AIC) and residual analysis we compare four variations of Fitts' Law to see which is the best fit. Looking at the participants speed, velocity and navigational paths we look for signs of patterns that could lead to a better alternative for Fitts' law, but find no such thing. It is also found that Meyer's variation is the best, with AIC-values ranging from 34.64 to 1781.96 less than other variations.
 
-\addcontentsline{toc}{section}{Resumé}
-\section*{\centering~Resumé}
+\subsection*{\centering~Resumé}
+
+Vi præsenterer en analyse af et datasæt erhvervet fra et ukontrolleret online brugerstudie med 264 deltagere, bakket op af et ti-persons kontrolleret laboratorieeksperiment. Ved hjælp af Akaike Information Criterion (AIC) og residualanalyse sammenligner vi fire varianter af Fitts' lov for at se, hvilken der passer dataen bedst. Ved at se på deltagernes fart, hastighed og navigationsbaner ser vi efter tegn på mønstre, der kunne føre til et bedre alternativ for Fitts 'lov, men finder ikke dette. Det findes også, at Meyers variation er bedst, med AIC-værdier i intervallet fra 34.64 til 1781.96 mindre end andre variationer.
 
 \addcontentsline{toc}{chapter}{Indledning}
 \chapter*{Indledning}
@@ -1131,7 +1131,7 @@ For at understøtte vores AIC-analyse lavede vi også en analyse af residualplot
 
 I vores analyse fandt vi frem til værdien af $a$ og $b$ i hver af de fire formuleringer for alle testpersoners pegeopgaver. De tre værdier af $a$ beskriver den tid det vil tage for en person at påbegynde opgaven. Denne ligger mellem cirka $400$ og $500$ millisekunder, hvilket også passer med hvad \cite{crossman1957} og \cite{welford1968} tidligere har fundet frem til. Det multiplikative led, $b$, beskriver hvor meget længere tid brugeren ville bruge på en opgave, hvis opgavens $ID$ bliver 1 større. Dette led ligger for Fitts', MacKenzie's og Meyer's omkring $150-200$, mens det for Welford's ligger omkring $300$. Grunden til at Welford's multiplikative led ligger højere er, at Welford's formulering ikke har det additive led og derfor vil den skulle stige mere, for at passe nogenlunde på vores data.
 
-Da vi har baseret vores forsøg på \cite{goldberg2015} vil vi også sammenligne vores resultater med deres. \cite{goldberg2015} fandt frem til at Meyer's var den bedste formel, når sværhedsgraden var lille, mens Fitts' formulering var den bedste, når sværhedsgraden var stor. Deres resultater var inkonsistente derimellem. Når de kiggede på MacKenzie's formulering, så var den klart bedre end både Fitts' og Meyer's. Dette modsiger vores resultater, hvor Meyer's var bedst. Grunden til dette kan være at vi generelt kigger på et område, hvor små variationer i dataen gør en stor forskel for hvilken formulering der passer bedst. Da vi på samme tid har med mennesker at gøre, så er der mange variable som kan have en indflydelse på hvor hurtigt de kan gøre det.\\
+Da vores pegeopgaver er en reproducering af tidligere udførte forsøg i \cite{goldberg2015}, så vil vi også sammenligne vores resultater med deres. Vi fandt, i vores analyse, at Meyer's var den formulering som tilpassede vores data bedst, ved alle testdeltageres pegeopgaver. \cite{goldberg2015} fandt frem til at MacKenzie's formulering er den som generelt tilpasser deres data bedst. Dette viser altså at vi ikke har kunne reproducere resultaterne i \cite{goldberg2015} på trods af at vi har reproduceret deres pegeopgaver og der kan derfor stilles spørgsmålstegn ved rigtigheden af resultaterne i \cite{goldberg2015}.
 
 % Diskussion af tunnel
 I vores analyse af tunnelopgaverne viste tabel \ref{tab:table_analysis_aic_tunnel_all} og \ref{tab:table_analysis_aic_tunnel_mean} at Meyer's formulering beskrev vores data bedst, da den havde den mindste AIC-værdi, på hhv. $20549.61$ og $33.68$. For vores fulde datasæt var forskellene i mellem Meyer's, Accot \& Zhai's, MacKenzie's og Fitts' formuleringer dog så små, at det ikke kan konkluderes, at Meyer's formulering beskriver vores datasæt bedst. Ved AIC-værdierne for gennemsnitstiderne er forskellen i mellem formuleringerne markant højere. Kun Accot \& Zhai's formulering har en forskel, der er mindre end 10, hvilket betyder, at de tre andre formuleringer ikke kan beskrive vores data i samme grad. 
