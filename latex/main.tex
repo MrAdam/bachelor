@@ -154,7 +154,7 @@ Crossman og Goodeve \cite{crossman1983} forklarer Fitts' lov som en primær unde
 \section*{Alternative formuleringer}
 Siden udgivelsen af Fitts’ artikel, har flere forskere forsøgt at finde en formel, der passer bedre på det motoriske system, end Fitts’ originale lov. Der har inden for menneske-datamaskine interaktion været flere udgivelser, som mener at have fundet en mere korrekt formulering af Fitts’ lov. Vi vil i dette afsnit se nærmere på tre af sådanne formuleringer.
 
-\addcontentsline{toc}{subsection}{Welfords formulering}
+\addcontentsline{toc}{subsection}{Welford's formulering}
 \subsection*{Welfords formulering}
 
 I \cite{welford1968} beskriver Welford en række fundamentale forudsætninger for det menneskelige motoriske system. Her kiggede han blandt andet på Fitts' lov, og de data han indsamlede i sit første forsøg. Han mente at Fitts' lov i princippet gengav den indsamlede data præcist, men han så også tre utilfredsstillende egenskaber, hvilket fik ham til at foreslå følgende modifikationer:
@@ -191,14 +191,14 @@ Ud fra de tre ovenstående modifikationer indførte Welford igen Fitts' data fra
 \label{fig:WelfordGraf2}
 \end{figure}
 
-\addcontentsline{toc}{subsection}{MacKenzies formulering}
+\addcontentsline{toc}{subsection}{MacKenzie's formulering}
 \subsection*{MacKenzies formulering}
-MacKenzie udgav i 1992 en artikel~\cite{mackenzie1992}, hvor han ser nærmere på Fitts' Lov og seks alternative studier af samme. Han gennemgår en række forbedringer af den originale model, og fremstiller en alternativ formulering til $ID$, som han beskriver som værende mere teoretisk forsvarlig, nemlig:
+MacKenzie udgav i 1992 en artikel~\cite{mackenzie1992}, hvor han ser nærmere på Fitts' lov og seks alternative studier af samme. Han gennemgår en række forbedringer af den originale model, og fremstiller en alternativ formulering til Fitts' lov, som han beskriver som værende mere teoretisk forsvarlig, nemlig:
 \begin{align}
 T=a+b\cdot\log_2\left({\frac{A+W}{W}}\right)
 \end{align}
 
-Han nævner i afsnittet \emph{Physical Interpretation} at skæringspunktet ideelt set vil ligge i nul, hvilket tyder på, at en opgave med $ID=0$ vil tage 0 sekunder. Ifølge MacKenzie modvises dette normalt ved lineær regression på forsøgsdata, som ofte medfører et skæringspunkt, der ikke ligger i nul. Dette bruger han som argument for, at der findes en additiv faktor som er urelateret til ID.\\
+Han nævner i afsnittet \emph{Physical Interpretation}, at skæringspunktet ideelt set vil ligge i nul, hvilket tyder på, at en opgave med $ID=0$ vil tage 0 sekunder. Ifølge MacKenzie modbevises dette normalt ved lineær regression på forsøgsdata, som ofte medfører et skæringspunkt, der ikke ligger i nul. Dette bruger han som argument for, at der findes en additiv faktor som er urelateret til ID.\\
 
 En af de mest accepterede udledninger af Fitts' lov stammer fra modellen \emph{deterministic error-corrections} originalt fremstillet af \cite{crossman1983}, og bygger på idéen om at en bevægelsesopgave består af en række iterative korrigerende bevægelser. MacKenzie refererer til simpliciteten af denne model som værende appellerende, men kalder de underliggende antagelser for suspekte. Han refererer til \cite{langolf1976}, hvor der blev observeret bevægelsesopgaver som kun indeholdte én korrigerende bevægelse, selvom det generelt forudses at der vil være flere korrigerende bevægelser ved en vis størrelse af $A/W$.\\
 
@@ -227,7 +227,7 @@ MacKenzie ser sin formulering som værende en mindre forbedring i forhold til We
 
 Det generelle problem med MacKenzie's artikel er, at han ikke kommer med noget teoretisk grundlag for sin formulering, og derved ikke kan forklare hvorfor hans formulering er mere præcis end andres, eller hvorfor det netop er bedre med en direkte analogi til Shannon's i forhold til Welford's. I artiklen~\cite{drewes2010} bliver der stillet spørgsmålstegn ved dette. Men hvis man ser bort fra det manglende teoretiske grundlag, er MacKenzies formulering stadig en af de mest udbredte og brugte varianter af Fitt's lov, og har vist sig at passe godt på udførte forsøg~\cite{goldberg2015}.
 
-\addcontentsline{toc}{subsection}{Meyers formulering}
+\addcontentsline{toc}{subsection}{Meyer's formulering}
 \subsection*{Meyers formulering}
 Som beskrevet i forrige afsnit, baserer Fitts' lov sig på \emph{deterministic error-corrections} modellen. Meyer et al. foreslog en ny model, kaldet stochastic optimized-submovement modellen, som de baserede deres formel på \cite{meyer1988}. Som det ses af figur \ref{fig:MeyerTheory}, baserer denne model sig på, at personer laver en primær underbevægelse og derefter, hvis der er behov for det, en korrigerende underbevægelse. Udfra denne model kan den gennemsnitlige tid, $T$, forudsiges til at være
 \begin{equation}
