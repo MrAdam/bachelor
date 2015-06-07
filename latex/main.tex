@@ -274,15 +274,15 @@ Da vi har vist, at omskrivningen af Welford's formulering ikke giver logisk meni
 \begin{align*}
 \text{Fitts: } &T=b\cdot\log_2\left(\frac{2\cdot5}{2}\right)\\
 \text{Welford: } &T=k\cdot\log_2\left(\frac{5+0.5\cdot 2}{2}\right)\\
-\text{Mackenzie: } &T=b\cdot\log_2\left(\frac{5 + 2}{2}\right)\\
+\text{MacKenzie: } &T=b\cdot\log_2\left(\frac{5 + 2}{2}\right)\\
 \text{Meyer: } &T=b\cdot\sqrt{\frac{5}{2}}
 \end{align*}
 Ved at sætte to af ligningerne for $T$ lig hinanden kan vi vise, at de to formuleringer ikke er ens.
 \begin{align*}
-b_{Fit}\cdot\log\left(\frac{2\cdot_25}{2}\right)&=b_{Mac}\cdot\log_2\left(\frac{5 + 2}{2}\right)\\
+b_{Fit}\cdot\log_2\left(\frac{2\cdot_25}{2}\right)&=b_{Mac}\cdot\log_2\left(\frac{5 + 2}{2}\right)\\
 b_{Mac} &= \frac{b_{Fit}\cdot\log_2\left(\frac{2\cdot5}{2}\right)}{\log_2\left(\frac{5 + 2}{2}\right)}
 \end{align*}
-Indsætter vi denne værdi for $b_{Mac}$ i Mackenzies formulering, kan vi finde frem til, at Mackenzies og Fitts formuleringer kun er ens, såfremt $ID$ ledet er ens, hvilket ikke er tilfældet.
+Indsætter vi denne værdi for $b_{Mac}$ i MacKenzie's formulering, kan vi finde frem til, at MacKenzie's og Fitts' formuleringer kun er ens, såfremt $ID$ ledet er ens, hvilket ikke er tilfældet.
 \begin{align*}
 \text{Mackenzie: } &T =\frac{b_{Fit}\cdot\log\left(\frac{2\cdot5}{2}\right)}{\log\left(\frac{5 + 2}{2}\right)}\cdot\log\left(\frac{5 + 2}{2}\right)\\
 \text{Mackenzie: } &T =b_{Fit}\cdot\log\left(\frac{2\cdot5}{2}\right)
