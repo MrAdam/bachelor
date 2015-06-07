@@ -46,7 +46,7 @@ Vi vil i denne rapport udføre to forsøg hvis formål er at indsamle og analyse
 
 \addcontentsline{toc}{section}{Forventninger til læseren}
 \section*{Forventninger til læseren}
-Der stilles forventinger til læseren om matematik på gymnasielt niveau, indledende statistik \& sandsynlighed og indledende kendskab til menneske-datamaskine interaktion. Det noteres desuden at sektionen Modeludvælgelse under Analyse kun gennemgås kursorisk.
+Der stilles forventinger til læseren om indledende universitets matematik, eksempelvis \cite{kolman2008}, indledende statistik \& sandsynlighed, eksempelvis \cite{ditlevsen2011} og \cite{soerensen2003}. Endvidere forventes et indledende kendskab til menneske-datamaskine interaktion, eksempelvis \cite{hartson2012}.
 
 \addcontentsline{toc}{chapter}{Teori}
 \chapter*{Teori}
@@ -506,7 +506,7 @@ Efterfølgende har vi lukket for muligheden for at deltage i vores forsøg den 3
 
 \addcontentsline{toc}{chapter}{Analyse}
 \chapter*{Analyse}
-I dette afsnit vil vi analysere den indsamlede data ved brug af både kvantitative og kvalitative metoder. Vi vil mere præcist analysere testdeltagernes bevægelsesbaner og hastighedsprofiler.
+I dette afsnit vil vi analysere den indsamlede data ved brug af både kvantitative og kvalitative metoder. Vi vil mere præcist analysere testdeltagernes bevægelsesbaner og hastighedsprofiler. Afsnittet modeludvælgelse vil kun blive gennemgået kursorisk.
 
 Den tilsvarende R-kode som er brugt til analysen, kan findes i vores bilag.
 \addcontentsline{toc}{section}{Modeludvælgelse}
@@ -526,7 +526,7 @@ LSE er bestemt ved at finde gennemsnittet af kvadratet på afstandene fra punkte
 
 Mallow's $C_p$ kriteriet bliver beregnet ud fra LSE men inddrager også antallet af parametre i beregningen for netop at undgå overfitting. Tilsvarende gør sig gældende for AIC og BIC, de beregnes dog ved hjælp af maximum likelihood i stedet for LSE.
 
-For et givent datasæt $x$ og en tilhørende statistisk model vil likelihoodfunktionen beregne sandsynligheden for at modellens parametre $p$ vil resultere i $x$. Ved maximum likelihood findes de værdier for parametrene $p$, som maksimere likelihood funktionen. Det vil sige de værdier for parametrene $p$, som gør det observerede datasæt $x$ mest sandsynligt. Forskellen på AIC og BIC er, at BIC vægter antallet af parametre mere negativt end AIC.
+For et givent datasæt $x$ og en tilhørende statistisk model vil likelihoodfunktionen beregne sandsynligheden for, at modellens parametre $p$ vil resultere i $x$. Ved maximum likelihood findes den værdi for  $p$, som maksimerer likelihood funktionen. \textit{"Det vil sige den værdi af  $p$ der gør den observerede værdi $x$ mest sandsynlig"} \cite{ditlevsen2011} side 14. Forskellen på AIC og BIC er, at BIC vægter antallet af parametre mere negativt end AIC.
 
 Af de fire beskrevne modeller har vi valgt at bruge AIC, da det er den mest udbredte at basere sin modeludvælgelse på. Hvis vi lader $L$ være maximum likelihood-værdierne for modellens parametre og $k$ antallet af parametre, så er AIC givet ved
 \begin{align}
@@ -1011,7 +1011,7 @@ Figur \ref{fig:speed_distance_testperson_140} og \ref{fig:speed_distance_testper
 
 Grafen vil efter aftagningen foretage nul eller flere stigninger til lokale maksimum, som kan betegnes som korrigerende underbevægelser. Dette bekræfter derfor vores hypotese om, at testpersonerne har én primær underbevægelse efterfulgt af korrigerende underbevægelser, hvilket også er beskrevet tidligere i rapporten. Ydermere bemærker vi, at graferne for opgaver med høje $ID$ viser flere korrigerende underbevægelser end graferne for opgaver med lavere $ID$.
 
-Vi notere os, at graferne udviser de egenskaber for både distance og tid.
+Som tidligere nævnt i rapporten, så har de fire formuleringer af Fitts' lov et additivt led, som beskriver reaktionstiden for testdeltagerne. Disse værdier varierede fra 300 til 500 millisekunder, hvilket stemmer overens med graferne i figur \ref{fig:speed_time_testperson_140} og \ref{fig:speed_time_testperson_248}, her starter deltagerne også først efter 200 til 500 millisekunder. Bemærk, at grafen på nogle af figurerne allerede starter omkring tiden 0 og fortsætter med en fart på 0, dette skyldes, at testdeltageren har bevæget sin pegeenhed på samme tid med, at deltageren klikkede for at starte opgaven. Derved er der blevet registreret et datapunkt, dog uden, at testdeltageren egentlig er startet med at manøvrere imod målet. Udover dette så noterer vi os, at graferne udviser de samme egenskaber for både distance og tid.
 
 \begin{minipage}{\linewidth}
 \begin{minipage}{.475\linewidth}
@@ -1049,7 +1049,10 @@ Vi notere os, at graferne udviser de egenskaber for både distance og tid.
 	\end{minipage}
 \end{minipage}
 
-VEKTORPLOTS HER!
+Udover analyse af testdeltagernes fart, så har vi også valgt at lave hastighedsprofiler for fire opgaver for fire tilfældigt udvalgte personer. De fire opgaver er, ligesom fartprofilerne, opgave $20$, $23$, $8$ og $22$, da de har de laveste og højeste sværhedsgrader. Hastighedsprofilerne er lavet, både med retning mod næste punkt og med retning mod slutpunktet. Dette er gjort, for at se om der er en sammenhæng mellem hastigheden til næste punkt, eller målet, og tiden det tager at udføre en opgave. De 16 plots ses i bilag \ref{sec:velocity_plots}, mens figur \ref{fig:plot_velocity_individual} og \ref{fig:plot_velocity_individual_target} visualisere hhv. et plot med hastighedsvektorer mod næste punkt og et plot med hastighedsvektorer mod slutpunktet. Figur \ref{fig:plot_velocity_individual} og \ref{fig:plot_velocity_individual_target} er taget fra en tilfældig opgave fra en tilfældig testdeltager, udelukkende for at visualisere sådanne plots. 
+
+Vektorerne i bilag \ref{sec:velocity_plots} udviser ingen generelle tendenser. Det ser ud til at være tilfældigt hvilke vektorer som er store og hvilke som er små. Derfor kan vi ikke se nogen sammenhæng mellem hastighedsprofiler og Fitts' lov. 
+
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}{.45\linewidth}
@@ -1139,6 +1142,14 @@ Generelt skal vi huske, at Fitts' lov beskriver komplekse menneskelige motoriske
 Vi kan på baggrund af vores analyse og diskussion konkludere, at Meyers formulering beskriver vores pegeopgave og tunnelopgave data bedst, men at Accot og Zhai's formulering bedst beskriver vores spiraldata. Generelt er det dog små ændringer i datapunkterne der kan ændre på, hvilken af formuleringerne, der klarer sig bedst.
 
 Welfords formulering klarer sig overordnet set dårligst, hvilket skyldes, at vores opgaver ikke er svære nok til at udelade det additive led.
+
+\addcontentsline{toc}{section}{Fremtidigt arbejde}
+\section*{Fremtidigt arbejde}
+Ved videre udarbejdelse af projektet, kunne det have været interessant at foretage en mere dybdegående analyse af hastighedsprofilerne. Ved at studere flere af testdeltagernes tilhørende vektorplots kunne der have været større grobund for at se en sammenhæng imellem dem og Fitts' lov. Endvidere ville vi gerne have haft mulighed for, at sammenligne testdeltagernes tider i forhold til flere af deres spørgeskemasvar, så som forskel på mænd og kvinder, højre eller venstre hånd og så videre.
+
+I forhold til tunnel og spiralopgaverne så ville det være naturligt at tilføje flere af denne type opgaver, for bedre at kunne undersøge om Accot og Zhai's formuleringer rent faktisk stemmer bedre overens med denne type opgaver i forhold til Fitts' lov. Hertil kunne man også godt kigge på fart og hastighedsprofiler. Blandt andet formoder vi, at navigationsopgaver har flere primære underbevægelser i stedet for kun én, hvilket går imod teorien bag de klassiske formuleringer af Fitts' lov.
+
+Med den teknologiske udvikling kunne det også være relevant at undersøge Fitts' lov i forhold til skærme med 'motion sensors'. Nærmere betegnet om forholdet imellem tiden det tager at udføre opgaven og sværhedsgraden af opgaven er det samme når man er fri for at bruge en pegeenhed eller røre ved skærmen.
 
 %\textbf{Konklusionen er afslutningen på din akademiske opgave. Her fortæller du din læser hvad du har fundet ud af i din undersøgelse/analyse, og hvorfor det er vigtigt.}
 %Konklusionen kan indeholde:
