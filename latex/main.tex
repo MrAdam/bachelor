@@ -180,14 +180,14 @@ Ud fra de tre ovenstående modifikationer indførte Welford igen Fitts' data fra
 \begin{figure}[h]
 \centering
 \includegraphics[width=.48\linewidth]{images/illustrations/welford_plot_1}
-\caption{Graf over $MT$ (y-akse) I forhold til $ID$ (x-akse), med punktplot over data fra et af Fitts' forsøg, og linje der viser hvordan Fitts' model passer på dataene}
+\caption{Graf over $T$ (y-akse) I forhold til $ID$ (x-akse), med punktplot over data fra et af Fitts' forsøg, og linje der viser hvordan Fitts' model passer på dataene}
 \label{fig:WelfordGraf}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth]{images/illustrations/welford_plot_2}
-\caption{Graf over $MT$ (y-akse) I forhold til $ID$ (x-akse), med punktplot over data fra et af Fitts' forsøg, og linje der viser hvordan Welfords model passer på dataene}
+\caption{Graf over $T$ (y-akse) I forhold til $ID$ (x-akse), med punktplot over data fra et af Fitts' forsøg, og linje der viser hvordan Welford's model passer på dataene}
 \label{fig:WelfordGraf2}
 \end{figure}
 
@@ -200,12 +200,12 @@ T=a+b\cdot\log_2\left({\frac{A+W}{W}}\right)
 
 Han nævner i afsnittet \emph{Physical Interpretation}, at skæringspunktet ideelt set vil ligge i nul, hvilket tyder på, at en opgave med $ID=0$ vil tage 0 sekunder. Ifølge MacKenzie modbevises dette normalt ved lineær regression på forsøgsdata, som ofte medfører et skæringspunkt, der ikke ligger i nul. Dette bruger han som argument for, at der findes en additiv faktor som er urelateret til ID.\\
 
-En af de mest accepterede udledninger af Fitts' lov stammer fra modellen \emph{deterministic error-corrections} originalt fremstillet af \cite{crossman1983}, og bygger på idéen om at en bevægelsesopgave består af en række iterative korrigerende bevægelser. MacKenzie refererer til simpliciteten af denne model som værende appellerende, men kalder de underliggende antagelser for suspekte. Han refererer til \cite{langolf1976}, hvor der blev observeret bevægelsesopgaver som kun indeholdte én korrigerende bevægelse, selvom det generelt forudses at der vil være flere korrigerende bevægelser ved en vis størrelse af $A/W$.\\
+En af de mest accepterede udledninger af Fitts' lov stammer fra modellen \emph{deterministic error-corrections} originalt fremstillet af \cite{crossman1983}, og bygger på idéen om at en bevægelsesopgave består, af en række iterative korrigerende bevægelser. MacKenzie refererer til simpliciteten af denne model som værende appellerende, men kalder de underliggende antagelser for suspekte. Han refererer til \cite{langolf1976}, hvor der blev observeret bevægelsesopgaver, som kun indeholdte én korrigerende bevægelse, selvom det generelt forudses, at der vil være flere korrigerende bevægelser ved en vis størrelse af $A/W$.\\
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth]{images/illustrations/mackenzie_plot_1}
-\caption{Graf over $MT$ (y-akse) i forhold til $ID$ (x-akse), med punktplot over data ved forskellige værdier af $W$, og linje der viser hvordan Fitts' model passer på dataen.}
+\caption{Graf over $T$ (y-akse) i forhold til $ID$ (x-akse), med punktplot over data ved forskellige værdier af $W$, og linje der viser hvordan Fitts' model passer på dataen.}
 \label{fig:MacKenziePlot1}
 \end{figure}
 MacKenzie beskriver, at et af problemerne med Fitts' Lov er den tætte relation mellem $ID$ og $MT$. Figur~\ref{fig:MacKenziePlot1} illustrerer, hvordan punkterne flader ud, ved lave værdier af $ID$, mens kurven beholder sit $1:1$-forhold mellem $ID$ og $MT$. Der er altså en usammenhæng mellem de observerede og forudsagte værdier, hvilket også er blevet observeret i flere andre studier som \cite{welford1960, buck1986, crossman1983, drury1975, klapp1975, langolf1976, meyer1988, wallace1978}\\
