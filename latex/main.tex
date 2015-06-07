@@ -747,7 +747,7 @@ De fire formuleringer er, som benævnt, ikke lavet til navigationsopgaver. Vi ha
 \begin{align*}
 \text{Fitts': } &T = 3532.2 + 581.9\cdot \log_2\left(\frac{2A}{W}\right)\\
 \text{Welford's: } &T =  1242.58\cdot \log_2\left(\frac{A+\frac{1}{2}W}{W}\right)\\
-\text{Mackenzie's: } &T = 4036.7 + 592.3\cdot \log_2\left(\frac{A+W}{W}\right)\\
+\text{MacKenzie's: } &T = 4036.7 + 592.3\cdot \log_2\left(\frac{A+W}{W}\right)\\
 \text{Meyer's: } &T = 5863.07 + 210.48 \cdot \sqrt{\frac{A}{W}}
 \end{align*}
 
@@ -772,7 +772,7 @@ Af graferne ser det ud til, at Welford's formulering er markant dårligere til a
 				Model & AIC værdi & Forskel\\\hline
 				Meyer & 20549.61 & 0 \\
 				Accot \& Zhai & 20549.62 & 0.01\\
-				Mackenzie & 20549.68 & 0.07 \\
+				MacKenzie & 20549.68 & 0.07 \\
 				Fitts & 20549.68 & 0.07\\
 				Welford & 20558.46 & 8.84
 			\end{tabular}
@@ -787,7 +787,7 @@ Af graferne ser det ud til, at Welford's formulering er markant dårligere til a
 				Model & AIC værdi & Forskel\\\hline
 				Meyer & 33.68 & 0 \\
 				Accot \& Zhai & 38.17 & 4.49\\
-				Mackenzie & 46.58 & 12.9 \\
+				MacKenzie & 46.58 & 12.9 \\
 				Fitts & 46.87 & 13.19\\
 				Welford & 64.97 & 31.29
 			\end{tabular}
@@ -838,7 +838,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_mackenzie}
-		\captionof{figure}{Mackenzie's affine model tilpasset gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
+		\captionof{figure}{MacKenzie's affine model tilpasset gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:mackenzie_tunnel_line}
 	\end{minipage}
 \end{minipage}
@@ -858,7 +858,7 @@ For at kunne tilpasse vores fire originale formuleringer af Fitts' lov, har vi d
 \begin{align*}
 \text{Fitts': } &T = -24882.5+ 8217.7 \cdot \log_2\left(\frac{2A}{W}\right)\\
 \text{Welford's: } &T =  2808.54\cdot \log_2\left(\frac{A+\frac{1}{2}W}{W}\right)\\
-\text{Mackenzie's: } &T = -21606.0 + 9310.7\cdot \log_2\left(\frac{A+W}{W}\right)\\
+\text{MacKenzie's: } &T = -21606.0 + 9310.7\cdot \log_2\left(\frac{A+W}{W}\right)\\
 \text{Meyer's: } &T = -16269.1 + 8452.2 \cdot \sqrt{\frac{A}{W}}
 \end{align*}
 
@@ -866,6 +866,7 @@ Accot og Zhai argumenterer i \cite{accot1997} for, at $ID$ for en navigationsopg
 \begin{align*}
 ID_s = \int_{2\pi}^{2\pi(n+1)}\frac{\sqrt{\left(\theta+w\right)^6+9\left(\theta+w\right)4}}{\left(\theta+2\pi+2\right)^3-\left(\theta+w\right)^3}d\theta
 \end{align*}
+
 For vores spiralopgaver gjorde vi brug af $n=[1,2,3,4]$ og en bredde $w=[3.1,3.1,3.1,3.05]$. For hver testperson i vores kontrollerede eksperiment har vi tilpasset deres tid $T$ og de fire udregnede $ID_s$ med lineær regression. Figur \ref{fig:spiralingtest1} og \ref{fig:spiralingtest2} viser de affine modellers tilpasning til de fire datapunkter for hhv. testperson 2 og 10. Det kan bemærkes, hvordan kurven er monotont voksende, hvilket stemmer overens med forventningen om, at det tager længere tid at gennemføre en opgave, hvis sværhedsgraden, $ID$, bliver højere. I modsætning til tunnelopgaven var der ingen af testpersonerne i den kontrollerede forsøg, som blev hurtigere ved sværere $ID$.\\\\
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.45\linewidth}
@@ -897,7 +898,7 @@ Ligesom for vores tunnelopgaver har vi valgt at visualisere de fem modellers til
 			Model & AIC værdi & Forskel\\\hline
 			Accot \& Zhai & 20225.67 & 0\\
 			Meyer & 20240.39 & 14.72 \\
-			Mackenzie & 20256.62 & 30.95\\
+			MacKenzie & 20256.62 & 30.95\\
 			Fitts & 20262.07 & 36.4\\
 			Welford & 20613.96 & 388.29
 		\end{tabular}
@@ -912,7 +913,7 @@ Ligesom for vores tunnelopgaver har vi valgt at visualisere de fem modellers til
 			Model & AIC værdi & Forskel\\\hline
 			Accot \& Zhai & 61.91 & 0\\
 			Meyer & 68.12 & 6.21 \\
-			Mackenzie & 70.66 & 8.75\\
+			MacKenzie & 70.66 & 8.75\\
 			Fitts & 71.25 & 9.34\\
 			Welford & 79.11 & 17.2
 		\end{tabular}
@@ -947,7 +948,7 @@ Ligesom for vores tunnelopgaver har vi valgt at visualisere de fem modellers til
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_spiral_mackenzie}
-		\captionof{figure}{Mackenzie's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
+		\captionof{figure}{MacKenzie's affine model til gennemsnitstiden pr. $ID$, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:mackenzie_spiral_line}
 	\end{minipage}
 \end{minipage}
