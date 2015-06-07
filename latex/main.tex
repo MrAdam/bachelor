@@ -598,7 +598,7 @@ På baggrund af de affine linjers overenstemmelse med datapunkterne fra det kont
 \section*{Modelanalyse af pegeopgaver}
 Vores modelanalyse af pegeopgaver tager udgangspunkt i AIC-modellen og de datapunkter der er indsamlet ved crowdsourcingdeltagernes udførsel af opgaverne.
 
-Hver af de fire formuleringer af Fitts' lov har vi tilpasset til vores data fra de 264 testdeltageres pegeopgaver ved lineær regression. Til hver af modellerne har vi gjort brug af formuleringernes respektive $ID$ som $x$-koordinat og tiden, $t$, det tog testdeltageren at løse en pågældende pegeopgave som $y$-koordinat. De fire matematiske modeller med de tilpassede konstanter er vist nedenfor.
+Hver af de fire formuleringer af Fitts' lov har vi tilpasset vores data fra de 264 testdeltageres pegeopgaver ved lineær regression. Til hver af modellerne har vi gjort brug af formuleringernes respektive $ID$ som $x$-koordinat og tiden, $t$, det tog testdeltageren at løse en pågældende pegeopgave som $y$-koordinat. De fire matematiske modeller med de tilpassede konstanter er vist nedenfor.
 \begin{align*}
 \text{Fitts': } &T = 392.29 + 149.42\cdot \log_2\left(\frac{2A}{W}\right)\\
 \text{Welford's: } &T =  299.73\cdot \log_2\left(\frac{A+\frac{1}{2}W}{W}\right)\\
@@ -799,7 +799,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_test_navigation_1}
-		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 7's fire tunnelopgaver, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
+		\captionof{figure}{Accot og Zhai's formulering tilpasset testperson 7's fire tunnelopgaver, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:navigationtest1}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -807,7 +807,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 	\end{minipage}
 	\begin{minipage}[b]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_test_navigation_2}
-		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 9's fire tunnelopgaver, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
+		\captionof{figure}{Accot og Zhai's formulering tilpasset testperson 9's fire tunnelopgaver, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:navigationtest2}
 	\end{minipage}
 \end{minipage}
@@ -815,7 +815,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_welford}
-		\captionof{figure}{Welford's lineære model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
+		\captionof{figure}{Welford's lineære model tilpasset gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:welford_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -823,14 +823,14 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_fitt}
-		\captionof{figure}{Fitts' affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
+		\captionof{figure}{Fitts' affine model tilpasset gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:fitt_tunnel_line}
 	\end{minipage}
 \end{minipage}
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_meyer}
-		\captionof{figure}{Meyer's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
+		\captionof{figure}{Meyer's affine model tilpasset gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:meyer_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -838,7 +838,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_mackenzie}
-		\captionof{figure}{Mackenzie's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
+		\captionof{figure}{Mackenzie's affine model tilpasset gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:mackenzie_tunnel_line}
 	\end{minipage}
 \end{minipage}
@@ -846,7 +846,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 	\begin{minipage}[t]{\linewidth}
 		\centering
 		\includegraphics[width=0.5\textwidth]{images/plots/plot_model_tunnel_accot}
-		\captionof{figure}{Accot \& Zhai's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
+		\captionof{figure}{Accot \& Zhai's affine model tilpasset gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:accot_tunnel_line}
 	\end{minipage}
 \end{minipage}
@@ -871,7 +871,7 @@ For vores spiralopgaver gjorde vi brug af $n=[1,2,3,4]$ og en bredde $w=[3.1,3.1
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_test_spiraling_1}
-		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 2, med $ID_s$ på $x$-aksen og tiden $T$ på $y$-aksen}
+		\captionof{figure}{Accot og Zhai's formulering tilpasset testperson 2, med $ID_s$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:spiralingtest1}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -879,7 +879,7 @@ For vores spiralopgaver gjorde vi brug af $n=[1,2,3,4]$ og en bredde $w=[3.1,3.1
 	\end{minipage}
 	\begin{minipage}[b]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_test_spiraling_2}
-		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 10, med $ID_s$ på $x$-aksen og tiden $T$ på $y$-aksen}
+		\captionof{figure}{Accot og Zhai's formulering tilpasset testperson 10, med $ID_s$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:spiralingtest2}
 	\end{minipage}
 \end{minipage}
