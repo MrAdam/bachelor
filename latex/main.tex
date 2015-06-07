@@ -268,9 +268,9 @@ T &= -K+K\left(\log(2)+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
 T &= -K+K\left(\log\left(2\left(\cdot\frac{A+0.5W}{W}\right)\right)\right)\Leftrightarrow\\
 T &= -K+K\cdot\log\left(\frac{2A+W}{W}\right)
 \end{align*}
-På trods af at det er muligt at omformulere Welford's formulering, så vil det ikke være brugbart i praksis. Omformuleringen gør, at det additive led, $a = -K$, er blevet negativt, hvilket betyder, at tiden det tager at påbegynde en opgave er negativ. Vi vil derfor fremadrettet kun bruge Welford's formulering uden den additive konstant.
+På trods af, at det er muligt at omformulere Welford's formulering, så vil det ikke være brugbart i praksis. Omformuleringen gør, at $-K$, er negativt, hvilket betyder, at tiden det tager at påbegynde en opgave er negativ. Vi vil derfor fremadrettet kun bruge Welford's formulering uden den additive led.
 
-Når vi kigger på de fire formuleringer, kan vi vise, at de ikke er ens, ved at vælge et fast $A = 5$ og $W = 1$ og finde ét punkt, hvor de to funktionsværdier er forskellige. Vi sætter $a=0$ og finder tiden i skæringen med $y$-aksen.
+Da vi har vist omformuleringen af Welford's formulering ikke giver logisk mening, vil vi nu kigge på de fire formuleringer, og vise, at de ikke er ens. Dette kan vi gøre ved at vælge en fast værdi for $A$ og $W$, for eksempel, $A = 5$ og $W = 1$. Hvis vi her finder ét punkt, hvor de to funktionsværdier er forskellige. Vi sætter $a=0$ og finder tiden i skæringen med $y$-aksen.
 \begin{align*}
 \text{Fitts: } &T=b\cdot\log\left(\frac{2\cdot5}{2}\right)\\
 \text{Welford: } &T=k\cdot\log\left(\frac{5+0.5\cdot 2}{2}\right)\\
