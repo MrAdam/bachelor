@@ -301,7 +301,7 @@ Større dele af vores eksperiment har vi valgt at udføre ligesom tidligere udf�
 Det drejer sig om følgende dele af vores eksperiment:
 \begin{itemize}
 \item Spørgsmål som blev stillet før crowdsourcing-deltagerne kunne udføre forsøget \cite{goldberg2015}
-\item Design af pegeopgave, inklusiv værdier af A, W og canvas \cite{goldberg2015}
+\item Design af pegeopgave, inklusiv værdier af A, W og canvas\footnote{Den del af skærmen, hvor alle de grafiske elementer bliver tegnet} \cite{goldberg2015}
 \item Størrelser af A og W til tunnelopgave \cite{accot1997}
 \item Antal vindinger af spiral til spiralopgave \cite{accot1997}
 \end{itemize}
@@ -309,30 +309,30 @@ Derudover har vi brugt samme udformning af tunnel- og spiralopgave, som i pegeop
 
 \addcontentsline{toc}{section}{Platform og udviklingsværktøj}
 \section*{Platform og udviklingsværktøj}
-Vi har valgt at bruge JavaScript til at udvikle vores forsøg, da vi alle er bekendte med sproget, så vi skal ikke til at sætte os ind i noget nyt. Derudover er det integreret i alle browsere nu om dage, hvilket gør det nemt at crowdsource. For at generere vores opgaver har vi valgt at gøre brug af JavaScript-frameworket $paper.js$. Det gør brug af HTML5 canvas og er bagudkompatibelt til IE9. Frameworket gør det muligt at autogenerere cirkler til vores pegeopgaver, gemme bevægelsesbaner og tegne tunneller, til tunnelopgaverne.
+Vi har valgt at bruge JavaScript til at udvikle vores forsøg, da vi alle er bekendte med sproget, så vi skal ikke til at sætte os ind i noget nyt. Derudover er det integreret i alle browsere nu om dage, hvilket gør det nemt at crowdsource. For at generere vores opgaver har vi valgt at gøre brug af JavaScript-frameworket $paper.js$. Det gør brug af HTML5 canvas og er bagudkompatibelt til IE9. Frameworket gør det muligt at autogenerere cirkler til vores pegeopgaver, gemme bevægelsesbaner og tegne tunneller og spiraller, til vores tunnel- og spiralopgaver.
 
 \addcontentsline{toc}{section}{Opgavetyper}
 \section*{Opgavetyper}
-I denne sektion vil vi beskrive hvordan tunnel-, spiral- og pegeopgaverne er designet.
+I denne sektion vil vi beskrive hvordan tunnel-, spiral- og pegeopgaverne er designet. Undervejs i dette afsnit har vi inkluderet visuelle eksempler der er beskåret. I bilag \ref{sec:screenshots} har vi vedlagt figurer, der illustrerer de samme, og flere, eksempler uden nogen beskæring, så canvas, tekst og knapper er med.
 
 \addcontentsline{toc}{subsection}{Tunnelopgave}
 \subsection*{Tunnelopgave}
 \begin{minipage}{\linewidth}
 	\begin{minipage}{\textwidth}
 		\centering
-		\includegraphics[width=\textwidth, trim = .5cm 20cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_path}
+		\includegraphics[width=\textwidth, trim = .5cm 23cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_path}
 		\captionof{figure}{Skærmbillede af den første tunnelopgave, med starten af en testpersons sti.}
 		\label{fig:ex_tunnel_1}
 	\end{minipage}
 	\begin{minipage}{\textwidth}
 		\centering
-		\includegraphics[width=\textwidth, trim = .5cm 20cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_2}
+		\includegraphics[width=\textwidth, trim = .5cm 22cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_2}
 		\captionof{figure}{skærmbillede af den anden tunnelopgave.}
 		\label{fig:ex_tunnel_2}
 	\end{minipage}
 	\begin{minipage}{\textwidth}
 		\centering
-		\includegraphics[width=\textwidth, trim = .5cm 20cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_3}
+		\includegraphics[width=\textwidth, trim = .5cm 21cm .5cm 15cm, clip]{images/screenshots/ex_step_4_tunnel_3}
 		\captionof{figure}{Skærmbillede af den tredje tunnelopgave.}
 		\label{fig:ex_tunnel_3}
 	\end{minipage}
@@ -353,7 +353,7 @@ I denne opgave skal testdeltageren føre deres markør igennem fire tunneller af
 		3 & 300 & 40 \\
 		4 & 400 & 50 \\
 	\end{tabular}
-	\captionof{table}{Værdier af $A$ (længde) og $W$ (indmundingsbredde) af tunneller brugt i tunnelopgaverne}
+	\captionof{table}{Værdier af $A$ (længde) og $W$ (venstre lodrette streg) af tunneller brugt i tunnelopgaverne}
 	\label{tab:tunnelopgave}
 \end{center}
 Ved begyndelsen af en tunnelopgave vil den venstre side af tunnellen være markeret med grøn for at tydeliggøre hvor opgaven starter. Når testdeltagerens markør passerer venstre side af tunnellen vil opgaven starte, og det vil nu være den højre side af tunnellen der er grøn, for at signalere hvor markøren nu skal flyttes hen. Når opgaven er i gang, vil der som på figur \ref{fig:ex_tunnel_1} blive vist en grøn linje der hvor markøren flyttes fra, i tilfælde af at testdeltageren rammer eller ryger uden for kanterne, vil de kunne fortsætte ubemærket.\\
@@ -363,28 +363,28 @@ Når testpersonen passerer den højre side af tunnellen vil opgaven stoppe, og d
 \subsection*{Spiralopgave}
 \begin{minipage}{\linewidth}
 	\centering
-	\includegraphics[width=.4\linewidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_path}
+	\includegraphics[width=.4\linewidth, trim = 5cm 20cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_path}
 	\captionof{figure}{Skærmbillede af den første spiralopgave, med starten af en testpersons sti.}
 	\label{fig:ex_spiral_1}
-	\includegraphics[width=.4\linewidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_2}
+	\includegraphics[width=.4\linewidth, trim = 5cm 18.1cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_2}
 	\captionof{figure}{Skærmbillede af den anden spiralopgave.}
 	\label{fig:ex_spiral_2}
-	\includegraphics[width=.5\linewidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_3}
+	\includegraphics[width=.5\linewidth, trim = 5cm 15.4cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_3}
 	\captionof{figure}{Skærmbillede af den tredje spiralopgave.}
 	\label{fig:ex_spiral_3}
-	\includegraphics[width=.5\linewidth, trim = 5cm 14cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_4}
+	\includegraphics[width=.5\linewidth, trim = 5cm 14.3cm 5cm 8cm, clip]{images/screenshots/ex_step_5_spiral_4}
 	\captionof{figure}{Skærmbillede af den fjerde spiralopgave.}
 	\label{fig:ex_spiral_4}
 \end{minipage}\\\\
 I denne opgave skal testdeltageren føre deres markør igennem fire spiraler af varierende størrelse, og med varierende antal vindinger. De fire spiraler kan ses på figur \ref{fig:ex_spiral_1}, \ref{fig:ex_spiral_2}, \ref{fig:ex_spiral_3} og \ref{fig:ex_spiral_4}. De er skaleret cirka 80\% ned, men deres indbyrdes relative størrelser er beholdt. Antallet af vindinger i spiralerne er vist i tabel \ref{tab:spiralopgave}. Antallet af vindingerne på spiralerne er taget fra \cite{accot1997}.
 \begin{center}
-	\begin{tabular}{c c}
-		Spiral & A \\
+	\begin{tabular}{c c c}
+		Spiral & A & W \\
 		\hline
-		1 & 1 \\
-		2 & 2 \\
-		3 & 3 \\
-		4 & 4 \\
+		1 & 1 & 3.1 \\
+		2 & 2 & 3.1\\
+		3 & 3 & 3.1\\
+		4 & 4 & 3.05\\
 	\end{tabular}
 	\captionof{table}{Værdier af $A$ (antal vindinger) af spiraler brug i spiralopgaverne}
 	\label{tab:spiralopgave}
@@ -463,9 +463,8 @@ Hvis deltagerne bevæger pegeenheden uden for det canvas som opgaven skal udfør
 \subsection*{Laboratorieeksperiment}
 Laboratorieeksperimentet vil blive udført af 10 tilfældigt udvalgte universitetsstuderende - dog ikke dataloger.
 Forsøget foretages fra kl 9-13 - tidligt på dagen - for at sikre, at folk stadig er friske. Det vil foregå i en 4-personers sofabås på H.C. Ørstedsinstituttet, hvor der er privat og uden forstyrrelser.
-Tidsmæssigt vil der være afsat 20 minutter til hver deltager, dog med plads til ekstra tid hvis nødvendigt.
-Hver deltager bliver først introduceret til vores projekt og derefter introduceret til hhv. tunnel-, spiral- og pegeopgaven.
-Herefter bliver testdeltageren bedt om at udføre tunnelopgaven - efterfulgt af spiral- og pegeopgaven - hvor der vil være et antal opgaver som skal udføres, hhv. 4 for tunnelopgaven, 4 for spiralopgaven og 25 for pegeopgaven.
+Tidsmæssigt vil der være afsat 20 minutter til hver deltager, dog med plads til ekstra tid hvis nødvendigt. For at sikre os, at forsøgene forløber korrekt og ensartet har vi udarbejdet end drejebog, der kan ses i bilag \ref{sec:drejebog}. Hver deltager bliver først introduceret til vores projekt og derefter introduceret til hhv. tunnel-, spiral- og pegeopgaven.
+Herefter bliver testdeltageren bedt om at udføre tunnelopgaven - efterfulgt af spiral- og pegeopgaven - hvor der vil være et antal opgaver, som skal udføres, hhv. 4 for tunnelopgaven, 4 for spiralopgaven og 25 for pegeopgaven.
 
 \addcontentsline{toc}{subsection}{Crowdsourcingeksperiment}
 \subsection*{Crowdsourcingeksperiment}
@@ -483,7 +482,7 @@ For at nå ud til andet end danske brugere har vi valgt også at bruge de to fø
 \item reddit.com/r/care
 \end{itemize}
 
-Som det sidste vil vi også dele forsøget på vores egne Facebook-profiler.
+Som det sidste vil vi også dele forsøget på vores egne Facebook-profiler. Teksten som vi brugte til at dele forsøget kan ses i bilag \ref{sec:crowdsource-text}, den engelske version blev brugt på reddit, imens den danske blev brugt på facebook.
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth, trim = 0cm 0cm 7cm 0cm, clip]{images/screenshots/ex_questions}
@@ -526,7 +525,7 @@ LSE er bestemt ved at finde gennemsnittet af kvadratet på afstandene fra punkte
 
 Mallow's $C_p$ kriteriet bliver beregnet ud fra LSE men inddrager også antallet af parametre i beregningen for netop at undgå overfitting. Tilsvarende gør sig gældende for AIC og BIC, de beregnes dog ved hjælp af maximum likelihood i stedet for LSE.
 
-For et givent datasæt $x$ og en tilhørende statistisk model vil likelihoodfunktionen beregne sandsynligheden for, at modellens parametre $p$ vil resultere i $x$. Ved maximum likelihood findes den værdi for  $p$, som maksimerer likelihood funktionen. \textit{"Det vil sige den værdi af  $p$ der gør den observerede værdi $x$ mest sandsynlig"} \cite{ditlevsen2011} side 14. Forskellen på AIC og BIC er, at BIC vægter antallet af parametre mere negativt end AIC.
+For et givent datasæt $x$ og en tilhørende statistisk model vil likelihoodfunktionen beregne sandsynligheden for, at modellens parametre $p$ vil resultere i $x$. Ved maximum likelihood findes den værdi for  $p$, som maksimerer likelihood funktionen. \textit{"Det vil sige den v{\ae}rdi af  p der gør den observerede v{\ae}rdi x mest sandsynlig"} \cite{ditlevsen2011}. Forskellen på AIC og BIC er, at BIC vægter antallet af parametre mere negativt end AIC.
 
 Af de fire beskrevne modeller har vi valgt at bruge AIC, da det er den mest udbredte at basere sin modeludvælgelse på. Hvis vi lader $L$ være maximum likelihood-værdierne for modellens parametre og $k$ antallet af parametre, så er AIC givet ved
 \begin{align}
@@ -1075,10 +1074,32 @@ Vektorerne i bilag \ref{sec:velocity_plots} udviser ingen generelle tendenser. D
 \chapter*{Diskussion}
 Vi vil i dette afsnit diskutere vores fremgangsmåde og resultater fra både vores forsøgsopstilling og analyse.
 
-\begin{table}[h]
+\addcontentsline{toc}{section}{Forsøgsopstilling}
+\section*{Forsøgsopstilling}
+
+\begin{wrapfigure}{r}{.45\linewidth}
 	\centering
 	\begin{tabular}{ll}
-		Computerspil & Gennemsnitstid\\\hline
+		\textbf{Fordele} & \textbf{Ulemper}\\\hline
+		Flere deltagere & Lavere feedbackkvalitet\\
+		Hurtigere & Mindre interaktion\\
+		Lavere omkostninger & Spammere\\
+		Forskellige baggrunde & Store målgrupper\\
+	\end{tabular}
+	\caption{Tabel med oversigt over fordele og ulemper ved brug af crowdsourcing i forhold til laboratorieforsøg \cite{liu2012crowdsourcing}}
+	\label{tab:fordeleogulemper}
+\end{wrapfigure}
+
+Vi valgte at opdele vores forsøg i to dele; et kontrolleret laboratorieeksperiment, og et ukontrolleret crowdsourcingeksperiment. Opdeling blev lavet for at sikre at vi havde nogle kontrollerede data som vi kunne bruge til at måle kvaliteten af vores ukontrollerede data. Ifølge \cite{liu2012crowdsourcing} er der fordele ved både laboratorieforsøg, og ved crowdsourcing - disse ses i tabel \ref{tab:fordeleogulemper} som illustrerer fordelene ved . Den lavere kvalitet af feedback, og den manglende interaktion med deltagerne fremhæver vigtigheden af at udføre et laboratorieeksperiment, hvor disse problemer netop ikke vil være til stede\cite{liu2012crowdsourcing}. Det kan derfor diskuteres om vores 10 personer til det kontrollerede laboratorieforsøg er tilstrækkeligt, eller om vi burde have haft en større mængde deltagere, og sikret os en større mængde data af højere kvalitet. Derudover ville det også have givet os en mulighed for at finde flere folk fra en mere varieret målgruppe til at sammenligne crowdsourcingdata med.
+
+Fordelen ved brug af crowdsourcing taler dog klart for brugen af disse. Dog bliver der refereret til services som Amazon Mechanical Turk og CrowdFlower\cite{liu2012crowdsourcing}, der begge er betalingsservices, hvilket har nogle andre fordele og ulemper end vores valg af frivillige testdeltagere. De lave omkostninger, og den hurtige udførsel taler for at vælge betalingsservices, og ville have sikret os en større mængde data. Men vi kan ikke sige om kvaliteten af data havde været bedre, da der ved betalt crowdsourcing bliver et inticement til at gennemføre opgaverne hurtigere grundet Amazon Mechanical Turks betaling per gennemført opgave\cite{liu2012crowdsourcing}.
+
+Vores valg af opslagssteder til det ukontrollerede forsøg kan have haft en indflydelse på den indsamlede data. Vi valgte at bruge Reddit, hvilket giver os en meget specifik målgruppe, da den typiske Reddit-bruger er mand imellem 18 og 29 år\footnote{\href{http://www.pewinternet.org/2013/07/03/6-of-online-adults-are-reddit-users/}, besøgt: 03-06-2015}. Dette er også udslagsgivende i vores indsamlede data, hvor gennemsnitsalderen er 24.5 år og 233 ud af 257 er mænd. Det er førhen blevet påvist, at folk der spiller computer vil være hurtigere\cite{wyeld2013}. I vores undersøgelse er dette også tilfældet, da tabel \ref{tab:times_average} viser at gennemsnitstiderne for at gennemføre en opgave falder desto mere computer deltageren spiller.
+
+\begin{wrapfigure}{l}{.40\linewidth}
+	\centering
+	\begin{tabular}{ll}
+		\textbf{Computerspil} & \textbf{Gennemsnitstid}\\\hline
 		$<1$ time    & 1052.307ms\\
 		1-5 timer    & 1008.317ms\\
 		5-15 timer   & 963.7545ms\\
@@ -1087,15 +1108,11 @@ Vi vil i dette afsnit diskutere vores fremgangsmåde og resultater fra både vor
 	\end{tabular}
 	\caption{Tabel med oversigt over testpersoners spilletid, sammenlignet med deres gennemsnitlige gennemførselshastighed af pegeopgaverne}
 	\label{tab:times_average}
-\end{table}
+\end{wrapfigure}
 
-\addcontentsline{toc}{section}{Forsøgsopstilling}
-\section*{Forsøgsopstilling}
-Vores valg af opslagssteder i det ukontrollerede forsøg kan have haft en indflydelse på den indsamlede data. Vi valgte at bruge Reddit, hvilket giver os en meget specifik målgruppe, da den typiske Reddit-bruger er mand imellem 18 og 29 år\footnote{http://www.pewinternet.org/2013/07/03/6-of-online-adults-are-reddit-users/, besøgt: 03-06-2015}. Dette er også udslagsgivende i vores indsamlede data, hvor gennemsnitsalderen er 24.5 år og 233 ud af 257 er mænd. Det er førhen blevet påvist, at folk der spiller computer vil være hurtigere\cite{wyeld2013}. I vores undersøgelse er dette også tilfældet, da tabel \ref{tab:times_average} viser at gennemsnitstiderne for at gennemføre en opgave falder desto mere computer deltageren spiller.
+Det er derimod væsentligt at se på hvilket pegeredskab testdeltagerne brugte, da der kan være forskel på tiden, når personer bruger f.eks. mus i forhold til touchpad \cite{epps1986}. I vores data brugte 160 personer mus, mens 96 brugte touchpad. På trods af at der er flest der brugte mus, så er det stadig vigtigt at huske at cirka $35\%$ brugte touchpad, hvilket ifølge \cite{epps1986} medfører et dårligere resultat.
 
-Det er derimod væsentligt at se på hvilket pegeredskab testdeltagerne brugte, da der kan være forskelle på tiden, når personer bruger f.eks. mus i forhold til touchpad \cite{epps1986}. I vores data brugte 160 personer mus, mens 96 brugte touchpad. På trods af at der er flest der brugte mus, så er det stadig vigtigt at huske at cirka $35\%$ brugte touchpad, hvilket vil give dem et dårligere resultat.
-
-Vores testdata kom ikke kun fra Reddit, men også fra opslag på vores Facebook-væg. Dette medfører også et bias som kan være væsentligt, da det er vores familie og venner vi derved bruger. Familie og venner har ofte hørt om projektet før og kan derfor have en forventning om hvad der skal ske og hvad de burde gøre. Da både Reddit og Facebook hovedsageligt bruges af yngre personer, så vil vores målgruppe også være begrænset heraf. Vi har f.eks. kun ni testpersoner som er ældre end 40. 
+Vores testdata kom ikke kun fra Reddit, men også fra opslag på vores Facebook-væg. Dette medfører også et bias som kan være væsentligt, da det er vores familie og venner vi derved bruger. Familie og venner har ofte hørt om projektet før og kan derfor have en forventning om hvad der skal ske og hvad de burde gøre. Da både Reddit og Facebook hovedsageligt bruges af yngre personer, så vil vores målgruppe også være begrænset heraf.
 
 \addcontentsline{toc}{section}{Analyse}
 \section*{Analyse}
