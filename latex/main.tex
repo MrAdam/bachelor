@@ -763,7 +763,7 @@ $W_1$ er størrelsen på startstregen, og $W_2$ er størrelsen på slutstregen, 
 \text{Accot \& Zhai: } T = 6112.40+47.77 \cdot \left(\frac{A}{W_2-W_1}\cdot\ln\left(\frac{W_2}{W_1 }\right)\right)
 \end{align*}
 
-Det kan bemærkes, at den primære forskel imellem Accot og Zhai's formulering og de fire andre er det multiplikative led, $b$. Da $ID_{NT}$ antager væsentligt højere værdier end de fire andre $ID$'er, så er $b$ også tilsvarende mindre. For at visualisere de fem formuleringers tilpasning til dataene har vi valgt at beregne gennemsnitstiden for alle testdeltagerne per $ID$. Dette giver anledning til fire datapunkter, ét for hver tunnelopgave, som kan ses i figur \ref{fig:welford_tunnel_line}, \ref{fig:fitt_tunnel_line}, \ref{fig:meyer_tunnel_line}, \ref{fig:mackenzie_tunnel_line} og \ref{fig:accot_tunnel_line} sammen med de tilpassede affine kurver. På $x$-aksen er modellernes respektive $ID$ imens tiden, $T$ er angivet ved $y$-aksen. 
+Det kan bemærkes, at den primære forskel imellem Accot og Zhai's formulering og de fire andre er det multiplikative led, $b$. Da $ID_{NT}$ antager væsentligt højere værdier end de fire andre $ID$'er, så er $b$ også tilsvarende mindre. For at visualisere de fem formuleringers tilpasning til dataene har vi beregnet gennemsnitstiden for alle testdeltagerne per $ID$. Dette giver anledning til fire datapunkter, ét for hver tunnelopgave, som kan ses i figur \ref{fig:welford_tunnel_line}, \ref{fig:fitt_tunnel_line}, \ref{fig:meyer_tunnel_line}, \ref{fig:mackenzie_tunnel_line} og \ref{fig:accot_tunnel_line} sammen med de tilpassede affine kurver. På $x$-aksen er modellernes respektive $ID$ imens tiden, $T$ er angivet ved $y$-aksen. 
 
 Af graferne ser det ud til, at Welfords formulering klarer sig markant dårligere i at beskrive vores data end de fire andre formuleringer. For at undersøge dette har vi lavet AIC analyse af formuleringerne tilpasset det fulde datasæt, \ref{tab:table_analysis_aic_tunnel_all}, og gennemsnits datapunkterne, \ref{tab:table_analysis_aic_tunnel_mean}. Begge tabeller viser en klar tendens i og med, at Meyers formulering klarer sig bedst imens Welfords klarer sig dårligst i at beskrive vores data. Begge tabeller viser den samme rækkefølge for formuleringernes indbyrdes placering, men de relative forskelle varierer.\\\\
 \begin{minipage}[t]{\linewidth} 
@@ -800,7 +800,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_test_navigation_1}
-		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 7's 4 tunnelopgaver, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 7's 4 tunnelopgaver, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:navigationtest1}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -808,7 +808,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 	\end{minipage}
 	\begin{minipage}[b]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_test_navigation_2}
-		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 9's 4 tunnelopgaver, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Accot og Zhai's formulering tilpasset til testperson 9's 4 tunnelopgaver, med $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:navigationtest2}
 	\end{minipage}
 \end{minipage}
@@ -816,7 +816,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_welford}
-		\captionof{figure}{Welford's lineære model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Welford's lineære model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:welford_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -824,14 +824,14 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_fitt}
-		\captionof{figure}{Fitts' affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Fitts' affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:fitt_tunnel_line}
 	\end{minipage}
 \end{minipage}
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_meyer}
-		\captionof{figure}{Meyer's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Meyer's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:meyer_tunnel_line}
 	\end{minipage}
 	\begin{minipage}[b]{0.1\linewidth}
@@ -839,7 +839,7 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_mackenzie}
-		\captionof{figure}{Mackenzie's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen.}
+		\captionof{figure}{Mackenzie's affine model tilpasset til gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:mackenzie_tunnel_line}
 	\end{minipage}
 \end{minipage}
