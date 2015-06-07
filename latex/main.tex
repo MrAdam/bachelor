@@ -110,8 +110,8 @@ Resultaterne som Fitts fik fra de udførte eksperimenter viste, at des større a
 \begin{align*}
 ID = -\log_2\left(\frac{W}{2A}\right)
 \end{align*}
-Brugen af $\log_2$ i formlen, er baseret på Fitts' kendskab til Shannon's sætning 17 \cite{goldberg2015}. For at sikre at $ID$ altid giver en positiv værdi, valgte Fitts at gøre brug af $2A$ frem for $A$, da det kan garanteres at $2A > W$, hvilket sikrer det samme fortegn for alle udfald af logaritmen. Da $log\left(\frac{W}{2A}\right)<0$, for $0<\frac{W}{2A}<1$, valgte Fitts at multiplicere det med $-1$, hvilket sikrer at ID altid er positiv.
-Ved brug af $ID$ udregnede Fitts et \textit{Index of Performance}, IP, som beskriver hvorledes en opgave er udført i forhold til sværhedsgraden, $ID$, og tiden $t$.
+Brugen af $\log_2$ i formlen, er baseret på Fitts' kendskab til Shannon's sætning 17 \cite{goldberg2015}. For at sikre, at $ID$ altid giver en positiv værdi, valgte Fitts at gøre brug af $2A$ frem for $A$, da det kan garanteres at $2A > W$, hvilket sikrer det samme fortegn for alle udfald af logaritmen. Da $log\left(\frac{W}{2A}\right)<0$, for $0<\frac{W}{2A}<1$, valgte Fitts at multiplicere det med $-1$, hvilket sikrer at ID altid er positiv.
+Ved brug af $ID$ udregnede Fitts et \textit{Index of Performance}, IP, som beskriver, hvordan en opgave er udført i forhold til $ID$, og tiden $t$.
 \begin{align*}
 IP &= \frac{ID}{t}\Leftrightarrow\\
 IP &= \frac{-1}{t}\log_2\left(\frac{W}{2A}\right)
