@@ -173,21 +173,21 @@ T = K \cdot log\left(\frac{A + \frac{1}{2}W}{W}\right) = K \cdot log\left(\frac{
 
 I dette tilfælde vil det gælde, at $A = \frac{1}{2}W$, hvorved $T = K \cdot log\left(\frac{A + \frac{1}{2}W}{W}\right) = K \cdot log\left(\frac{W}{W}\right)$. Da $\log\left(\frac{W}{W}\right)=\log(1) > 0 $ vil $ID$ være positivt.
 
-Den sidste observation, der blev gjort, var at kurven i figur~\ref{fig:WelfordGraf} viser en tydelig udfladning ved lavere værdier af $x$. Welford noterede at det sandsynligvis var grundet en begrænsende faktor, som beskriver en minimumstid per bevægelse, hvor kort eller uhindret bevægelse end måtte være. Welford's egne undersøgelser har påvist at denne begrænsende faktor har betydning for, hvor meget af målet der rent faktisk bliver brugt. Når målene er brede og længden mellem dem kort, vil testpersonen kun bruge en sub-længde af målets fulde længde. Han overfører mere information end (\ref{eq:WelfordsLov}) ville beskrive, fordi den effektive W er kortere. Den kortere bredde kan i nogen omfang afspejles i en reduktion af fejl og, hvis reduktionen sker med behørigt hensyn, holder (\ref{eq:WelfordsLov}) stadig.
+Den sidste observation, der blev gjort var, at kurven i figur~\ref{fig:WelfordGraf} viser en tydelig udfladning ved lavere værdier af $x$. Welford noterede, at det sandsynligvis var grundet en begrænsende faktor, som beskriver en minimumstid per bevægelse, hvor kort eller uhindret bevægelsen end måtte være. Welford's egne undersøgelser har påvist, at denne begrænsende faktor har betydning for, hvor meget af målet, der rent faktisk bliver brugt. Når målene er brede og længden mellem dem kort, vil testpersonen kun bruge en sub-længde af målets fulde længde. Han overfører mere information end (\ref{eq:WelfordsLov}) ville beskrive, fordi den effektive W er kortere. Den kortere bredde kan i nogen omfang afspejles i en reduktion af fejl og, hvis reduktionen sker med behørigt hensyn, holder (\ref{eq:WelfordsLov}) stadig.
 
-Ud fra de tre ovenstående modifikationer indførte Welford igen Fitts' data fra hans første forsøg i et koordinatsystem. Denne gang havde dataen dog været igennem fejlreduktion og blev indsat op imod Welford's formulering, hvilket viste at (\ref{eq:WelfordsLov}) var bedre til at beskrive dataen end (\ref{eq:FittsLov}). Den affine kurve som Welford kom frem til er at se i figur \ref{fig:WelfordGraf2}.
+Ud fra de tre ovenstående modifikationer indførte Welford igen Fitts' data fra hans første forsøg i et koordinatsystem. Denne gang havde dataen dog været igennem fejlreduktion og blev sat op imod Welford's formulering, hvilket viste, at (\ref{eq:WelfordsLov}) var bedre til at beskrive dataen end (\ref{eq:FittsLov}). Den affine kurve som Welford kom frem til er at se i figur \ref{fig:WelfordGraf2}.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth]{images/illustrations/welford_plot_1}
-\caption{Graf over $MT$ (y-akse) I forhold til $ID$ (x-akse), med punktplot over data fra et af Fitts' forsøg, og linje der viser hvordan Fitts' model passer på dataen.}
+\caption{Graf over $MT$ (y-akse) I forhold til $ID$ (x-akse), med punktplot over data fra et af Fitts' forsøg, og linje der viser hvordan Fitts' model passer på dataene}
 \label{fig:WelfordGraf}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth]{images/illustrations/welford_plot_2}
-\caption{Graf over $MT$ (y-akse) I forhold til $ID$ (x-akse), med punktplot over data fra et af Fitts' forsøg, og linje der viser hvordan Welfords model passer på dataen.}
+\caption{Graf over $MT$ (y-akse) I forhold til $ID$ (x-akse), med punktplot over data fra et af Fitts' forsøg, og linje der viser hvordan Welfords model passer på dataene}
 \label{fig:WelfordGraf2}
 \end{figure}
 
