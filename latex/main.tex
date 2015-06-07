@@ -211,12 +211,12 @@ En af de mest accepterede udledninger af Fitts' lov stammer fra modellen \emph{d
 MacKenzie beskriver, at et af problemerne med Fitts' lov er den tætte relation mellem $ID$ og $T$. Figur~\ref{fig:MacKenziePlot1} illustrerer, hvordan punkterne flader ud, ved lave værdier af $ID$, mens kurven beholder sit 1:1-forhold mellem $ID$ og $T$. Der er altså en usammenhæng mellem de observerede og forudsagte værdier, hvilket også er blevet observeret i flere andre studier som \cite{welford1960, buck1986, crossman1983, drury1975, klapp1975, langolf1976, meyer1988, wallace1978}\\
 Han fremhæver dog, at der er lavet en del studier af Fitts' lov, og at der er blevet præsenteret en del alternative formuleringer, som forsøger at få de faktiske data til at passe bedre til modellen. Specielt fremhæver han Welford's~\cite{welford1960,welford1968}, da den er udbredt som alternativ til Fitts' originale formulering. MacKenzie nævner den ekstreme lighed mellem Welford og Shannons formulering, og beskriver hvordan det for nyligt er blevet vist at Fitts' originale formulerings forhold mellem $A$ og $W$ havde baggrund i en approksimation af Shannon's sætning~\cite[p. 388]{fitts1954}. Dette mener MacKenzie er et problem, da der i Shannon's sætning er forventning om et højst $S$ til $N$ forhold, imens Fitts gjorde brug af $A$ til $W$ forhold helt ned til 1:1 i sine originale forsøg. MacKenzie foreslår, at man benytter sig af en form der minder meget om Welford's, men er her en direkte analogi til Shannon's formulering:
 \begin{align}
-\text{Shannon: }C&=b\cdot&\log{\frac{S+N}{N}}\\
-\text{Welford: }T&=a+b\cdot&\log{\frac{A+0.5W}{W}}\\
-\text{MacKenzie: }T&=a+b\cdot&\log{\frac{A+W}{W}}
+\text{Shannon: }C&=b\cdot\log{\left(\frac{S+N}{N}\right)}\\
+\text{Welford: }T&=a+b\cdot\log{\left(\frac{A+0.5W}{W}\right)}\\
+\text{MacKenzie: }T&=a+b\cdot\log{\left(\frac{A+W}{W}\right)}
 \end{align}
 
-Forskellen mellem Fitts' originale formulering for $ID$, og MacKenzie's bud på en ny formulering lavet som en direkte analogi til Shannon's bliver sammenlignet i figur~\ref{fig:MacKenziePlot2}, hvor det er tydeligt, at der ved lavere værdier af $A$ sker en udfladning af kurven, hvilket passer med data punkterne i figur~\ref{fig:MacKenziePlot1}, jvf. det første data punkt, som ikke ligger på den affine linje.\\
+Forskellen mellem Fitts' originale formulering og MacKenzie's bud på en ny formulering lavet som en direkte analogi til Shannon's bliver sammenlignet i figur~\ref{fig:MacKenziePlot2}, hvor det er tydeligt, at der ved lavere værdier af $A$ sker en udfladning af kurven, hvilket passer med data punkterne i figur~\ref{fig:MacKenziePlot1}, jvf. det første data punkt, som ikke ligger på den affine linje.\\
 \begin{figure}[h]
 \centering
 \includegraphics[width=.5\linewidth]{images/illustrations/mackenzie_plot_2}
