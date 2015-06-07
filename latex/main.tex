@@ -598,7 +598,7 @@ På baggrund af de affine linjers overenstemmelse med datapunkterne fra det kont
 \section*{Modelanalyse af pegeopgaver}
 Vores modelanalyse af pegeopgaver tager udgangspunkt i AIC-modellen og de datapunkter der er indsamlet ved crowdsourcingdeltagernes udførsel af opgaverne.
 
-Hver af de fire formuleringer af Fitts' lov har vi tilpasset til vores data fra de 264 testdeltageres pegeopgaver ved lineær regression ved R's $lm()$ funktion. Til hver af modellerne har vi gjort brug af formuleringernes respektive $ID$ som $x$-koordinat og tiden, $t$, det tog testdeltageren at løse en pågældende pegeopgave som $y$-koordinat. De fire matematiske modeller med de tilpassede konstanter er vist nedenfor.
+Hver af de fire formuleringer af Fitts' lov har vi tilpasset til vores data fra de 264 testdeltageres pegeopgaver ved lineær regression. Til hver af modellerne har vi gjort brug af formuleringernes respektive $ID$ som $x$-koordinat og tiden, $t$, det tog testdeltageren at løse en pågældende pegeopgave som $y$-koordinat. De fire matematiske modeller med de tilpassede konstanter er vist nedenfor.
 \begin{align*}
 \text{Fitts': } &T = 392.29 + 149.42\cdot \log_2\left(\frac{2A}{W}\right)\\
 \text{Welford's: } &T =  299.73\cdot \log_2\left(\frac{A+\frac{1}{2}W}{W}\right)\\
@@ -608,10 +608,7 @@ Hver af de fire formuleringer af Fitts' lov har vi tilpasset til vores data fra 
 
 Bemærk, at den additive konstant er målt i millisekunder ligesom vores registrerede tider fra datasættet. Ud fra de tre additive konstanter, kan det ses, at testdeltagerne i gennemsnit bruger cirka 450 millisekunder på at opfange opgaven før de bevæger deres pegeenhed. Datapunkterne og de fire affine modeller er plottet og vist i figur \ref{fig:welford_affine_line}, \ref{fig:fitt_affine_line}, \ref{fig:meyer_affine_line} og \ref{fig:mackenzie_affine_line}. Hvert datapunkt er én testdeltagers opgaveløsning. Bemærk, hvordan datapunkterne danner 25 vertikale 'søjler', én for hvert af vores pegeopgavers $ID$.
 
-Det er de fire matematiske modeller som vores pegeopgaveanalyse vil tage udgangspunkt i. Ud fra modellerne og figurerne er det dog svært at sige noget om, hvilken af modellerne der klarer sig bedst i at beskrive datapunkterne. For at få et mere håndgribeligt resultat at analysere dette ud fra, vil vi gøre brug af en AIC sammenligning og underbygge den med en residualanalyse.
-
-
-\begin{minipage}{\linewidth}
+Det er de fire matematiske modeller som vores pegeopgaveanalyse vil tage udgangspunkt i. Ud fra modellerne og figurerne er det dog svært at sige noget om, hvilken af modellerne der klarer sig bedst i at beskrive datapunkterne. For at få et mere håndgribeligt resultat at analysere dette ud fra, vil vi gøre brug af en AIC sammenligning og underbygge den med en residualanalyse.\\\\\begin{minipage}{\linewidth}
 	\begin{minipage}[b]{0.45\linewidth}
 		\captionof{figure}{Welford's lineære model med hans $ID$ ud af $x$-aksen og tiden ud af $y$-aksen}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_welford}
