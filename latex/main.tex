@@ -272,9 +272,9 @@ På trods af, at det er muligt at omskrive Welford's formulering, så vil det ik
 
 Da vi har vist, at omskrivningen af Welford's formulering ikke giver logisk mening, vil vi nu kigge på de fire formuleringer, og vise, at de ikke er ens. Dette kan vi gøre ved at vælge en fast værdi for $A$ og $W$, for eksempel, $A = 5$ og $W = 1$. Hvis vi hertil finder ét punkt, hvor formuleringernes funktionsværdier er forskellige, har vi vist, at de ikke er ens. Vi sætter derfor $a=0$ og finder tiden, $T$, til skæringen med $y$-aksen.
 \begin{align*}
-\text{Fitts: } &T=b\cdot\log\left(\frac{2\cdot5}{2}\right)\\
-\text{Welford: } &T=k\cdot\log\left(\frac{5+0.5\cdot 2}{2}\right)\\
-\text{Mackenzie: } &T=b\cdot\log\left(\frac{5 + 2}{2}\right)\\
+\text{Fitts: } &T=b\cdot\log_2\left(\frac{2\cdot5}{2}\right)\\
+\text{Welford: } &T=k\cdot\log_2\left(\frac{5+0.5\cdot 2}{2}\right)\\
+\text{Mackenzie: } &T=b\cdot\log_2\left(\frac{5 + 2}{2}\right)\\
 \text{Meyer: } &T=b\cdot\sqrt{\frac{5}{2}}
 \end{align*}
 Ved at sætte to af ligningerne for $T$ lig hinanden kan vi vise, at de to formuleringer ikke er ens.
