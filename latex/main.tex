@@ -742,7 +742,7 @@ I vores forsøg havde vi, udover pegeopgaven, også tunnel- og spiralopgaver. Vi
 
 \addcontentsline{toc}{subsection}{Analyse af tunnelopgaver}
 \subsection*{Analyse af tunnelopgaver}
-De fire formuleringer er, som benævnt, ikke lavet til navigationsopgaver. Vi har dog alligevel tilpasset en lineær model med deres respektive ID, til vores 264 testdeltageres tunnelopgaver. Vi har valgt afstanden, $A$, til at være længden på tunnellen, $A=[20,30,40,50]$ pixel. Bredden, $W$, har vi valgt som størrelsen på tunnelens højre lodrette linje, slutstregen, der altid er $8$ pixels. Ved lineær regression, $lm()$, med $R$ fik vi tilpasset nedenstående matematiske modeller af de fire formuleringer.
+De fire formuleringer er, som benævnt, ikke lavet til navigationsopgaver. Vi har dog alligevel tilpasset en affin model med deres respektive ID, til vores 264 testdeltageres tunnelopgaver. Vi har valgt afstanden, $A$, til at være længden på tunnellen, $A=[20,30,40,50]$ pixel. Bredden, $W$, har vi valgt som størrelsen på tunnelens højre lodrette linje, slutstregen, der altid er $8$ pixels. Ved lineær regression, $lm()$, med $R$ fik vi tilpasset nedenstående matematiske modeller af de fire formuleringer.
 
 \begin{align*}
 \text{Fitts': } &T = 3532.2 + 581.9\cdot \log_2\left(\frac{2A}{W}\right)\\
