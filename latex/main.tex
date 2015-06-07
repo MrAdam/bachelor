@@ -121,7 +121,7 @@ Denne formel er dog ikke den klassiske formel for Fitts' lov, men ved omregninge
 ID &= -\log_2\left(\frac{W}{2A}\right) \Leftrightarrow\\
 ID &= -\log_2\left(W\right)-\left(-\log_2\left(2A\right)\right) \Leftrightarrow\\
 ID &= \log_2\left(2A\right)-\log_2\left(W\right) \Leftrightarrow\\
-ID &= log_2\left(\frac{2A}{W}\right)
+ID &= \log_2\left(\frac{2A}{W}\right)
 \end{align*}
 Vi kan indsætte dette i formlen for IP, og isolere et udtryk for tiden $t$.
 \begin{align*}
@@ -161,17 +161,17 @@ I \cite{welford1968} beskriver Welford en række fundamentale forudsætninger fo
 Welford argumenterede for, at $A$ ikke skulle multipliceres med $2$, da det på data fra Fitts' første forsøg, ville resultere i en negativ $a$-værdi. Derved bliver (\ref{eq:FittsLov}) til
 \begin{align}
 \label{eq:Crossman}
-T = a + b \cdot log\left(\frac{A}{W}\right)
+T = a + b \cdot \log_2\left(\frac{A}{W}\right)
 \end{align}
 som også tidligere var blevet udledt af Crossman \cite{crossman1957}. Hvis data fra Fitts' første forsøg indsættes i (\ref{eq:Crossman}), så vil $a$ ligge tæt på $0.05$. Dette passer med Crossman's eksperiment, hvor tiden man bruger, inden bevægelsen begynder, udregnes til at være cirka $0.05$ \cite{crossman1957}. Welford argumenterer for, at man derved helt kunne undlade $a$, da det beskriver tiden inden bevægelsen. I et lignende eksperiment \cite{welford1958} fandt han dog, at resultaterne generelt var mere troværdige, hvis $a$-leddet var medtaget.
 
 Figur \ref{fig:WelfordGraf} viser data fra ét af Fitts' eksperimenter og den tilhørende affine kurve. Den affine kurves skæring med $y$-aksen rammer under nul, jævnfør den negative $a$ værdi. På baggrund af de to første punkter, som ikke ligger på den affine linje, fandt Welford frem til, at følgende modifikationer til (\ref{eq:FittsLov}) ville beskrive datapunkterne bedre.
 \begin{align}\label{eq:WelfordsLov}
-T = K \cdot log\left(\frac{A + \frac{1}{2}W}{W}\right) = K \cdot log\left(\frac{A}{W} + 0.5\right)
+T = K \cdot \log_2\left(\frac{A + \frac{1}{2}W}{W}\right) = K \cdot \log_2\left(\frac{A}{W} + 0.5\right)
 \end{align}
 (\ref{eq:WelfordsLov}) er sidenhen blevet kendt som Welfords lov og har betydning for, hvordan tiden, $T$, opfattes. Tiden vil i (\ref{eq:WelfordsLov}) blive afhænging af en Weber Fraction \cite{welford1958}, da testpersonen skal skelne mellem længderne til målets fjerneste og næreste kant. Testpersonen skal altså udvælge en længde, $W$, ud fra den totale længde mellem startpunktet og målets fjerneste kant. Det er her vigtigt at notere, at (\ref{eq:WelfordsLov}) også opretholder den fordel, som Fitts hævdede der var ved at multiplicere $A$ med $2$. Dette ses ud fra det mest ekstreme tilfælde, hvor bevægelsens startpunkt er på målets kant.
 
-I dette tilfælde vil det gælde, at $A = \frac{1}{2}W$, hvorved $T = K \cdot log\left(\frac{A + \frac{1}{2}W}{W}\right) = K \cdot log\left(\frac{W}{W}\right)$. Da $\log\left(\frac{W}{W}\right)=\log(1) > 0 $ vil $ID$ være positivt.
+I dette tilfælde vil det gælde, at $A = \frac{1}{2}W$, hvorved $T = K \cdot log\left(\frac{A + \frac{1}{2}W}{W}\right) = K \cdot \log_2\left(\frac{W}{W}\right)$. Da $\log_2\left(\frac{W}{W}\right)=\log_2(1) > 0 $ vil $ID$ være positivt.
 
 Den sidste observation, der blev gjort var, at kurven i figur~\ref{fig:WelfordGraf} viser en tydelig udfladning ved lavere værdier af $x$. Welford noterede, at det sandsynligvis var grundet en begrænsende faktor, som beskriver en minimumstid per bevægelse, hvor kort eller uhindret bevægelsen end måtte være. Welford's egne undersøgelser har påvist, at denne begrænsende faktor har betydning for, hvor meget af målet, der rent faktisk bliver brugt. Når målene er brede og længden mellem dem kort, vil testpersonen kun bruge en sub-længde af målets fulde længde. Han overfører mere information end (\ref{eq:WelfordsLov}) ville beskrive, fordi den effektive W er kortere. Den kortere bredde kan i nogen omfang afspejles i en reduktion af fejl og, hvis reduktionen sker med behørigt hensyn, holder (\ref{eq:WelfordsLov}) stadig.
 
