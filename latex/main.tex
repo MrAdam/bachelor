@@ -261,12 +261,12 @@ Graferne for funktionerne i (\ref{eq:meyer}) og (\ref{eq:FittsLov}) vil udvise s
 \section*{Sammenligning}
 For at få en bedre forståelse af de fire formuleringer af Fitts' lov, vil vi i dette afsnit se på hvordan de matematisk ligner hinanden. Det første vi vil gøre er, at prøve at omformulere Welford's formulering, da den ikke indeholder et additivt $a$-led. 
 \begin{align*}
-T &= K\cdot\log\left(\frac{A+0.5W}{W}\right)\Leftrightarrow\\
-T &= K\left(1-1+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
-T &= -K+K\left(1+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
-T &= -K+K\left(\log(2)+\log\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
-T &= -K+K\left(\log\left(2\left(\cdot\frac{A+0.5W}{W}\right)\right)\right)\Leftrightarrow\\
-T &= -K+K\cdot\log\left(\frac{2A+W}{W}\right)
+T &= K\cdot\log_2\left(\frac{A+0.5W}{W}\right)\Leftrightarrow\\
+T &= K\left(1-1+\log_2\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
+T &= -K+K\left(1+\log_2\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
+T &= -K+K\left(\log_2(2)+\log_2\left(\frac{A+0.5W}{W}\right)\right)\Leftrightarrow\\
+T &= -K+K\left(\log_2\left(2\left(\cdot\frac{A+0.5W}{W}\right)\right)\right)\Leftrightarrow\\
+T &= -K+K\cdot\log_2\left(\frac{2A+W}{W}\right)
 \end{align*}
 På trods af, at det er muligt at omskrive Welford's formulering, så vil det ikke være brugbart i praksis. Omformuleringen gør, at $-K$, er negativt, hvilket betyder, at tiden det tager at påbegynde en opgave er negativ. Vi vil derfor fremadrettet kun bruge Welford's formulering uden det additive led.
 
