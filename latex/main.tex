@@ -710,8 +710,7 @@ På figur \ref{fig:plot_residual_fitt}, \ref{fig:plot_residual_welford}. \ref{fi
 
 Når vi kigger på de fire residualplot, så viser de samme resultater som AIC-analysen. Welford's residualplot viser, at modellen passer dårligt på den indsamlede data. Fitt's og MacKenzie's ligner hinanden meget, mens Meyer's er den model der giver det bedste fit til den indsamlede data.
 
-Det ses af figur \ref{fig:plot_residual_welford}, at Welford's især er dårligere ved lavere værdier af $ID$. Grunden til dette er, at Welford's ikke har det additive $a$-led. Som Welford \cite{welford1968} selv forklarer, så vil det manglende $a$-led ikke gøre stor forskel ved større værdier af $ID$. Fitt's og MacKenzie's residualer ligner hinanden.
-
+Det ses af figur \ref{fig:plot_residual_welford}, at Welford's især er dårligere ved lavere værdier af $ID$. Grunden til dette er, at Welford's ikke har det additive $a$-led. Som Welford \cite{welford1968} selv forklarer, så vil det manglende $a$-led ikke gøre stor forskel ved større værdier af $ID$. Fitt's og MacKenzie's residualer ligner hinanden.\\\\
 \begin{minipage}{\linewidth}
 	\begin{minipage}{.5\linewidth}
 		\includegraphics[width=0.8\linewidth]{images/plots/plot_residual_fitt}
@@ -813,29 +812,31 @@ Selvom Accot og Zhai's formulering er specificeret til denne type opgaver, er de
 
 \begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
+		\centering
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_welford}
 		\captionof{figure}{Welford's lineære model tilpasset gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:welford_tunnel_line}
 	\end{minipage}
-	\begin{minipage}[b]{0.1\linewidth}
+	\begin{minipage}[t]{0.1\linewidth}
 	~
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
+		\centering
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_fitt}
 		\captionof{figure}{Fitts' affine model tilpasset gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:fitt_tunnel_line}
 	\end{minipage}
-\end{minipage}
-\begin{minipage}{\linewidth}
 	\begin{minipage}[t]{.45\linewidth}
+		\centering
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_meyer}
 		\captionof{figure}{Meyer's affine model tilpasset gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:meyer_tunnel_line}
 	\end{minipage}
-	\begin{minipage}[b]{0.1\linewidth}
+	\begin{minipage}[t]{0.1\linewidth}
 	~
 	\end{minipage}
 	\begin{minipage}[t]{0.45\linewidth}
+		\centering
 		\includegraphics[width=\textwidth]{images/plots/plot_model_tunnel_mackenzie}
 		\captionof{figure}{MacKenzie's affine model tilpasset gennemsnitstiden pr. $ID$ for de 264 testdeltageres tunnelopgave. $ID$ på $x$-aksen og tiden $T$ på $y$-aksen}
 		\label{fig:mackenzie_tunnel_line}
@@ -1031,7 +1032,7 @@ Grafen vil efter aftagningen foretage nul eller flere stigninger til lokale maks
 
 Som tidligere nævnt i rapporten, har de fire formuleringer af Fitts' lov et additivt led, som beskriver reaktionstiden for testdeltagerne. Disse værdier varierede fra 300 til 500 millisekunder, hvilket stemmer overens med graferne i figur \ref{fig:speed_time_testperson_140} og \ref{fig:speed_time_testperson_248}. Her starter deltagerne først efter 200 til 500 millisekunder. Bemærk, at grafen på nogle af figurerne allerede starter omkring tiden 0 og fortsætter med en fart på 0, dette skyldes, at testdeltageren har bevæget sin pegeenhed samtidig med, at deltageren klikkede for at starte opgaven. Derved er der blevet registreret et datapunkt, dog uden, at testdeltageren egentlig er startet med at manøvrere imod målet. Udover dette noterer vi os, at graferne udviser de samme egenskaber for både distance og tid.\\\\
 \begin{minipage}{\linewidth}
-\begin{minipage}{.475\linewidth}
+\begin{minipage}[c]{.475\linewidth}
 	\centering
 	\includegraphics[width=\linewidth]{images/plots/plot_speed_individual_140}
 	\captionof{figure}{Plot af testdeltager 140's fart i forhold til den tilbagelagte distance på opgaverne 20, 23, 8 og 22}
@@ -1040,16 +1041,13 @@ Som tidligere nævnt i rapporten, har de fire formuleringer af Fitts' lov et add
 	\begin{minipage}[b]{0.05\linewidth}
 	~
 	\end{minipage}
-	\begin{minipage}{.475\linewidth}
+	\begin{minipage}[c]{.475\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/plots/plot_speed_individual_248}
 		\captionof{figure}{Plot af testdeltager 248's fart i forhold til den tilbagelagte distance på opgaverne 20, 23, 8 og 22}
 		\label{fig:speed_distance_testperson_248}
 	\end{minipage}
-\end{minipage}
-
-\begin{minipage}{\linewidth}
-\begin{minipage}{.475\linewidth}
+\begin{minipage}[c]{.475\linewidth}
 	\centering
 	\includegraphics[width=\linewidth]{images/plots/plot_speed_time_individual_140}
 	\captionof{figure}{Plot af testdeltager 140's fart i forhold til den forløbne tid på opgaverne 20, 23, 8 og 22}
@@ -1058,7 +1056,7 @@ Som tidligere nævnt i rapporten, har de fire formuleringer af Fitts' lov et add
 	\begin{minipage}[b]{0.05\linewidth}
 	~
 	\end{minipage}
-	\begin{minipage}{.475\linewidth}
+	\begin{minipage}[c]{.475\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/plots/plot_speed_time_individual_248}
 		\captionof{figure}{Plot af testdeltager 248's fart i forhold til den forløbne tid på opgaverne 20, 23, 8 og 22}
