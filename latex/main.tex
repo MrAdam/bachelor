@@ -353,15 +353,15 @@ I denne sektion vil vi beskrive, hvordan tunnel-, spiral- og pegeopgaverne er de
 		\label{fig:ex_tunnel_4}
 	\end{minipage}
 \end{minipage}\\\\
-I denne opgave skal testdeltageren føre sin markør igennem fire tunneller af varierende længde, og varierende bredde på startlinjen. De fire tunneller kan ses på Figur \ref{fig:ex_tunnel_1}, \ref{fig:ex_tunnel_2}, \ref{fig:ex_tunnel_3} og \ref{fig:ex_tunnel_4}, hvor de er skaleret ned til 50\% af deres oprindelige forhold, så deres indbyrdes relative størrelse er bevaret.  Størrelserne målt i pixels for tunnellængde, $A$, og den venstre lodrette linje, startlinjen $W$, er vist i tabel \ref{tab:tunnelopgave}. Den højre lodrette linje, slutstregen, er fastsat til 8 pixels bredde, hvilket stemmer overens med forsøget lavet i \cite{accot1997}
+I denne opgave skal testdeltageren føre sin markør igennem fire tunneller af varierende længde, og varierende bredde på startlinjen. De fire tunneller kan ses på Figur \ref{fig:ex_tunnel_1}, \ref{fig:ex_tunnel_2}, \ref{fig:ex_tunnel_3} og \ref{fig:ex_tunnel_4}, hvor de er skaleret ned til 50\% af deres oprindelige forhold, så deres indbyrdes relative størrelse er bevaret.  Størrelserne målt i pixels for tunnellængde, $A$, og den venstre lodrette linje, startlinjen $W_1$, er vist i tabel \ref{tab:tunnelopgave}. Den højre lodrette linje, slutstregen $W_2$, er fastsat til 8 pixels bredde, hvilket stemmer overens med forsøget lavet i \cite{accot1997}
 \begin{center}
 	\begin{tabular}{c c c}
-		Tunnel & A & W \\
+		Tunnel & A & W_1 & W_2 \\
 		\hline
-		1 & 100 & 20 \\
-		2 & 250 & 30 \\
-		3 & 300 & 40 \\
-		4 & 400 & 50 \\
+		1 & 100 & 20 & 8 \\
+		2 & 250 & 30 & 8\\
+		3 & 300 & 40 & 8\\
+		4 & 400 & 50 & 8\\
 	\end{tabular}
 	\captionof{table}{Størrelse i pixels af $A$ (længde) og $W$ (startstregen) af tunneller brugt i tunnelopgaverne}
 	\label{tab:tunnelopgave}
@@ -751,7 +751,7 @@ De fire formuleringer er, som benævnt, ikke lavet til navigationsopgaver. Vi ha
 \text{Meyer's: } &T = 5863.07 + 210.48 \cdot \sqrt{\frac{A}{W}}
 \end{align*}
 
-Helt naturligt er det additive led markant højere for tunnelopgaverne end for pegeopgaverne, da det gennemsnitligt har taget længere tid for vores testdeltagere at gennemføre dem. Gennemsnitstiden for de 264 testdeltageres tunnelopgaver er $7673.01$ millisekunder imod $983.30$ millisekunder for pegeopgaverne. Det additive led kan dog ikke fortolkes som reaktionstiden for tunnelopgaverne. Dette skyldes, at tiden bliver registreret fra testdeltageren passerer venstre lodrette streg i tunnellen, og derved allerede er i bevægelse ved $T=0$.
+Det additive led er markant højere for tunnelopgaverne end for pegeopgaverne, da det gennemsnitligt har taget længere tid for vores testdeltagere at gennemføre dem. Gennemsnitstiden for de 264 testdeltageres tunnelopgaver er $7673.01$ millisekunder imod $983.30$ millisekunder for pegeopgaverne. Det additive led kan dog ikke fortolkes som reaktionstiden for tunnelopgaverne. Dette skyldes, at tiden bliver registreret fra testdeltageren passerer venstre lodrette streg i tunnellen, og derved allerede er i bevægelse ved $T=0$.
 
 Accot og Zhai beskriver i deres artikel \cite{accot1997}, hvordan en indsnævrende tunnelopgave kan opdeles i små delelementer, som hver især udgør én lille navigationsopgave. Ved at gøre dette kan man finde $ID$ som summen af delelementernes $ID$, hvilket resulterer i $ID_{NT} = \frac{A}{W_2-W_1}\ln\left(\frac{W_2}{W_1}\right)$. $W_1$ er størrelsen på venstre lodrette streg, startstregen, og $W_2$ er størrelsen på højre lodrette streg, slutstregen, imens $A$ er længden af tunnelen. I følge Accot og Zhai er der en lineær sammenhæng imellem tiden $T$ og dette $ID_{NT}$, hvilket giver anledning til følgende formulering $T = a+b\cdot ID_{NT}$. Tilpasses denne formulering med lineær regression til vores 264 testdeltageres tunnelopgaver findes nedenstående matematiske model.
 
