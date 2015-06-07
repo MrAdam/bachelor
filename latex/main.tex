@@ -559,8 +559,7 @@ Funktionen $AIC$\footnote{R dokumentation om $AIC$: \url{https://stat.ethz.ch/R-
 \section*{Indledende analyse}
 For at være sikre på, at vores data fra det ukontrollerede crowdsourcing eksperiment kan bruges til at sammenligne de fire formuleringer, har vi først kigget på vores 10 testdeltagere fra laboratieeksperimentet hver for sig. Vi har fitted vores 10 testdeltageres data fra pegeopgaverne til Fitts' lov hver for sig. To af disse plots kan ses i figur \ref{fig:testdeltager1} og \ref{fig:testdeltager3}.  Punkterne ligger tæt omkring modellen, angivet ved den blå linje, der er dog enkelte datapunkter bryder tendensen, specielt på figur \ref{fig:testdeltager3}.
 
-Vi har derfor fjernet alle datapunkter, som afviger med mere end 3 gange standardafvigelsen, $\sigma$, som er kvadratroden af variansen på datasættet \cite{pearson1894}. Ved at filtrere data med for stor afvigelse fra, kan vi fitte en model der beskriver størstedelen af vores data bedre. Figur \ref{fig:testdeltager7unfilter} og \ref{fig:testdeltager7filter} viser den tilpassede affine model for testdeltager 7 med og uden filtreret data.
-
+Vi har derfor fjernet alle datapunkter, som afviger med mere end 3 gange standardafvigelsen, $\sigma$, som er kvadratroden af variansen på datasættet \cite{pearson1894}. Ved at filtrere data fra med for stor afvigelse, kan vi fitte en model der beskriver størstedelen af vores data bedre. Figur \ref{fig:testdeltager7unfilter} og \ref{fig:testdeltager7filter} viser den tilpassede affine model for testdeltager 7 med og uden filtreret data.\\\\
 \begin{minipage}{\linewidth}
 	\begin{minipage}[b]{.45\linewidth}
 		\includegraphics[width=\textwidth]{images/plots/plot_model_test_1}
